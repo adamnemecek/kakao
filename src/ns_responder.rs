@@ -127,39 +127,81 @@ impl NSResponderRef {
     }
 
     // - (void)cursorUpdate:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn cursor_update(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, cursorUpdate: event] }
+    }
     // /* The following *WithEvent methods are available on 10.5.2 or later, and will be sent only on hardware capable of generating the corresponding NSEvent types
     // */
     // - (void)magnifyWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn magnify_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, magnifyWithEvent: event] }
+    }
     // - (void)rotateWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn rotate_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, rotateWithEvent: event] }
+    }
     // - (void)swipeWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn swipe_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, swipeWithEvent: event] }
+    }
     // - (void)beginGestureWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn begin_gesture_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, beginGestureWithEvent: event] }
+    }
     // - (void)endGestureWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
+    pub fn end_gesture_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, endGestureWithEvent: event] }
+    }
 
     // - (void)smartMagnifyWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.8));
+    pub fn smart_magnify_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, smartMagnifyWithEvent: event] }
+    }
 
     // /* Issued in response to a double-tap on the side of the Apple Pencil */
     // - (void)changeModeWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.15));
+    pub fn change_mode_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, changeModeWithEvent: event] }
+    }
 
     // /* A new set of touches has been recognized. To get the set of touches that began for this view (or descendants of this view): [event touchesMatchingPhase:NSTouchPhaseBegan inView:self]; Note: this is not always the point of contact with the touch device. A touch that transitions from resting to active may be part of a Began set.
     // */
     // - (void)touchesBeganWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.6));
+    pub fn touches_began_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, touchesBeganWithEvent: event] }
+    }
 
     // /* One or more touches has moved. To get the set of touches that moved for this view (or descendants of this view): [event touchesMatchingPhase:NSTouchPhaseMoved inView:self];
     // */
     // - (void)touchesMovedWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.6));
+    pub fn touches_moved_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, touchesMovedWithEvent: event] }
+    }
 
     // /* A set of touches have been removed. To get the set of touches that ended for this view (or descendants of this view): [event touchesMatchingPhase:NSTouchPhaseEnded inView:self]; Note: this is not always the point of removal with the touch device. A touch that transitions from active to resting may be part of an Ended set.
     // */
     // - (void)touchesEndedWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.6));
+    pub fn touches_ended_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, touchesEndedWithEvent: event] }
+    }
 
     // /* The System has cancelled the tracking of touches for any reason.
     // */
     // - (void)touchesCancelledWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.6));
+    pub fn touches_cancelled_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, touchesCancelledWithEvent: event] }
+    }
 
     // /* Perform a Quick Look on the content at location in the event. If there are no Quick Look items at the location, call super. Also, see quickLookPreviewItems: further below. */
     // - (void)quickLookWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.8));
+    pub fn quick_look_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, quickLookWithEvent: event] }
+    }
 
     // - (void)pressureChangeWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.10.3));
+    pub fn pressure_change_with_event(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, pressureChangeWithEvent: event] }
+    }
 
     // - (void)noResponderFor:(SEL)eventSelector;
     // @property (readonly) BOOL acceptsFirstResponder;
@@ -180,14 +222,23 @@ impl NSResponderRef {
     // /* Some views process gesture scroll events to perform elastic scrolling. In some cases, you may want to track gesture scroll events like a swipe. (see -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler: in NSEvent.h) Implement this method and return YES in your swipe controller and views that perform elastic scrolling will forward gesture scroll events up the responder chain on the following condition: the content to be scrolled is already at the edge of the scrolled direction at the beginning of the scroll gesture. Otherwise, the view will perform elastic scrolling. Default implementation returns NO.
     // */
     // - (BOOL)wantsScrollEventsForSwipeTrackingOnAxis:(NSEventGestureAxis)axis API_AVAILABLE(macos(10.7));
+    pub fn wants_scroll_events_for_swipe_tracking_on_axis(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, wantsScrollEventsForSwipeTrackingOnAxis: event] }
+    }
 
     // /* Some views process gesture scroll events to perform elastic scrolling. In some cases, the scroll events should be forwarded up the responder chain for further processing (for example an enclosing scroll view). Implement this method returning yes and views that perform elastic scrolling will forward gesture scroll events up the responder chain on the following condition: the content to be scrolled is already at the edge of the scrolled direction at the beginning of the scroll gesture. Otherwise, the view will perform elastic scrolling. Note: If you intend to call -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler: implement -wantsToTrackScrollEventsAsSwipeForAxis, as defined above instead. Default implementation returns NO.
     // */
     // - (BOOL)wantsForwardedScrollEventsForAxis:(NSEventGestureAxis)axis API_AVAILABLE(macos(10.7));
+    pub fn wants_forwarded_scroll_events_for_axis(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, wantsForwardedScrollEventsForAxis: event] }
+    }
 
     // /* This method is used in the process of finding a target for an action method. If this NSResponder instance does not itself respondsToSelector:action, then supplementalTargetForAction:sender: is called. This method should return an object which responds to the action; if this responder does not have a supplemental object that does that, the implementation of this method should call super's supplementalTargetForAction:sender:. NSResponder's implementation returns nil.
     // */
     // - (nullable id)supplementalTargetForAction:(SEL)action sender:(nullable id)sender API_AVAILABLE(macos(10.7));
+    pub fn id(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, id: event] }
+    }
     // @end
 
     // /* This protocol contains a large number of methods intended for use as key binding commands.  NSResponder does not implement any of them.  NSTextView implements a certain subset of them (see the NSTextView.h header).  Your responder subclasses can implement any that make sense.  You can make up your own as well, but you should use these if the concepts map.  If your view is key and uses key binding and the user types a key sequence which is bound to a command which is not implemented in your class, it is OK, nothing will happen by default.
@@ -248,9 +299,21 @@ impl NSResponderRef {
     // - (void)moveWordLeftAndModifySelection:(nullable id)sender;
 
     // - (void)moveToLeftEndOfLine:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn move_to_left_end_of_line(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, moveToLeftEndOfLine: event] }
+    }
     // - (void)moveToRightEndOfLine:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn move_to_right_end_of_line(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, moveToRightEndOfLine: event] }
+    }
     // - (void)moveToLeftEndOfLineAndModifySelection:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn move_to_left_end_of_line_and_modify_selection(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, moveToLeftEndOfLineAndModifySelection: event] }
+    }
     // - (void)moveToRightEndOfLineAndModifySelection:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn move_to_right_end_of_line_and_modify_selection(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, moveToRightEndOfLineAndModifySelection: event] }
+    }
 
     // - (void)scrollPageUp:(nullable id)sender;
     // - (void)scrollPageDown:(nullable id)sender;
@@ -281,7 +344,13 @@ impl NSResponderRef {
     // - (void)insertLineBreak:(nullable id)sender;
     // - (void)insertContainerBreak:(nullable id)sender;
     // - (void)insertSingleQuoteIgnoringSubstitution:(nullable id)sender API_AVAILABLE(macos(10.5));
+    pub fn insert_single_quote_ignoring_substitution(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, insertSingleQuoteIgnoringSubstitution: event] }
+    }
     // - (void)insertDoubleQuoteIgnoringSubstitution:(nullable id)sender API_AVAILABLE(macos(10.5));
+    pub fn insert_double_quote_ignoring_substitution(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, insertDoubleQuoteIgnoringSubstitution: event] }
+    }
 
     //     /* Case changes */
     // - (void)changeCaseOfLetter:(nullable id)sender;
@@ -316,17 +385,38 @@ impl NSResponderRef {
 
     //     /* Writing Direction */
     // - (void)makeBaseWritingDirectionNatural:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_base_writing_direction_natural(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeBaseWritingDirectionNatural: event] }
+    }
     // - (void)makeBaseWritingDirectionLeftToRight:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_base_writing_direction_left_to_right(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeBaseWritingDirectionLeftToRight: event] }
+    }
     // - (void)makeBaseWritingDirectionRightToLeft:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_base_writing_direction_right_to_left(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeBaseWritingDirectionRightToLeft: event] }
+    }
 
     // - (void)makeTextWritingDirectionNatural:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_text_writing_direction_natural(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeTextWritingDirectionNatural: event] }
+    }
     // - (void)makeTextWritingDirectionLeftToRight:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_text_writing_direction_left_to_right(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeTextWritingDirectionLeftToRight: event] }
+    }
     // - (void)makeTextWritingDirectionRightToLeft:(nullable id)sender API_AVAILABLE(macos(10.6));
+    pub fn make_text_writing_direction_right_to_left(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, makeTextWritingDirectionRightToLeft: event] }
+    }
 
     //    /* Quick Look */
     // /* Perform a Quick Look on the text cursor position, selection, or whatever is appropriate for your view. If there are no Quick Look items, then call [[self nextResponder] tryToPerform:_cmd with:sender]; to pass the request up the responder chain. Eventually AppKit will attempt to perform a dictionary look up. Also see quickLookWithEvent: above.
     // */
     // - (void)quickLookPreviewItems:(nullable id)sender API_AVAILABLE(macos(10.8));
+    pub fn quick_look_preview_items(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, quickLookPreviewItems: event] }
+    }
 
     // @end
 
@@ -342,6 +432,9 @@ impl NSResponderRef {
     // /* This is a responder chain method to allow controls to determine when they should become first responder or not. Some controls, such as NSTextField, should only become first responder when the enclosing NSTableView/NSBrowser indicates that the view can begin editing. It is up to the particular control that wants to be validated to call this method in its -mouseDown: (or other time) to determine if it should attempt to become the first responder or not. The default implementation returns YES when there is no -nextResponder, otherwise, it is forwarded up the responder chain. NSTableView/NSBrowser implements this to only allow first responder status if the responder is a view in a selected row. It also delays the first responder assignment if a doubleAction needs to (possibly) be sent. 'event' may be nil if there is no applicable event.
     // **/
     // - (BOOL)validateProposedFirstResponder:(NSResponder *)responder forEvent:(nullable NSEvent *)event API_AVAILABLE(macos(10.7));
+    pub fn validate_proposed_first_responder(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, validateProposedFirstResponder: event] }
+    }
 
     // @end
 
@@ -391,6 +484,9 @@ impl NSResponderRef {
     // @interface NSResponder(NSTextFinderSupport)
 
     // - (void)performTextFinderAction:(nullable id)sender API_AVAILABLE(macos(10.7));
+    pub fn perform_text_finder_action(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, performTextFinderAction: event] }
+    }
 
     // @end
 
@@ -399,6 +495,9 @@ impl NSResponderRef {
     // /* For automatic window tabbing: This method can be implemented in the responder chain. It is automatically called for tabbed windows when the plus button is clicked, and the next window that is created and shown will be placed in a tab. This can be implemented in an NSDocumentController subclass, or somewhere in the responder chain starting at NSWindow (such as NSWindow, the window delegate, the windowController, the NSApp delegate, etc. A plus button on tabbed windows will only be shown if this method exists in the responder chain.
     // **/
     // - (IBAction)newWindowForTab:(nullable id)sender API_AVAILABLE(macos(10.12));
+    pub fn new_window_for_tab(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, newWindowForTab: event] }
+    }
 
     // @end
 
