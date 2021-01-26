@@ -357,313 +357,314 @@ foreign_obj_type! {
 }
 
 // @interface NSEvent : NSObject <NSCopying, NSCoding>
+impl NSEventRef {
+    // /* these messages are valid for all events */
+    // @property (readonly) NSEventType type;
+    // @property (readonly) NSEventModifierFlags modifierFlags;
+    // @property (readonly) NSTimeInterval timestamp;
+    // @property (readonly, nullable, weak) NSWindow *window;
+    // @property (readonly) NSInteger windowNumber;
+    // @property (nullable, readonly, strong) NSGraphicsContext *context API_DEPRECATED("This method always returns nil. If you need access to the current drawing context, use [NSGraphicsContext currentContext] inside of a draw operation.", macos(10.0,10.12));
 
-// /* these messages are valid for all events */
-// @property (readonly) NSEventType type;
-// @property (readonly) NSEventModifierFlags modifierFlags;
-// @property (readonly) NSTimeInterval timestamp;
-// @property (readonly, nullable, weak) NSWindow *window;
-// @property (readonly) NSInteger windowNumber;
-// @property (nullable, readonly, strong) NSGraphicsContext *context API_DEPRECATED("This method always returns nil. If you need access to the current drawing context, use [NSGraphicsContext currentContext] inside of a draw operation.", macos(10.0,10.12));
+    // /* these messages are valid for all mouse down/up/drag events */
+    // @property (readonly) NSInteger clickCount;
+    // @property (readonly) NSInteger buttonNumber;    // for NSOtherMouse events, but will return valid constants for NSLeftMouse and NSRightMouse
+    // /* these messages are valid for all mouse down/up/drag and enter/exit events */
+    // @property (readonly) NSInteger eventNumber;
 
-// /* these messages are valid for all mouse down/up/drag events */
-// @property (readonly) NSInteger clickCount;
-// @property (readonly) NSInteger buttonNumber;    // for NSOtherMouse events, but will return valid constants for NSLeftMouse and NSRightMouse
-// /* these messages are valid for all mouse down/up/drag and enter/exit events */
-// @property (readonly) NSInteger eventNumber;
+    // /* -pressure is valid for all mouse down/up/drag events, and is also valid for NSEventTypeTabletPoint events on 10.4 or later and NSEventTypePressure on 10.10.3 or later */
+    // @property (readonly) float pressure;
+    // /* -locationInWindow is valid for all mouse-related events */
+    // @property (readonly) NSPoint locationInWindow;
 
-// /* -pressure is valid for all mouse down/up/drag events, and is also valid for NSEventTypeTabletPoint events on 10.4 or later and NSEventTypePressure on 10.10.3 or later */
-// @property (readonly) float pressure;
-// /* -locationInWindow is valid for all mouse-related events */
-// @property (readonly) NSPoint locationInWindow;
+    // /* these messages are valid for scroll wheel events and mouse move/drag events.  As of 10.5.2, deltaX and deltaY are also valid for swipe events.  A non-0 deltaX will represent a horizontal swipe, -1 for swipe right and 1 for swipe left.  A non-0 deltaY will represent a vertical swipe, -1 for swipe down and 1 for swipe up. As of 10.7, the preferred methods for scroll wheel events are scrollingDeltaX and scrollingDeltaY defined below.
+    // */
+    // @property (readonly) CGFloat deltaX;
+    // @property (readonly) CGFloat deltaY;
+    // @property (readonly) CGFloat deltaZ;    // 0 for most scroll wheel and mouse events
 
-// /* these messages are valid for scroll wheel events and mouse move/drag events.  As of 10.5.2, deltaX and deltaY are also valid for swipe events.  A non-0 deltaX will represent a horizontal swipe, -1 for swipe right and 1 for swipe left.  A non-0 deltaY will represent a vertical swipe, -1 for swipe down and 1 for swipe up. As of 10.7, the preferred methods for scroll wheel events are scrollingDeltaX and scrollingDeltaY defined below.
-// */
-// @property (readonly) CGFloat deltaX;
-// @property (readonly) CGFloat deltaY;
-// @property (readonly) CGFloat deltaZ;    // 0 for most scroll wheel and mouse events
+    // /* This message is valid for NSEventTypeScrollWheel events. A generic scroll wheel issues rather coarse scroll deltas. Some Apple mice and trackpads provide much more precise delta. This method determines the resolution of the scrollDeltaX and scrollDeltaY values.
+    // */
+    // @property (readonly) BOOL hasPreciseScrollingDeltas API_AVAILABLE(macos(10.7));
 
-// /* This message is valid for NSEventTypeScrollWheel events. A generic scroll wheel issues rather coarse scroll deltas. Some Apple mice and trackpads provide much more precise delta. This method determines the resolution of the scrollDeltaX and scrollDeltaY values.
-// */
-// @property (readonly) BOOL hasPreciseScrollingDeltas API_AVAILABLE(macos(10.7));
+    // /* The following two message are the preferred API for accessing NSEventTypeScrollWheel deltas. When -hasPreciseScrollingDeltas reutrns NO, multiply the returned value by line or row height. When -hasPreciseScrollingDeltas returns YES, scroll by the returned value (in points).
+    // */
+    // @property (readonly) CGFloat scrollingDeltaX API_AVAILABLE(macos(10.7));
+    // @property (readonly) CGFloat scrollingDeltaY API_AVAILABLE(macos(10.7));
 
-// /* The following two message are the preferred API for accessing NSEventTypeScrollWheel deltas. When -hasPreciseScrollingDeltas reutrns NO, multiply the returned value by line or row height. When -hasPreciseScrollingDeltas returns YES, scroll by the returned value (in points).
-// */
-// @property (readonly) CGFloat scrollingDeltaX API_AVAILABLE(macos(10.7));
-// @property (readonly) CGFloat scrollingDeltaY API_AVAILABLE(macos(10.7));
+    // /* This message is valid for NSEventTypeScrollWheel events. With the Magic Mouse and some trackpads, the user can flick thier finger resulting in a stream of scroll events that dissipate over time. The location of these scroll wheel events changes as the user moves the cursor. AppKit latches these scroll wheel events to the view that is under the cursor when the flick occurs. A custom view can use this method to recognize these momentum scroll events and further route the event to the appropriate sub component.
+    // */
+    // @property (readonly) NSEventPhase momentumPhase API_AVAILABLE(macos(10.7));
 
-// /* This message is valid for NSEventTypeScrollWheel events. With the Magic Mouse and some trackpads, the user can flick thier finger resulting in a stream of scroll events that dissipate over time. The location of these scroll wheel events changes as the user moves the cursor. AppKit latches these scroll wheel events to the view that is under the cursor when the flick occurs. A custom view can use this method to recognize these momentum scroll events and further route the event to the appropriate sub component.
-// */
-// @property (readonly) NSEventPhase momentumPhase API_AVAILABLE(macos(10.7));
+    // /* valid for NSEventScrollWheel events. The user may choose to change the scrolling behavior such that it feels like they are moving the content instead of the scroll bar. To accomplish this, deltaX/Y and scrollingDeltaX/Y are automatically inverted for NSEventScrollWheel events according to the user's preferences. However, for some uses, the behavior should not respect the user preference. This method allows you to determine when the event has been inverted and compensate by multiplying -1 if needed.
+    // */
+    // @property (getter=isDirectionInvertedFromDevice, readonly) BOOL directionInvertedFromDevice API_AVAILABLE(macos(10.7));
 
-// /* valid for NSEventScrollWheel events. The user may choose to change the scrolling behavior such that it feels like they are moving the content instead of the scroll bar. To accomplish this, deltaX/Y and scrollingDeltaX/Y are automatically inverted for NSEventScrollWheel events according to the user's preferences. However, for some uses, the behavior should not respect the user preference. This method allows you to determine when the event has been inverted and compensate by multiplying -1 if needed.
-// */
-// @property (getter=isDirectionInvertedFromDevice, readonly) BOOL directionInvertedFromDevice API_AVAILABLE(macos(10.7));
+    // /* these messages are valid for keyup and keydown events */
+    // @property (nullable, readonly, copy) NSString *characters;
+    // @property (nullable, readonly, copy) NSString *charactersIgnoringModifiers;
 
-// /* these messages are valid for keyup and keydown events */
-// @property (nullable, readonly, copy) NSString *characters;
-// @property (nullable, readonly, copy) NSString *charactersIgnoringModifiers;
+    // /* This message is valid keyup and keydown events.
+    //     It returns the character(s) that would have been generated if a different modifier combination had been used.
+    //     It uses [self keyCode], the new modifiers and the current keyboard input source's layout data for re-translation.  It entirely ignores the modifiers that are already present in the event and calling this method will not affect the dead key state for current text input.
+    //     If there is invalid data in this event, -charactersByApplyingModifiers will return nil.
+    // */
+    // - (nullable NSString *)charactersByApplyingModifiers:(NSEventModifierFlags)modifiers API_AVAILABLE(macos(10.15));
 
-// /* This message is valid keyup and keydown events.
-//     It returns the character(s) that would have been generated if a different modifier combination had been used.
-//     It uses [self keyCode], the new modifiers and the current keyboard input source's layout data for re-translation.  It entirely ignores the modifiers that are already present in the event and calling this method will not affect the dead key state for current text input.
-//     If there is invalid data in this event, -charactersByApplyingModifiers will return nil.
-// */
-// - (nullable NSString *)charactersByApplyingModifiers:(NSEventModifierFlags)modifiers API_AVAILABLE(macos(10.15));
+    //   /* the chars that would have been generated, regardless of modifier keys (except shift) */
+    // @property (getter=isARepeat, readonly) BOOL ARepeat;
+    // /* this message is valid for keyup, keydown and flagschanged events */
+    // @property (readonly) unsigned short keyCode;        /* device-independent key number */
+    // /* these messages are valid for enter and exit events */
+    // @property (readonly) NSInteger trackingNumber;
+    // @property (nullable, readonly) void *userData NS_RETURNS_INNER_POINTER;
+    // /* -trackingArea returns the NSTrackingArea that generated this event.  It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned. */
+    // @property (nullable, readonly, strong) NSTrackingArea *trackingArea API_AVAILABLE(macos(10.5));
 
-//   /* the chars that would have been generated, regardless of modifier keys (except shift) */
-// @property (getter=isARepeat, readonly) BOOL ARepeat;
-// /* this message is valid for keyup, keydown and flagschanged events */
-// @property (readonly) unsigned short keyCode;        /* device-independent key number */
-// /* these messages are valid for enter and exit events */
-// @property (readonly) NSInteger trackingNumber;
-// @property (nullable, readonly) void *userData NS_RETURNS_INNER_POINTER;
-// /* -trackingArea returns the NSTrackingArea that generated this event.  It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned. */
-// @property (nullable, readonly, strong) NSTrackingArea *trackingArea API_AVAILABLE(macos(10.5));
+    // /* this message is valid for kit, system, and app-defined events */
+    // /* this message is also valid for mouse events on 10.4 or later */
+    // @property (readonly) NSEventSubtype subtype;
 
-// /* this message is valid for kit, system, and app-defined events */
-// /* this message is also valid for mouse events on 10.4 or later */
-// @property (readonly) NSEventSubtype subtype;
+    // /* these messages are valid for kit, system, and app-defined events */
+    // @property (readonly) NSInteger data1;
+    // @property (readonly) NSInteger data2;
 
-// /* these messages are valid for kit, system, and app-defined events */
-// @property (readonly) NSInteger data1;
-// @property (readonly) NSInteger data2;
+    // /* -eventRef and +eventWithEventRef:  are valid for all events */
+    // /* -eventRef returns an EventRef corresponding to the NSEvent.  The EventRef is retained by the NSEvent, so will be valid as long as the NSEvent is valid, and will be released when the NSEvent is freed.  You can use RetainEvent to extend the lifetime of the EventRef, with a corresponding ReleaseEvent when you are done with it.  If there is no EventRef corresponding to the NSEvent, -eventRef will return NULL.
+    // */
+    // @property (nullable, readonly) const void * /* EventRef */eventRef NS_RETURNS_INNER_POINTER API_AVAILABLE(macos(10.5));
+    // /* +eventWithEventRef: returns an autoreleased NSEvent corresponding to the EventRef.  The EventRef is retained by the NSEvent and will be released when the NSEvent is freed.  If there is no NSEvent corresponding to the EventRef, +eventWithEventRef will return nil.
+    // */
+    // + (nullable NSEvent *)eventWithEventRef:(const void * /* EventRef */)eventRef API_AVAILABLE(macos(10.5));
 
-// /* -eventRef and +eventWithEventRef:  are valid for all events */
-// /* -eventRef returns an EventRef corresponding to the NSEvent.  The EventRef is retained by the NSEvent, so will be valid as long as the NSEvent is valid, and will be released when the NSEvent is freed.  You can use RetainEvent to extend the lifetime of the EventRef, with a corresponding ReleaseEvent when you are done with it.  If there is no EventRef corresponding to the NSEvent, -eventRef will return NULL.
-// */
-// @property (nullable, readonly) const void * /* EventRef */eventRef NS_RETURNS_INNER_POINTER API_AVAILABLE(macos(10.5));
-// /* +eventWithEventRef: returns an autoreleased NSEvent corresponding to the EventRef.  The EventRef is retained by the NSEvent and will be released when the NSEvent is freed.  If there is no NSEvent corresponding to the EventRef, +eventWithEventRef will return nil.
-// */
-// + (nullable NSEvent *)eventWithEventRef:(const void * /* EventRef */)eventRef API_AVAILABLE(macos(10.5));
+    // /* -CGEvent returns an autoreleased CGEventRef corresponding to the NSEvent.  If there is no CGEventRef corresponding to the NSEvent, -CGEvent will return NULL.
+    // */
+    // @property (nullable, readonly) CGEventRef CGEvent API_AVAILABLE(macos(10.5));
 
-// /* -CGEvent returns an autoreleased CGEventRef corresponding to the NSEvent.  If there is no CGEventRef corresponding to the NSEvent, -CGEvent will return NULL.
-// */
-// @property (nullable, readonly) CGEventRef CGEvent API_AVAILABLE(macos(10.5));
+    // /* +eventWithCGEvent: returns an autoreleased NSEvent corresponding to the CGEventRef.  The CGEventRef is retained by the NSEvent and will be released when the NSEvent is freed.  If there is no NSEvent corresponding to the CGEventRef, +eventWithEventRef will return nil.
+    // */
+    // + (nullable NSEvent *)eventWithCGEvent:(CGEventRef)cgEvent API_AVAILABLE(macos(10.5));
 
-// /* +eventWithCGEvent: returns an autoreleased NSEvent corresponding to the CGEventRef.  The CGEventRef is retained by the NSEvent and will be released when the NSEvent is freed.  If there is no NSEvent corresponding to the CGEventRef, +eventWithEventRef will return nil.
-// */
-// + (nullable NSEvent *)eventWithCGEvent:(CGEventRef)cgEvent API_AVAILABLE(macos(10.5));
+    // /* Enable or disable coalescing of mouse movement events, including mouse moved, mouse dragged, and tablet events.  Coalescing is enabled by default.
+    // */
+    // @property (class, getter=isMouseCoalescingEnabled) BOOL mouseCoalescingEnabled API_AVAILABLE(macos(10.5));
 
-// /* Enable or disable coalescing of mouse movement events, including mouse moved, mouse dragged, and tablet events.  Coalescing is enabled by default.
-// */
-// @property (class, getter=isMouseCoalescingEnabled) BOOL mouseCoalescingEnabled API_AVAILABLE(macos(10.5));
+    // /* This message is valid for events of type NSEventTypeMagnify, on 10.5.2 or later */
+    // @property (readonly) CGFloat magnification API_AVAILABLE(macos(10.5));       // change in magnification.   This value should be added to the current scaling of an item to get the new scale factor.
 
-// /* This message is valid for events of type NSEventTypeMagnify, on 10.5.2 or later */
-// @property (readonly) CGFloat magnification API_AVAILABLE(macos(10.5));       // change in magnification.   This value should be added to the current scaling of an item to get the new scale factor.
+    // /* this message is valid for mouse events with subtype NSEventSubtypeTabletPoint or NSEventSubtypeTabletProximity, and for NSEventTypeTabletPoint and NSEventTypeTabletProximity events */
+    // @property (readonly) NSUInteger deviceID;
 
-// /* this message is valid for mouse events with subtype NSEventSubtypeTabletPoint or NSEventSubtypeTabletProximity, and for NSEventTypeTabletPoint and NSEventTypeTabletProximity events */
-// @property (readonly) NSUInteger deviceID;
+    // /* this message is valid for valid for mouse events with subtype NSEventSubtypeTabletPoint, and for NSEventTypeTabletPoint events.  On 10.5.2 or later, it is also valid for NSEventTypeRotate events. */
+    // @property (readonly) float rotation;       // In degrees.  For NSEventTypeTabletPoint, this is rotation of the pen.  For NSEventTypeRotate, it is rotation on the track pad.
 
-// /* this message is valid for valid for mouse events with subtype NSEventSubtypeTabletPoint, and for NSEventTypeTabletPoint events.  On 10.5.2 or later, it is also valid for NSEventTypeRotate events. */
-// @property (readonly) float rotation;       // In degrees.  For NSEventTypeTabletPoint, this is rotation of the pen.  For NSEventTypeRotate, it is rotation on the track pad.
+    // /* these messages are valid for mouse events with subtype NSEventSubtypeTabletPoint, and for NSEventTypeTabletPoint events */
+    // /* absolute x coordinate in tablet space at full tablet resolution */
+    // @property (readonly) NSInteger absoluteX;
+    // /* absolute y coordinate in tablet space at full tablet resolution */
+    // @property (readonly) NSInteger absoluteY;
+    // /* absolute z coordinate in tablet space at full tablet resolution */
+    // @property (readonly) NSInteger absoluteZ;
+    // /* mask indicating which buttons are pressed.*/
+    // @property (readonly) NSEventButtonMask buttonMask;
+    // /* range is -1 to 1 for both axes */
+    // @property (readonly) NSPoint tilt;
+    // /* tangential pressure on the device; range is -1 to 1 */
+    // @property (readonly) float tangentialPressure;
+    // /* NSArray of 3 vendor defined shorts */
+    // @property (readonly, strong) id vendorDefined;
 
-// /* these messages are valid for mouse events with subtype NSEventSubtypeTabletPoint, and for NSEventTypeTabletPoint events */
-// /* absolute x coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteX;
-// /* absolute y coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteY;
-// /* absolute z coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteZ;
-// /* mask indicating which buttons are pressed.*/
-// @property (readonly) NSEventButtonMask buttonMask;
-// /* range is -1 to 1 for both axes */
-// @property (readonly) NSPoint tilt;
-// /* tangential pressure on the device; range is -1 to 1 */
-// @property (readonly) float tangentialPressure;
-// /* NSArray of 3 vendor defined shorts */
-// @property (readonly, strong) id vendorDefined;
+    // /* these messages are valid for mouse events with subtype NSEventSubtypeTabletProximity, and  for NSEventTypeTabletProximity events */
+    // /* vendor defined, typically USB vendor ID */
+    // @property (readonly) NSUInteger vendorID;
+    // /* vendor defined tablet ID */
+    // @property (readonly) NSUInteger tabletID;
+    // /* index of the device on the tablet.  Usually 0, except for tablets that support multiple concurrent devices */
+    // @property (readonly) NSUInteger pointingDeviceID;
+    // /* system assigned unique tablet ID */
+    // @property (readonly) NSUInteger systemTabletID;
+    // /* vendor defined pointing device type */
+    // @property (readonly) NSUInteger vendorPointingDeviceType;
+    // /* vendor defined serial number of pointing device */
+    // @property (readonly) NSUInteger pointingDeviceSerialNumber;
+    // /* vendor defined unique ID */
+    // @property (readonly) unsigned long long uniqueID;
+    // /* mask representing capabilities of device */
+    // @property (readonly) NSUInteger capabilityMask;
+    // /* mask representing capabilities of device */
+    // @property (readonly) NSPointingDeviceType pointingDeviceType;
+    // /* YES - entering; NO - leaving */
+    // @property (getter=isEnteringProximity, readonly) BOOL enteringProximity;
 
-// /* these messages are valid for mouse events with subtype NSEventSubtypeTabletProximity, and  for NSEventTypeTabletProximity events */
-// /* vendor defined, typically USB vendor ID */
-// @property (readonly) NSUInteger vendorID;
-// /* vendor defined tablet ID */
-// @property (readonly) NSUInteger tabletID;
-// /* index of the device on the tablet.  Usually 0, except for tablets that support multiple concurrent devices */
-// @property (readonly) NSUInteger pointingDeviceID;
-// /* system assigned unique tablet ID */
-// @property (readonly) NSUInteger systemTabletID;
-// /* vendor defined pointing device type */
-// @property (readonly) NSUInteger vendorPointingDeviceType;
-// /* vendor defined serial number of pointing device */
-// @property (readonly) NSUInteger pointingDeviceSerialNumber;
-// /* vendor defined unique ID */
-// @property (readonly) unsigned long long uniqueID;
-// /* mask representing capabilities of device */
-// @property (readonly) NSUInteger capabilityMask;
-// /* mask representing capabilities of device */
-// @property (readonly) NSPointingDeviceType pointingDeviceType;
-// /* YES - entering; NO - leaving */
-// @property (getter=isEnteringProximity, readonly) BOOL enteringProximity;
+    // - (NSSet<NSTouch *> *)touchesMatchingPhase:(NSTouchPhase)phase inView:(nullable NSView *)view API_AVAILABLE(macos(10.6));
 
-// - (NSSet<NSTouch *> *)touchesMatchingPhase:(NSTouchPhase)phase inView:(nullable NSView *)view API_AVAILABLE(macos(10.6));
+    // /* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:nil] */
+    // - (NSSet <NSTouch *> *)allTouches API_AVAILABLE(macos(10.12));
 
-// /* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:nil] */
-// - (NSSet <NSTouch *> *)allTouches API_AVAILABLE(macos(10.12));
+    // /* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:view] */
+    // - (NSSet <NSTouch *> *)touchesForView:(NSView *)view API_AVAILABLE(macos(10.12));
 
-// /* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:view] */
-// - (NSSet <NSTouch *> *)touchesForView:(NSView *)view API_AVAILABLE(macos(10.12));
+    // /* An array of auxiliary NSTouch’s for the touch events that did not get delivered for a given main touch. This also includes an auxiliary version of the main touch itself. Only valid for NSEventTypeDirectTouch events.
+    // */
+    // - (NSArray <NSTouch *> *)coalescedTouchesForTouch:(NSTouch *)touch API_AVAILABLE(macos(10.12.2));
 
-// /* An array of auxiliary NSTouch’s for the touch events that did not get delivered for a given main touch. This also includes an auxiliary version of the main touch itself. Only valid for NSEventTypeDirectTouch events.
-// */
-// - (NSArray <NSTouch *> *)coalescedTouchesForTouch:(NSTouch *)touch API_AVAILABLE(macos(10.12.2));
+    // /* The phase of a gesture scroll event. A gesture phrase are all the events that begin with a NSEventPhaseBegan and end with either a NSEventPhaseEnded or NSEventPhaseCancelled. All the gesture events are sent to the view under the cursor when the NSEventPhaseBegan occurred.  A gesture scroll event starts with a NSEventPhaseBegan phase and ends with a NSPhaseEnded. Legacy scroll wheel events (say from a Mighty Mouse) and momentum scroll wheel events have a phase of NSEventPhaseNone.
+    //     Valid for NSEventTypeScrollWheel
+    // */
+    // @property (readonly) NSEventPhase phase API_AVAILABLE(macos(10.7));
 
-// /* The phase of a gesture scroll event. A gesture phrase are all the events that begin with a NSEventPhaseBegan and end with either a NSEventPhaseEnded or NSEventPhaseCancelled. All the gesture events are sent to the view under the cursor when the NSEventPhaseBegan occurred.  A gesture scroll event starts with a NSEventPhaseBegan phase and ends with a NSPhaseEnded. Legacy scroll wheel events (say from a Mighty Mouse) and momentum scroll wheel events have a phase of NSEventPhaseNone.
-//     Valid for NSEventTypeScrollWheel
-// */
-// @property (readonly) NSEventPhase phase API_AVAILABLE(macos(10.7));
+    // /* This message is valid for NSEventTypePressure events. Pressure gesture events go through multiple stages.
+    // */
+    // @property (readonly) NSInteger stage API_AVAILABLE(macos(10.10.3));
 
-// /* This message is valid for NSEventTypePressure events. Pressure gesture events go through multiple stages.
-// */
-// @property (readonly) NSInteger stage API_AVAILABLE(macos(10.10.3));
+    // /* This message is valid for NSEventTypePressure events. Positive stageTransition describes approaching the next stage of the pressure gesture. Negative stageTransition describes approaching release of the current stage.
+    // */
+    // @property (readonly) CGFloat stageTransition API_AVAILABLE(macos(10.10.3));
 
-// /* This message is valid for NSEventTypePressure events. Positive stageTransition describes approaching the next stage of the pressure gesture. Negative stageTransition describes approaching release of the current stage.
-// */
-// @property (readonly) CGFloat stageTransition API_AVAILABLE(macos(10.10.3));
+    // /* This message is valid for Mouse events. The event mask describing the various events that you may also get during this event sequence. Useful for determining if the input device issuing this mouse event can also simultaneously issue NSEventTypePressure events.
+    // */
+    // @property (readonly) NSEventMask associatedEventsMask API_AVAILABLE(macos(10.10.3));
 
-// /* This message is valid for Mouse events. The event mask describing the various events that you may also get during this event sequence. Useful for determining if the input device issuing this mouse event can also simultaneously issue NSEventTypePressure events.
-// */
-// @property (readonly) NSEventMask associatedEventsMask API_AVAILABLE(macos(10.10.3));
+    // /* this message is valid for NSEventTypePressure events */
+    // @property (readonly) NSPressureBehavior pressureBehavior API_AVAILABLE(macos(10.11));
 
-// /* this message is valid for NSEventTypePressure events */
-// @property (readonly) NSPressureBehavior pressureBehavior API_AVAILABLE(macos(10.11));
+    // /* Returns the user's preference about using gesture scrolls as a way to track fluid swipes. This value is determined by the Mouse / Trackpad preference panel for the current user. Generally, NSScrollView will check this for you. However, if your app is not using an NSScrollView, or your NSResponder can receive scrollWheel messages without first being sent to an NSScrollView, then you should check this preference before calling -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler:
+    // */
+    // @property (class, readonly, getter=isSwipeTrackingFromScrollEventsEnabled) BOOL swipeTrackingFromScrollEventsEnabled API_AVAILABLE(macos(10.7));
 
-// /* Returns the user's preference about using gesture scrolls as a way to track fluid swipes. This value is determined by the Mouse / Trackpad preference panel for the current user. Generally, NSScrollView will check this for you. However, if your app is not using an NSScrollView, or your NSResponder can receive scrollWheel messages without first being sent to an NSScrollView, then you should check this preference before calling -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler:
-// */
-// @property (class, readonly, getter=isSwipeTrackingFromScrollEventsEnabled) BOOL swipeTrackingFromScrollEventsEnabled API_AVAILABLE(macos(10.7));
+    // /* This method allows easy tracking and UI feedback of scroll events as fluid swipes. Fluid swipes are tracked not only to the end of the physical gesture phase by the user, but also to the completion of any UI animation that should be performed. Using this method allows your implementation to maintain a consistent fluid feel with other applications. Any gesture amount outside of the supplied minimum and maximum dampen amount is pre-dampened for you to provide an elastic feel.
 
-// /* This method allows easy tracking and UI feedback of scroll events as fluid swipes. Fluid swipes are tracked not only to the end of the physical gesture phase by the user, but also to the completion of any UI animation that should be performed. Using this method allows your implementation to maintain a consistent fluid feel with other applications. Any gesture amount outside of the supplied minimum and maximum dampen amount is pre-dampened for you to provide an elastic feel.
+    //    The trackingHandler has the following parameters:
+    //        gestureAmount: the amount of gesture that you should display in the UI. This may be a fractional amount. Note: Upon completion, the gesture amount will animate to one of the following values: -1, 0, 1.
+    //        phase: the phase of the physical gesture as performed by the user. When the phase is either NSPhaseEnded, or NSPhaseCancelled, the use has physically ended the gesture successfully or not, respectively. Your handler will continue to be called with updated progress values to complete the fluid swipe animation with a phase of NSPhaseNone.
+    //        isComplete: Signifies the swipe and animation are complete and you should tear down any temporary animation objects. The trackingHandler is released and will not be called further.
+    //       *stop: A pointer to a BOOL allowing you to cancel further use of this trackingHandler by setting its value to YES. The trackingHandler is released appropriately.
 
-//    The trackingHandler has the following parameters:
-//        gestureAmount: the amount of gesture that you should display in the UI. This may be a fractional amount. Note: Upon completion, the gesture amount will animate to one of the following values: -1, 0, 1.
-//        phase: the phase of the physical gesture as performed by the user. When the phase is either NSPhaseEnded, or NSPhaseCancelled, the use has physically ended the gesture successfully or not, respectively. Your handler will continue to be called with updated progress values to complete the fluid swipe animation with a phase of NSPhaseNone.
-//        isComplete: Signifies the swipe and animation are complete and you should tear down any temporary animation objects. The trackingHandler is released and will not be called further.
-//       *stop: A pointer to a BOOL allowing you to cancel further use of this trackingHandler by setting its value to YES. The trackingHandler is released appropriately.
+    //    Note: This method returns immediately and tracking is performed asynchronously.
 
-//    Note: This method returns immediately and tracking is performed asynchronously.
+    //    Valid for Scroll events with a phase of NSEventPhaseBegan or NSEventPhaseChanged
+    // */
+    // - (void)trackSwipeEventWithOptions:(NSEventSwipeTrackingOptions)options dampenAmountThresholdMin:(CGFloat)minDampenThreshold max:(CGFloat)maxDampenThreshold usingHandler:(void (^)(CGFloat gestureAmount, NSEventPhase phase, BOOL isComplete, BOOL *stop))trackingHandler API_AVAILABLE(macos(10.7));
 
-//    Valid for Scroll events with a phase of NSEventPhaseBegan or NSEventPhaseChanged
-// */
-// - (void)trackSwipeEventWithOptions:(NSEventSwipeTrackingOptions)options dampenAmountThresholdMin:(CGFloat)minDampenThreshold max:(CGFloat)maxDampenThreshold usingHandler:(void (^)(CGFloat gestureAmount, NSEventPhase phase, BOOL isComplete, BOOL *stop))trackingHandler API_AVAILABLE(macos(10.7));
+    // /* used for initial delay and periodic behavior in tracking loops */
+    // + (void)startPeriodicEventsAfterDelay:(NSTimeInterval)delay withPeriod:(NSTimeInterval)period;
+    // + (void)stopPeriodicEvents;
 
-// /* used for initial delay and periodic behavior in tracking loops */
-// + (void)startPeriodicEventsAfterDelay:(NSTimeInterval)delay withPeriod:(NSTimeInterval)period;
-// + (void)stopPeriodicEvents;
+    // /* apps will rarely create these objects */
+    // + (nullable NSEvent *)mouseEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil eventNumber:(NSInteger)eNum clickCount:(NSInteger)cNum pressure:(float)pressure;
+    // + (nullable NSEvent *)keyEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil characters:(NSString *)keys charactersIgnoringModifiers:(NSString *)ukeys isARepeat:(BOOL)flag keyCode:(unsigned short)code;
+    // + (nullable NSEvent *)enterExitEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil eventNumber:(NSInteger)eNum trackingNumber:(NSInteger)tNum userData:(nullable void *)data;
+    // + (nullable NSEvent *)otherEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil subtype:(short)subtype data1:(NSInteger)d1 data2:(NSInteger)d2;
 
-// /* apps will rarely create these objects */
-// + (nullable NSEvent *)mouseEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil eventNumber:(NSInteger)eNum clickCount:(NSInteger)cNum pressure:(float)pressure;
-// + (nullable NSEvent *)keyEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil characters:(NSString *)keys charactersIgnoringModifiers:(NSString *)ukeys isARepeat:(BOOL)flag keyCode:(unsigned short)code;
-// + (nullable NSEvent *)enterExitEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil eventNumber:(NSInteger)eNum trackingNumber:(NSInteger)tNum userData:(nullable void *)data;
-// + (nullable NSEvent *)otherEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext* __unused)unusedPassNil subtype:(short)subtype data1:(NSInteger)d1 data2:(NSInteger)d2;
+    // // global mouse coordinates
+    // @property (class, readonly) NSPoint mouseLocation;
 
-// // global mouse coordinates
-// @property (class, readonly) NSPoint mouseLocation;
+    // /* modifier keys currently down.  This returns the state of devices combined with synthesized events at the moment, independent of which events have been delivered via the event stream. */
+    // @property (class, readonly) NSEventModifierFlags modifierFlags API_AVAILABLE(macos(10.6));
 
-// /* modifier keys currently down.  This returns the state of devices combined with synthesized events at the moment, independent of which events have been delivered via the event stream. */
-// @property (class, readonly) NSEventModifierFlags modifierFlags API_AVAILABLE(macos(10.6));
+    // /* mouse buttons currently down.  Returns indices of the mouse buttons currently down.  1 << 0 corresponds to leftMouse, 1 << 1 to rightMouse, and 1 << n, n >= 2 to other mouse buttons.  This returns the state of devices combined with synthesized events at the moment, independent of which events have been delivered via the event stream, so this method is not suitable for tracking. */
+    // @property (class, readonly) NSUInteger pressedMouseButtons API_AVAILABLE(macos(10.6));
 
-// /* mouse buttons currently down.  Returns indices of the mouse buttons currently down.  1 << 0 corresponds to leftMouse, 1 << 1 to rightMouse, and 1 << n, n >= 2 to other mouse buttons.  This returns the state of devices combined with synthesized events at the moment, independent of which events have been delivered via the event stream, so this method is not suitable for tracking. */
-// @property (class, readonly) NSUInteger pressedMouseButtons API_AVAILABLE(macos(10.6));
+    // /* the time in which a second click must occur in order to be considered a doubleClick.  This is a system value so overrides will have no effect. */
+    // @property (class, readonly) NSTimeInterval doubleClickInterval   API_AVAILABLE(macos(10.6));
+    // /* the time for which a key must be held down in order to generate the first key repeat event.  This is a system value so overrides will have no effect. */
+    // @property (class, readonly) NSTimeInterval keyRepeatDelay        API_AVAILABLE(macos(10.6));
+    // /* the time between subsequent key repeat events.  This is a system value so overrides will have no effect. */
+    // @property (class, readonly) NSTimeInterval keyRepeatInterval     API_AVAILABLE(macos(10.6));
 
-// /* the time in which a second click must occur in order to be considered a doubleClick.  This is a system value so overrides will have no effect. */
-// @property (class, readonly) NSTimeInterval doubleClickInterval   API_AVAILABLE(macos(10.6));
-// /* the time for which a key must be held down in order to generate the first key repeat event.  This is a system value so overrides will have no effect. */
-// @property (class, readonly) NSTimeInterval keyRepeatDelay        API_AVAILABLE(macos(10.6));
-// /* the time between subsequent key repeat events.  This is a system value so overrides will have no effect. */
-// @property (class, readonly) NSTimeInterval keyRepeatInterval     API_AVAILABLE(macos(10.6));
+    // /*
+    //    API for monitoring events in other processes, or in your own process. For either +addGlobal or +addLocal, pass an event mask specifying which events you wish to monitor, and a block that will be called with the event to monitor.
 
-// /*
-//    API for monitoring events in other processes, or in your own process. For either +addGlobal or +addLocal, pass an event mask specifying which events you wish to monitor, and a block that will be called with the event to monitor.
+    //    Use +addGlobal to install an event monitor that receives copies of events posted to other applications. Events are delivered asynchronously to your app and you can only observe the event; you cannot modify or otherwise prevent the event from being delivered to its original target application. Key-related events may only be monitored if accessibility is enabled or if your application is trusted for accessibility access (see AXIsProcessTrusted in AXUIElement.h). Note that your handler will not be called for events that are sent to your own application.
 
-//    Use +addGlobal to install an event monitor that receives copies of events posted to other applications. Events are delivered asynchronously to your app and you can only observe the event; you cannot modify or otherwise prevent the event from being delivered to its original target application. Key-related events may only be monitored if accessibility is enabled or if your application is trusted for accessibility access (see AXIsProcessTrusted in AXUIElement.h). Note that your handler will not be called for events that are sent to your own application.
+    //    Use +addLocal to install an event monitor that receives events before they are dispatched by -[NSApplication sendEvent:]. In this case, your block should either return a valid NSEvent (which may be the same as the incoming NSEvent, or may be a newly created NSEvent) to cause the event to be dispatched, or it may return nil to stop dispatching of the event. Note that your handler will not be called for events that are consumed by nested event-tracking loops such as control tracking, menu tracking, or window dragging; only events that are dispatched through -[NSApplication sendEvent:] will be passed to your handler.
 
-//    Use +addLocal to install an event monitor that receives events before they are dispatched by -[NSApplication sendEvent:]. In this case, your block should either return a valid NSEvent (which may be the same as the incoming NSEvent, or may be a newly created NSEvent) to cause the event to be dispatched, or it may return nil to stop dispatching of the event. Note that your handler will not be called for events that are consumed by nested event-tracking loops such as control tracking, menu tracking, or window dragging; only events that are dispatched through -[NSApplication sendEvent:] will be passed to your handler.
+    //    In either case, the return value of the API is a retained NSObject. You typically do not need to retain and release the event monitor yourself, since the implementation will retain it while needed.
 
-//    In either case, the return value of the API is a retained NSObject. You typically do not need to retain and release the event monitor yourself, since the implementation will retain it while needed.
+    //    To remove the event monitor, under both garbage collection and non-GC, pass the return value from the +add API to +removeMonitor.
+    // */
+    // + (nullable id)addGlobalMonitorForEventsMatchingMask:(NSEventMask)mask handler:(void (^)(NSEvent *event))block API_AVAILABLE(macos(10.6));
+    // + (nullable id)addLocalMonitorForEventsMatchingMask:(NSEventMask)mask handler:(NSEvent* _Nullable (^)(NSEvent *event))block API_AVAILABLE(macos(10.6));
+    // + (void)removeMonitor:(id)eventMonitor API_AVAILABLE(macos(10.6));
 
-//    To remove the event monitor, under both garbage collection and non-GC, pass the return value from the +add API to +removeMonitor.
-// */
-// + (nullable id)addGlobalMonitorForEventsMatchingMask:(NSEventMask)mask handler:(void (^)(NSEvent *event))block API_AVAILABLE(macos(10.6));
-// + (nullable id)addLocalMonitorForEventsMatchingMask:(NSEventMask)mask handler:(NSEvent* _Nullable (^)(NSEvent *event))block API_AVAILABLE(macos(10.6));
-// + (void)removeMonitor:(id)eventMonitor API_AVAILABLE(macos(10.6));
+    // @end
 
-// @end
+    // /* Unicodes we reserve for function keys on the keyboard,  OpenStep reserves the range 0xF700-0xF8FF for this purpose.  The availability of various keys will be system dependent. */
+    // enum {
+    //     NSUpArrowFunctionKey        = 0xF700,
+    //     NSDownArrowFunctionKey      = 0xF701,
+    //     NSLeftArrowFunctionKey      = 0xF702,
+    //     NSRightArrowFunctionKey     = 0xF703,
+    //     NSF1FunctionKey             = 0xF704,
+    //     NSF2FunctionKey             = 0xF705,
+    //     NSF3FunctionKey             = 0xF706,
+    //     NSF4FunctionKey             = 0xF707,
+    //     NSF5FunctionKey             = 0xF708,
+    //     NSF6FunctionKey             = 0xF709,
+    //     NSF7FunctionKey             = 0xF70A,
+    //     NSF8FunctionKey             = 0xF70B,
+    //     NSF9FunctionKey             = 0xF70C,
+    //     NSF10FunctionKey            = 0xF70D,
+    //     NSF11FunctionKey            = 0xF70E,
+    //     NSF12FunctionKey            = 0xF70F,
+    //     NSF13FunctionKey            = 0xF710,
+    //     NSF14FunctionKey            = 0xF711,
+    //     NSF15FunctionKey            = 0xF712,
+    //     NSF16FunctionKey            = 0xF713,
+    //     NSF17FunctionKey            = 0xF714,
+    //     NSF18FunctionKey            = 0xF715,
+    //     NSF19FunctionKey            = 0xF716,
+    //     NSF20FunctionKey            = 0xF717,
+    //     NSF21FunctionKey            = 0xF718,
+    //     NSF22FunctionKey            = 0xF719,
+    //     NSF23FunctionKey            = 0xF71A,
+    //     NSF24FunctionKey            = 0xF71B,
+    //     NSF25FunctionKey            = 0xF71C,
+    //     NSF26FunctionKey            = 0xF71D,
+    //     NSF27FunctionKey            = 0xF71E,
+    //     NSF28FunctionKey            = 0xF71F,
+    //     NSF29FunctionKey            = 0xF720,
+    //     NSF30FunctionKey            = 0xF721,
+    //     NSF31FunctionKey            = 0xF722,
+    //     NSF32FunctionKey            = 0xF723,
+    //     NSF33FunctionKey            = 0xF724,
+    //     NSF34FunctionKey            = 0xF725,
+    //     NSF35FunctionKey            = 0xF726,
+    //     NSInsertFunctionKey         = 0xF727,
+    //     NSDeleteFunctionKey         = 0xF728,
+    //     NSHomeFunctionKey           = 0xF729,
+    //     NSBeginFunctionKey          = 0xF72A,
+    //     NSEndFunctionKey            = 0xF72B,
+    //     NSPageUpFunctionKey         = 0xF72C,
+    //     NSPageDownFunctionKey       = 0xF72D,
+    //     NSPrintScreenFunctionKey    = 0xF72E,
+    //     NSScrollLockFunctionKey     = 0xF72F,
+    //     NSPauseFunctionKey          = 0xF730,
+    //     NSSysReqFunctionKey         = 0xF731,
+    //     NSBreakFunctionKey          = 0xF732,
+    //     NSResetFunctionKey          = 0xF733,
+    //     NSStopFunctionKey           = 0xF734,
+    //     NSMenuFunctionKey           = 0xF735,
+    //     NSUserFunctionKey           = 0xF736,
+    //     NSSystemFunctionKey         = 0xF737,
+    //     NSPrintFunctionKey          = 0xF738,
+    //     NSClearLineFunctionKey      = 0xF739,
+    //     NSClearDisplayFunctionKey   = 0xF73A,
+    //     NSInsertLineFunctionKey     = 0xF73B,
+    //     NSDeleteLineFunctionKey     = 0xF73C,
+    //     NSInsertCharFunctionKey     = 0xF73D,
+    //     NSDeleteCharFunctionKey     = 0xF73E,
+    //     NSPrevFunctionKey           = 0xF73F,
+    //     NSNextFunctionKey           = 0xF740,
+    //     NSSelectFunctionKey         = 0xF741,
+    //     NSExecuteFunctionKey        = 0xF742,
+    //     NSUndoFunctionKey           = 0xF743,
+    //     NSRedoFunctionKey           = 0xF744,
+    //     NSFindFunctionKey           = 0xF745,
+    //     NSHelpFunctionKey           = 0xF746,
+    //     NSModeSwitchFunctionKey     = 0xF747
+    // };
 
-// /* Unicodes we reserve for function keys on the keyboard,  OpenStep reserves the range 0xF700-0xF8FF for this purpose.  The availability of various keys will be system dependent. */
-// enum {
-//     NSUpArrowFunctionKey        = 0xF700,
-//     NSDownArrowFunctionKey      = 0xF701,
-//     NSLeftArrowFunctionKey      = 0xF702,
-//     NSRightArrowFunctionKey     = 0xF703,
-//     NSF1FunctionKey             = 0xF704,
-//     NSF2FunctionKey             = 0xF705,
-//     NSF3FunctionKey             = 0xF706,
-//     NSF4FunctionKey             = 0xF707,
-//     NSF5FunctionKey             = 0xF708,
-//     NSF6FunctionKey             = 0xF709,
-//     NSF7FunctionKey             = 0xF70A,
-//     NSF8FunctionKey             = 0xF70B,
-//     NSF9FunctionKey             = 0xF70C,
-//     NSF10FunctionKey            = 0xF70D,
-//     NSF11FunctionKey            = 0xF70E,
-//     NSF12FunctionKey            = 0xF70F,
-//     NSF13FunctionKey            = 0xF710,
-//     NSF14FunctionKey            = 0xF711,
-//     NSF15FunctionKey            = 0xF712,
-//     NSF16FunctionKey            = 0xF713,
-//     NSF17FunctionKey            = 0xF714,
-//     NSF18FunctionKey            = 0xF715,
-//     NSF19FunctionKey            = 0xF716,
-//     NSF20FunctionKey            = 0xF717,
-//     NSF21FunctionKey            = 0xF718,
-//     NSF22FunctionKey            = 0xF719,
-//     NSF23FunctionKey            = 0xF71A,
-//     NSF24FunctionKey            = 0xF71B,
-//     NSF25FunctionKey            = 0xF71C,
-//     NSF26FunctionKey            = 0xF71D,
-//     NSF27FunctionKey            = 0xF71E,
-//     NSF28FunctionKey            = 0xF71F,
-//     NSF29FunctionKey            = 0xF720,
-//     NSF30FunctionKey            = 0xF721,
-//     NSF31FunctionKey            = 0xF722,
-//     NSF32FunctionKey            = 0xF723,
-//     NSF33FunctionKey            = 0xF724,
-//     NSF34FunctionKey            = 0xF725,
-//     NSF35FunctionKey            = 0xF726,
-//     NSInsertFunctionKey         = 0xF727,
-//     NSDeleteFunctionKey         = 0xF728,
-//     NSHomeFunctionKey           = 0xF729,
-//     NSBeginFunctionKey          = 0xF72A,
-//     NSEndFunctionKey            = 0xF72B,
-//     NSPageUpFunctionKey         = 0xF72C,
-//     NSPageDownFunctionKey       = 0xF72D,
-//     NSPrintScreenFunctionKey    = 0xF72E,
-//     NSScrollLockFunctionKey     = 0xF72F,
-//     NSPauseFunctionKey          = 0xF730,
-//     NSSysReqFunctionKey         = 0xF731,
-//     NSBreakFunctionKey          = 0xF732,
-//     NSResetFunctionKey          = 0xF733,
-//     NSStopFunctionKey           = 0xF734,
-//     NSMenuFunctionKey           = 0xF735,
-//     NSUserFunctionKey           = 0xF736,
-//     NSSystemFunctionKey         = 0xF737,
-//     NSPrintFunctionKey          = 0xF738,
-//     NSClearLineFunctionKey      = 0xF739,
-//     NSClearDisplayFunctionKey   = 0xF73A,
-//     NSInsertLineFunctionKey     = 0xF73B,
-//     NSDeleteLineFunctionKey     = 0xF73C,
-//     NSInsertCharFunctionKey     = 0xF73D,
-//     NSDeleteCharFunctionKey     = 0xF73E,
-//     NSPrevFunctionKey           = 0xF73F,
-//     NSNextFunctionKey           = 0xF740,
-//     NSSelectFunctionKey         = 0xF741,
-//     NSExecuteFunctionKey        = 0xF742,
-//     NSUndoFunctionKey           = 0xF743,
-//     NSRedoFunctionKey           = 0xF744,
-//     NSFindFunctionKey           = 0xF745,
-//     NSHelpFunctionKey           = 0xF746,
-//     NSModeSwitchFunctionKey     = 0xF747
-// };
-
-// API_UNAVAILABLE_END
-// NS_ASSUME_NONNULL_END
+    // API_UNAVAILABLE_END
+    // NS_ASSUME_NONNULL_END
+}
