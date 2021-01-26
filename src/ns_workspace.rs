@@ -46,14 +46,14 @@
 // - (void)openApplicationAtURL:(NSURL *)applicationURL configuration:(NSWorkspaceOpenConfiguration *)configuration completionHandler:(void (^ _Nullable)(NSRunningApplication *_Nullable app, NSError *_Nullable error))completionHandler API_AVAILABLE(macos(10.15));
 
 // /* Activate the Finder and open a window selecting the file at the given path.  If fullPath is nil, this will instead open the directory specified by rootFullPath, and not select any file. If rootFullPath is the empty string (@""), the file is selected in the main viewer. Otherwise, a new file viewer is opened.
-//  */
+// **/
 // - (BOOL)selectFile:(nullable NSString *)fullPath inFileViewerRootedAtPath:(NSString *)rootFullPath;
 
 // /* Activate the Finder, and open one or more windows selecting the files at the given fileURLs. */
 // - (void)activateFileViewerSelectingURLs:(NSArray<NSURL *> *)fileURLs API_AVAILABLE(macos(10.6));
 
 // /* Displays a Spotlight search results window in Finder for the specified query string. Finder becomes the active application, if possible. The user can further refine the search via the Finder UI. Returns YES if the communication with Finder was successful.
-//  */
+// **/
 // - (BOOL)showSearchResultsForQueryString:(NSString *)queryString API_AVAILABLE(macos(10.6));
 
 // /* noteFileSystemChanged: informs listeners of a filesystem change, using the FNNotifyByPath() API.  As the FNNotify API has been supplanted by the FSEvents API, the use of this method is discouraged. */
@@ -181,15 +181,15 @@
 // typedef NSString * NSWorkspaceDesktopImageOptionKey NS_TYPED_ENUM;
 
 // /* The value is an NSNumber containing an NSImageScaling.  If this is not specified, NSImageScaleProportionallyUpOrDown is used.  Note: NSImageScaleProportionallyDown is not currently supported.
-//  */
+// **/
 // APPKIT_EXTERN NSWorkspaceDesktopImageOptionKey const NSWorkspaceDesktopImageScalingKey API_AVAILABLE(macos(10.6));
 
 // /* The value is an NSNumber containing a BOOL, which affects the interpretation of Proportional scaling types.  A NO value will make the image fully visible, but there may be empty space on the sides or top and bottom.  A YES value will cause the image to fill the entire screen, but the image may be clipped.  If this is not specified, NO is assumed.  Non-proportional scaling types ignore this value.
-//  */
+// **/
 // APPKIT_EXTERN NSWorkspaceDesktopImageOptionKey const NSWorkspaceDesktopImageAllowClippingKey API_AVAILABLE(macos(10.6));
 
 // /* The value is an NSColor, which is used to fill any empty space around the image.  If not specified, a default value is used.  Currently, only colors that use or can be converted to use NSCalibratedRGBColorSpace are supported, and any alpha value is ignored.
-//  */
+// **/
 // APPKIT_EXTERN NSWorkspaceDesktopImageOptionKey const NSWorkspaceDesktopImageFillColorKey API_AVAILABLE(macos(10.6));
 
 
@@ -199,15 +199,15 @@
 // /* Sets the desktop image for the given screen to the image at the given URL.  The URL must be a file URL and may not be nil.  The options dictionary may contain any of the NSWorkspaceDesktopImage keys, which control how the image is scaled on the screen.  This returns YES if the image was successfully set; otherwise, NO is returned and an error is returned by reference.
 
 //   You should normally NOT present a user interface for picking the options.  Instead, just choose appropriate defaults and allow the user to adjust them in the System Preference Pane.
-//  */
+// **/
 // - (BOOL)setDesktopImageURL:(NSURL *)url forScreen:(NSScreen *)screen options:(NSDictionary<NSWorkspaceDesktopImageOptionKey, id> *)options error:(NSError **)error API_AVAILABLE(macos(10.6));
 
 // /* Returns the URL for the desktop image for the given screen.
-//  */
+// **/
 // - (nullable NSURL *)desktopImageURLForScreen:(NSScreen *)screen API_AVAILABLE(macos(10.6));
 
 // /* Returns the options dictionary for the desktop image for the given screen.
-//  */
+// **/
 // - (nullable NSDictionary<NSWorkspaceDesktopImageOptionKey, id> *)desktopImageOptionsForScreen:(NSScreen *)screen API_AVAILABLE(macos(10.6));
 
 // @end
@@ -251,7 +251,7 @@
 //  - NSFileWriteNoPermissionError: The operation failed for any other reason, including the user denying access to the resource, or access to a resource is denied by system policy.
  
 //  All other NSFileManager methods invoked on this instance will behave normally.
-//  */
+// **/
 // + (instancetype)fileManagerWithAuthorization:(NSWorkspaceAuthorization *)authorization API_AVAILABLE(macos(10.14));
 
 // @end
@@ -259,7 +259,7 @@
 // /* Application notifications */
 
 // /* In Mac OS X 10.6 and later, all application notifications have the following key in their userInfo.  Its value is an instance of NSRunningApplication, representing the affected app.
-//  */
+// **/
 // APPKIT_EXTERN NSString * const NSWorkspaceApplicationKey API_AVAILABLE(macos(10.6));
 
 // APPKIT_EXTERN NSNotificationName NSWorkspaceWillLaunchApplicationNotification;	//	see above
@@ -279,7 +279,7 @@
 // APPKIT_EXTERN NSString * const NSWorkspaceVolumeURLKey API_AVAILABLE(macos(10.6));  //NSURL containing the mount path of the volume
 
 // /* The following additional keys are provided in the userInfo of NSWorkspaceDidRenameVolumeNotification.
-//  */
+// **/
 // APPKIT_EXTERN NSString * const NSWorkspaceVolumeOldLocalizedNameKey API_AVAILABLE(macos(10.6)); //NSString containing the old user-visible name of the volume
 // APPKIT_EXTERN NSString * const NSWorkspaceVolumeOldURLKey API_AVAILABLE(macos(10.6));  //NSURL containing the old mount path of the volume
 
@@ -288,7 +288,7 @@
 // APPKIT_EXTERN NSNotificationName NSWorkspaceWillUnmountNotification;		//	@"NSDevicePath"
 
 // /* NSWorkspaceDidRenameVolumeNotification is posted when a volume changes its name and/or mount path.  These typically change simultaneously, in which case only one notification is posted.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidRenameVolumeNotification API_AVAILABLE(macos(10.6));
 
 
@@ -309,7 +309,7 @@
 // /* Miscellaneous notifications */
 
 // /* NSWorkspaceDidChangeFileLabelsNotification is posted when the user changes a file label color name or the color itself.  The notification object is always NSWorkspace, and there is no user info.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidChangeFileLabelsNotification API_AVAILABLE(macos(10.6));
 
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceActiveSpaceDidChangeNotification API_AVAILABLE(macos(10.6));
@@ -346,7 +346,7 @@
 // @interface NSWorkspace (NSDeprecated)
 
 // /* Open a file at some path. If you use the variant without the withApplication: parameter, or if you pass nil for this parameter, the default application is used. The appName parameter may be a full path to an application, or just the application's name, with or without the .app extension. If you pass YES for andDeactivate:, or call a variant without this parameter, the calling app is deactivated before the new app is launched, so that the new app may come to the foreground unless the user switches to another application in the interim. Passing YES for andDeactivate: is generally recommended.
-//  */
+// **/
 // - (BOOL)openFile:(NSString *)fullPath API_DEPRECATED("Use -[NSWorkspace openURL:] instead.", macos(10.0, 11.0));
 // - (BOOL)openFile:(NSString *)fullPath withApplication:(nullable NSString *)appName API_DEPRECATED("Use -[NSWorkspace openURLs:withApplicationAtURL:configuration:completionHandler:] instead.", macos(10.0, 11.0));
 // - (BOOL)openFile:(NSString *)fullPath withApplication:(nullable NSString *)appName andDeactivate:(BOOL)flag API_DEPRECATED("Use -[NSWorkspace openURLs:withApplicationAtURL:configuration:completionHandler:] instead.", macos(10.0, 11.0));
@@ -357,7 +357,7 @@
 // /* Launches the app at the given URL. If the app is successfully launched, a reference to the new running app is returned. If the app is already running, and NSWorkspaceLaunchNewInstance is not specified, then a reference to the existing app is returned. If the app could not be launched, nil is returned and an NSError is returned by reference.
  
 //  The configuration dictionary can be used to pass additional options to the app. The configuration dictionary may be empty, in which case default behavior applies.
-//  */
+// **/
 // - (nullable NSRunningApplication *)launchApplicationAtURL:(NSURL *)url options:(NSWorkspaceLaunchOptions)options configuration:(NSDictionary<NSWorkspaceLaunchConfigurationKey, id> *)configuration error:(NSError **)error API_DEPRECATED("Use -[NSWorkspace openApplicationAtURL:configuration:completionHandler:] instead.", macos(10.6, 11.0));
 
 // /* Opens the given URL in an the application that claims it. An NSRunningApplication instance representing the app that the URL was opened in is returned. If the app could not be launched or no app claims the URL, nil is returned and an NSError is returned by reference. The options and configuration parameters are the same as those in launchApplicationAtURL:options:configuration:error:. */
@@ -377,7 +377,7 @@
 
 // /* The following methods launch an app with the given bundle identifier. The descriptor describes the first AppleEvent to be sent to the process. The launchIdentifier is currently of no significance.
 //  If the application is already running, and NSWorkspaceLaunchNewInstance is not specified in the options, then the descriptor is delivered to the currently running app, and YES is returned.
-//  */
+// **/
 // - (BOOL)launchAppWithBundleIdentifier:(NSString *)bundleIdentifier options:(NSWorkspaceLaunchOptions)options additionalEventParamDescriptor:(nullable NSAppleEventDescriptor *)descriptor launchIdentifier:(NSNumber * _Nullable * _Nullable)identifier API_DEPRECATED("Use -[NSWorkspace openApplicationAtURL:configuration:completionHandler:] instead.", macos(10.0, 11.0));
 // - (BOOL)openURLs:(NSArray<NSURL *> *)urls withAppBundleIdentifier:(nullable NSString *)bundleIdentifier options:(NSWorkspaceLaunchOptions)options additionalEventParamDescriptor:(nullable NSAppleEventDescriptor *)descriptor launchIdentifiers:(NSArray<NSNumber *> * _Nullable * _Nullable)identifiers API_DEPRECATED("Use -[NSWorkspace openURLs:withApplicationAtURL:configuration:completionHandler:] instead.", macos(10.10, 11.0));
 
@@ -400,7 +400,7 @@
 //  NSApplicationProcessSerialNumberHigh (the high long of the PSN, as an NSNumber)
 //  NSApplicationProcessSerialNumberLow (the low long of the PSN, as an NSNumber)
 //  The same information will now be provided in the userInfo of the NSWorkspace notifications for application launch and termination.
-//  */
+// **/
 
 // /* Get an NSDictionary representing the currently frontmost app, with the above keys.  The NSWorkspaceApplicationKey is also provided.  On Mac OS X 10.7 and later, use -frontmostApplication. */
 // - (nullable NSDictionary *)activeApplication API_DEPRECATED("Use -[NSWorkspace frontmostApplication] instead.", macos(10.0,10.11));
@@ -413,7 +413,7 @@
 
 
 // /* Gets an array of NSDictionaries with the above keys.  In addition, the NSWorkspaceApplicationKey is provided, and vends an instance of NSRunningApplication.  This method does not return applications that are UIElement or BackgroundOnly.  To access the entire list of running applications, use the -[NSWorkspace runningApplications] method, declared in NSRunningApplication.h.
-//  */
+// **/
 // - (nullable NSArray *)launchedApplications API_DEPRECATED("Use -[NSWorkspace runningApplications] instead.", macos(10.0,10.7));
 
 // /* Open a file with an animation.  This currently does the same thing as openFile: and its use is discouraged. */
@@ -422,7 +422,7 @@
 
 // /* Performs the given file operation, blocking until complete.  source should be the directory containing the file(s).  For operations that require a destination, such as Move and Copy, destination should be the destination directory; otherwise it should be nil.  files is an array of file names that are in the source directory.
 //  A value is returned by reference in the tag parameter, either 0 for success, or -1 for failure.  tag may be NULL.
-//  */
+// **/
 // - (BOOL)performFileOperation:(NSWorkspaceFileOperationName)operation source:(NSString *)source destination:(NSString *)destination files:(NSArray *)files tag:(nullable NSInteger *)tag API_DEPRECATED("", macos(10.0,10.11));
 
 // /* Get, by reference, the name of the app used to open a file at the given path, and the type of the file.  The type of the file will either be a filename extension or an HFS type encoded with NSFileTypeForHFSTypeCode(). Both strings are returned autoreleased.  The method returns YES if successful, NO if not. */
@@ -434,25 +434,25 @@
 // /* Given an absolute file path, return the uniform type identifier (UTI) of the file, if one can be determined. Otherwise, return nil after setting *outError to an NSError that encapsulates the reason why the file's type could not be determined. If the file at the end of the path is a symbolic link the type of the symbolic link will be returned.
 
 //  You can invoke this method to get the UTI of an existing file.  To get the UTI of a URL, use the NSURLTypeIdentifierKey file system resource key from NSURL.h.
-//  */
+// **/
 // - (nullable NSString *)typeOfFile:(NSString *)absoluteFilePath error:(NSError **)outError API_DEPRECATED("Use -[NSURL getResourceValue:forKey:error:] with NSURLContentTypeKey instead.", macos(10.5, API_TO_BE_DEPRECATED));
 
 // /* Given a UTI, return a string that describes the document type and is fit to present to the user, or nil for failure.
 
 //  You can invoke this method to get the name of a type that must be shown to the user, in an alert about your application's inability to handle the type, for instance.
-//  */
+// **/
 // - (nullable NSString *)localizedDescriptionForType:(NSString *)typeName API_DEPRECATED("Use UTType.localizedDescription instead.", macos(10.5, API_TO_BE_DEPRECATED));
 
 // /* Given a UTI, return the best file name extension to use when creating a file of that type, or nil for failure.
 
 //  You can invoke this method when your application has only the base name of a file that's being written and it has to append a file name extension so that the file's type can be reliably identified later on.
-//  */
+// **/
 // - (nullable NSString *)preferredFilenameExtensionForType:(NSString *)typeName API_DEPRECATED("Use UTType.preferredFilenameExtension instead.", macos(10.5, API_TO_BE_DEPRECATED));
 
 // /* Given a file name extension and a UTI, return YES if the file name extension is a valid tag for the identified type, NO otherwise.
 
 //  You can invoke this method when your application needs to check if a file name extension can be used to reliably identify the type later on. For example, NSSavePanel uses this method to validate any extension that the user types in the panel's file name field.
-//  */
+// **/
 // - (BOOL)filenameExtension:(NSString *)filenameExtension isValidForType:(NSString *)typeName API_DEPRECATED("Use +[UTType typesWithTag:tagClass:conformingToType:] to get a list of candidate types, then check if the input type conforms to any of them.", macos(10.5, API_TO_BE_DEPRECATED));
 
 // /* Given two UTIs, return YES if the first "conforms to" to the second in the uniform type identifier hierarchy, NO otherwise. This method will always return YES if the two strings are equal, so you can also use it with other kinds of type name, including those declared in CFBundleTypeName Info.plist entries in apps that don't take advantage of the support for UTIs that was added to Cocoa in Mac OS 10.5.
@@ -460,13 +460,13 @@
 //  You can invoke this method when your application must determine whether it can handle a file of a known type, returned by -typeOfFile:error: for instance.
 
 //  Use this method instead of merely comparing UTIs for equality.
-//  */
+// **/
 // - (BOOL)type:(NSString *)firstTypeName conformsToType:(NSString *)secondTypeName API_DEPRECATED("Use -[UTType conformsToType:] instead.", macos(10.5, API_TO_BE_DEPRECATED));
 
 // @end
 
 // /* Possible values for operation in performFileOperation:...
-//  */
+// **/
 // APPKIT_EXTERN NSWorkspaceFileOperationName NSWorkspaceMoveOperation API_DEPRECATED("Use -[NSFileManager moveItemAtURL:toURL:error:] instead.", macos(10.0,10.11));
 // APPKIT_EXTERN NSWorkspaceFileOperationName NSWorkspaceCopyOperation API_DEPRECATED("Use -[NSFileManager copyItemAtURL:toURL:error:] instead.", macos(10.0,10.11));
 // APPKIT_EXTERN NSWorkspaceFileOperationName NSWorkspaceLinkOperation API_DEPRECATED("Use -[NSFileManager linkItemAtURL:toURL:error:] instead.", macos(10.0,10.11));

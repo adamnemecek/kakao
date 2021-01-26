@@ -38,13 +38,13 @@
 
 // /*
 //  ** Library global options.
-//  */
+// **/
 // APPKIT_EXTERN void NSOpenGLSetOption(NSOpenGLGlobalOption pname, GLint param)   NS_OPENGL_DEPRECATED(10.0, 10.14);
 // APPKIT_EXTERN void NSOpenGLGetOption(NSOpenGLGlobalOption pname, GLint * param) NS_OPENGL_DEPRECATED(10.0, 10.14);
 
 // /*
 //  ** Library version.
-//  */
+// **/
 // APPKIT_EXTERN void NSOpenGLGetVersion(GLint * _Nullable major, GLint * _Nullable minor) NS_OPENGL_DEPRECATED(10.0, 10.14);
 
 
@@ -55,7 +55,7 @@
 // /*
 //  ** Attribute names for [NSOpenGLPixelFormat initWithAttributes]
 //  ** and [NSOpenGLPixelFormat getValues:forAttribute:forVirtualScreen].
-//  */
+// **/
 // enum {
 //     NSOpenGLPFAAllRenderers          NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14)  =   1,	/* choose from all available renderers          */
 //     NSOpenGLPFATripleBuffer          NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14)  =   3,	/* choose a triple buffered pixel format        */
@@ -109,7 +109,7 @@
 
 // /*
 //  ** NSOpenGLPixelFormat interface.
-//  */
+// **/
 
 // NS_OPENGL_CLASS_DEPRECATED("Please use Metal or MetalKit.", 10.0, 10.14)
 // @interface NSOpenGLPixelFormat : NSObject <NSCoding>
@@ -133,7 +133,7 @@
 //  *********************/
 
 // /* NOTE: PBuffers should be considered deprecated as of 10.7.  Use GL_EXT_framebuffer_object instead.
-//  */
+// **/
 // API_DEPRECATED("Use GL_EXT_framebuffer_object instead", macos(10.2,10.7))
 // @interface NSOpenGLPixelBuffer : NSObject
 
@@ -144,7 +144,7 @@
 //  ** internalFormat should be GL_RGB, GL_RGBA or GL_DEPTH_COMPONENT
 //  ** maxLevel specifies the desired maximum mipmap level, starting with 0.  Must be 0 for
 //  ** TEXTURE_RECTANGLE targets.
-//  */
+// **/
 // - (nullable instancetype)initWithTextureTarget:(GLenum)target textureInternalFormat:(GLenum)format textureMaxMipMapLevel:(GLint)maxLevel pixelsWide:(GLsizei)pixelsWide pixelsHigh:(GLsizei)pixelsHigh API_DEPRECATED("", macos(10.2,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // - (nullable NSOpenGLPixelBuffer *)initWithCGLPBufferObj:(CGLPBufferObj)pbuffer API_DEPRECATED("", macos(10.6,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // @property (nullable, readonly) CGLPBufferObj CGLPBufferObj NS_RETURNS_INNER_POINTER API_AVAILABLE(macos(10.6)) API_DEPRECATED("", macos(10.6,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
@@ -195,7 +195,7 @@
 // - (void)setFullScreen API_DEPRECATED("Use a fullscreen NSOpenGLView instead", macos(10.0,10.7));
 
 // /* Deprecated in 10.7.  The -setOffScreen:width:height:rowbytes: API forces use of the software rasterizer, which is much slower than GPU rendering.  It is generally much better nowadays to use a normal pixel format with either an off-screen window or an FBO (GL_EXT_framebuffer_object), and then call glReadPixels() to read the rendered result back to CPU memory (if that's where it is needed).
-//  */
+// **/
 // - (void)setOffScreen:(void *)baseaddr width:(GLsizei)width height:(GLsizei)height rowbytes:(GLint)rowbytes API_DEPRECATED("", macos(10.0,10.7));
 
 // - (void)clearDrawable;
@@ -238,7 +238,7 @@
 //  ** parameter of the pixel buffer.
 //  ** If applicable, the virtual screen should be set to the same value as the current virtual screen you are using
 //  ** to render on-screen with.
-//  */
+// **/
 // - (void)setPixelBuffer:(NSOpenGLPixelBuffer *)pixelBuffer cubeMapFace:(GLenum)face mipMapLevel:(GLint)level currentVirtualScreen:(GLint)screen API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // - (nullable NSOpenGLPixelBuffer *)pixelBuffer API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // - (GLenum)pixelBufferCubeMapFace API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
@@ -250,7 +250,7 @@
 //  ** This call is a mirror of CGLTexImagePBuffer.  This essentially "binds" the given pixel buffer's image data
 //  ** to the currently bound texture object.   Source specifies which of the PBuffer's color buffers should be used,
 //  ** and should be one of GL_FRONT, GL_BACK, GL_AUX0, etc.
-//  */
+// **/
 // - (void)setTextureImageToPixelBuffer:(NSOpenGLPixelBuffer *)pixelBuffer colorBuffer:(GLenum)source API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // @end
 

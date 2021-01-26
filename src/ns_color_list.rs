@@ -70,7 +70,7 @@
 // @property (getter=isEditable, readonly) BOOL editable;
 
 // /* Save the color list using secure keyed archive format. Specify nil to save to the user's private colorlists directory (and also update availableColorLists), using the name of the color list.
-//  */
+// **/
 // - (BOOL)writeToURL:(nullable NSURL *)url error:(NSError **)errPtr API_AVAILABLE(macos(10.11));
 
 // /* Save the color list using unkeyed archive format. Specify nil to save to the user's private colorlists directory (and also update availableColorLists), using the name of the color list.

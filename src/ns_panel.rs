@@ -40,7 +40,7 @@
 // /*
 //  These constants are used by deprecated NSRunAlertPanel() and NSGetAlertPanel() functions.
 //  Modern NSAlert API uses NSAlertFirstButtonReturn, etc.
-//  */
+// **/
 // enum {
 //     NSAlertDefaultReturn API_DEPRECATED("Use NSAlertFirstButtonReturn with an NSAlert presentation instead", macos(10.0,10.10)) = 1,
 //     NSAlertAlternateReturn API_DEPRECATED("Use NSAlertFirstButtonReturn and other NSModalResponses with an NSAlert presentation instead", macos(10.0,10.10)) = 0,

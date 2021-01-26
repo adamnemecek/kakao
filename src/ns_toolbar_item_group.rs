@@ -36,7 +36,7 @@
 //  The item returned will have a custom view for representing the control and automatically create subitems for the group.
 //  The labels array, if not nil, will be used to provide individual labels under the item for each segment of the control.
 //  When space in the toolbar is tight, the control may switch to a smaller alternate representation as necessary to remain in the toolbar.
-//  */
+// **/
 // + (instancetype)groupWithItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier titles:(NSArray<NSString *> *)titles selectionMode:(NSToolbarItemGroupSelectionMode)selectionMode labels:(nullable NSArray<NSString *> *)labels target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.15));
 
 // #if !TARGET_OS_IPHONE
@@ -52,22 +52,22 @@
 // /*
 //  The style in which this item will be represented to the user.
 //  Defaults to NSToolbarItemGroupControlRepresentationAutomatic.
-//  */
+// **/
 // @property NSToolbarItemGroupControlRepresentation controlRepresentation API_AVAILABLE(macos(10.15));
 
 // /*
 //  Get and set how selection is handled by the control.
-//  */
+// **/
 // @property NSToolbarItemGroupSelectionMode selectionMode API_AVAILABLE(macos(10.15));
 
 // /*
 //  The most recently selected item of the group, or -1 if nothing is selected.
-//  */
+// **/
 // @property NSInteger selectedIndex API_AVAILABLE(macos(10.15));
 
 // /*
 //  Get and set selection of individual subitems of the group item.
-//  */
+// **/
 // - (void)setSelected:(BOOL)selected atIndex:(NSInteger)index API_AVAILABLE(macos(10.15));
 // - (BOOL)isSelectedAtIndex:(NSInteger)index API_AVAILABLE(macos(10.15));
 

@@ -32,7 +32,7 @@
 // @optional
 
 // /* This is the message that's propagated up the responder chain.
-//  */
+// **/
 // - (void)changeFont:(nullable NSFontManager *)sender;
 // - (NSFontPanelModeMask)validModesForFontPanel:(NSFontPanel *)fontPanel;
 // @end
@@ -78,7 +78,7 @@
 
 // /* Tags of views in the FontPanel
 //  THESE ARE ALL OBSOLETE and should not be used.
-//  */
+// **/
 // enum {
 //     NSFPPreviewButton			= 131,
 //     NSFPRevertButton			= 130,

@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSController.h>

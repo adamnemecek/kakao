@@ -3,7 +3,7 @@
 //  Application Kit
 //  Copyright (c) 2019, Apple Inc.
 //  All rights reserved.
-//  */
+// **/
 
 // #import <AppKit/NSTouchBarItem.h>
 
@@ -32,7 +32,7 @@
 
 // /*
 //  Creates a standard item with an NSSegmentedControl appropriate for use in an NSTouchBar
-//  */
+// **/
 // + (instancetype)pickerTouchBarItemWithIdentifier:(NSTouchBarItemIdentifier)identifier labels:(NSArray<NSString *> *)labels selectionMode:(NSPickerTouchBarItemSelectionMode)selectionMode target:(nullable id)target action:(nullable SEL)action;
 
 // #if !TARGET_OS_IPHONE
@@ -44,14 +44,14 @@
 // /*
 //  The style in which this item will be represented to the user.
 //  Defaults to NSPickerRepresentationAutomatic.
-//  */
+// **/
 // @property NSPickerTouchBarItemControlRepresentation controlRepresentation;
 
 // /*
 //  The user facing label and or image visible when the control is in the collapsed representation.
 //  If the selectionMode is NSPickerSelectionModeSelectOne, the collapsed representation will automatically be populated with the associated label and or image from the seelctedIndex.
 //  Setting these values may be used to override any automatic behavior.
-//  */
+// **/
 // @property (copy) NSString *collapsedRepresentationLabel;
 
 // #if !TARGET_OS_IPHONE
@@ -62,7 +62,7 @@
 
 // /*
 //  The most recently selected index of the control, or -1 if nothing is selected.
-//  */
+// **/
 // @property NSInteger selectedIndex;
 
 // #if !TARGET_OS_IPHONE
@@ -73,17 +73,17 @@
 
 // /*
 //  Defaults to NSPickerTouchBarItemSelectionModeSelectOne
-//  */
+// **/
 // @property NSPickerTouchBarItemSelectionMode selectionMode;
 
 // /*
 //  The number of options represented in the control.
-//  */
+// **/
 // @property NSInteger numberOfOptions;
 
 // /*
 //  Get and set the image and labels of an option at the given index.
-//  */
+// **/
 // #if !TARGET_OS_IPHONE
 // - (void)setImage:(nullable NSImage *)image atIndex:(NSInteger)index;
 // - (nullable NSImage *)imageAtIndex:(NSInteger)index;

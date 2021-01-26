@@ -196,11 +196,11 @@
 //  By default, this will be YES if your application has any NSDocument subclasses for which autosavesInPlace is YES. To disable the Share menu entirely, or to enable custom placement or construction of the Share menu, applications can explicitly opt out of automatic share menu insertion by overriding this property to return NO.
  
 //  Be aware that even if allowsAutomaticShareMenu is YES, NSDocumentController may choose not to insert the Share menu if it detects that the application already has a Share menu.
-//  */
+// **/
 // @property (readonly) BOOL allowsAutomaticShareMenu API_AVAILABLE(macos(10.13));
 
 // /* A menu item that can be used for sharing the current document. You would typically only use this if you make your NSDocument subclass return NO for allowsAutomaticShareMenu to do custom placement of the Share menu.
-//  */
+// **/
 // - (NSMenuItem *)standardShareMenuItem API_AVAILABLE(macos(10.13));
 
 // #pragma mark *** Error Presentation ***

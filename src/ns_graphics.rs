@@ -90,7 +90,7 @@
 
 
 // /* Types of window backing stores.
-//  */
+// **/
 // typedef NS_ENUM(NSUInteger, NSBackingStoreType) {
 //     /* NSBackingStoreRetained and NSBackingStoreNonretained have effectively been synonyms of NSBackingStoreBuffered since OS X Mountain Lion.  Please switch to the equivalent NSBackingStoreBuffered.
 //      */
@@ -144,7 +144,7 @@
 // APPKIT_EXTERN NSColorSpaceName NSCustomColorSpace;		/* Used to indicate a custom gstate in images */
 
 // /* Prefer colorspaces where 1.0 means white.
-//  */
+// **/
 // APPKIT_EXTERN NSColorSpaceName NSCalibratedBlackColorSpace     /* 1.0 == black */ API_DEPRECATED("", macos(10.0,10.6));
 // APPKIT_EXTERN NSColorSpaceName NSDeviceBlackColorSpace 	/* 1.0 == black */ API_DEPRECATED("", macos(10.0,10.6));
 
@@ -178,7 +178,7 @@
 // APPKIT_EXTERN const CGFloat NSBlack;
 
 // /* Approximate color gamut for use by NSScreen and NSWindow
-//  */
+// **/
 // typedef NS_ENUM(NSInteger, NSDisplayGamut) {
 //     NSDisplayGamutSRGB = 1,
 //     NSDisplayGamutP3 

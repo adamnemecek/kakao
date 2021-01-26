@@ -25,7 +25,7 @@
 //  * Only the \c -vertical, \c -autosaveName, and divider properties should be manipulated on the managed NSSplitView. Changing other properties (such as delegate, manipulating subviews, holding priorities) will cause an exception to be thrown.
 //  * Autolayout must be used with NSSplitViewController to properly control the layout of the child views and the animations of collapses and reveals. e.g., Constraints can be used to setup whether a window should grow/shrink or stay the same size when showing and hiding a sidebar.
 //  * NSViewController's methods \c -addChildViewController:, \c -insertViewController:atIndex:, and \c -removeChildViewControllerAtIndex: can all be used as convience methods to add children; default SplitViewItems will be appropriately created or destroyed.
-//  */
+// **/
 // API_AVAILABLE(macos(10.10))
 // @interface NSSplitViewController : NSViewController <NSSplitViewDelegate, NSUserInterfaceValidations>
 
@@ -38,34 +38,34 @@
 // /*!
 //  * Adds a SplitViewItem to the end of the SplitViewController. If the receiver's view is loaded and the SplitViewItem is not collapsed, the SplitViewItem's viewController's view will be loaded and added to the splitView. This calls through to -insertSplitViewItem:atIndex:.
 //  * \param splitViewItem The SplitViewItem to add. It must have a viewController set by the time it is added or an exception will be thrown. An exception will also be thrown if splitViewItem is nil.
-//  */
+// **/
 // - (void)addSplitViewItem:(NSSplitViewItem *)splitViewItem;
 
 // /*!
 //  * Adds a SplitViewItem to a given index in the SplitViewController. If the receiver's view is loaded and the SplitViewItem is not collapsed, the SplitViewItem's viewController's view will be loaded and added to the \c splitView. Subclasses must call through \c -insertSplitViewItem:atIndex: to add a SplitViewItem.
 //  * \param splitViewItem The SplitViewItem to add. It must have a \c viewController set by the time it is added or an exception will be thrown. An exception will also be thrown if splitViewItem is nil.
 //  * \param index The index to add the SplitViewItem at. Will throw an exception if \c index < 0 or \c index > \c splitViewItems.count
-//  */
+// **/
 // - (void)insertSplitViewItem:(NSSplitViewItem *)splitViewItem atIndex:(NSInteger)index;
 
 // /*!
 //  * Removes a SplitViewItem from the receiver. The layout of the \c splitView will be adjusted for its removal. Subclasses must call through \c -removeSplitViewItem: to remove a SplitViewItem.
 //  * \param splitViewItem The SplitViewItem to remove. An exception will be thrown if \c splitViewItem is not in the SplitViewController or if it is nil.
-//  */
+// **/
 // - (void)removeSplitViewItem:(NSSplitViewItem *)splitViewItem;
 
 // /*!
 //  * Returns the corresponding SplitViewItem for a given child ViewController.
 //  * \param viewController The ViewController to look up.
 //  * \return The corresponding SplitViewItem. Returns nil if \c viewController is not a child of the SplitViewController.
-//  */
+// **/
 // - (nullable NSSplitViewItem *)splitViewItemForViewController:(NSViewController *)viewController;
 
 // /*!
 //  * The minimum thickness in the primary axis of split view (width for "vertical", height otherwise) before sidebar items will automatically collapse. If reshown in fullscreen, they will overlay over the other split items.
 //  * Auto-collapsed sidebars will automatically uncollapse if the thickness is increased back to or past the minimum thickness.
 //  * Defaults to \c NSSplitViewControllerAutomaticDimension, which will use the effective minimum sizes of the split view item views as described by constraints in the window to determine the minimum size for inline sidebars. Once constraints establishing the minimum size can't be satisfied for all non-collapsed split panes, all sidebars will auto-collapse. When fullscreen, if a sidebar tries to uncollapse in this state, it will overlay.
-//  */
+// **/
 // @property CGFloat minimumThicknessForInlineSidebars API_AVAILABLE(macos(10.11));
 
 // /// Validates items with an action of `toggleSidebar:` to reflect the status of the sidebar item contained within the receiver.

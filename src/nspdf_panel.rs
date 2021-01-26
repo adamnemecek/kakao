@@ -40,7 +40,7 @@
 // @property (copy) NSString *defaultFileName;
 
 // /* Present a print panel to the user, document-modally. When the user has dismissed it, invoke the completionHandler block. If the user didn't click the 'Cancel' button, the given NSPDFInfo will be modified to reflect the user's chosen settings, if any.
-//  */
+// **/
 // - (void)beginSheetWithPDFInfo:(NSPDFInfo *)pdfInfo modalForWindow:(nullable NSWindow *)docWindow completionHandler:(void (^)(NSInteger))completionHandler;
 // @end
 

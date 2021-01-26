@@ -18,7 +18,7 @@
 // @interface NSOpenPanel : NSSavePanel
 
 // /* Creates a new instance of the NSOpenPanel. This class is not a singleton. 
-//  */
+// **/
 // + (NSOpenPanel *)openPanel;
 
 // @property (readonly, copy) NSArray<NSURL *> *URLs;
@@ -53,30 +53,30 @@
 // @interface NSOpenPanel (NSDeprecated)
 
 // /* Use URLs instead.
-//  */
+// **/
 // - (NSArray *)filenames API_DEPRECATED("", macos(10.0,10.6));
 
 // /* Use -beginSheetModalForWindow:completionHandler: instead.
 //     Set the -directoryURL property instead of passing in a 'path'.
 //     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
-//  */
+// **/
 // - (void)beginSheetForDirectory:(nullable NSString *)path file:(nullable NSString *)name types:(nullable NSArray *)fileTypes modalForWindow:(nullable NSWindow *)docWindow modalDelegate:(nullable id)delegate didEndSelector:(nullable SEL)didEndSelector contextInfo:(nullable void *)contextInfo API_DEPRECATED("", macos(10.0,10.6));
 
 // /* Use -beginWithCompletionHandler: instead. 
 //     Set the -directoryURL property instead of passing in a 'path'.
 //     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
-//  */
+// **/
 // - (void)beginForDirectory:(nullable NSString *)path file:(nullable NSString *)name types:(nullable NSArray *)fileTypes modelessDelegate:(nullable id)delegate didEndSelector:(nullable SEL)didEndSelector contextInfo:(nullable void *)contextInfo  API_DEPRECATED("", macos(10.0,10.6));
 
 // /* Use -runModal instead. 
 //     Set the -directoryURL property instead of passing in a 'path'.
 //     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
-//  */
+// **/
 // - (NSInteger)runModalForDirectory:(nullable NSString *)path file:(nullable NSString *)name types:(nullable NSArray *)fileTypes API_DEPRECATED("", macos(10.0,10.6));
 
 // /* Use -runModal instead. 
 //     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
-//  */
+// **/
 // - (NSInteger)runModalForTypes:(nullable NSArray *)fileTypes API_DEPRECATED("", macos(10.0,10.6));
 
 // @end

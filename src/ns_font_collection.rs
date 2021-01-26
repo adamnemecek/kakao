@@ -19,7 +19,7 @@
 
 // /*
 //  Named collection visibility
-//  */
+// **/
 // typedef NS_OPTIONS(NSUInteger, NSFontCollectionVisibility) {
 //     // Visible within this process, not persistent
 //     NSFontCollectionVisibilityProcess = (1UL << 0),
@@ -34,7 +34,7 @@
 
 // /*
 //  Matching options
-//  */
+// **/
 // typedef NSString * NSFontCollectionMatchingOptionKey NS_TYPED_ENUM;
 // // NSNumber BOOL specifying whether disabled fonts should be included in the list of matching descriptors (YES) or not (NO). When unspecified, CoreText assumes NO. This option is intended only for font management applications. This option will make descriptor matching slower.
 // APPKIT_EXTERN NSFontCollectionMatchingOptionKey const NSFontCollectionIncludeDisabledFontsOption API_AVAILABLE(macos(10.7));
@@ -50,13 +50,13 @@
 
 // /*
 //  NSFontCollection - immutable font list
-//  */
+// **/
 // API_AVAILABLE(macos(10.7))
 // @interface NSFontCollection : NSObject <NSCopying, NSMutableCopying, NSCoding>
 
 // /*
 //  Creating collections
-//  */
+// **/
 // // Return a font collection matching the given descriptors
 // + (NSFontCollection *)fontCollectionWithDescriptors:(NSArray<NSFontDescriptor *> *)queryDescriptors;
 
@@ -76,7 +76,7 @@
 //  There is no association between the the NSFontCollection instance and the name from which it was created. When you change the collection, you must show it again to see the changes reflected on disk or in font UI.
  
 //  Errors returned from these methods are NSFileManager errors.
-//  */
+// **/
 
 // // Make the font collection visible by giving it a name
 // + (BOOL)showFontCollection:(NSFontCollection *)collection withName:(NSFontCollectionName)name visibility:(NSFontCollectionVisibility)visibility error:(NSError **)error;
@@ -98,7 +98,7 @@
 
 // /*
 //  Descriptor matching
-//  */
+// **/
 
 // // The list of NSFontDescriptors to match. The matching descriptors are produced by matching this list of descriptors.
 // @property (nullable, readonly, copy) NSArray<NSFontDescriptor *> *queryDescriptors;
@@ -120,7 +120,7 @@
 
 // /*
 //  NSMutableFontCollection - mutable font list
-//  */
+// **/
 // API_AVAILABLE(macos(10.7))
 // @interface NSMutableFontCollection : NSFontCollection
 
@@ -156,7 +156,7 @@
  
 //  This notification is sent to the local notification center when a named, persistent collection is modified.
 //  User info key NSFontCollectionNotificationAction describes the nature of the change.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName const NSFontCollectionDidChangeNotification API_AVAILABLE(macos(10.7));
 
 // // Notification user info dictionary keys
@@ -177,7 +177,7 @@
  
 //  Standard mutable collection names -- these names are included in the list of allFontCollectionNames -- they have special meaning to the
 //  Cocoa font system and should not be hidden or renamed.
-//  */
+// **/
 // APPKIT_EXTERN NSFontCollectionName const NSFontCollectionAllFonts API_AVAILABLE(macos(10.7));		// All fonts in the system
 // APPKIT_EXTERN NSFontCollectionName const NSFontCollectionUser API_AVAILABLE(macos(10.7));			// Per-user unmodifiable collection
 // APPKIT_EXTERN NSFontCollectionName const NSFontCollectionFavorites API_AVAILABLE(macos(10.7));		// Collection of the user's preferred font descriptors

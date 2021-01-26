@@ -27,14 +27,14 @@
 // @protocol NSHapticFeedbackPerformer <NSObject>
 // @required
 // /* Provide user feedback synchronized with a drawing style. Always use the feedback pattern that describes the user action. In most cases, haptic feedback should occur with something on screen such as the appearance of an alignment guide. The haptic feedback performer waits until the performanceTime to ensure that the user simultaneously experiences both. Note: The system reserves the right to suppress this request. For example, Force Touch trackpads will not perform the feedback if the user isn't currently touching the trackpad.
-//  */
+// **/
 // - (void)performFeedbackPattern:(NSHapticFeedbackPattern)pattern performanceTime:(NSHapticFeedbackPerformanceTime)performanceTime;
 // @end
 
 // API_AVAILABLE(macos(10.11))
 // @interface NSHapticFeedbackManager : NSObject
 // /* The most appropriate feedback performer for the current input device, accessibility settings and user preferences. Note: This device may change during the life of your application. Always request the defaultPerformer when you need perform feedback.
-//  */
+// **/
 // @property (class, readonly, strong) id<NSHapticFeedbackPerformer> defaultPerformer;
 // @end
 

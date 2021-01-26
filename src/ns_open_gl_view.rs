@@ -51,7 +51,7 @@
 // @interface NSView (NSExtendedDynamicRange)
 
 // /* When set to YES on a view with an attached OpenGL context, the NSScreen in which that views resides may have its maximumExtendedDynamicRangeColorComponentValue increased.  When composited by the Window Server, color values rendered by this OpenGL surface will be clamped to the NSScreen’s maximumExtendedDynamicRangeColorComponentValue rather than 1.0.
-//  */
+// **/
 // @property BOOL wantsExtendedDynamicRangeOpenGLSurface API_DEPRECATED("Use NSOpenGLView instead.", macos(10.11,10.14));
 
 // @end

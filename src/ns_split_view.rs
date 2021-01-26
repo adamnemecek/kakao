@@ -83,7 +83,7 @@
 // /* Sets the priority under which split view subviews hold their widths (for a vertical split view) or height (for a horizontal split view). The view with the lowest priority will be the first to take on additional width if the split view grows or shrinks. The default is NSLayoutPriorityDefaultLow. 
  
 //    There is no reason to use the default, but you should use priorities less than NSLayoutPriorityDragThatCannotResizeWindow (490)
-//  */
+// **/
 // #if !TARGET_OS_IPHONE
 // - (NSLayoutPriority)holdingPriorityForSubviewAtIndex:(NSInteger)subviewIndex API_AVAILABLE(macos(10.8));
 // - (void)setHoldingPriority:(NSLayoutPriority)priority forSubviewAtIndex:(NSInteger)subviewIndex API_AVAILABLE(macos(10.8));
@@ -96,31 +96,31 @@
 // /*!
 //  * Whether or not all subviews will be added as arranged views. When NO, a subview must be explicitly added as an arrangedSubview if the view should be arranged as a split pane. When YES, \c -arrangedSubviews always be identical to \c -subviews. Defaults to YES.
 //  * Setting this from YES to NO will leave all existing subviews as \c -arrangedSubviews. Setting this from NO to YES will cause \c -arrangedSubviews to become the value of \c -subviews.
-//  */
+// **/
 // @property BOOL arrangesAllSubviews API_AVAILABLE(macos(10.11));
 
 // /*!
 //  * The list of views that are arranged as split panes in the receiver.
 //  * They are a subset of \c -subviews, with potential difference in ordering. If \c -arrangesAllSubviews is YES, then \c -arrangedSubviews is identical to \c -subviews.
-//  */
+// **/
 // @property (readonly, copy) NSArray<__kindof NSView *> *arrangedSubviews API_AVAILABLE(macos(10.11));
 
 // /*!
 //  * Adds a view as arranged split pane. If the view is not a subview of the receiver, it will be added as one.
-//  */
+// **/
 // - (void)addArrangedSubview:(NSView *)view API_AVAILABLE(macos(10.11));
 
 // /*!
 //  * Adds a view as an arranged split pane list at the specific index.
 //  * If the view is already an arranged split view, it will move the view the specified index (but not move the subview index).
 //  * If the view is not a subview of the receiver, it will be added as one (not necessarily at the same index).
-//  */
+// **/
 // - (void)insertArrangedSubview:(NSView *)view atIndex:(NSInteger)index API_AVAILABLE(macos(10.11));
 
 // /*!
 //  * Removes a view as arranged split pane. If \c -arrangesAllSubviews is set to NO, this does not remove the view as a subview.
 //  * Removing the view as a subview (either by -[view removeFromSuperview] or setting the receiver's subviews) will automatically remove it as an arranged subview.
-//  */
+// **/
 // - (void)removeArrangedSubview:(NSView *)view API_AVAILABLE(macos(10.11));
 
 // @end
@@ -165,7 +165,7 @@
 
 
 // /* Given that a split view has been resized and is adjusting its subviews to accomodate the new size, return YES if -adjustSubviews can change the size of the indexed subview, NO otherwise. -adjustSubviews may change the origin of the indexed subview regardless of what this method returns. -adjustSubviews may also resize otherwise nonresizable subviews to prevent an invalid subview layout. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that returns YES when sent this message.
-//  */
+// **/
 // - (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)view API_AVAILABLE(macos(10.6));
 
 
@@ -202,7 +202,7 @@
 // @interface NSSplitView (NSDeprecated)
 
 // /* Set or get whether the split view is a "pane splitter" (YES) or "grabber" (NO) split view. In Mac OS 10.5 the value of this property has no effect. These methods are deprecated in Mac OS 10.6.
-//  */
+// **/
 // - (void)setIsPaneSplitter:(BOOL)flag API_DEPRECATED("", macos(10.0,10.6));
 // - (BOOL)isPaneSplitter API_DEPRECATED("", macos(10.0,10.6));
 

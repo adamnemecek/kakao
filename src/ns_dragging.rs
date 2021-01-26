@@ -65,7 +65,7 @@
 // /* protocol for the sender argument of the messages sent to a drag destination.  The view or
 //    window that registered dragging types sends these messages as dragging is
 //    happening to find out details about that session of dragging.
-//  */
+// **/
 // @protocol NSDraggingInfo <NSObject>
 // @required
 // @property (nullable, readonly) NSWindow *draggingDestinationWindow;
@@ -86,11 +86,11 @@
 // @property NSDraggingFormation draggingFormation API_AVAILABLE(macos(10.7));
 
 // /* During the conclusion of an accepted drag, if this property is set to YES, the drag manager will animate each dragging image to their NSDraggingFormationNone locations. Otherwise, the drag images are removed without any animation. Note: This property is inspected between -prepareForDragOperation: and -performDragOperation:. If the final destination frames do not match the current NSDraggingFormationNone frames, then enumerate through the draggingItems during -performDragOperation: to set thier NSDraggingFormationNone frames to the correct destinations.
-//  */
+// **/
 // @property BOOL animatesToDestination API_AVAILABLE(macos(10.7));
 
 // /* During draggingEntered: or draggingUpdated:, you are responsible for returning the drag operation. In some cases, you may accept some, but not all items on the dragging pasteboard. (For example, you only accept image files.) If you only accept some of the items, you should set this property so the drag manager can update the drag count badge. When -updateItems: is called, you should set the image of non valid dragging items to nil. If none of the drag items are valid then do not call this method. Simply return NSDragOperationNone from draggingEntered: and/or draggingUpdated: and do not modify any drag item properties.
-//  */
+// **/
 // @property NSInteger numberOfValidItemsForDrop API_AVAILABLE(macos(10.7));
 
 // /* Use the following enumerate method to modify the properties of each dragging item. For example, change the drag image and size.
@@ -112,7 +112,7 @@
 // /* Methods implemented by an object that receives dragged images.  The
 //    destination view or window is sent these messages during dragging if it
 //    responds to them.
-//  */
+// **/
 // @protocol NSDraggingDestination <NSObject>
 // @optional
 // - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender;
@@ -175,7 +175,7 @@
 // @protocol NSSpringLoadingDestination <NSObject>
 // @required
 // /* Perform the spring loading action (For example, the button's action, or select the tab). Normally, spring loading is a discrete action that only activates after the user completes the spring loading input. When the NSSpringLoadingContinuousActivation option set, spring loading become a continuous action that activates (YES) when the user starts spring loading and then deactivates (NO) when the user releases spring loading. See NSSpringLoadingContinuousActivation for more information.
-//  */
+// **/
 // - (void)springLoadingActivated:(BOOL)activated draggingInfo:(id <NSDraggingInfo>)draggingInfo API_AVAILABLE(macos(10.11));
 
 // /* Called when the spring loading highlight changes */

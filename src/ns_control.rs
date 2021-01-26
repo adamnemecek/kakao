@@ -57,7 +57,7 @@
 // - (void)performClick:(nullable id)sender;
 
 // /* The following methods apply only to controls with apparent textual content of some sort (buttons with labels, textfields, etc.).
-//  */
+// **/
 // @property (nullable, copy) NSFont *font;
 
 // @property BOOL usesSingleLineMode API_AVAILABLE(macos(10.10));
@@ -70,21 +70,21 @@
 
 // /* Gets and sets the ability for expansion tool tips to be shown or not. Expansion tooltips are automatically shown when the cell can not show the full content. This is controlled by the NSCell API expansionFrameWithFrame:inView: and is drawn by drawWithExpansionFrame:inView:. The default value is NO.
 //     This value is encoded along with the control. In general, it is recommended to turn this on for NSTextFields in a View Based NSTableView.
-//  */
+// **/
 // @property BOOL allowsExpansionToolTips API_AVAILABLE(macos(10.8));
 
 // /*  Allows the control to return an expansion tool tip frame if contentFrame is too small for the entire contents in the view. When the mouse is hovered over the text in certain controls, the full contents will be shown in a special floating tool tip view. If the frame is not too small, return an empty rect, and no expansion tool tip view will be shown. By default, NSControl returns NSZeroRect, while some subclasses (such as NSTextField) will return the proper frame when required.
-//  */
+// **/
 // - (NSRect)expansionFrameWithFrame:(NSRect)contentFrame API_AVAILABLE(macos(10.10));
 
 // /* Allows the control to perform custom expansion tool tip drawing. Note that the view may be different from the original view that the text appeared in.
-//  */
+// **/
 // - (void)drawWithExpansionFrame:(NSRect)contentFrame inView:(NSView *)view API_AVAILABLE(macos(10.10));
 
 // @end
 
 // /* The following category applies only to controls with editable text, like NSTextField.
-//  */
+// **/
 // @interface NSControl(NSControlEditableTextMethods)
 // - (nullable NSText *)currentEditor;
 // - (BOOL)abortEditing;

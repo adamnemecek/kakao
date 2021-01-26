@@ -45,11 +45,11 @@
 // - (BOOL)isExpandable:(nullable id)item;
 
 // /* Returns the number of children for a given parent item. This is mostly useful for static outline views where the data was encoded at design time; however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
-//  */
+// **/
 // - (NSInteger)numberOfChildrenOfItem:(nullable id)item API_AVAILABLE(macos(10.10));
 
 // /* Returns the child item for a given parent item. This is mostly useful for static outline views where the data was encoded at design time, however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
-//  */
+// **/
 // - (nullable id)child:(NSInteger)index ofItem:(nullable id)item API_AVAILABLE(macos(10.10));
 
 // /* Expands 'item', if not already expanded, and all children if 'expandChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will expand  each item under the root.
@@ -81,7 +81,7 @@
 // - (nullable id)parentForItem:(nullable id)item;
 
 // /* Returns the child index of 'item' within its parent. The performance of this method is O(1) at best and O(n) at worst.
-//  */
+// **/
 // - (NSInteger)childIndexForItem:(id)item API_AVAILABLE(macos(10.11));
 
 // /* Item/Row translation
@@ -130,19 +130,19 @@
 // #pragma mark ***** Animated Insert / Remove / Move Support *****
 
 // /* This method parallels TableView's -insertRowIndexes:withAnimation:, and is used in a way similar to NSMutableArray's -insertObjects:atIndexes: This method inserts a new item at 'indexes' in 'parent'. 'parent' can be nil to insert items into the root of the OutlineView. The operation will not do anything if 'parent' is not expanded. The actual item values are determined by the dataSource methods -outlineView:child:ofItem: (note that this will only be called after an -endUpdates happens to ensure dataSource integrity). Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; new insertions will move previously inserted new items, just like modifying an array. Inserting an index beyond what is available will throw an exception.  The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-//  */
+// **/
 // - (void)insertItemsAtIndexes:(NSIndexSet *)indexes inParent:(nullable id)parent withAnimation:(NSTableViewAnimationOptions)animationOptions API_AVAILABLE(macos(10.7));
 
 // /* This method parallels TableView's -removeRowsAtIndexes:withAnimation:, and is used similar to NSMutableArray's -removeObjectsAtIndexes:. The items at the given indexes will be removed from the parent. The operation will not do anything if 'parent' is not expanded. If one of the children items is expanded, then all of its children rows will also be removed. Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; changes work just like modifying an array. Deleting an index beyond what is available will throw an exception.  The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-//  */
+// **/
 // - (void)removeItemsAtIndexes:(NSIndexSet *)indexes inParent:(nullable id)parent withAnimation:(NSTableViewAnimationOptions)animationOptions API_AVAILABLE(macos(10.7));
 
 // /* This method parallels TableView's -moveRowAtIndex:toIndex:. The item located at 'fromIndex' is moved from the existing 'oldParent' to the given index in 'newParent'. 'newParent' can be the same as 'oldParent' to reorder an item within the same parent. This method can be called multiple times within the same beginUpdates/endUpdates block. Moving from an invalid index, or to an invalid index will throw an exception.  The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-//  */
+// **/
 // - (void)moveItemAtIndex:(NSInteger)fromIndex inParent:(nullable id)oldParent toIndex:(NSInteger)toIndex inParent:(nullable id)newParent API_AVAILABLE(macos(10.7));
 
 // /* Modifications to an OutlineView should be done with the insertItems:/deleteItems:/moveItem: methods, and not the NSTableView primitives. Internally, these methods are used in the implementation, and while they are unavailable for callers they can be overridden by subclasses.
-//  */
+// **/
 // - (void)insertRowsAtIndexes:(NSIndexSet *)indexes withAnimation:(NSTableViewAnimationOptions)animationOptions UNAVAILABLE_ATTRIBUTE;
 // - (void)removeRowsAtIndexes:(NSIndexSet *)indexes withAnimation:(NSTableViewAnimationOptions)animationOptions UNAVAILABLE_ATTRIBUTE;
 // - (void)moveRowAtIndex:(NSInteger)oldIndex toIndex:(NSInteger)newIndex UNAVAILABLE_ATTRIBUTE;
@@ -150,11 +150,11 @@
 // #pragma mark -
 
 // /* Get and set the user interface layout direction. When set to NSUserInterfaceLayoutDirectionRightToLeft, the Outline View will show the disclosure triangle to the right of the cell instead of the left. This method is available for NSOutlineView on 10.7 and higher.
-//  */
+// **/
 // @property NSUserInterfaceLayoutDirection userInterfaceLayoutDirection API_AVAILABLE(macos(10.7));
 
 // /* When YES, the NSOutlineView will retain and release the objects returned to it from the dataSource (outlineView:child:ofItem:). When NO, it only treats the objects as opaque items and assume the client has a retain on them. The default value is YES for applications linked on 10.12 and later, and NO for previous applications. This value is not encoded in the nib, and must be explicitly set to NO in code if one requires the legacy behavior and is linking on 10.12 and later. In general, this is required if the items themselves create a retain cycle.
-//  */
+// **/
 // @property BOOL stronglyReferencesItems API_AVAILABLE(macos(10.12));
 
 // @end
@@ -170,29 +170,29 @@
 // #pragma mark ***** Required Methods (unless bindings is used) *****
 
 // /* NOTE: it is not acceptable to call reloadData or reloadItem from the implementation of any of the following four methods, and doing so can cause corruption in NSOutlineViews internal structures.
-//  */
+// **/
 
 // - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(nullable id)item;
 // - (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(nullable id)item;
 // - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item;
 
 // /* NOTE: this method is optional for the View Based OutlineView.
-//  */
+// **/
 // - (nullable id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(nullable NSTableColumn *)tableColumn byItem:(nullable id)item;
 
 // #pragma mark -
 // #pragma mark ***** Optional Methods *****
 
 // /* View Based OutlineView: This method is not applicable.
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView setObjectValue:(nullable id)object forTableColumn:(nullable NSTableColumn *)tableColumn byItem:(nullable id)item;
 
 // /* NOTE: Returning nil indicates the item no longer exists, and won't be re-expanded.
-//  */
+// **/
 // - (nullable id)outlineView:(NSOutlineView *)outlineView itemForPersistentObject:(id)object;
 
 // /* NOTE: Returning nil indicates that the item's state will not be persisted.
-//  */
+// **/
 // - (nullable id)outlineView:(NSOutlineView *)outlineView persistentObjectForItem:(nullable id)item;
 
 // /* Optional - Sorting Support
@@ -204,15 +204,15 @@
 // */
 
 // /* Dragging Source Support - Required for multi-image dragging. Implement this method to allow the table to be an NSDraggingSource that supports multiple item dragging. Return a custom object that implements NSPasteboardWriting (or simply use NSPasteboardItem). Return nil to prevent a particular item from being dragged. If this method is implemented, then outlineView:writeItems:toPasteboard: will not be called.
-//  */
+// **/
 // - (nullable id <NSPasteboardWriting>)outlineView:(NSOutlineView *)outlineView pasteboardWriterForItem:(id)item API_AVAILABLE(macos(10.7));
 
 // /* Dragging Source Support - Optional. Implement this method know when the dragging session is about to begin and to potentially modify the dragging session. 'draggedItems' is an array of items that we dragged, excluding items that were not dragged due to outlineView:pasteboardWriterForItem: returning nil. This array will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -outlineView:acceptDrop:item:childIndex: when enumerating the NSDraggingInfo's pasteboard classes. 
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forItems:(NSArray *)draggedItems API_AVAILABLE(macos(10.7));
 
 // /* Dragging Source Support - Optional. Implement this method know when the dragging session has ended. This delegate method can be used to know when the dragging source operation ended at a specific location, such as the trash (by checking for an operation of NSDragOperationDelete).
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation API_AVAILABLE(macos(10.7));
 
 // /* Dragging Source Support - Optional for single-image dragging. This method is called after it has been determined that a drag should begin, but before the drag has been started.  To refuse the drag, return NO.  To start a drag, return YES and place the drag data onto the pasteboard (data, owner, etc...).  The drag image and other drag related information will be set up and provided by the outline view once this call returns with YES.  The items array is the list of items that will be participating in the drag.
@@ -220,7 +220,7 @@
 // - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard API_DEPRECATED("Use -outlineView:pasteboardWriterForItem: instead", macos(10.0, 10.15));
 
 // /* Dragging Destination Support - Required for multi-image dragging. Implement this method to allow the table to update dragging items as they are dragged over the view. Typically this will involve calling [draggingInfo enumerateDraggingItemsWithOptions:forView:classes:searchOptions:usingBlock:] and setting the draggingItem's imageComponentsProvider to a proper image based on the content. For View Based TableViews, one can use NSTableCellView's -draggingImageComponents and -draggingImageFrame.
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView updateDraggingItemsForDrag:(id <NSDraggingInfo>)draggingInfo API_AVAILABLE(macos(10.7));
 
 // /* Dragging Destination Support - This method is used by NSOutlineView to determine a valid drop target. Based on the mouse position, the outline view will suggest a proposed child 'index' for the drop to happen as a child of 'item'. This method must return a value that indicates which NSDragOperation the data source will perform. The data source may "re-target" a drop, if desired, by calling setDropItem:dropChildIndex: and returning something other than NSDragOperationNone. One may choose to re-target for various reasons (eg. for better visual feedback when inserting into a sorted position). On Leopard linked applications, this method is called only when the drag position changes or the dragOperation changes (ie: a modifier key is pressed). Prior to Leopard, it would be called constantly in a timer, regardless of attribute changes.
@@ -246,19 +246,19 @@
 // #pragma mark ***** View Based TableView/OutlineView Support *****
 
 // /* View Based OutlineView: See the delegate method -tableView:viewForTableColumn:row: in NSTableView.
-//  */
+// **/
 // - (nullable NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(nullable NSTableColumn *)tableColumn item:(id)item API_AVAILABLE(macos(10.7));
 
 // /* View Based OutlineView: See the delegate method -tableView:rowViewForRow: in NSTableView.
-//  */
+// **/
 // - (nullable NSTableRowView *)outlineView:(NSOutlineView *)outlineView rowViewForItem:(id)item API_AVAILABLE(macos(10.7));
 
 // /* View Based OutlineView: This delegate method can be used to know when a new 'rowView' has been added to the table. At this point, you can choose to add in extra views, or modify any properties on 'rowView'.
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row API_AVAILABLE(macos(10.7));
 
 // /* View Based OutlineView: This delegate method can be used to know when 'rowView' has been removed from the table. The removed 'rowView' may be reused by the table so any additionally inserted views should be removed at this point. A 'row' parameter is included. 'row' will be '-1' for rows that are being deleted from the table and no longer have a valid row, otherwise it will be the valid row that is being removed due to it being moved off screen.
-//  */
+// **/
 // - (void)outlineView:(NSOutlineView *)outlineView didRemoveRowView:(NSTableRowView *)rowView forRow:(NSInteger)row API_AVAILABLE(macos(10.7));
 
 // #pragma mark -
@@ -291,7 +291,7 @@
 
 // /* Optional - Variable Row Heights
 //     Implement this method to support a table with varying row heights. The height returned by this method should not include intercell spacing. Returning a height of -1 will default to the rowHeight of the tableView for normal rows, and the system defined height for group rows. Performance Considerations: For large tables in particular, you should make sure that this method is efficient. NSTableView may cache the values this method returns, but this should NOT be depended on, as all values may not be cached. To signal a row height change, call -noteHeightOfRowsWithIndexesChanged:. For a given row, the same row height should always be returned until -noteHeightOfRowsWithIndexesChanged: is called, otherwise unpredicable results will happen. NSTableView automatically invalidates its entire row height cache in -reloadData, and -noteNumberOfRowsChanged.
-//  */
+// **/
 // - (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item;
 
 // /* View Based OutlineView: Optional - Item tinting customization
@@ -360,16 +360,16 @@
 
 // /*  Optional - Control of column reordering.
 //  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable. 
-//  */
+// **/
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldReorderColumn:(NSInteger)columnIndex toColumn:(NSInteger)newColumnIndex API_AVAILABLE(macos(10.6));
 
 // /* Optional - Hiding the outline cell (disclosure triangle)
 //  Allows the delegate to decide if the outline cell (disclosure triangle) for 'item' should be displayed or not. This method will only be called for expandable rows. If 'NO' is returned,  -[outlineView frameOfOutlineCellAtRow:] will return NSZeroRect, causing the outline cell to be hidden. In addition, if 'NO' is returned, the row will not be collapsable by keyboard shortcuts.
-//  */
+// **/
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldShowOutlineCellForItem:(id)item API_AVAILABLE(macos(10.6));
 
 // /* Notifications - see comments below for more information about the @"NSObject" parameter in the userInfo dictionary.
-//  */
+// **/
 // - (void)outlineViewSelectionDidChange:(NSNotification *)notification;
 // - (void)outlineViewColumnDidMove:(NSNotification *)notification;
 // - (void)outlineViewColumnDidResize:(NSNotification *)notification;
@@ -389,7 +389,7 @@
 //  When a custom button is used, it is important to properly set up the target/action to do something (probably expand or collapse the rowForView: that the sender is located in). Or, one can call super to get the default button, and copy its target/action to get the normal default behavior.
  
 //  NOTE: These keys are backwards compatible to 10.7, however, the symbol is not exported prior to 10.9 and the regular string value must be used (i.e.: @"NSOutlineViewDisclosureButtonKey").
-//  */
+// **/
 // APPKIT_EXTERN NSUserInterfaceItemIdentifier const NSOutlineViewDisclosureButtonKey API_AVAILABLE(macos(10.9)); // The normal triangle disclosure button
 // APPKIT_EXTERN NSUserInterfaceItemIdentifier const NSOutlineViewShowHideButtonKey API_AVAILABLE(macos(10.9)); // The show/hide button used in "Source Lists"
 

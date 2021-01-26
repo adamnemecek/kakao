@@ -204,7 +204,7 @@
 // - -isDocumentEdited and -hasUnautosavedChanges, because you can't reliably make decisions based on whether the document's contents in memory have been saved to a file when it might be being asynchronously saved at that moment.
 // - -updateChangeCountWithToken:forSaveOperation: and, sometimes, updateChangeCount:, to make using this mechanism when invoking -isDocumentEdited and -hasUnautosavedChanges meaningful.
 // - -backupFileURL, since it depends on -fileURL.
-//  */
+// **/
 // - (void)performSynchronousFileAccessUsingBlock:(void (NS_NOESCAPE ^)(void))block API_AVAILABLE(macos(10.7));
 
 // /* Do the same sort of thing as -performSynchronousFileAccessUsingBlock:, but without ever blocking the main thread, and perhaps not invoking the block until after the method invocation has returned, though still always on the same thread as the method invocation. The block is passed another block, the file access completion handler, which must be invoked when the file access is complete, though it can be invoked from any thread. This method is for use with file access that might begin on one thread but continue on another before it is complete. saveToURL:ofType:forSaveOperation:completionHandler: for for example uses this method instead of -performSynchronousFileAccessUsingBlock: because if it does asynchronous saving then there is no way for it to actually complete all of its file access before returning from the file access block.
@@ -250,7 +250,7 @@
 // - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError;
 
 // /* Return YES if the document's entire file is loaded into memory, NO otherwise. The default implementation of this method returns YES. You can override this method to return NO if additional data may need to be read from the file. NSDocument may use this value to do things like prevent volume ejection or warn the user when a partially loaded file disappears from the file system.
-//  */
+// **/
 // @property (getter=isEntireFileLoaded, readonly) BOOL entireFileLoaded API_AVAILABLE(macos(10.7));
 
 // /* ...and also one of these. */
@@ -446,7 +446,7 @@
 // /* Return YES if the receiving subclass of NSDocument supports Mac OS 10.7 version preservation, NO otherwise. The default implementation of this method returns [self autosavesInPlace]. You can override it and return NO to declare that NSDocument should not preserve old document versions.
 
 // Returning NO from this method will disable version browsing and -revertDocumentToSaved:, which rely on version preservation when autosaving in place. Returning YES from this method when +autosavesInPlace returns NO will result in undefined behavior.
-//  */
+// **/
 // @property(class, readonly) BOOL preservesVersions API_AVAILABLE(macos(10.7));
 
 // /* The action of the Browse Saved Versions menu item in a document-based application. The default implementation causes the document's main window, specified by [self windowForSheet], to enter the Versions browser.
@@ -631,11 +631,11 @@
 // #pragma mark *** PDF Creation ***
 
 // /* The action of the File menu's Export As PDF... item in a document-based application. The default implementation of this method merely invokes [self printDocumentWithSettings:@{ NSPrintJobDisposition : NSPrintSaveJob } showPrintPanel:NO delegate:nil didPrintSelector:NULL contextInfo:NULL].
-//  */
+// **/
 // - (IBAction)saveDocumentToPDF:(nullable id)sender API_AVAILABLE(macos(10.9));
 
 // /* Create a print operation that can be run to create a PDF representation of the document's current contents, and return it if successful. You typically should not use [self printInfo] when creating this print operation, but you should instead maintain a separate NSPrintInfo instance specifically for creating PDFs. The default implementation of this method simply invokes [self printOperationWithSettings:@{ NSPrintJobDisposition : NSPrintSaveJob } error:NULL], but you are highly encouraged to override it if your document subclass supports creating PDF representations.
-//  */
+// **/
 // @property (readonly, strong) NSPrintOperation *PDFPrintOperation API_AVAILABLE(macos(10.9));
 
 // #pragma mark *** Sharing ***
@@ -643,7 +643,7 @@
 // /* If YES, allows this instance to be shared via NSDocumentController's standard Share menu. If NO, the standard Share menu will be disabled when this document is targeted.
  
 //  By default, this returns the same value as [[self class] autosavesInPlace].
-//  */
+// **/
 // @property (readonly) BOOL allowsDocumentSharing API_AVAILABLE(macos(10.13));
 
 // /* Share the document's file using the given NSSharingService. First, ensure the document is in a state where it can be properly shared by the given service by saving or relocating the receiver's file, if necessary. Then perform the given sharing service with 'self.fileURL' as the only item. When sharing is complete or fails, invoke the completion handler indicating whether the operation was successful.
@@ -653,11 +653,11 @@
 //  If the given sharing service had a delegate already set, the default implementation replaces it with its own delegate in order to get completion notifications. However, all NSSharingServiceDelegate methods will be forwarded to the original delegate as well.
  
 //  When an NSDocument is the only item being used with NSSharingServicePicker or NSSharingServicePickerTouchBarItem, it will invoke this method instead of calling -[NSSharingService performWithItems:] directly.
-//  */
+// **/
 // - (void)shareDocumentWithSharingService:(NSSharingService *)sharingService completionHandler:(void (^ _Nullable)(BOOL success))completionHandler API_AVAILABLE(macos(10.13));
 
 // /* Given the NSSharingServicePicker used by an NSDocumentController-owned Share menu (either an automatically inserted one, or one returned by +[NSDocumentController standardShareMenuItem]), make any final changes before that menu is presented. Specifically, you may choose to set a custom NSSharingServicePickerDelegate to customize the construction of the resulting menu, or provide a custom NSSharingServiceDelegate for the chosen service.
-//  */
+// **/
 // - (void)prepareSharingServicePicker:(NSSharingServicePicker *)sharingServicePicker API_AVAILABLE(macos(10.13));
 
 // #pragma mark *** Change Management ***

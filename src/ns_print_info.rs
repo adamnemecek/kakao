@@ -78,7 +78,7 @@
 
 
 // /* Valid values for the NSPrintJobDisposition attribute.
-//  */
+// **/
 // typedef NSString * NSPrintJobDispositionValue NS_TYPED_ENUM;
 // APPKIT_EXTERN NSPrintJobDispositionValue const NSPrintSpoolJob;
 // APPKIT_EXTERN NSPrintJobDispositionValue const NSPrintPreviewJob;

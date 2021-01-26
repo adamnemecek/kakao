@@ -107,7 +107,7 @@
 //  NSTouchBarItemIdentifierFixedSpaceLarge -> NSTouchBar will automatically create a standard large space
 //  NSTouchBarItemIdentifierFlexibleSpace -> NSTouchBar will automatically create a standard flexible space
 //  NSTouchBarItemIdentifierOtherItemsProxy -> NSTouchBar will automatically create a special item that acts as a proxy for the items of NSTouchBar closer to the first responder.
-//  */
+// **/
 // - (nullable __kindof NSTouchBarItem *)itemForIdentifier:(NSTouchBarItemIdentifier)identifier;
 
 // /*
@@ -118,7 +118,7 @@
 
 // /*
 //  Convenience method for the NSApp's automaticCustomizeTouchBarMenuItemEnabled property.
-//  */
+// **/
 // @property (class, getter=isAutomaticCustomizeTouchBarMenuItemEnabled) BOOL automaticCustomizeTouchBarMenuItemEnabled API_AVAILABLE(macos(10.15), ios(13.0));
 
 // @end

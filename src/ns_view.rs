@@ -103,7 +103,7 @@
 // - (void)sortSubviewsUsingFunction:(NSComparisonResult (NS_NOESCAPE *)(__kindof NSView *, __kindof NSView *,  void * _Nullable))compare context:(nullable void *)context;
 
 // /* NOTE: In general, it is good practice to call 'super' for the viewWill* and viewDid* methods. Some AppKit subclasses, such as NSTableView, depend on this behavior, and calling super is required for things to work properly.
-//  */
+// **/
 // - (void)viewWillMoveToWindow:(nullable NSWindow *)newWindow;
 // - (void)viewDidMoveToWindow;
 // - (void)viewWillMoveToSuperview:(nullable NSView *)newSuperview;
@@ -143,7 +143,7 @@
 // @property (getter=isRotatedOrScaledFromBase, readonly) BOOL rotatedOrScaledFromBase;
 
 // /* A hint as to whether or not this view draws its contents completely opaque or not. Opaque content drawing can allow some optimizations to happen. The default value is NO.
-//  */
+// **/
 // @property (getter=isOpaque, readonly) BOOL opaque;
 
 // - (NSPoint)convertPoint:(NSPoint)point fromView:(nullable NSView *)view;
@@ -154,7 +154,7 @@
 // - (NSRect)convertRect:(NSRect)rect toView:(nullable NSView *)view;
 
 // /* Uses NSIntegralRectWithOptions() to produce a backing store pixel aligned rectangle from the given input rectangle in local view coordinates.
-//  */
+// **/
 // - (NSRect)backingAlignedRect:(NSRect)rect options:(NSAlignmentOptions)options API_AVAILABLE(macos(10.7));
 // - (NSRect)centerScanRect:(NSRect)rect;
 
@@ -247,23 +247,23 @@
 // @property NSViewLayerContentsPlacement layerContentsPlacement API_AVAILABLE(macos(10.6));
 
 // /* Indicates if this view should be a "Layer Backed View". When layer backed, all subviews will subsequently also have a layer set on them (however, wantsLayer will only be YES on views that have had it explicitly set). Contents for a layer are specified in one of two ways: if -wantsUpdateLayer returns YES, then one can directly update the layer's contents (or other properties) in -updateLayer. If -wantsUpdateLayer returns NO, then the layer's contents is filled with whatever is drawn by -drawRect:
-//  */
+// **/
 // @property BOOL wantsLayer API_AVAILABLE(macos(10.5));
 
 // /* Get and set the CALayer for this view. The layer is not encoded by the view.
-//  */
+// **/
 // @property (nullable, strong) CALayer *layer API_AVAILABLE(macos(10.5));
 
 // /* Layer Backed Views: Return YES if this view supports directly setting the layer properties (such as the contents and backgroundColor) as opposed to filling in the contents with a drawRect: implementation. Most AppKit controls return YES if there is no subclassing involved that would alter the drawing appearance. It will return NO for views that do have subclassing that AppKit does not know about (such as, overriding drawRect:, or other drawing methods).
-//  */
+// **/
 // @property (readonly) BOOL wantsUpdateLayer API_AVAILABLE(macos(10.8));
 
 // /* Layer Backed Views: If the view responds YES to wantsUpdateLayer, then updateLayer will be called as opposed to drawRect:. This method should be used for better performance; it is faster to directly set the layer.contents with a shared image and inform it how to stretch with the layer.contentsCenter property instead of drawing into a context with drawRect:. In general, one should also set the layerContentsRedrawPolicy to an appropriate value in the init method (frequently NSViewLayerContentsRedrawOnSetNeedsDisplay is desired). To signal a refresh of the layer contents, one will then call [view setNeedsDisplay:YES], and -updateLayer will be lazily called when the layer needs its contents. One should not alter geometry or add/remove subviews (or layers) during this method. To add subviews (or layers) use -layout. -layout will still be called even if autolayout is not enabled, and wantsUpdateLayer returns YES.
-//  */
+// **/
 // - (void)updateLayer API_AVAILABLE(macos(10.8));
 
 // /* When canDrawSubviewsIntoLayer is set to YES, and the view is layer-backed (either explicitly with -wantsLayer=YES, or by having a parent view that is layer-backed), the layer will draw all subviews into this view's layer, and each subview will not get an individual layer (the exception to this is a subview which has wantsLayer explicitly set to YES). This is useful for layer-backing a complex set of views that can not be refactored to take advantage of proper resizing and -wantsUpdateLayer==YES. If canDrawSubviewsIntoLayer is YES, the value returned from wantsUpdateLayer will be ignored, and the layer will always have drawRect: invoked to get the layer's contents. The default value is NO. NOTE: These methods should NOT be overridden, and the setter should always be used.
-//  */
+// **/
 // @property BOOL canDrawSubviewsIntoLayer API_AVAILABLE(macos(10.9));
 
 // - (void)layoutSubtreeIfNeeded API_AVAILABLE(macos(10.7));
@@ -273,7 +273,7 @@
 // @property CGFloat alphaValue API_AVAILABLE(macos(10.5));
 
 // /* If you have set a custom layer on your view, and it (or one of its sublayers) uses CIFilters, you should set this. You do not need to set this if you are using the backgroundFilters, compositingFilter, or contentFilters properties below. See the release notes for more information.
-//  */
+// **/
 // @property BOOL layerUsesCoreImageFilters API_AVAILABLE(macos(10.9));
 
 // @property (copy) NSArray<__kindof CIFilter *> *backgroundFilters API_AVAILABLE(macos(10.5));
@@ -306,7 +306,7 @@
 //  * The view should update any visual state in response — such as making a selection.
 //  * \param menu The contextual menu that is being opened on the view
 //  * \param event The event that caused the menu to open.
-//  */
+// **/
 // - (void)willOpenMenu:(NSMenu *)menu withEvent:(NSEvent *)event API_AVAILABLE(macos(10.11));
 
 // /*!
@@ -314,7 +314,7 @@
 //  * The view should update any visual state in response — such as removing a temporary selection.
 //  * \param menu The contextual menu that was open on the view
 //  * \param event The event that caused the menu to close. This may be nil if there is no specific event that triggered the closing.
-//  */
+// **/
 // - (void)didCloseMenu:(NSMenu *)menu withEvent:(nullable NSEvent *)event API_AVAILABLE(macos(10.11));
 
 // @property (nullable, copy) NSString *toolTip;
@@ -327,19 +327,19 @@
 // - (void)viewWillStartLiveResize;
 
 // /* A view receives viewWillEndLiveResize after the frame is last changed for a live resize. It is important to call [super viewDidEndLiveResize].
-//  */
+// **/
 // - (void)viewDidEndLiveResize;
 
 // /* inLiveResize can be called at any time to determine if the window is performing a live resize or not. Drawing optimizations can be done when the view is being live-resized.
-//  */
+// **/
 // @property (readonly) BOOL inLiveResize;
 
 // /* A view that returns YES for -preservesContentDuringLiveResize is responsible for invalidating its own dirty rects during live resize 
-//  */
+// **/
 // @property (readonly) BOOL preservesContentDuringLiveResize;
 
 // /* -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view 
-//  */
+// **/
 // @property (readonly) NSRect rectPreservedDuringLiveResize;
 
 // /* On return from -getRectsExposedDuringLiveResize, exposedRects indicates the parts of the view that are newly exposed (at most 4 rects).  *count indicates how many rects are in the exposedRects list */
@@ -347,7 +347,7 @@
 
 // /* Text Input */
 // /* Returns NSTextInputContext object for the receiver. Returns nil if the receiver doesn't conform to NSTextInputClient protocol.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSTextInputContext *inputContext API_AVAILABLE(macos(10.6));
 
 // /* Return the complete rect of the most appropriate content grouping at the specified location. For example, if your content is divided into three columns, return the entire rect of the column that contains the location. NSScrollView will attempt to magnify such that the width fits inside the scroll view while remaining within the minMagnification, maxMagnification range.
@@ -355,15 +355,15 @@
 //  If your content layout is sub-divided further than one level deep (for example, two boxes that each contain multiple text boxes), then use the visibleRect parameter to determine when to provide the rect of a sub-grouping. Always return a rect for the appropriate grouping. If there is no deeper content grouping, return the rect for the deepest grouping. NSScrollView will determine when to pan, magnify in, and magnify out.
  
 //  Return NSZeroRect for the default behavior.
-//  */
+// **/
 // - (NSRect)rectForSmartMagnificationAtPoint:(NSPoint)location inRect:(NSRect)visibleRect API_AVAILABLE(macos(10.8));
 
 // /* Get and set the user interface layout direction. By default, a basic NSView may not respect the User Interface Layout Direction that is uniquely set on it, and it is up to the developer and supporting subclasses to correctly implement a Right To Left layout implementation. The default value is set to [NSApp userInterfaceLayoutDirection]. 
-//  */
+// **/
 // @property NSUserInterfaceLayoutDirection userInterfaceLayoutDirection API_AVAILABLE(macos(10.8));
 
 // /* The View Based NSTableView allows views to be reused. Sometimes it is necessary to prepare a view with some initial state before it is to be reused. This method can be overridden to allow a view to be prepared back to the default state. Override this method to do the preparation. By default, NSView will do some setup, such as setting the view to not be hidden and have a 1.0 alpha. It is important to call super to get this work done. This method was made public in 10.9, but exists back to 10.7.
-//  */
+// **/
 // - (void)prepareForReuse API_AVAILABLE(macos(10.7));
 
 // /* A subclass of any NSScrollView, NSClipView or the NSScrollView's documentView can override this method to verify that its customizations are compatible with 10.9's responsive scrolling behavior. By default, AppKit assumes that a ScrollView is responsive scrolling compatible if it and its clipview and document view do not override certain methods such as -scrollWheel: (See documentation for the expanded list). However, these views may still opt into responsive scrolling if they work with the new scrolling behavior by overriding and returning YES for this method. Likewise, the same set of views may return NO to explicitly opt out of responsive scrolling.
@@ -371,17 +371,17 @@
 // @property (class, readonly, getter=isCompatibleWithResponsiveScrolling) BOOL compatibleWithResponsiveScrolling API_AVAILABLE(macos(10.9));
 
 // /* Called by NSView with a 'rect' for a recommended area that should be fully rendered for overdraw. Override this method and bring in additional subviews and pre-cached content for the 'rect' in order to perform responsive scrolling. Calling super may be required for some subclasses (such as NSTableView and NSOutlineView), so in general, super should always be called. To suppress overdraw for a particular view (such as NSTableView), override this method and call [super prepareContentInRect:[self visibleRect]].
-//  */
+// **/
 // - (void)prepareContentInRect:(NSRect)rect API_AVAILABLE(macos(10.9));
 
 // /* The preparedContentRect is the area of the NSView that has full content coverage. In general, this should be called with the area that is filled in fully with views.  Set this with a value equal to the visibleRect to have overdraw start from the visibleRect and automatically grow larger on idle, as is needed for optimal system performance. The result of preparedContentRect may include the visibleRect, and may not include it if the previously prepared area has been scrolled away.
-//  */
+// **/
 // @property NSRect preparedContentRect API_AVAILABLE(macos(10.9));
 
 // /* allowsVibrancy is queried when a vibrant appearance is used on a view hierarchy. When allowsVibrancy returns YES, the view will have an appropriate measure taken to ensure it is vibrant on top of its given material.
  
 //  Specific subclasses, such as NSControl, will answer this question based on the artwork they draw for a given appearance.
-//  */
+// **/
 // @property (readonly) BOOL allowsVibrancy API_AVAILABLE(macos(10.10));
 
 // /// Override point for reacting to the effective appearance of the receiver changing. At this point `effectiveAppearance` property reflects the new appearance.
@@ -494,7 +494,7 @@
 
 
 // /* NSDefinitionPresentationTypeKey is an optional key in 'options' that specifies the presentation type of the definition display.  The possible values are NSDefinitionPresentationTypeOverlay that produces a small overlay window at the string location, or NSDefinitionPresentationTypeDictionaryApplication that invokes 'Dictionary' application to display the definition.  Without this option, the definition will be shown in either of those presentation forms depending on the 'Contextual Menu:' setting in Dictionary application preferences.
-//  */
+// **/
 // typedef NSString * NSDefinitionOptionKey NS_TYPED_ENUM;
 // APPKIT_EXTERN NSDefinitionOptionKey const NSDefinitionPresentationTypeKey API_AVAILABLE(macos(10.6));
 
@@ -508,7 +508,7 @@
 //  textBaselineOrigin specifies the baseline origin of attrString in the receiver view coordinate system.  If a small overlay window is selected as default presentation (see NSDefinitionPresentationTypeKey option for details), the overlay text would be rendered starting from the location.  Otherwise, 'Dictionary' application will be invoked to show the definition of the specified string.
  
 //  This method is equivalent to using showDefinitionForAttributedString:range:options:baselineOriginProvider: and passing attrString with the whole range, nil options, and an originProvider which returns textBaselineOrigin.
-//  */
+// **/
 // - (void)showDefinitionForAttributedString:(nullable NSAttributedString *)attrString atPoint:(NSPoint)textBaselineOrigin API_AVAILABLE(macos(10.6));
 
 // /* Takes a whole attributed string with the target range (normally, this is the selected range), and shows a window displaying the definition of the specified range.  The caller can pass a zero-length range and the appropriate range will be auto-detected around the range's offset.  That's the recommended approach when there is no selection.
@@ -518,7 +518,7 @@
 //  Except when NSDefinitionPresentationTypeKey with NSDefinitionPresentationTypeDictionaryApplication is specified in options, the caller must supply an originProvider Block which returns the baseline origin of the first character at proposed adjustedRange in the receiver view coordinate system.
  
 //  If the receiver is an NSTextView, both attrString and originProvider may be nil, in which case the text view will automatically supply values suitable for displaying definitions for the specified range within its text content.  This method does not cause scrolling, so clients should perform any necessary scrolling before calling this method.
-//  */
+// **/
 // - (void)showDefinitionForAttributedString:(nullable NSAttributedString *)attrString range:(NSRange)targetRange options:(nullable NSDictionary<NSDefinitionOptionKey, id> *)options baselineOriginProvider:(NSPoint (^ _Nullable)(NSRange adjustedRange))originProvider API_AVAILABLE(macos(10.6));
 
 // @end
@@ -527,7 +527,7 @@
 // @interface NSView(NSFindIndicator)
 
 // /* When this method returns YES, the receiver or one of its ancestors is being drawn for a find indicator, meaning the receiver should draw so its contents will be easily readable.
-//  */
+// **/
 // @property (getter=isDrawingFindIndicator, readonly) BOOL drawingFindIndicator API_AVAILABLE(macos(10.7));
 
 // @end
@@ -581,11 +581,11 @@
 // - (BOOL)performMnemonic:(NSString *)string API_DEPRECATED("This has always returned NO and had no effect on macOS", macos(10.0,10.8));
 
 // /* shouldDrawColor is no longer used by AppKit.
-//  */
+// **/
 // - (BOOL)shouldDrawColor API_DEPRECATED("This method no longer does anything", macos(10.0,10.10));
 
 // /* The gState class of methods are deprecated and in many cases did not do anything, or not what one would expect.
-//  */
+// **/
 // - (NSInteger)gState API_DEPRECATED("", macos(10.0,10.10));
 // - (void)allocateGState API_DEPRECATED("", macos(10.0,10.10));
 // - (oneway void)releaseGState API_DEPRECATED("", macos(10.0,10.10));
@@ -598,21 +598,21 @@
 // /* Notifications */
 
 // /* Sent when the frame changes for a view. This is only sent if postsFrameChangedNotifications is set to YES.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName NSViewFrameDidChangeNotification;
 // APPKIT_EXTERN NSNotificationName NSViewFocusDidChangeNotification API_DEPRECATED("", macos(10.0,10.4));
 
 // /* This notification is sent whenever the views bounds change and the frame does not.  That is, it is sent whenever the view's bounds are translated, scaled or rotated, but NOT when the bounds change as a result of, for example, setFrameSize:.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName NSViewBoundsDidChangeNotification;
 
 
 // /* This notification is sent whenever an NSView that has an attached NSOpenGLContext changes size or changes screens (thus potentially changing graphics hardware drivers).
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName NSViewGlobalFrameDidChangeNotification API_DEPRECATED("Use NSOpenGLView instead.", macos(10.0,10.14));
 
 // /* This notification is sent whenever tracking areas should be recalculated for the view.  It is sent after the view receives -updateTrackingAreas.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName NSViewDidUpdateTrackingAreasNotification API_AVAILABLE(macos(10.5));
 
 

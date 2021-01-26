@@ -408,7 +408,7 @@
 
 // */************************* Input Source support ***************************/
 // /* Returns an array of locale identifiers representing keyboard input sources allowed to be enabled when the receiver has the keyboard focus.
-//  */
+// **/
 // @property (nullable, copy) NSArray<NSString *> *allowedInputSourceLocales API_AVAILABLE(macos(10.5));
 // @end
 
@@ -484,7 +484,7 @@
 
 // #pragma mark NSTouchBar support
 // /* NSTextView provides support for text formatting and inputting NSTouchBarItems. -[NSTextView makeTouchBar] instantiates an NSTouchBar configured based on settings such as -automaticTextCompletionEnabled and -richText. NSTextView conforms to NSTouchBarDelegate and supplies NSTouchBarItems via -touchBar:makeItemForIdentifier:.
-//  */
+// **/
 // @interface NSTextView (NSTextView_TouchBar) <NSCandidateListTouchBarItemDelegate, NSTouchBarDelegate>
 
 // // Enables the automatic completion NSTouchBarItem. YES by default. When YES, NSTextView displays the candidates for the text selection in its NSCandidateListTouchBarItem returned from -candidateListTouchBarItem. Invokes -updateTouchBarItemIdentifiers.

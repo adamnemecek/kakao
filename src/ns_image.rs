@@ -107,7 +107,7 @@
 // - (BOOL)drawRepresentation:(NSImageRep *)imageRep inRect:(NSRect)rect;
 
 // /* This is exactly equivalent to calling -[image drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1 respectFlipped:YES hints:nil].
-//  */
+// **/
 // - (void)drawInRect:(NSRect)rect API_AVAILABLE(macos(10.9));
 
 // - (void)recache;
@@ -142,13 +142,13 @@
 //  The alignmentRect of an image has no effect on methods such as drawInRect:fromRect:operation:Fraction: or drawAtPoint:fromRect:operation:fraction:. It is the client's responsibility to take the alignmentRect into account where applicable.
  
 //  The default alignmentRect of an image is {{0,0},imageSize}. The rect is adjusted when setSize: is called. 
-//  */
+// **/
 // @property NSRect alignmentRect API_AVAILABLE(macos(10.5));
 
 // /* The 'template' property is metadata that allows clients to be smarter about image processing.  An image should be marked as a template if it is basic glpyh-like black and white art that is intended to be processed into derived images for use on screen.
  
 //  NSButtonCell applies effects to images based on the state of the button.  For example, images are shaded darker when the button is pressed.  If a template image is set on a cell, the cell can apply more sophisticated effects.  For example, it may be processed into an image that looks engraved when drawn into a cell whose interiorBackgroundStyle is NSBackgroundStyleRaised, like on a textured button.
-//  */
+// **/
 // #if defined(__cplusplus)
 // - (BOOL)isTemplate API_AVAILABLE(macos(10.5));
 // - (void)setTemplate:(BOOL)isTemplate API_AVAILABLE(macos(10.5));
@@ -168,7 +168,7 @@
 //  This is not a designated initializer.
  
 //  Size of an NSImage is distinct from pixel dimensions.  If an NSImage is placed in an NSButton, it will be drawn in a rect with the provided size in the ambient coordinate system.
-//  */
+// **/
 // - (instancetype)initWithCGImage:(CGImageRef)cgImage size:(NSSize)size API_AVAILABLE(macos(10.6));
 
 // /* Returns a CGImage capturing the drawing of the receiver.  This method returns an existing CGImage if one is available, or creates one if not.  It behaves the same as drawing the image with respect to caching and related behaviors.  This method is typically called, not overridden.  
@@ -188,15 +188,15 @@
 //  This method will always return a valid CGImage provided the NSImage is able to draw.  If the receiver is unable to draw for whatever reason, the error behavior is the same as when drawing the image.
  
 //  The CGImageRef returned is guaranteed to live as long as the current autorelease pool.  The caller should not release the CGImage.  This is the standard Cocoa convention, but people may not realize that it applies to CFTypes.
-//  */
+// **/
 // - (nullable CGImageRef)CGImageForProposedRect:(nullable NSRect *)proposedDestRect context:(nullable NSGraphicsContext *)referenceContext hints:(nullable NSDictionary<NSImageHintKey, id> *)hints API_AVAILABLE(macos(10.6)) CF_RETURNS_NOT_RETAINED;
 
 // /* Select best representation.  The parameters have the same meaning and behavior as in -CGImageForProposedRect:context:hints:.
-//  */
+// **/
 // - (nullable NSImageRep *)bestRepresentationForRect:(NSRect)rect context:(nullable NSGraphicsContext *)referenceContext hints:(nullable NSDictionary<NSImageHintKey, id> *)hints API_AVAILABLE(macos(10.6));
 
 // /* Answers the question, "If you were to draw the image in the passed destination rect in the passed context respecting the passed flippedness with the passed hints, would the test rect in the context intersect a non-transparent portion of the image?"
-//  */
+// **/
 // - (BOOL)hitTestRect:(NSRect)testRectDestSpace withImageDestinationRect:(NSRect)imageRectDestSpace context:(nullable NSGraphicsContext *)context hints:(nullable NSDictionary<NSImageHintKey, id> *)hints flipped:(BOOL)flipped API_AVAILABLE(macos(10.6));
 
 // - (CGFloat)recommendedLayerContentsScale:(CGFloat)preferredContentsScale API_AVAILABLE(macos(10.7));
@@ -228,7 +228,7 @@
 // - (nullable NSImage *)imageForResource:(NSImageName)name API_AVAILABLE(macos(10.7)); /* May return nil if no file found */
 
 // /* Neither of the following methods can return images with multiple representations in different files (for example, MyImage.png and MyImage@2x.png.) The above method is generally prefered.
-//  */
+// **/
 // - (nullable NSString *)pathForImageResource:(NSImageName)name;	/* May return nil if no file found */
 // - (nullable NSURL *)URLForImageResource:(NSImageName)name API_AVAILABLE(macos(10.6)); /* May return nil if no file found */
 // @end
@@ -240,7 +240,7 @@
 // - (null_unspecified NSImageRep *)bestRepresentationForDevice:(null_unspecified NSDictionary *)deviceDescription API_DEPRECATED("Use -[NSImage bestRepresentationForRect:context:hints:] instead.  Any deviceDescription dictionary is also a valid hints dictionary.", macos(10.0,10.6));
 
 // /* These return union of all the types registered with NSImageRep.
-//  */
+// **/
 // + (NSArray<NSString *> *)imageUnfilteredFileTypes API_DEPRECATED("Use +imageUnfilteredTypes instead", macos(10.0,10.10));
 // + (NSArray<NSPasteboardType> *)imageUnfilteredPasteboardTypes API_DEPRECATED("Use +imageUnfilteredTypes instead", macos(10.0,10.10));
 // + (NSArray<NSString *> *)imageFileTypes API_DEPRECATED("Use +imageTypes instead", macos(10.0,10.10));
@@ -288,7 +288,7 @@
 //  Some images also contain the word "Freestanding".  This indicates that an image is appropriate for use as a borderless button - it doesn't need any extra bezel artwork behind it.  For example, Safari uses NSImageNameStopProgressTemplate as the stop button in a button on its toolbar, while it uses NSImageNameStopProgressFreestandingTemplate in the downloads window where it appears inline with a progress indicator.
   
 //  The string value of each symbol is typically the same as the constant name without the "ImageName" part.  For example, NSImageNameBonjour is @"NSBonjour".  This is documented so that images can be used by name in Interface Builder.
-//  */
+// **/
 
 // APPKIT_EXTERN NSImageName const NSImageNameAddTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameBluetoothTemplate API_AVAILABLE(macos(10.5), ios(13.0));
@@ -325,62 +325,62 @@
 // APPKIT_EXTERN NSImageName const NSImageNameTrashFull API_AVAILABLE(macos(10.6));
 
 // /* This image is appropriate on an 'action' button.  An action button is a popup that has the same contents as the contextual menu for a related control.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameActionTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 
 // /* This image can be used as a badge for a 'smart' item.  In 10.5, this and the 'action' image are both gears.  Please avoid using a gear for other situations, and if you do, use custom art.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameSmartBadgeTemplate API_AVAILABLE(macos(10.5));
 
 // /* These images are intended for use in a segmented control for switching view interfaces for another part of the window.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameIconViewTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameListViewTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameColumnViewTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameFlowViewTemplate API_AVAILABLE(macos(10.5));
 
 // /* Place this image to the right of invalid data.  For example, use it if the user tries to commit a form when it's missing a required name field.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameInvalidDataFreestandingTemplate API_AVAILABLE(macos(10.5));
 
 // /* Use these images for "go forward" or "go back" functions, as seen in Safari's toolbar.  These images will automatically mirror when the user interface layout direction is right to left.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameGoForwardTemplate API_AVAILABLE(macos(10.12), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameGoBackTemplate API_AVAILABLE(macos(10.12), ios(13.0));
 
 // /* These images are like GoForward and GoBack except that they always point in the specified direction regardless of layout direction.  See also the right and left facing triangle images.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameGoRightTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameGoLeftTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 
 // /* Prefer the GoForward and GoBack or GoLeft and GoRight images for situations where they apply.  These generic triangles aren't endorsed for any particular use, but you can use them if you don't have any better art.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameRightFacingTriangleTemplate API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameLeftFacingTriangleTemplate API_AVAILABLE(macos(10.5));
 
 // /* NSImageNameDotMac will continue to work for the forseeable future, and will return the same image as NSImageNameMobileMe.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameDotMac API_DEPRECATED_WITH_REPLACEMENT("NSImageNameMobileMe", macos(10.5,10.7));
 // APPKIT_EXTERN NSImageName const NSImageNameMobileMe API_AVAILABLE(macos(10.6));
 
 // /* This image is appropriate as a drag image for multiple items.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameMultipleDocuments API_AVAILABLE(macos(10.5));
 
 // /* These images are intended for use in toolbars in preference windows.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameUserAccounts API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNamePreferencesGeneral API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameAdvanced API_AVAILABLE(macos(10.5));
 
 // /* These images are intended for use in other toolbars.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameInfo API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameFontPanel API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameColorPanel API_AVAILABLE(macos(10.5));
 
 // /* These images are appropriate for use in sharing or permissions interfaces.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameUser API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameUserGroup API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameEveryone API_AVAILABLE(macos(10.5));  
@@ -392,13 +392,13 @@
 // APPKIT_EXTERN NSImageName const NSImageNameMenuMixedStateTemplate API_AVAILABLE(macos(10.6));
 
 // /* The name @"NSApplicationIcon" has been available since Mac OS X 10.0.  The symbol NSImageNameApplicationIcon is new in 10.6.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameApplicationIcon API_AVAILABLE(macos(10.6));
 
 // #pragma mark - NSTouchBar images
 
 // /* These images are appropriate for use only in NSTouchBar.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarAddDetailTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarAddTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarAlarmTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
@@ -475,12 +475,12 @@
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarUserTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
 
 // /* If you have a volume indicator, use NSImageNameTouchBarAudioOutputVolume{Off,Low,Medium,High}Template, which align the speaker correctly.  For volume controls, use NSImageNameTouchBarVolume{Down,Up}Template.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarVolumeDownTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarVolumeUpTemplate API_AVAILABLE(macos(10.12.2), ios(13.0));
 
 // /* If you have an NSTouchBarItem with a seekable media control, NSImageNameTouchBarPlayheadTemplate is suitable for use in displaying the playhead.
-//  */
+// **/
 // APPKIT_EXTERN NSImageName const NSImageNameTouchBarPlayheadTemplate API_AVAILABLE(macos(10.12.2));
 
 // typedef NS_ENUM(NSInteger, NSImageSymbolScale) {

@@ -125,7 +125,7 @@
 // /*
 //  *  Cause any applications that are invisibly still running (see NSProcessInfo.h automatic termination methods and docs) to terminate as if triggered by system memory pressure
 //  *  This is intended for installer apps and the like to make sure that nothing is unexpectedly relying on the files they're replacing
-//  */
+// **/
 // + (void) terminateAutomaticallyTerminableApplications;
 
 // @end
@@ -137,7 +137,7 @@
 //  Similar to NSRunningApplication's properties, this property will only change when the main run loop is run in a common mode.  Instead of polling, use key-value observing to be notified of changes to this array property.
  
 //  This property is thread safe, in that it may be called from background threads and the result is returned atomically.  This property is observable through KVO.
-//  */
+// **/
 // @property (readonly, copy) NSArray<NSRunningApplication *> *runningApplications API_AVAILABLE(macos(10.6));
 
 // @end

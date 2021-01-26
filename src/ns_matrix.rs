@@ -27,7 +27,7 @@
 
 // /*
 //     NSMatrix is deprecated and will be unsupported in future releases.  For radio button grouping, sibling radio buttons that share the same action will operate in an exclusive mode.
-//  */
+// **/
 // @interface NSMatrix : NSControl <NSUserInterfaceValidations, NSViewToolTipOwner>
 
 
@@ -114,7 +114,7 @@
 // /* Determine whether the receiver autorecalculates its cellSize. The default is NO. If set to YES, then the receiver will adjust its cellSize to accommodate its largest cell. Changing the cellSize does not directly affect the frame of the receiver; however it does affect the intrinsic content size, which may cause the receiver to resize under autolayout. 
  
 //    The default is NO. When using autolayout, you typically want this to be set to YES.
-//  */
+// **/
 // @property BOOL autorecalculatesCellSize API_AVAILABLE(macos(10.8));
 
 // @end

@@ -86,7 +86,7 @@
 //  The item with the specified identifier will be positioned in the absolute center of the Toolbar relative to the window assuming space allows. When the window shrinks, the highest priority is to have the most items visible. Thus, centering is broken first (it'll be pushed off to the left/right as necessary). Next, items will be shrunk down a little at a time towards their min size, at the same rate. Finally, items will be removed based on their visibility priority.
  
 //  This property is archived.
-//  */
+// **/
 // @property (nullable, copy) NSToolbarItemIdentifier centeredItemIdentifier API_AVAILABLE(macos(10.14));
 
 
@@ -153,7 +153,7 @@
 
 // /*
 //  Sets the toolbar full screen accessory view.  When entering full screen, the accessory view is removed from the window if necessary, and attaches underneath the toolbar.  When leaving full screen, the accessory view is returned to the window, if it was in the window previously. To customize this latter behavior, you can implement the NSWindow delegate method windowWillExitFullScreen:.
-//  */
+// **/
 // @property (nullable, strong) NSView *fullScreenAccessoryView API_DEPRECATED("Use NSTitlebarAccessoryViewController with NSWindow instead", macos(10.7,10.13));
 
 // /*
@@ -162,7 +162,7 @@
 //  If the minimum height is zero (which it is by default), the accessory view is not resized; instead a special transition is used to reveal it with the menu bar. This simplifies the accessory view's task, because it does not have to handle the case of being set to zero height. To create a fixed-height accessory view, set the min and max height to be equal.
  
 //  By default, the min height is 0 and the max height gets set to the height of the accessory view's frame when it is set.
-//  */
+// **/
 // @property CGFloat fullScreenAccessoryViewMinHeight API_DEPRECATED("Use NSTitlebarAccessoryViewController and its fullScreenMinHeight property with NSWindow instead.", macos(10.7,10.13));
 // @property CGFloat fullScreenAccessoryViewMaxHeight API_DEPRECATED("Use NSTitlebarAccessoryViewController with NSWindow instead. The max height of a titlebar accessory is implied by its view's height.", macos(10.7,10.13));
 

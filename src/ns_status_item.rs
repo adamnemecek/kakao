@@ -35,31 +35,31 @@
 // @interface NSStatusItem : NSObject
 
 // /*  The status bar that the receiver is displayed in.
-//  */
+// **/
 // @property (readonly, weak) NSStatusBar *statusBar;
 
 // /*  The amount of space in the status bar that should be allocated to the receiver. \c NSVariableStatusItemLength will adjust the length to the size of the status item's contents and \c NSSquareStatusItemLength will keep the length the same as the status bar's height.
-//  */
+// **/
 // @property CGFloat length;
 
 // /*  The drop down menu that is displayed when the status item is pressed or clicked.
-//  */
+// **/
 // @property (nullable, strong) NSMenu *menu;
 
 // /*  The button that is displayed in the status bar. This is created automatically on the creation of the StatusItem. Behavior customization for the button, such as image, target/action, tooltip, can be set with this property.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSStatusBarButton *button API_AVAILABLE(macos(10.10));
 
 // /*  Specifies the behavior of the status item.
-//  */
+// **/
 // @property (assign) NSStatusItemBehavior behavior API_AVAILABLE(macos(10.12));
 
 // /*  Specifies if the status item is currently visible in the status bar, even if it is obscured by the application menu. Defaults to YES. Persisted based on the -autosaveName. This is observable through KVO.
-//  */
+// **/
 // @property (assign, getter=isVisible) BOOL visible API_AVAILABLE(macos(10.12));
 
 // /*  Specifies a unique name for persisting visibility information. If none is specified, one is automatically chosen. Apps with multiple status bar items should set an autosave after creation. Setting to nil resets the automatically chosen name and clears saved information.
-//  */
+// **/
 // @property (null_resettable, copy) NSStatusItemAutosaveName autosaveName API_AVAILABLE(macos(10.12));
 
 // @end
@@ -83,7 +83,7 @@
 // /*
 //  Custom views should not be set on a status item.
 //  The button property with a template image will allow proper styling of the status item in various states and contexts and should be used instead.
-//  */
+// **/
 // @property (nullable, strong) NSView *view API_DEPRECATED("Use the standard button property instead", macos(10.0,10.14));
 // - (void)drawStatusBarBackgroundInRect:(NSRect)rect withHighlight:(BOOL)highlight API_DEPRECATED("Use the standard button instead which handles highlight drawing, making this method obsolete", macos(10.0,10.14));
 // - (void)popUpStatusItemMenu:(NSMenu *)menu API_DEPRECATED("Use the menu property instead", macos(10.0,10.14));

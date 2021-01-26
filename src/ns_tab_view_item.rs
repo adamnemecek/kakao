@@ -26,11 +26,11 @@
 // /*!
 //  * Creates an autoreleased TabViewItem that wraps the provided ViewController. The viewController is set as the tab view item’s \c -viewController property, which sets several of the tab view item’s other properties.
 //  * \param viewController The view controller to wrap, used to set the viewController property
-//  */
+// **/
 // + (instancetype)tabViewItemWithViewController:(NSViewController *)viewController API_AVAILABLE(macos(10.10));
 
 // /* By default, NSTabViewItem creates a basic NSView for you automatically.
-//  */
+// **/
 // - (instancetype)initWithIdentifier:(nullable id)identifier; // identifier is retained
 
 // @property (strong, nullable) id identifier;
@@ -44,7 +44,7 @@
 //  * If this is set, the tab view item will forward \c -view calls onto the viewController. Setting a viewController will also set the following properties on the tab view item: \c -identifier from the address of the viewController, \c -label from the viewController's title, and \c -image based on the classname as the view controller.
 //  * An image named "ViewControllerClassName-TabViewItem" will be searched for first, followed by "ViewControllerClassName". It will search first using +[NSImage imageNamed:], then in \c viewController.nibBundle, and lastly in the bundle containing the view controller's class.
 //  * As defined by: -[NSImage imageNamed:imageName], -[viewController.nibBundle imageForResource:imageName], -[[NSBundle bundleForClass:[viewController class]] imageForResource:imageName]. One pass with imageName as [NSStringFromClass([viewController class]) stringByAppendingString:@"-TabViewItem"], followed by imageName as NSStringFromClass([viewController class]).
-//  */
+// **/
 // @property (nullable, strong) NSViewController *viewController API_AVAILABLE(macos(10.10));
 
 // @property (readonly) NSTabState tabState;

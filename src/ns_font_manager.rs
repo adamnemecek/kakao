@@ -23,7 +23,7 @@
 //  * This list should be kept small since the more traits that are assigned
 //  * to a given font, the harder it will be to map it to some other family.
 //  * Some traits are mutually exclusive such as NSExpanded and NSCondensed.
-//  */
+// **/
 // typedef NS_OPTIONS(NSUInteger, NSFontTraitMask) {
 //     NSItalicFontMask			= 0x00000001,
 //     NSBoldFontMask			= 0x00000002,
@@ -46,7 +46,7 @@
 
 
 // /* And these "actions" are really tag values in Font Menu cells which send any of the action messages listed above.  Normally, they're pre-defined in the font panel.
-//  */
+// **/
 // typedef NS_ENUM(NSUInteger, NSFontAction) {
 //     NSNoFontChangeAction		= 0,
 //     NSViaPanelFontAction		= 1,
@@ -110,11 +110,11 @@
 // - (void)removeFontDescriptor:(NSFontDescriptor *)descriptor fromCollection:(NSString *)collection API_DEPRECATED("Use -[NSMutableFontCollection removeQueryForDescriptors:] instead", macos(10.0,10.11));
 
 // /* Returns the current font action used by -convertFont:. This method is intended to be invoked to query the font conversion action while the action message (usually -changeFont:) is being invoked.
-//  */
+// **/
 // @property (readonly) NSFontAction currentFontAction API_AVAILABLE(macos(10.5));
 
 // /* Converts fontTraits to a new traits mask value just as -convertFont:. This method is intended to be invoked to query the font traits while the action message (usually -changeFont:) is being invoked when the current font action is either NSAddTraitFontAction or NSRemoveTraitFontAction.
-//  */
+// **/
 // - (NSFontTraitMask)convertFontTraits:(NSFontTraitMask)traits API_AVAILABLE(macos(10.5));
 
 // @property (nullable, weak) id target API_AVAILABLE(macos(10.5));

@@ -5,7 +5,7 @@
  
 // 	NSParagraphStyle and NSMutableParagraphStyle hold paragraph style information
 // 	NSTextTab holds information about a single tab stop
-//  */
+// **/
 
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSText.h>

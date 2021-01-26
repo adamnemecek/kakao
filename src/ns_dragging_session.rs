@@ -24,11 +24,11 @@
 // @property NSDraggingFormation draggingFormation;
 
 // /* Controls whether the dragging image animates back to its starting point on a cancelled or failed drag. -draggingSession:endedAtPoint:operation: is a good time to change this value depending on the result of the drag operation. The default value is YES.
-//  */
+// **/
 // @property BOOL animatesToStartingPositionsOnCancelOrFail;
 
 // /* The index of the draggingItem under the cursor. The default is the NSDraggingItem closest to the location in the event that was passed to -beginDraggingSessionWithItems:event:source:
-//  */
+// **/
 // @property NSInteger draggingLeaderIndex;
 
 // /* Returns the pasteboard object that holds the data being dragged. */

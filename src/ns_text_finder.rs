@@ -101,7 +101,7 @@
 //  All user interface items that control text finding ("Find...", "Find Next", etc.) have -performTextFinderAction: as their action and a tag that corresponds to one of the values in the NSTextFinderAction enum. A responder may implement this method by calling +performAction:forClient: on an NSTextFinder instance. The responder passes both the sender's tag, and the client that the NSTextFinder will interact with.
  
 //  The responder to -performTextFinderAction: should also implement -validateUserInterfaceItem:. When the parameter to this method has an action equal to -performTextFinderAction:, the responder should call +[NSTextFinder validateAction:forClient:], passing the item's tag and the client in a similar manner to its implementation of -performTextFinderAction:.
-//  */
+// **/
 
 // @optional
 

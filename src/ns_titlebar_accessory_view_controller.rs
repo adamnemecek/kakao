@@ -27,7 +27,7 @@
  
 //     For applications linked on 10.13 and higher, NSLayoutAttributeTop can also be used to specify a view that will be at the top of the titlebar area. Only one should be used per window, and if one is set the normal titlebar will not be drawn. Using the top attributed requires the window to have the NSWindowStyleMaskFullSizeContentView style mask set. The "hidden" property can be used to show and hide the view. The "hidden" property will animate the view via an alpha fade in and out if accessed through the animator proxy (such as: viewController.animator.hidden = YES).
 
-//  */
+// **/
 // @property NSLayoutAttribute layoutAttribute;
 // #endif
 
@@ -49,7 +49,7 @@
 //    Only valid for accessories with a layoutAttribute of NSLayoutAttributeBottom.
  
 //    The default value is YES.
-//  */
+// **/
 // @property BOOL automaticallyAdjustsSize API_AVAILABLE(macos(11.0));
 
 // - (void)viewWillAppear NS_REQUIRES_SUPER;
@@ -60,7 +60,7 @@
  
 //    NOTE: NSTitlebarAccessoryViewController will observe the view's frame for changes. You can change the view's frame in a direction that "makes sense". For instance, changing the height when the layoutAttribute is NSLayoutAttributeBottom, or changing the width when the layoutAttribute is NSLayoutAttributeRight. The other size direction will automatically be filled to the maximum size as required for the window.
 
-//  */
+// **/
 
 // @end
 

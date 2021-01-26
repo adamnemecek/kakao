@@ -20,7 +20,7 @@
 
 // /*
 //  Creates a standard item with an button appropriate for use in an NSTouchBar
-//  */
+// **/
 // + (instancetype)buttonTouchBarItemWithIdentifier:(NSTouchBarItemIdentifier)identifier title:(NSString *)title target:(nullable id)target action:(nullable SEL)action;
 
 // #if !TARGET_OS_IPHONE

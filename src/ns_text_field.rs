@@ -41,15 +41,15 @@
 // @property NSTextFieldBezelStyle bezelStyle;
 
 // /* The preferredMaxLayoutWidth determines the maximum width of the intrinsicContentSize. If the text field wraps, the intrinsic height will be large enough to show the entire text contents at that width. The default is 0, which implies no maximum preferred width.
-//  */
+// **/
 // @property CGFloat preferredMaxLayoutWidth API_AVAILABLE(macos(10.8));
 
 // /* For text that wraps (see NSCell’s lineBreakMode), this property determines the maximum number of lines to display. A value of 0 means there is no limit, which is the default, and the text fills the cell’s bounds. If the text reaches the number of lines allowed, or the height of the container cannot accommodate the number of lines needed, the text will be clipped (or truncated if truncatesLastVisibleLine is set). The value of this property also affects -[NSControl sizeThatFits:], -[NSView fittingSize] and -[NSView intrinsicContentSize]. Most importantly, if the value of this property is not 1, multiple lines may be used to find the field’s intrinsicContentSize. Prior to 10.11, the intrinsicContentSize would be determined as if the maximumNumberOfLines was 1.
-//  */
+// **/
 // @property NSInteger maximumNumberOfLines API_AVAILABLE(macos(10.11));
 
 // /* Maps to -[NSParagraphStyle allowsDefaultTighteningForTruncation] in rendering and sizing the text field. Ignored when the content value is an attributed string.
-//  */
+// **/
 // @property BOOL allowsDefaultTighteningForTruncation API_AVAILABLE(macos(10.11));
 
 // #if !TARGET_OS_IPHONE
@@ -73,14 +73,14 @@
 //  Creates a non-wrapping, non-editable, non-selectable text field that displays text in the default system font.
 //  @param stringValue The title text to display in the field.
 //  @return An initialized text field object.
-//  */
+// **/
 // + (instancetype)labelWithString:(NSString *)stringValue API_AVAILABLE(macos(10.12));
 
 // /*!
 //  Creates a wrapping, non-editable, selectable text field that displays text in the default system font.
 //  @param stringValue The title text to display in the field.
 //  @return An initialized text field object.
-//  */
+// **/
 // + (instancetype)wrappingLabelWithString:(NSString *)stringValue API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -88,14 +88,14 @@
 //  The line break mode of this field is determined by the attributed string's NSParagraphStyle attribute.
 //  @param attributedStringValue The attributed string to display in the field.
 //  @return An initialized text field object.
-//  */
+// **/
 // + (instancetype)labelWithAttributedString:(NSAttributedString *)attributedStringValue API_AVAILABLE(macos(10.12));
 
 // /*!
 //  Creates a non-wrapping editable text field.
 //  @param stringValue The initial contents of the text field, or empty string for an initially empty text field.
 //  @return An initialized text field object.
-//  */
+// **/
 // + (instancetype)textFieldWithString:(NSString *)stringValue API_AVAILABLE(macos(10.12));
 
 // @end
@@ -117,7 +117,7 @@
 // @interface NSTextField(NSDeprecated)
 
 // /* This method is deprecated in 10.8 and higher. Use setTitle: instead.
-//  */
+// **/
 // - (void)setTitleWithMnemonic:(null_unspecified NSString *)stringWithAmpersand API_DEPRECATED("", macos(10.0,10.8));
 
 // @end

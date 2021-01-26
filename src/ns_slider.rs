@@ -70,7 +70,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized slider control.
-//  */
+// **/
 // + (instancetype)sliderWithTarget:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -81,7 +81,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized slider control.
-//  */
+// **/
 // + (instancetype)sliderWithValue:(double)value minValue:(double)minValue maxValue:(double)maxValue target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // @end

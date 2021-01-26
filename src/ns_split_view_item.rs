@@ -39,7 +39,7 @@
 // /*!
 //  * NSSplitViewItem implements the items used in an NSSplitViewController.
 //  * The item describes a child ViewController's state in a SplitViewController, e.g. its collapsibility, holding priority and other metrics, and collapsed state.
-//  */
+// **/
 // API_AVAILABLE(macos(10.10))
 // @interface NSSplitViewItem : NSObject <NSAnimatablePropertyContainer, NSCoding>
 
@@ -47,7 +47,7 @@
 //  * Creates an autoreleased SplitViewItem that represents the provided ViewController. All other properties are left at their default.
 //  * \param viewController The view controller used to set the viewController property
 //  * \return An autoreleased SplitViewItem.
-//  */
+// **/
 // + (instancetype)splitViewItemWithViewController:(NSViewController *)viewController;
 
 // /*!
@@ -62,7 +62,7 @@
 //  *  - springLoaded is set to YES
 //  * \param viewController The view controller used to set the viewController property
 //  * \return An autoreleased SplitViewItem that acts as a sidebar.
-//  */
+// **/
 // + (instancetype)sidebarWithViewController:(NSViewController *)viewController API_AVAILABLE(macos(10.11));
 
 // /*!
@@ -73,7 +73,7 @@
 //  *  - preferredThicknessFraction is set to the standard fraction for content lists (0.28 when a neighbor sidebar is visible, 0.33 if not)
 //  * \param viewController The view controller used to set the viewController property
 //  * \return An autoreleased SplitViewItem that acts as a content list.
-//  */
+// **/
 // + (instancetype)contentListWithViewController:(NSViewController *)viewController API_AVAILABLE(macos(10.11));
 
 // /// The standard behavior type of the receiver. See initializers for descriptions of each behavior.

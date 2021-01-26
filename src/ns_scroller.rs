@@ -90,7 +90,7 @@
 // @end
 
 // /* Posted when the preferred scroller style changes.  The notification object is private; disregard it.  Consult NSScroller's +preferredScrollerStyle method when this notification is received, or thereafter, to determine the new scroller style to use.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName const NSPreferredScrollerStyleDidChangeNotification API_AVAILABLE(macos(10.7));
 
 
@@ -111,11 +111,11 @@
 // @interface NSScroller(NSDeprecated)
 
 // /* Returns the with for scrollers of the receiving class, given the specified controlSize and assuming a scrollerStyle of NSScrollerStyleLegacy.
-//  */
+// **/
 // + (CGFloat)scrollerWidthForControlSize:(NSControlSize)controlSize API_DEPRECATED("Use +scrollerWidthForControlSize:scrollerStyle: instead", macos(10.0,10.7));
 
 // /* Returns the width for scrollers of the receiving class, assuming a controlSize NSRegularControlSize, and a scrollerStyle of NSScrollerStyleLegacy.
-//  */
+// **/
 // + (CGFloat)scrollerWidth API_DEPRECATED("Use +scrollerWidthForControlSize:scrollerStyle: instead", macos(10.0,10.7));
 
 // /* To maintain binary compatibility, AppKit will continue to invoke overrides of this method. Code that targets Mac OS 10.5 and later should use -setDoubleValue: and -setKnobProportion: instead, and eliminate any overrides of -setFloatValue:knobProportion:. Code that needs to remain compatible with Mac OS 10.4 and earlier should continue to use -setFloatValue:knobProportion:.

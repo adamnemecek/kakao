@@ -188,7 +188,7 @@
 // @property BOOL allowsUndo;
 
 // /* Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the cell bounds. The setting is ignored if -lineBreakMode is neither NSLineBreakByWordWrapping nor NSLineBreakByCharWrapping.
-//  */
+// **/
 // @property BOOL truncatesLastVisibleLine API_AVAILABLE(macos(10.5));
 
 // /* Bi-directional User Interface. It specifies the general UI layout flow directions.
@@ -196,15 +196,15 @@
 // @property NSUserInterfaceLayoutDirection userInterfaceLayoutDirection API_AVAILABLE(macos(10.6));
 
 // /* Returns a custom field editor for editing inside controlView. This is an override point for NSCell subclasses designed to work with its own custom field editor. This message is sent to the selected cell of controlView in -[NSWindow fieldEditor:forObject:]. Returning non-nil from this method indicates skipping the standard field editor querying processes including -windowWillReturnFieldEditor:toObject: delegation. The default NSCell implementation returns nil. The field editor returned from this method should have isFieldEditor == YES.
-//  */
+// **/
 // - (nullable NSTextView *)fieldEditorForView:(NSView *)controlView API_AVAILABLE(macos(10.6));
 
 // /* Tells the text cell to layout/render its content in single-line. If YES, the cell ignores the return value from -wraps, interprets NSLineBreakByWordWrapping and NSLineBreakByCharWrapping from -lineBreakMode as NSLineBreakByClipping, and configures the field editor to ignore key binding commands that insert paragraph/line separators. Also, the field editor bound to a single line cell filters paragraph/line separator insertion from user actions. Cells in the single line mode use the fixed baseline layout. The text baseline position is determined solely by the control size regardless of content font style/size.
-//  */
+// **/
 // @property BOOL usesSingleLineMode API_AVAILABLE(macos(10.6));
 
 // /* Multi-image Drag Support. The default implementation will return an array of up to two NSDraggingImageComponent instances -- one for the image portion and another for the text portion (if appropriate). This method can be subclassed and overridden to provide a custom set of NSDraggingImageComponents to create the drag image for the cell. This method is generally used by NSTableView/NSOutlineView.
-//  */
+// **/
 // - (NSArray<NSDraggingImageComponent *> *)draggingImageComponentsWithFrame:(NSRect)frame inView:(NSView *)view API_AVAILABLE(macos(10.7));
 
 // @end
@@ -299,13 +299,13 @@
 // @interface NSCell (NSCellBackgroundStyle)
 
 // /* Describes the surface the cell is drawn onto in -[NSCell drawWithFrame:inView:]. A control typically sets this before it asks the cell to draw. A cell may draw differently based on background characteristics. For example, a tableview drawing a cell in a selected row might call [cell setBackgroundStyle:NSBackgroundStyleEmphasized]. A text cell might decide to render its text using alternateSelectedControlTextColor as a result.
-//  */
+// **/
 // @property NSBackgroundStyle backgroundStyle API_AVAILABLE(macos(10.5));
 
 // /* Describes the surface drawn onto in -[NSCell drawInteriorWithFrame:inView:]. This is often the same as the backgroundStyle, but a button that draws a bezel would have a different interiorBackgroundStyle.  
  
 //  This is both an override point and a useful method to call. A button that draws a custom bezel would override this to describe that surface. A cell that has custom interior drawing might query this method to help pick an image that looks good on the cell. Calling this method gives you some independence from changes in framework art style.
-//  */
+// **/
 // @property (readonly) NSBackgroundStyle interiorBackgroundStyle API_AVAILABLE(macos(10.5));
 
 // @end
@@ -313,13 +313,13 @@
 // /* Draw an image from two end caps and a fill.  The end caps are scaled proportionally to match the thickness of the destination frame.  In the horizontal case, the startCap is drawn into the left part of the destination, the endCap is drawn into the right part of the destination, and the fill is tiled over the remaining area.  The caps and the fill should all be the same height.  The vertical case is similar.
 
 //  This is an appropriate way to draw the bezel of a button that can be resized in one dimension.
-//  */
+// **/
 // APPKIT_EXTERN void NSDrawThreePartImage(NSRect frame, NSImage * _Nullable startCap, NSImage * _Nullable centerFill, NSImage * _Nullable endCap, BOOL vertical, NSCompositingOperation op, CGFloat alphaFraction, BOOL flipped) API_AVAILABLE(macos(10.5));
 
 // /* Draw an image from nine pieces.  When drawn, the destination rect is partitioned into nine rectangular regions: the corner pieces are the natural size of the corner images, the edge pieces are the natural size of the edge fill images in the direction perpendicular to the edge and flush with the corners.  The center rect fills the remaining space.  The supplied images and fills are drawn into the corresponding regions, with fill images tiled at their natural dimensions.  Images that share a border should have the same thickness in that dimension.
 
 //  This method is appropriate for the bezel of a control, like a box, that can be resized in both dimensions.
-//  */
+// **/
 // APPKIT_EXTERN void NSDrawNinePartImage(NSRect frame, NSImage * _Nullable topLeftCorner, NSImage * _Nullable topEdgeFill, NSImage * _Nullable topRightCorner, NSImage * _Nullable leftEdgeFill, NSImage * _Nullable centerFill, NSImage * _Nullable rightEdgeFill, NSImage * _Nullable bottomLeftCorner, NSImage * _Nullable bottomEdgeFill, NSImage * _Nullable bottomRightCorner, NSCompositingOperation op, CGFloat alphaFraction, BOOL flipped) API_AVAILABLE(macos(10.5));
 
 // @interface NSCell (NSDeprecated)
@@ -333,7 +333,7 @@
 // - (void)setFloatingPointFormat:(BOOL)autoRange left:(NSUInteger)leftDigits right:(NSUInteger)rightDigits API_DEPRECATED("", macos(10.0,10.0));
 
 // /* In 10.8 and higher, all the *Mnemonic* methods are deprecated. On MacOS they have typically not been used.
-//  */
+// **/
 // - (void)setMnemonicLocation:(NSUInteger)location API_DEPRECATED("", macos(10.0,10.8));
 // - (NSUInteger)mnemonicLocation API_DEPRECATED("", macos(10.0,10.8));
 // - (NSString *)mnemonic API_DEPRECATED("", macos(10.0,10.8));

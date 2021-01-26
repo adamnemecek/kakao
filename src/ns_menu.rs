@@ -21,7 +21,7 @@
 // @interface NSMenu : NSObject <NSCopying, NSCoding, NSUserInterfaceItemIdentification, NSAppearanceCustomization, NSAccessibilityElement, NSAccessibility>
 
 // /* Designated initializer.  If this menu is used as a submenu of an item in the application's main menu, then the title is what appears in the menu bar.  Otherwise, the title is ignored.  Do not pass nil (an exception will result), but you may pass an empty string.
-//  */
+// **/
 // - (instancetype)initWithTitle:(NSString *)title NS_DESIGNATED_INITIALIZER;
 // - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
@@ -57,7 +57,7 @@
 // - (void)addItem:(NSMenuItem *)newItem;
 
 // /* Inserts a new menu item with the given title, action, and key equivalent, at the given index.  The index must be at least zero and no more than the receiver's item count.  The title and key equivalent must not be nil (pass the empty string to indicate no key equivalent). This returns the new item.
-//  */
+// **/
 // - (NSMenuItem *)insertItemWithTitle:(NSString *)string action:(nullable SEL)selector keyEquivalent:(NSString *)charCode atIndex:(NSInteger)index;
 
 // /* Appends a new menu item with the given properties to the end of the menu. */
@@ -110,7 +110,7 @@
 // - (BOOL)performKeyEquivalent:(NSEvent *)event;
 
 // /* This method is called when a menu item's enabled state, submenu, title, attributed title, image, key equivalent, key equivalent modifier mask, alternate status, indent, tooltip, view, or visibility (via isHidden) changes.  This method posts NSMenuDidChangeItemNotification.  Future properties will likely not call this method when they change, because posting a notification when a property changes is rather expensive.
-//  */
+// **/
 // - (void)itemChanged:(NSMenuItem *)item;
 
 // /* Triggers the action for the item at the given index in the receiver.  This is useful as both an override point and something you may call directly.  As an override point, this is called when the user chooses the item during normal menu tracking; subclassers can override it to take some different action.  If you call it directly, it triggers the action for that item.  In SnowLeopard and later, calling it directly will also highlight the menu (if present in the main menu) and trigger accessibility notifications, including VoiceOver speaking the title.
@@ -121,7 +121,7 @@
 // @property (nullable, weak) id<NSMenuDelegate> delegate;
 
 // /* If called on the main menu, returns the height of the menu bar in pixels.  If called on any other menu, returns 0.
-//  */
+// **/
 // @property (readonly) CGFloat menuBarHeight;
 
 // /* Dismisses the menu and ends all menu tracking */
@@ -196,7 +196,7 @@
 // @end
 
 // /* The NSMenuProperties type is a bitmask used for specifying a set of menu or menu item properties, used in the following method.
-//  */
+// **/
 // typedef NS_OPTIONS(NSUInteger, NSMenuProperties) {
 //     NSMenuPropertyItemTitle = 1 << 0,            // the menu item's title
 //     NSMenuPropertyItemAttributedTitle = 1 << 1,  // the menu item's attributed title
@@ -209,7 +209,7 @@
 // /* The following method may be called from delegate callbacks to determine which properties need to be updated and which may be skipped.  It is intended to allow more efficient updating of the menu in certain circumstances.  For example, if the NSMenuPropertyItemImage bit is zero, your delegate does not need to update the images of the menu items, because the images are not needed (for example, during key equivalent matching).  Calling this is optional: it is always acceptable to fully update the menu.
  
 //  This may be called from the menu delegate method -menuNeedsUpdate:.  Calling this at other times will raise an exception.
-//  */
+// **/
 // @interface NSMenu (NSMenuPropertiesToUpdate)
 // @property (readonly) NSMenuProperties propertiesToUpdate API_AVAILABLE(macos(10.6));
 // @end

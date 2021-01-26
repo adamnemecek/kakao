@@ -46,7 +46,7 @@
 //     NSPathStylePopUp = 2,
     
 // /* This style is deprecated as of Mac OS X 10.7. Please use one of the other NSPathStyle values.
-//  */
+// **/
 //     NSPathStyleNavigationBar API_DEPRECATED("", macos(10.5,10.7))= 1
 // };
 
@@ -54,7 +54,7 @@
 // API_AVAILABLE(macos(10.5))
 // @interface NSPathCell : NSActionCell <NSMenuItemValidation, NSOpenSavePanelDelegate>
 // /* See NSPathControl for documentation on all the properties listed below. The NSPathControl directly calls the cell's methods.
-//  */
+// **/
 // @property NSPathStyle pathStyle;
 
 // @property (nullable, copy) NSURL *URL;

@@ -35,22 +35,22 @@
 
 // /*
 //  An array of font descriptors is required argument to the init method. The fontDescriptors argument describes queries for downloadable font assets (list available at https://support.apple.com/en-us/HT206872#download). Any assets downloaded can be found using the standard NSFont lookup API once the request is completed.
-//  */
+// **/
 // - (instancetype)initWithFontDescriptors:(NSArray<NSFontDescriptor *> *)fontDescriptors options:(NSFontAssetRequestOptions)options NS_DESIGNATED_INITIALIZER;
 
 // /*
 //  The downloaded font descriptors up to this point.
-//  */
+// **/
 // @property (readonly, copy) NSArray<NSFontDescriptor *> *downloadedFontDescriptors;
 
 // /*
 //  Progress for the request. The progress object will be valid at initialization and begin updating after the -downloadFontAssetsWithCompletionHandler: method is called.
-//  */
+// **/
 // @property (readonly, strong) NSProgress *progress;
 
 // /*
 //  Start the download process. completionHandler will be called whenever encounters any error, or when all download has been completed without error. completionHandler should return NO if you wish to stop downloading from that point, or YES if you wish to continue trying downloading the next font.
-//  */
+// **/
 // - (void)downloadFontAssetsWithCompletionHandler:(BOOL (^)(NSError * _Nullable error))completionHandler;
 
 // @end

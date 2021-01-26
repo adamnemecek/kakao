@@ -27,7 +27,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized button object.
-//  */
+// **/
 // + (instancetype)buttonWithTitle:(NSString *)title image:(NSImage *)image target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -36,7 +36,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized button object.
-//  */
+// **/
 // + (instancetype)buttonWithTitle:(NSString *)title target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -45,7 +45,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized button object.
-//  */
+// **/
 // + (instancetype)buttonWithImage:(NSImage *)image target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -54,7 +54,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized button object.
-//  */
+// **/
 // + (instancetype)checkboxWithTitle:(NSString *)title target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -63,7 +63,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized button object.
-//  */
+// **/
 // + (instancetype)radioButtonWithTitle:(NSString *)title target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // #pragma mark Configuring Buttons
@@ -132,7 +132,7 @@
 
 // /*!
 //  Specifies a combination of point size, weight, and scale to use when sizing and displaying symbol images. If a symbol configuration isn't provided, the symbol is matched to the button's `font` property. The default value is nil.
-//  */
+// **/
 // @property (nullable, copy) NSImageSymbolConfiguration *symbolConfiguration API_AVAILABLE(macos(11));
 
 // /*! Applies a custom color to the button's bezel, in appearances that support it. A nil value indicates an unmodified button appearance. The default value is nil. */

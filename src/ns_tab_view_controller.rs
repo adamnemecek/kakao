@@ -34,7 +34,7 @@
 //  * ChildViewControllers’ views are lazily loaded; they are only loaded once their tab is selected and visible.
 //  * The NSTabViewController is set as the delegate of its managed NSTabView. Any overrides of NSTabViewDelegate methods must call super. Properties of the TabView such as the tabStyle can be directly manipulated, but calling methods that add and remove tabViewItems or changing the delegate is not allowed.
 //  * NSViewController's methods \c -addChildViewController:, \c -insertViewController:atIndex:, and \c -removeChildViewControllerAtIndex: can all be used as convience methods to add children; default TabViewItems will be appropriately created or destroyed. The default NSTabViewItem created with with +[NSTabViewItem tabViewItemForViewController:].
-//  */
+// **/
 // API_AVAILABLE(macos(10.10))
 // @interface NSTabViewController : NSViewController <NSTabViewDelegate, NSToolbarDelegate>
 
@@ -59,27 +59,27 @@
 // /*!
 //  * Adds a TabViewItem to the end of the TabViewController. The tabViewItem’s viewController’s view will only be loaded once its tab is selected.
 //  * \param tabViewItem The TabViewItem to add. It must have a \c viewController set by the time it is added or an exception will be thrown. An exception will also be thrown if tabViewItem is nil.
-//  */
+// **/
 // - (void)addTabViewItem:(NSTabViewItem *)tabViewItem;
 
 // /*!
 //  * Adds a TabViewItem to a given index in the TabViewController. The tabViewItem’s viewController’s view will only be loaded once its tab is selected. \c -selectedTabViewItemIndex will be adjusted if the insertion index is before it. Subclasses must call through \c -insertTabViewItem:atIndex: to add a TabViewItem.
 //  * \param tabViewItem The TabViewItem to add. It must have a \c viewController set by the time it is added or an exception will be thrown. An exception will also be thrown if tabViewItem is nil.
 //  * \param index The index to add the TabViewItem at. Will throw an exception if \c index < 0 or \c index > \c tabViewItems.count
-//  */
+// **/
 // - (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(NSInteger)index;
 
 // /*!
 //  * Removes a TabViewItem from the receiver. If the removed tabViewItem currently selected, the next (or previous, if there is no next) tabViewItem will become selected. If this is the only tabViewItem in the TabViewController, the selectedTabViewItemIndex will become \c -1. Subclasses must call through \c -removeTabViewItem: to remove a TabViewItem.
 //  * \param tabViewItem The TabViewItem to remove. An exception will be thrown if \c tabViewItem is not in the NSTabViewController or if it is nil.
-//  */
+// **/
 // - (void)removeTabViewItem:(NSTabViewItem *)tabViewItem;
 
 // /*!
 //  * Convenience method for getting the associated tab view item for a particular childViewController.
 //  * \param viewController The ViewController to look up.
 //  * \return The corresponding TabViewItem. Returns nil if \c viewController is not a child of the TabViewController.
-//  */
+// **/
 // - (nullable NSTabViewItem *)tabViewItemForViewController:(NSViewController *)viewController;
 
 

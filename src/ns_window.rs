@@ -224,26 +224,26 @@
 // @property (copy) NSString *subtitle API_AVAILABLE(macos(11.0));
 
 // /* See the enum values for how this property works.
-//  */
+// **/
 // @property NSWindowTitleVisibility titleVisibility API_AVAILABLE(macos(10.10)); // Default value is NSWindowTitleVisible
 
 // /* When YES, the titlebar doesn't draw its background, allowing all buttons to show through, and "click through" to happen. In general, this is only useful when NSFullSizeContentViewWindowMask is set.
-//  */
+// **/
 // @property BOOL titlebarAppearsTransparent API_AVAILABLE(macos(10.10));
 
 // /* Specifies how the titlebar area of the window should appear when the window displays an NSToolbar
-//  */
+// **/
 // @property NSWindowToolbarStyle toolbarStyle API_AVAILABLE(macos(11.0));
 
 // /* The contentLayoutRect will return the area inside the window that is for non-obscured content. Typically, this is the same thing as the contentView's frame. However, for windows with the NSFullSizeContentViewWindowMask set, there needs to be a way to determine the portion that is not under the toolbar. The contentLayoutRect returns the portion of the layout that is not obscured under the toolbar. contentLayoutRect is in window coordinates. It is KVO compliant. */
 // @property (readonly) NSRect contentLayoutRect API_AVAILABLE(macos(10.10));
 
 // /* contentLayoutGuide is a corollary to contentLayoutRect. It can be used by autolayout constraints to automatically bind to the contentLayoutRect.
-//  */
+// **/
 // @property (nullable, readonly) id contentLayoutGuide API_AVAILABLE(macos(10.10));
 
 // /* The following methods allow you to add accessory views to the titlebar/toolbar area of a window. See NSTitlebarAccessoryViewController for more details.
-//  */
+// **/
 // @property (copy) NSArray<__kindof NSTitlebarAccessoryViewController *> *titlebarAccessoryViewControllers API_AVAILABLE(macos(10.10));
 // - (void)addTitlebarAccessoryViewController:(NSTitlebarAccessoryViewController *)childViewController API_AVAILABLE(macos(10.10));
 // - (void)insertTitlebarAccessoryViewController:(NSTitlebarAccessoryViewController *)childViewController atIndex:(NSInteger)index API_AVAILABLE(macos(10.10));
@@ -279,7 +279,7 @@
 
 // /*! Subclasses can override \c animationResizeTime: to control the total time for the frame change.
 //  \c newFrame is the rect passed into \c setFrame:display:animate:
-//  */
+// **/
 // - (NSTimeInterval)animationResizeTime:(NSRect)newFrame;
 
 // /*! \c setFrame:display:animate: is equivalent to \c setFrame:display: if the \c animateFlag is NO.
@@ -321,7 +321,7 @@
 // @property (null_resettable, copy) NSColor *backgroundColor;
 
 // /* Indicates the thickness of a given border of the window. NSMinYEdge is the bottom edge of the window, while NSMaxYEdge is the top edge of the window. This method may throw an exception for values that don't apply to the current window styleMask; specifically, passing NSMaxYEdge for a non-textured window will always raise. The contentBorder does not include the titlebar or toolbar.
-//  */
+// **/
 // - (void)setContentBorderThickness:(CGFloat)thickness forEdge:(NSRectEdge)edge API_AVAILABLE(macos(10.5));
 // - (CGFloat)contentBorderThicknessForEdge:(NSRectEdge)edge API_AVAILABLE(macos(10.5));
 
@@ -397,7 +397,7 @@
 // /*
 //  Default is NO. Set to YES to allow a window to display tooltips even when the application is in the background.  Note that, enabling tooltips in an inactive application will cause the app to do work any time the mouse passes over the window.  This can degrade system performance.
 //  Returns YES if this window displays tooltips even when the application is in the background.  To configure this setting you should call setAllowsToolTipsWhenApplicationIsInactive: instead of overriding -allowsToolTipsWhenApplicationIsInactive.
-//  */
+// **/
 // @property BOOL allowsToolTipsWhenApplicationIsInactive;
 
 // @property NSBackingStoreType backingType;
@@ -407,7 +407,7 @@
 // @property (readonly) BOOL hasDynamicDepthLimit;
 
 // /* The screen property returns the best screen for the window. If the window only intersects one screen, it returns that screen. If it intersects more than one screen, then it resolves the tie through based on what space it is mostly on. It may return nil if there are no available screens, or it is completely off screen.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSScreen *screen;
 // @property (nullable, readonly, strong) NSScreen *deepestScreen;
 
@@ -422,14 +422,14 @@
 // @property NSWindowSharingType sharingType API_AVAILABLE(macos(10.5));
 
 // /* Controls whether threading of view drawing should be enabled for this window.  Defaults to YES.  When this is set to YES, AppKit's view system is allowed to perform -drawRect: activity for the window's views on threads other than the main thread, for views that have canDrawConcurrently == YES.  When this is set to NO, the window's views will be drawn serially as on 10.5 and earlier, even though some of the views may have canDrawConcurrently == YES.
-//  */
+// **/
 // @property BOOL allowsConcurrentViewDrawing API_AVAILABLE(macos(10.6));
 
 // @property BOOL displaysWhenScreenProfileChanges;
 
 // /*
 //  In recent macOS versions this method does not do anything and should not be called. 
-//  */
+// **/
 // - (void)disableScreenUpdatesUntilFlush;
 
 // /* This API controls whether the receiver is permitted onscreen before the user has logged in.  This property is off by default.  Alert panels and windows presented by input managers are examples of windows which should have this property set.
@@ -449,7 +449,7 @@
 // @property (getter=isOnActiveSpace, readonly) BOOL onActiveSpace API_AVAILABLE(macos(10.6));
 
 // /* toggleFullScreen: enters or exits for full screen. A window must have NSWindowCollectionBehaviorFullScreenAuxiliary or NSWindowCollectionBehaviorFullScreenPrimary included in the collectionBehavior property; if it does not, this method may simply do nothing.
-//  */
+// **/
 // - (void)toggleFullScreen:(nullable id)sender API_AVAILABLE(macos(10.7));
 
 // @property (readonly, copy) NSWindowPersistableFrameDescriptor stringWithSavedFrame;
@@ -463,7 +463,7 @@
 // + (void)removeFrameUsingName:(NSWindowFrameAutosaveName)name;
 
 // /* NOTE: minSize/contentMinSize and maxSize/contentMaxSize are ignored when using autolayout.
-//  */
+// **/
 // @property NSSize minSize;
 // @property NSSize maxSize;
 // @property NSSize contentMinSize;
@@ -472,7 +472,7 @@
 // /* These are the min and max values for a full screen tiled window.
  
 //  In general, one should not need to explicitly set the min/maxFullScreenContentSize. If an application does not change its window content upon entering full screen, then the normal auto layout min and max size will be sufficient, and one should not set these values. If an application does significantly rework the UI in full screen, then it may be necessary to set a min/maxFullScreenContentSize. This size is what is used to determine if a window can fit when it is in full screen in a tile. This property may be used even if the window does not support full screen, but are implicitly opted into supporting a full screen tile based on resizing behavior and window properties (see the collectionBehavior property). By default, the system uses auto layout to determine the min and max sizes. If auto layout is not used, contentMinSize and contentMaxSize are queried.
-//  */
+// **/
 // @property NSSize minFullScreenContentSize API_AVAILABLE(macos(10.11));
 // @property NSSize maxFullScreenContentSize API_AVAILABLE(macos(10.11));
 
@@ -499,7 +499,7 @@
 //  This relationship exists starting when the sheet is begun (using NSApplication's -beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo: or NSWindow's -beginSheet:completionHandler:), and ending once it is ordered out.
  
 //  Returns nil if the window is not a sheet or has no sheet parent.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSWindow *sheetParent API_AVAILABLE(macos(10.9));
 
 
@@ -541,24 +541,24 @@
 // /* Specifies the style of separator displayed between the window's titlebar and content.
  
 //     The default value is NSTitlebarSeparatorStyleAutomatic. Changing this value will override any preference made by `NSSplitViewItem`.
-//  */
+// **/
 // @property NSTitlebarSeparatorStyle titlebarSeparatorStyle API_AVAILABLE(macos(11.0));
 
 
 // #pragma mark - NSViewController Support
 
 // /* The main content view controller for the window. This provides the contentView of the window. Assigning this value will remove the existing contentView and will make the contentViewController.view the main contentView for the window. The default value is nil. The contentViewController only controls the contentView, and not the title of the window. The window title can easily be bound to the contentViewController with the following: [window bind:NSTitleBinding toObject:contentViewController withKeyPath:@"title" options:nil]. Setting the contentViewController will cause the window to resize based on the current size of the contentViewController. Autolayout should be used to restrict the size of the window. The value of the contentViewController is encoded in the NIB. Directly assigning a contentView will clear out the contentViewController.
-//  */
+// **/
 // @property (nullable, strong) NSViewController *contentViewController API_AVAILABLE(macos(10.10));
 
 // /* Convenience method for creating an autoreleased titled window with the given contentViewController. A basic NSWindow with the following attributes is made: titled, closable, resizable, miniaturizable. The window's title is automatically bound to the contentViewController's title. The size of the window can easily be controlled by utilizing autolayout and applying size constraints to the view (or its subviews). The window has isReleasedWhenClosed set to NO, and it must be explicitly retained to keep the window instance alive. To have it automatically be freed when it is closed, do the following: [window retain] and [window setReleasedWhenClosed:YES].
-//  */
+// **/
 // + (instancetype)windowWithContentViewController:(NSViewController *)contentViewController API_AVAILABLE(macos(10.10));
 
 // #pragma mark - Window Dragging
 
 // /* Call to start a drag (moving the window) in the Window Server process. In general, this can be done after a mouseDown event has come in and been examined by an application or view. The view may determine it wants to allow that portion of the window to start a window drag, and can hand off the work to the Window Server process by calling this method. This allows the window to participate in space switching, and other system features. Pass the original mouseDown event to the method. The method will return right away, and a mouseUp may not get sent.
-//  */
+// **/
 // - (void)performWindowDragWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.11));
 
 // #pragma mark - Keyboard UI support (Key View Loop)
@@ -585,52 +585,52 @@
 // #pragma mark - Automatic Window Tabbing
 
 // /* Allows automatic window tabbing when the value is YES. By default, this will be set to YES, but applications can explicitly opt out of all automatic tabbing by setting it to NO, and can still adopted explicit window tabbing, if desired.
-//  */
+// **/
 // @property (class) BOOL allowsAutomaticWindowTabbing API_AVAILABLE(macos(10.12));
 
 // /* Returns the user's tabbing preference as set in System Preferences. This value should be queried anytime a new window is made to see if the user wants to automatically show it in tabs.
-//  */
+// **/
 // @property (class, readonly) NSWindowUserTabbingPreference userTabbingPreference API_AVAILABLE(macos(10.12));
 
 // /* Get and set the tabbing mode for this window. This should be set before a window is shown. The default value is NSWindowTabbingModeAutomatic. When the value is NSWindowTabbingModeAutomatic, the system will look at the userTabbingPreference and automatically tab windows together based on the tabbingIdentifier, when it is appropriate to do so.
-//  */
+// **/
 // @property NSWindowTabbingMode tabbingMode API_AVAILABLE(macos(10.12));
 
 // /* Windows with the same tabbingIdentifier will have the ability to be tabbed together when a window is being shown. This allows aggregation of similar windows. By default, the tabbingIdentifier will be generated based on inherent window properties, such as the window class name, the delegate class name, the window controller class name, and some additional state. Windows can be explicitly made to group together by using the same tabbingIdentifier.
-//  */
+// **/
 // @property (copy) NSWindowTabbingIdentifier tabbingIdentifier API_AVAILABLE(macos(10.12));
 
 // /* Actions that can be called to perform various tabbed window behaviors. UI that is hooked up to these items can be automatically validated by calling NSWindow's validateUserInterfaceItem.
-//  */
+// **/
 // - (IBAction)selectNextTab:(nullable id)sender API_AVAILABLE(macos(10.12));
 // - (IBAction)selectPreviousTab:(nullable id)sender API_AVAILABLE(macos(10.12));
 // - (IBAction)moveTabToNewWindow:(nullable id)sender API_AVAILABLE(macos(10.12));
 // - (IBAction)mergeAllWindows:(nullable id)sender API_AVAILABLE(macos(10.12));
 // - (IBAction)toggleTabBar:(nullable id)sender API_AVAILABLE(macos(10.12));
 // /* Toggle the Tab Picker / Tab Overview UI which is invoked via "Show All Tabs". Performs the toggle in an animated fashion. Use tabGroup.isOverviewVisible to find out if it is visible or not at a given time.
-//  */
+// **/
 // - (IBAction)toggleTabOverview:(nullable id)sender API_AVAILABLE(macos(10.13));
 
 // /* This is now a cover for self.tabGroup.windows, but will return nil if the window is not showing a tab bar.
-//  */
+// **/
 // @property (readonly, copy, nullable) NSArray<NSWindow *> *tabbedWindows API_AVAILABLE(macos(10.12));
 
 // /* This is now a cover for [self.tabGroup addWindow:], which allows more precise placement.
-//  */
+// **/
 // - (void)addTabbedWindow:(NSWindow *)window ordered:(NSWindowOrderingMode)ordered API_AVAILABLE(macos(10.12));
 
 // /* Access the properties for this window when it is a tabbed window environment. See the NSWindowTab header and comments for more information.
-//  */
+// **/
 // @property (strong, readonly) NSWindowTab *tab API_AVAILABLE(macos(10.13));
 
 // /* Represents a tab group of windows. This tabGroup is lazily created on demand.
-//  */
+// **/
 // @property (readonly, weak) NSWindowTabGroup *tabGroup API_AVAILABLE(macos(10.13));
 
 // #pragma mark - Other
 
 // /* Retrieve the layout direction of the window titlebar: this includes the standard window buttons (close/minimize/maximize buttons) and the title for this window. In general, this will return "right to left" (RTL) if the primary system language is RTL. The layout direction may be RTL even in applications that do not have a RTL language localization. This value should be utilized if an application uses titlebarAppearsTransparent and places controls underneath the titlebar.
-//  */
+// **/
 // @property (readonly) NSUserInterfaceLayoutDirection windowTitlebarLayoutDirection API_AVAILABLE(macos(10.12));
 
 // #pragma mark -
@@ -639,7 +639,7 @@
 
 // @interface NSWindow(NSEvent)
 // /* Tracks events matching the supplied mask with the supplied tracking handler until the tracking handler explicitly terminates tracking. Each event is removed from the event queue then passed to the tracking handler. If a matching event does not exist in the event queue, then the main thread blocks in the specified runloop mode until an event of the requested type is received or the timeout expires. If the timeout expires, the tracking handler is called with a nil event. A negative timeout is interpreted as 0. Use NSEventDurationForever to never timeout. Tracking continues until *stop is set to YES. Calls to -nextEventMatchingMask:… are allowed inside the trackingHandler block. This method returns once tracking is terminated.
-//  */
+// **/
 // - (void)trackEventsMatchingMask:(NSEventMask)mask timeout:(NSTimeInterval)timeout mode:(NSRunLoopMode)mode handler:(void (NS_NOESCAPE ^)(NSEvent *_Nullable event, BOOL *stop))trackingHandler API_AVAILABLE(macos(10.10));
 // - (nullable NSEvent *)nextEventMatchingMask:(NSEventMask)mask;
 // - (nullable NSEvent *)nextEventMatchingMask:(NSEventMask)mask untilDate:(nullable NSDate *)expiration inMode:(NSRunLoopMode)mode dequeue:(BOOL)deqFlag;
@@ -672,11 +672,11 @@
 // @interface NSWindow(NSCarbonExtensions)
 
 // /* Create an NSWindow for a Carbon window - windowRef must be a Carbon WindowRef - see MacWindows.h. This method can only be called on NSWindow, and not subclasses of NSWindow. On 10.11, it will throw an exception if this is done.
-//  */
+// **/
 // - (nullable NSWindow *)initWithWindowRef:(void * /* WindowRef */)windowRef;
 
 // /* return the Carbon WindowRef for this window, creating if necessary: - see MacWindows.h
-//  */
+// **/
 // @property (readonly) void * /* WindowRef */windowRef NS_RETURNS_INNER_POINTER;
 // @end
 
@@ -691,7 +691,7 @@
 // - (nullable NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window;
 
 // /* Tells the delegate that the window is about to show a sheet, and gives the delegate a chance to customize the location of the sheet.
-//  */
+// **/
 // - (NSRect)window:(NSWindow *)window willPositionSheet:(NSWindow *)sheet usingRect:(NSRect)rect;
 
 // /* If a window has a representedURL, the window will by default show a path popup menu for a command-click on a rectangle containing the window document icon button and the window title.  The window delegate may implement -window:shouldPopupDocumentPathMenu: to override NSWindow's default behavior for path popup menu.  A return of NO will prevent the menu from being shown.  A return of YES will cause the window to show the menu passed to this method, which by default will contain a menuItem for each path component of the representedURL.  If the representedURL has no path components, the menu will have no menu items.  Before returning YES, the window delegate may customize the menu by changing the menuItems.  menuItems may be added or deleted, and each menuItem title, action, or target may be modified. 
@@ -707,7 +707,7 @@
 // - (NSApplicationPresentationOptions)window:(NSWindow *)window willUseFullScreenPresentationOptions:(NSApplicationPresentationOptions)proposedOptions API_AVAILABLE(macos(10.7));
 
 // /* The default animation between a window and its fullscreen representation is a crossfade.  With knowledge of the layout of a window before and after it enters fullscreen, an application can do a much better job on the animation.  The following API allows a window delegate to customize the animation by providing a custom window or windows containing layers or other effects.  In order to manage windows on spaces, we need the window delegate to provide a list of windows involved in the animation.  If an application does not do a custom animation, this method can be unimplemented or can return nil.  window:startCustomAnimationToEnterFullScreenWithDuration: will be called only if customWindowsToEnterFullScreenForWindow: returns non-nil.  
-//  */
+// **/
 // - (nullable NSArray<NSWindow *> *)customWindowsToEnterFullScreenForWindow:(NSWindow *)window API_AVAILABLE(macos(10.7));
 
 // /* The system has started its animation into fullscreen, including transitioning to a new space.  Start the window fullscreen animation immediately, and perform the animation with the given duration to  be in sync with the system animation.  This method is called only if customWindowToEnterFullScreenForWindow: returned non-nil. 
@@ -836,7 +836,7 @@
 // + (void)menuChanged:(NSMenu *)menu API_DEPRECATED("This method does not do anything and should not be called.", macos(10.0,10.11));
 
 // /* gState is unused and should not be called.
-//  */
+// **/
 // - (NSInteger)gState API_DEPRECATED("This method is unused and should not be called.", macos(10.0,10.10));
 
 // /* The base/screen conversion methods are deprecated in 10.7 and later. Please use one of convertRectToScreen:, convertRectFromScreen:, convertPointToScreen:, or convertPointFromScreen: instead.  */
@@ -845,7 +845,7 @@
 
 // /* This method is deprecated and should not be used by applications targeting Mac OS X 10.7 or later.
 //  The implementation of this method will always return 1.0.  Please use -convertRectToBacking: and -backingScaleFactor instead.
-//  */
+// **/
 // - (CGFloat)userSpaceScaleFactor API_DEPRECATED("Use -convertRectToBacking: and -backingScaleFactor instead", macos(10.4,10.7));
 
 // - (void)useOptimizedDrawing:(BOOL)flag API_DEPRECATED("This method does not do anything and should not be called.", macos(10.0,10.10));
@@ -861,7 +861,7 @@
 // @property (getter=isAutodisplay) BOOL autodisplay API_DEPRECATED("Use +[NSAnimationContext runAnimationGroup:completionHandler:] to temporarily prevent AppKit's automatic deferred display mechanism from drawing.", macos(10.0,10.14));
 
 // /* Returns NSGraphicsContext used to render the receiver's content on the screen for the calling thread.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSGraphicsContext *graphicsContext API_DEPRECATED("Add instances of NSView to display content in a window.", macos(10.0,10.14));
 
 // @property (getter=isOneShot) BOOL oneShot API_DEPRECATED("This property does not do anything and should not be used", macos(10.0,10.14));
@@ -881,7 +881,7 @@
 // @end
 
 // /* Deprecated legacy style mask constants. Prefer to use NSWindowStyleMask values instead.
-//  */
+// **/
 // static const NSWindowStyleMask NSBorderlessWindowMask API_DEPRECATED_WITH_REPLACEMENT("NSWindowStyleMaskBorderless", macos(10.0,10.12)) = NSWindowStyleMaskBorderless;
 // static const NSWindowStyleMask NSTitledWindowMask API_DEPRECATED_WITH_REPLACEMENT("NSWindowStyleMaskTitled", macos(10.0,10.12)) = NSWindowStyleMaskTitled;
 // static const NSWindowStyleMask NSClosableWindowMask API_DEPRECATED_WITH_REPLACEMENT("NSWindowStyleMaskClosable", macos(10.0,10.12)) = NSWindowStyleMaskClosable;
@@ -898,11 +898,11 @@
 // static const NSWindowStyleMask NSUnscaledWindowMask API_DEPRECATED("NSUnscaledWindowMask is deprecated and has no effect. The scale factor for a window backing store is dynamic and dependent on the screen it is placed on.", macos(10.0,10.9)) = 1 << 11;
 
 // /* Deprecated window button constants
-//  */
+// **/
 // static const NSWindowButton NSWindowFullScreenButton API_DEPRECATED("The standard window button for NSWindowFullScreenButton is always nil; use NSWindowZoomButton instead", macos(10.7,10.12)) = (NSWindowButton)7;
 
 // /* Deprecated window levels
-//  */
+// **/
 // static const NSWindowLevel NSDockWindowLevel API_DEPRECATED("", macos(10.0,10.13)) = kCGDockWindowLevel;
 
 

@@ -71,11 +71,11 @@
 
 
 // /* PMPrinter API should be used instead. Return the status of the named table in the printer's PostScript Printer Description (PPD) if the PPD is available. NSPrinterTableNotFound is returned for every table name if no PPD is available.
-//  */
+// **/
 // - (NSPrinterTableStatus)statusForTable:(NSString *)tableName API_DEPRECATED("", macos(10.0,10.9));
 
 // /* PMPrinter API should be used instead. Methods for accessing the information in the printer's PPD. If no PPD is available for the printer, values such as NO, 0, NSZeroRect, NSZeroSize, and nil are returned.
-//  */
+// **/
 // - (BOOL)isKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));
 // - (BOOL)booleanForKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));
 // - (float)floatForKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));

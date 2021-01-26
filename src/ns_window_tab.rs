@@ -14,7 +14,7 @@
 // @class NSWindow, NSView, NSImage;
 
 // /* This class encapsulates all the state and properties for a window when it exists in a tabbed window environment. See [NSWindow allowsAutomaticWindowTabbing] and [NSWindow tabbingIdentifier]. These properties can be set at anytime, but will only take effect when the window is shown in a tab.
-//  */
+// **/
 // API_AVAILABLE(macos(10.13))
 // @interface NSWindowTab : NSObject
 
@@ -25,11 +25,11 @@
 // @property (copy, nullable) NSAttributedString *attributedTitle;
 
 // /* The tool tip for this window when in a tab. By default, it is self.title but can be set to something custom. Setting it back to nil will make it follow self.title again.
-//  */
+// **/
 // @property (copy, null_resettable) NSString *toolTip;
 
 // /* Get and set the accessory view for this window when it is in a tabbed window. translatesAutoresizingMaskIntoConstraints will automatically be set to NO on the view. Constraints can be created and activated to specify the view's width and height values. A constraint will automatically be added to y-center the view, and to right align the view.
-//  */
+// **/
 // @property (strong, nullable) NSView *accessoryView;
 
 // @end

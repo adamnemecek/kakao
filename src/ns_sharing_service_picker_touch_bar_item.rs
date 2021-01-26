@@ -29,7 +29,7 @@
 // #endif
 
 // /* Enables or disabled the sharing button; if the popover is shown, it will first be closed.
-//  */
+// **/
 // @property (getter=isEnabled) BOOL enabled;
 
 // /* Get/set the button title and image. By default, the button title is an empty string, and the button image is a share picker image. */

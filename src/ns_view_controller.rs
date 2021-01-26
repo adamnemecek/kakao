@@ -115,7 +115,7 @@
 // - (void)viewDidDisappear API_AVAILABLE(macos(10.10));
 
 // /* Expresses the view's desired size.  May be consulted by a parent ViewController when performing layout.
-//  */
+// **/
 // @property NSSize preferredContentSize API_AVAILABLE(macos(10.10));
 
 // /*  The base implementation sends -updateConstraints to the view. When a view has a view controller, this message is sent to the view controller during the autolayout updateConstraints pass in lieu of sending updateConstraints directly to the view. You may override this method in a NSViewController subclass for updating custom constraints instead of subclassing your view and overriding -[NSView updateConstraints].  Overrides must call super or send -updateConstraints to the view. This method is only called for applications that link on 10.10 and higher.

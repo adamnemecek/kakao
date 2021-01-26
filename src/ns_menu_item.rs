@@ -29,7 +29,7 @@
 // - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
 // /* Never call the set method directly it is there only for subclassers.
-//  */
+// **/
 // @property (nullable, assign) NSMenu *menu;
 
 

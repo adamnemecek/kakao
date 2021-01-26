@@ -77,12 +77,12 @@
 // /*
 //  When set on an item without a custom view, the button produced will have a bordered style.
 //  Defaults to NO.
-//  */
+// **/
 // @property (getter=isBordered) BOOL bordered API_AVAILABLE(macos(10.15), ios(13.0));
 
 // /*
 // Whether or not the item behaves as a navigation item (i.e. back/forward) in the toolbar. Navigation items may be specially positioned by the system outside the normal list of items of the toolbar in the order specified by -toolbarDefaultItemIdentifiers:.
-//  */
+// **/
 // @property (getter=isNavigational) BOOL navigational API_AVAILABLE(macos(11.0), ios(14.0));
 
 // /* Use setView: if you want your toolbar item to use something other than the standard.  Note that, by default, many of the set/get methods will be implemented by calls forwarded to the view you set, if it responds to it.  Also, your view must be archivable (in order for the toolbar to make copies of your item to hand off to the config palette). */
@@ -93,7 +93,7 @@
 //  The min size should be small enough to look nice in all display modes.
 //  If you do not set a min/max size, the view's size properties will be calculated using constraints. Apps linked before 10.14 will use the view's current size.
 //  In general, apps should rely on the automatic measurements and constraints to define min/max sizes rather than setting these properties since this will account for localizations.
-//  */
+// **/
 // @property NSSize minSize API_DEPRECATED("This property is no longer recommended. Instead, let the system automatically measure the size of the view using constraints.", macos(10.0, API_TO_BE_DEPRECATED)) API_UNAVAILABLE(ios);
 // @property NSSize maxSize API_DEPRECATED("This property is no longer recommended. Instead, let the system automatically measure the size of the view using constraints.", macos(10.0, API_TO_BE_DEPRECATED)) API_UNAVAILABLE(ios);
 

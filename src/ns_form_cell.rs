@@ -36,14 +36,14 @@
 //  If the width is negative, the cellSize matches the historic behavior, which is that it is large enough to accommodate the title, bezel, and the current text. The default is -1.
  
 //  This method can aid migration to autolayout, and is sufficient for simple cases. However, for new apps, prefer to use NSTextFields directly instead of NSForm.
-//  */
+// **/
 // @property CGFloat preferredTextFieldWidth API_AVAILABLE(macos(10.8));
 
 // @end
 
 // @interface NSFormCell(NSKeyboardUI)
 // /* Deprecated in 10.8 and higher. Use setTitle: instead.
-//  */
+// **/
 // - (void)setTitleWithMnemonic:(null_unspecified NSString *)stringWithAmpersand API_DEPRECATED("", macos(10.0,10.8));
 // @end
 

@@ -20,7 +20,7 @@
 // @property(readonly) NSPressureBehavior pressureBehavior;
 
 // /* Designated initializer. An NSPressureBehavior must be inited with its behavior type and shall not change for the object's lifetime
-//  */
+// **/
 // - (instancetype)initWithPressureBehavior:(NSPressureBehavior)pressureBehavior NS_DESIGNATED_INITIALIZER;
 
 // /* Sets the configuration; it will automatically be reset on mouse up or gesture end. Only takes effect during a mouse drag or pressure event sequence. However, if your application is slow to respond to the mouseDown event, the user may complete the mouse click sequence before this configuration can take effect. When possible you should configure the pressure behavior before the mouse down via NSView's pressureConfiguration property.

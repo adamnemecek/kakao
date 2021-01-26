@@ -36,7 +36,7 @@
 //  buttonPosition 3+x = NSAlertThirdButtonReturn + x
 
 //  Note that these return values do not apply to an NSAlert created via +alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:, which instead uses the same return values as NSRunAlertPanel.  See NSAlertDefaultReturn, etc. in NSPanel.h
-//  */
+// **/
 // static const NSModalResponse NSAlertFirstButtonReturn = 1000;
 // static const NSModalResponse NSAlertSecondButtonReturn = 1001;
 // static const NSModalResponse NSAlertThirdButtonReturn = 1002;
@@ -82,7 +82,7 @@
 
 // /* The delegate of the receiver, currently only allows for custom help behavior of the alert.
 //    For apps linked against 10.12, this property has zeroing weak memory semantics. When linked against an older SDK this back to having `retain` semantics, matching legacy behavior.
-//  */
+// **/
 // @property (nullable, weak) id<NSAlertDelegate> delegate;
 
 // /* -setShowsSuppressionButton: indicates whether or not the alert should contain a suppression checkbox.  The default is NO.  This checkbox is typically used to give the user an option to not show this alert again.  If shown, the suppression button will have a default localized title similar to @"Do not show this message again" (single-button alert) or @"Don't ask again" (multi-button alert).  You can customize this title using [[alert suppressionButton] setTitle:].  When the alert is dismissed, you can get the state of the suppression button, using [[alert suppressionButton] state] and store the result in user defaults, for example.  This setting can then be checked before showing the alert again.  By default, the suppression button is positioned below the informative text, and above the accessory view (if any) and the alert buttons, and left-aligned with the informative text.  However do not count on the placement of this button, since it might be moved if the alert panel user interface is changed in the future. If you need a checkbox for purposes other than suppression text, it is recommended you create your own using an accessory view.
@@ -109,7 +109,7 @@
 
 // /* Begins a sheet on the doc window using NSWindow's sheet API.
 //    If the alert has an alertStyle of NSAlertStyleCritical, it will be shown as a "critical" sheet; it will otherwise be presented as a normal sheet.
-//  */
+// **/
 // - (void)beginSheetModalForWindow:(NSWindow *)sheetWindow completionHandler:(void (^ _Nullable)(NSModalResponse returnCode))handler API_AVAILABLE(macos(10.9));
 
 // /* return the application-modal panel or the document-modal sheet corresponding to this alert.
@@ -130,7 +130,7 @@
 
 // /* This was intended for use by apps migrating from the C-based API.  This uses alternate return codes that were compatible with this C-based API, but not with modern alerts, see NSAlertDefaultReturn, etc. in NSPanel.h
 //  Alerts should be created with the -init method and setting properties.
-//  */
+// **/
 // + (NSAlert *)alertWithMessageText:(nullable NSString *)message defaultButton:(nullable NSString *)defaultButton alternateButton:(nullable NSString *)alternateButton otherButton:(nullable NSString *)otherButton informativeTextWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(5,6) API_DEPRECATED("Use -init instead", macos(10.3,10.10));
 
 // - (void)beginSheetModalForWindow:(NSWindow *)window modalDelegate:(nullable id)delegate didEndSelector:(nullable SEL)didEndSelector contextInfo:(nullable void *)contextInfo API_DEPRECATED("Use -beginSheetModalForWindow:completionHandler: instead", macos(10.3,10.10));

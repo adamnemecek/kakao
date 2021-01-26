@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <AppKit/NSObjectController.h>
 // #import <AppKit/AppKitDefines.h>

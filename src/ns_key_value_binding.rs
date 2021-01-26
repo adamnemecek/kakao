@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
@@ -100,7 +100,7 @@
 // /* During autosaving, commit editing may fail, due to a pending edit.  Rather than interrupt the user with an unexpected alert, this method provides the caller with the option to either present the error or fail silently, leaving the pending edit in place and the user's editing uninterrupted.  This method attempts to commit editing, but if there is a failure the error is returned to the caller to be presented or ignored as appropriate.  If an error occurs while attempting to commit, an implementation of this method should return NO as well as the generated error by reference.  Returns YES if commit is successful.
  
 //  If you have enabled autosaving in your application, and your application has custom objects that implement or override the NSEditor protocol, you must also implement this method in those NSEditors.
-//  */
+// **/
 // - (BOOL)commitEditingAndReturnError:(NSError **)error API_AVAILABLE(macos(10.7));
 
 // @end

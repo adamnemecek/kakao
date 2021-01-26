@@ -33,7 +33,7 @@
 // @property (nullable, copy) void (^completionHandler)(void) API_AVAILABLE(macos(10.7));
 
 // /* Determine if animations are enabled or not. Using the -animator proxy will automatically set allowsImplicitAnimation to YES. When YES, other properties can implicitly animate along with the initially changed property. For instance, calling [[view animator] setFrame:frame] will allow subviews to also animate their frame positions. This is only applicable when layer backed on Mac OS 10.8 and later. The default value is NO.
-//  */
+// **/
 // @property BOOL allowsImplicitAnimation API_AVAILABLE(macos(10.8));
 
 // @end

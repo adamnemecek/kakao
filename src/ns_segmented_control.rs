@@ -95,7 +95,7 @@
 // @property NSSegmentSwitchTracking trackingMode API_AVAILABLE(macos(10.10.3));
 
 // /*  This message is valid only for trackingMode=NSSegmentSwitchTrackingMomentaryAccelerator and provides the double value for the selected segment.
-//  */
+// **/
 // @property (readonly) double doubleValueForSelectedSegment API_AVAILABLE(macos(10.10.3));
 
 // @property (nullable, copy) NSColor *selectedSegmentBezelColor API_AVAILABLE(macos(10.12.2)); // The color of the selected segment's bevel, in appearances that support it
@@ -124,7 +124,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized segmented control.
-//  */
+// **/
 // + (instancetype)segmentedControlWithLabels:(NSArray<NSString *> *)labels trackingMode:(NSSegmentSwitchTracking)trackingMode target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // /*!
@@ -134,7 +134,7 @@
 //  @param target The target object that receives action messages from the control.
 //  @param action The action message sent by the control.
 //  @return An initialized segmented control.
-//  */
+// **/
 // + (instancetype)segmentedControlWithImages:(NSArray<NSImage *> *)images trackingMode:(NSSegmentSwitchTracking)trackingMode target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(macos(10.12));
 
 // @end

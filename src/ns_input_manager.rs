@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
@@ -16,7 +16,7 @@
 // @class NSArray, NSAttributedString, NSEvent, NSInputServer, NSImage;
 
 // /* NSTextInput is deprecated in Mac OS X 10.6. Use NSTextInputClient instead.
-//  */
+// **/
 // @protocol NSTextInput
 
 // - (void) insertText:(null_unspecified id)string API_DEPRECATED("", macos(10.0,10.6)); // instead of keyDown: string can be NSString or NSAttributedString
@@ -55,7 +55,7 @@
 // @end
 
 // /* NSInputManager is deprecated in Mac OS X 10.6. Use NSTextInputContext instead. 
-//  */
+// **/
 // API_DEPRECATED("Use NSTextInputContext instead", macos(10.0,10.6))
 // @interface NSInputManager : NSObject <NSTextInput>
 

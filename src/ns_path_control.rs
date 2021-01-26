@@ -37,45 +37,45 @@
  
 //  If the control isEditable and has the pathStyle set to NSPathStylePopUp, an additional choice in the pop up menu will allow selecting another location. By default, an NSOpenPanel will be configured based on the allowedTypes. The NSOpenPanel that is used can be customized with a delegate method.
 
-//  */
+// **/
 // API_AVAILABLE(macos(10.5))
 // @interface NSPathControl : NSControl
 
 // @property(getter=isEditable) BOOL editable API_AVAILABLE(macos(10.10));
 
 // /* Specifies the allowed types when the control isEditable. The allowedTypes can contain a file extension (without the period that begins the extension) or UTI (Uniform Type Identifier). To allow folders, include the UTI 'public.folder'. To allow all types, use 'nil'. If allowedTypes is an empty array, nothing will be allowed. The default value is 'nil', allowing all types.
-//  */
+// **/
 // @property(nullable, copy) NSArray<NSString *> *allowedTypes API_AVAILABLE(macos(10.10));
 
 
 // /* If there are no components in the path, the placeholder is drawn instead (if non-nil).  We first try to draw the placeholderAttributedString. If it's nil, then the placeholderString will be drawn with correct default attributes.
-//  */
+// **/
 // @property(nullable, copy) NSString *placeholderString API_AVAILABLE(macos(10.10));
 // @property(nullable, copy) NSAttributedString *placeholderAttributedString API_AVAILABLE(macos(10.10));
 
 // /* Gets and sets the path value displayed. When setting, an array of NSPathControlItems will automatically be set based on the path in the 'url'. If the 'url' is a file URL (returns YES from isFileURL), the images will automatically be filled up with file icons, if the path exists.  The URL value itself is stored in the objectValue of the control.
-//  */
+// **/
 // @property (nullable, copy) NSURL *URL;
 
 // /* The selector that will be called when the user double clicks on a NSPathControlItem.
-//  */
+// **/
 // @property (nullable) SEL doubleAction;
 
 // /* The style/mode of the NSPathControl. Defaults to NSPathStyleStandard.
-//  */
+// **/
 // @property NSPathStyle pathStyle;
 
 // /* The clicked NSPathControlItem, or nil, if no item has been clicked. The clickedPathItem is generally only valid while the action or doubleAction is being sent.
-//  */
+// **/
 // @property (nullable, readonly) NSPathControlItem *clickedPathItem API_AVAILABLE(macos(10.10));
 
 // /* The array of NSPathControlItems currently being displayed.
 //     Each item must be an NSPathControlItem.  Do not subclass NSPathControlItem. You cannot set this value to nil, but should instead set it to an empty array.
-//  */
+// **/
 // @property (copy) NSArray<NSPathControlItem *> *pathItems API_AVAILABLE(macos(10.10));
 
 // /* The background color to be drawn.  By default, it will be set to a light blue color for NSPathStyleStandard, and nil for everything else. You can use [NSColor clearColor] to make the background transparent.
-//  */
+// **/
 // @property (nullable, copy) NSColor *backgroundColor;
 
 // /* The delegate for this control. The delegate is weakly referenced for zeroing-weak compatible objects in apps linked on 10.10 or later. Otherwise the behavior of this property is 'assign'.
@@ -87,7 +87,7 @@
 // - (void)setDraggingSourceOperationMask:(NSDragOperation)mask forLocal:(BOOL)isLocal;
 
 // /* The menu used when the syle is NSPathStylePopUp.
-//  */
+// **/
 // @property (nullable, strong) NSMenu *menu;
 
 // @end

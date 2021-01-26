@@ -36,7 +36,7 @@
 //  Note that prior to 10.13, NSColor used its colorSpaceName property to distinguish different types of colors, rather than type. The name colorSpaceName is a bit misleading since the value doesn't literally correspond to the name of an NSColorSpace. Like type, colors with different colorSpaceName values provide different ways of getting at the components:  NSNamedColorSpace corresponds to NSColorTypeCatalog, NSPatternColorSpace corresponds to NSColorTypePattern, and NSCustomColorSpace corresponds to NSColorTypeComponentBased. There are five other colorSpaceName values which all also correspond to color type of NSColorTypeComponentBased: NSDeviceWhiteColorSpace, NSCalibratedWhiteColorSpace, NSDeviceRGBColorSpace, NSCalibratedRGBColorSpace, NSDeviceCMYKColorSpace.  In new code where possible use type instead of colorSpaceName.
 
 //  Subclassers of NSColor need to implement the methods type, set, setFill, setStroke, the accessors appropriate for the color's type, and the NSCoding protocol. In code that needs to run prior to 10.13, colorSpaceName should also be implemented.  Some other methods such as colorWithAlphaComponent:, isEqual:, colorUsingType:, colorUsingColorSpaceName:, and CGColor may also be implemented if needed. If isEqual: is overridden, so should hash (because if [a isEqual:b] then [a hash] == [b hash]). Mutable subclassers (if any) should also implement copyWithZone: to a true copy.
-//  */
+// **/
 
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -58,7 +58,7 @@
 // static const NSAppKitVersion NSAppKitVersionNumberWithPatternColorLeakFix = 641.0;
 
 // /* Enum to distinguish types of colors. The color type of a color determines which properties are valid for that color; it's an exception-raising error to use properties that are not valid for a color.
-//  */
+// **/
 // typedef NS_ENUM(NSInteger, NSColorType) {
 //     NSColorTypeComponentBased,  // Colors with colorSpace, and floating point color components
 //     NSColorTypePattern,         // Colors with patternImage
@@ -92,24 +92,24 @@
 
 
 // /* Create component-based colors that are compatible with sRGB colorspace; these methods are effectively same as colorWithSRGBRed:... or colorWithGenericGamma22White:..., but provided for easier reuse of code that uses UIColor on iOS.  If red, green, blue, or saturation, brightness, or white values are outside of the 0..1 range, these will create colors in the extended sRGB (or for colorWithWhite:alpha:, extendedGenericGamma22GrayColorSpace) color spaces. This behavior is compatible with iOS UIColor.
-//  */
+// **/
 // + (NSColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha API_AVAILABLE(macos(10.9));
 // + (NSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha API_AVAILABLE(macos(10.9));
 // + (NSColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha API_AVAILABLE(macos(10.9));
 
 
 // /* Create a RGB-based color using HSB component values. An exception will be raised if the color model of the provided color space is not RGB.
-//  */
+// **/
 // + (NSColor *)colorWithColorSpace:(NSColorSpace *)space hue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha API_AVAILABLE(macos(10.12));
 
 
 
 // /* Look up and return catalog colors from standard color catalogs, or from NSColorList whose name matches the specified catalog name.
-//  */
+// **/
 // + (nullable NSColor *)colorWithCatalogName:(NSColorListName)listName colorName:(NSColorName)colorName;
 
 // /* Create catalog colors from values stored with the given name in the Asset Catalog of the specified bundle.  To look in the main bundle, use the method without the bundle argument, or specify a nil bundle argument.
-//  */
+// **/
 // + (nullable NSColor *)colorNamed:(NSColorName)name bundle:(nullable NSBundle *)bundle API_AVAILABLE(macos(10.13));
 // + (nullable NSColor *)colorNamed:(NSColorName)name API_AVAILABLE(macos(10.13));
 
@@ -118,11 +118,11 @@
 //  * When methods are called on this color that need color component values, the provider is called with +NSAppearance.currentAppearance. The provider can use the appearance to return another color to be used for drawing. As much as possible, use the given appearance to make that decision, not other state.
 //  * The `colorName` should be universally unique and equates to the identity of the color, if nil is provided a unique name will be generated.
 //  * The name and the Aqua appearance color fallback will be encoded as part of the color. The decoded color is also able to 'join' to a color that gets registered with the same name and become dynamic again.
-//  */
+// **/
 // + (NSColor *)colorWithName:(nullable NSColorName)colorName dynamicProvider:(NSColor * (^)(NSAppearance *))dynamicProvider API_AVAILABLE(macos(10.15));
 
 // /* Create component-based colors in various device color spaces.
-//  */
+// **/
 // + (NSColor *)colorWithDeviceWhite:(CGFloat)white alpha:(CGFloat)alpha;
 // + (NSColor *)colorWithDeviceRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 // + (NSColor *)colorWithDeviceHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
@@ -130,14 +130,14 @@
 
 
 // /* Create component-based colors in NSCalibratedWhiteColorSpace or NSCalibratedRGBColorSpace color spaces. In general it's best to avoid these methods, since sRGB or P3 colors are preferred over the calibrated (aka "generic") color spaces.
-//  */
+// **/
 // + (NSColor *)colorWithCalibratedWhite:(CGFloat)white alpha:(CGFloat)alpha;
 // + (NSColor *)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 // + (NSColor *)colorWithCalibratedHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
 
 
 // /* Create pattern colors that paint with the specified image.
-//  */
+// **/
 // + (NSColor *)colorWithPatternImage:(NSImage *)image;
 
 
@@ -145,24 +145,24 @@
 // /* Return the type of the color, which in turn determines which accessors are valid for this color. It's an exception-raising error to use properties that are not valid for a color; so, before using a given accessor on a color, call colorUsingType: to convert the color to the appropriate type. Or, if wanting to use colorSpace-specific accessors such as redComponent, convert to the desired colorSpace with colorUsingColorSpace:.
  
 //  Note that as of macOS 10.13, the new APIs type and colorUsingType: replace colorSpaceName and colorUsingColorSpaceName: as the funnel APIs for determining the type of color.  In code destined to run on 10.13 and newer systems, subclassers are encouraged to implement these two rather than the older colorSpaceName based methods.
-//  */
+// **/
 // @property (readonly) NSColorType type API_AVAILABLE(macos(10.13));
 
 // /* Convert the color to a color of different type; return nil if conversion is not possible.
-//  */
+// **/
 // - (nullable NSColor *)colorUsingType:(NSColorType)type API_AVAILABLE(macos(10.13));
 
 
 // /* colorUsingColorSpace: will convert existing color to a new color space, if the receiver can be represented as a component-based color.  This method will return the receiver if its colorspace is already the same as the one specified.  Will return nil if conversion is not possible.
  
 //  This method is highly recommended before using any specialized component accessors such as redComponent, cyanComponent, etc, since these will raise an exception if the color is not in an appropriate color space.
-//  */
+// **/
 // - (nullable NSColor *)colorUsingColorSpace:(NSColorSpace *)space;
 
 
 
 // /* Some convenience methods to create standard colors, typically should not be used for display in user interface elements. Do not make any assumptions about the actual color spaces used: For applications built against the 10.13 SDK these return colors in the sRGB or genericGamma22GrayColorSpace color spaces, while in older apps they use calibrated color spaces.
-//  */
+// **/
 // @property (class, strong, readonly) NSColor *blackColor;        /* 0.0 white */
 // @property (class, strong, readonly) NSColor *darkGrayColor;     /* 0.333 white */
 // @property (class, strong, readonly) NSColor *lightGrayColor;    /* 0.667 white */
@@ -183,7 +183,7 @@
 // /* The following are semantic system colors that are used for drawing user interface elements. These colors are implemented as dynamic named colors whose values may vary between releases and between different appearances (such as Aqua vs DarkAqua vs TouchBar). Do not make assumptions about the color spaces or actual colors used.
  
 //  If you do need to extract a CGColor (to use with a layer, say), always do it as lazily/late as possible, and update it whenever needed.  If you do need to extract color components, always convert to the desired color space first as described at the top of this file.
-//  */
+// **/
 
 // /* Foreground Colors */
 // @property (class, strong, readonly) NSColor *labelColor API_AVAILABLE(macos(10.10));           // Foreground color for static text and related elements
@@ -232,7 +232,7 @@
 
 
 // /* Some colors that are used by system elements and applications. Like the above dynamic system colors, these return named colors whose values may vary between different appearances and releases.  Do not make assumptions about the color spaces or actual colors used.
-//  */
+// **/
 // @property (class, strong, readonly) NSColor *systemRedColor API_AVAILABLE(macos(10.10));
 // @property (class, strong, readonly) NSColor *systemGreenColor API_AVAILABLE(macos(10.10));
 // @property (class, strong, readonly) NSColor *systemBlueColor API_AVAILABLE(macos(10.10));
@@ -298,7 +298,7 @@
  
 //     NSColor *sRGBColor = color.colorUsingColorSpace(NSColorSpace.sRGBColorSpace);
 //     CGFloat red = sRGBColor ? sRGBColor.redComponent : someFallBackValue;
-//  */
+// **/
 // @property (readonly) CGFloat redComponent;          // Valid only on component based colors whose colorSpace model is NSColorSpaceModelRGB.
 // @property (readonly) CGFloat greenComponent;        // Valid only on component based colors whose colorSpace model is NSColorSpaceModelRGB.
 // @property (readonly) CGFloat blueComponent;         // Valid only on component based colors whose colorSpace model is NSColorSpaceModelRGB.
@@ -335,7 +335,7 @@
 
 
 // /* Return the image used for the pattern color. Will raise exception for colors other than type == NSColorTypePattern.
-//  */
+// **/
 // @property (readonly, strong) NSImage *patternImage;
 
 
@@ -401,7 +401,7 @@
 // @property (class, strong, readonly) NSArray<NSColor *> *controlAlternatingRowBackgroundColors API_DEPRECATED_WITH_REPLACEMENT("alternatingContentBackgroundColors", macos(10.3, 11.0));
 
 // /* Get the color space name of the color. Note that here "color space name" doesn't refer to the name of an NSColorSpace, but rather an older way to distinguish the color type of different types of colors, as described at the top of this file. Should be implemented by subclassers for code destined to run on 10.12 or earlier. Newer code can choose to implement type instead.
-//  */
+// **/
 // @property (readonly, copy) NSColorSpaceName colorSpaceName API_DEPRECATED("Use -type and NSColorType instead", macos(10.0,10.14));
 
 
@@ -412,7 +412,7 @@
 //  If device is nil then the current device (as obtained from the currently lockFocus'ed view's window or, if printing, the current printer) is used. The method without the device: argument passes nil for the device.
 
 //  If colorSpaceName is nil, then the most appropriate color space is used.
-//  */
+// **/
 // - (nullable NSColor *)colorUsingColorSpaceName:(nullable NSColorSpaceName)name device:(nullable NSDictionary<NSDeviceDescriptionKey, id> *)deviceDescription API_DEPRECATED("Use -colorUsingType: or -colorUsingColorSpace: instead", macos(10.0,10.14));
 // - (nullable NSColor *)colorUsingColorSpaceName:(NSColorSpaceName)name API_DEPRECATED("Use -colorUsingType: or -colorUsingColorSpace: instead", macos(10.0,10.14));
 

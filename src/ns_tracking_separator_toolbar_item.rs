@@ -16,7 +16,7 @@
 // /*
 //  Creates a new NSTrackingSeparatorToolbarItem and configures it to attempt to visually align with the specified divider of the splitView.
 //  The splitView must be in the same window as the toolbar containing this item by the time the toolbar is shown. Only vertical split views are supported.
-//  */
+// **/
 // + (instancetype)trackingSeparatorToolbarItemWithIdentifier:(NSToolbarItemIdentifier)identifier splitView:(NSSplitView *)splitView dividerIndex:(NSInteger)dividerIndex API_UNAVAILABLE(ios);
 
 // /*

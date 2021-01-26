@@ -37,7 +37,7 @@
 //  It must conform to one of the following signatures:
 //  - (BOOL)myPerformActionMethod;
 //  - (BOOL)myPerformActionMethod:(NSAccessibilityCustomAction *)action;
-//  */
+// **/
 // @property (nullable) SEL selector;
 
 // @end

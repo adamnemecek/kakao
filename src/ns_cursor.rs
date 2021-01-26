@@ -29,7 +29,7 @@
 //  Only the cursor image and hot spot are replicated in the returned NSCursor. Other properties (such as isSetOnMouseExited and isSetOnMouseEntered) will not necessarily be accurate.
  
 //  This method returns nil if the currently displayed cursor could not be fetched.
-//  */
+// **/
 // @property (class, readonly, nullable, strong) NSCursor *currentSystemCursor API_AVAILABLE(macos(10.6));
 
 // @property (class, readonly, strong) NSCursor *arrowCursor;

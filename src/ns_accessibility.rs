@@ -82,7 +82,7 @@
 //  - the object must post the NSAccessibilityUIElementDestroyed notification at appropriate times, typically when the corresponding UI element in the application's visual interface is removed from the screen, and certainly when the accessible object is deallocated.
  
 //  - the object must implement -accessibilityNotifiesWhenDestroyed to return YES.
-//  */
+// **/
 // @property (readonly) BOOL accessibilityNotifiesWhenDestroyed API_AVAILABLE(macos(10.9));
 
 // @end
@@ -141,7 +141,7 @@
 // /* Setting whether the application may have protected content. Protected content is identified by a value of TRUE for the accessibility attribute NSAccessibilityContainsProtectedContentAttribute. If NSAccessibilityMayContainProtectedContent returns NO, then NSAccessibilityContainsProtectedContentAttribute is completely ignored.
 
 //     A return value of TRUE indicates success.
-//  */
+// **/
 // APPKIT_EXTERN BOOL NSAccessibilitySetMayContainProtectedContent(BOOL flag);
 
 // /* Getting descriptions for standard roles and actions.

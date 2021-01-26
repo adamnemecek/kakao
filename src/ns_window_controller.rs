@@ -20,12 +20,12 @@
 // @interface NSWindowController : NSResponder <NSSeguePerforming>
 
 // /* Designated Initializer.  window can be nil.  All other -init... methods call this, and then possibly do other setup.
-//  */
+// **/
 // - (instancetype)initWithWindow:(nullable NSWindow *)window NS_DESIGNATED_INITIALIZER;
 // - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
 // /* Instances initialized with the "Name" methods will eventually locate their nib file in the file's owner's class' bundle or in the app's +mainBundle using standard NSBundle API.  Use the "Path" method if your nib file is at a fixed location (which is not inside one of those bundles).
-//  */
+// **/
 // - (instancetype)initWithWindowNibName:(NSNibName)windowNibName;	// self is the owner
 // - (instancetype)initWithWindowNibName:(NSNibName)windowNibName owner:(id)owner; // The owner is NOT retained
 // - (instancetype)initWithWindowNibPath:(NSString *)windowNibPath owner:(id)owner;
@@ -61,7 +61,7 @@
 
 // /* Returns the document associated with the window controller (if any).
 //  You should not set the document property.  It is invoked automatically from NSDocument's -addWindowController:.  You can override it if you need to, but call super's implementation. The document is not retained by the NSWindowController.
-//  */
+// **/
 // @property (nullable, assign) id /* __kindof NSDocument * */ document;
 
 // /* NSDocument calls this method for its window controllers whenever the document is made dirty or clean.  By default this calls -setDocumentEdited: on the controller's window (if any).  A controller calls this on itself when its document gets set or its window gets set.
@@ -86,7 +86,7 @@
 
 
 // /* The view controller for the window's contentView. Tracks the window property of the same name.
-//  */
+// **/
 // @property (nullable, strong) NSViewController *contentViewController API_AVAILABLE(macos(10.10));
 
 // /* The window getter will load the nib file (if there is one and it has not yet been loaded) and then return the window.  If it has to load the window, it will first call -windowWillLoad, then -loadWindow, then -windowDidLoad.  To affect nib loading or do something before or after it happens, you should always override those other methods.
@@ -120,11 +120,11 @@
 
 // /*!
 //  These methods are used to support using Storyboards with your app.
-//  */
+// **/
 // @interface NSWindowController (NSWindowControllerStoryboardingMethods)
 
 // /* The Storyboard the WindowController was loaded from. Returns nil if the WindowController was not loaded from a Storyboard.
-//  */
+// **/
 // @property(nullable, readonly, strong) NSStoryboard *storyboard API_AVAILABLE(macos(10.10));
 
 // @end
@@ -132,7 +132,7 @@
 // @interface NSWindowController (NSWindowControllerDismissing)
 
 // /* Dismisses the WindowController.  Does nothing if the receiver is not currently presented.
-//  */
+// **/
 // - (IBAction)dismissController:(nullable id)sender API_AVAILABLE(macos(10.10));
 
 // @end

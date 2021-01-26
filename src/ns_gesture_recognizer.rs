@@ -84,7 +84,7 @@
 // @optional
 // /* called when the window begins a new recognition stream
 //  return YES to allow the recognizer to process events. return NO to fail recognition and opt the recognizer out of the event stream
-//  */
+// **/
 // - (BOOL)gestureRecognizer:(NSGestureRecognizer *)gestureRecognizer shouldAttemptToRecognizeWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.11));
 
 // /* called when a gesture recognizer attempts to transition out of NSGestureRecognizerStatePossible. returning NO causes it to transition to NSGestureRecognizerStateFailed */
@@ -106,7 +106,7 @@
 // - (BOOL)gestureRecognizer:(NSGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(NSGestureRecognizer *)otherGestureRecognizer;
 
 // /* called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
-//  */
+// **/
 // - (BOOL)gestureRecognizer:(NSGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(NSTouch *)touch API_AVAILABLE(macos(10.12.2));
 // @end
 

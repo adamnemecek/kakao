@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSWindow.h>
@@ -25,7 +25,7 @@
  
 //  Note that the receiver may invoke the completion handler before or after the method returns, and on any queue.  If you plan to invoke the completion handler after the method returns, you must copy the completion handler via the -copy method, and -release it after you invoke it.  It is not necessary or recommended for implementations of this method to order restored windows onscreen (for example, the window may have been minimized, in which case it will not be ordered onscreen).
  
-//  */
+// **/
 // + (void)restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier state:(NSCoder *)state completionHandler:(void (^)(NSWindow * _Nullable, NSError * _Nullable))completionHandler API_AVAILABLE(macos(10.7));
 // @end
 
@@ -46,18 +46,18 @@
 // @end
 
 // /* NSApplicationDidFinishRestoringWindowsNotification is posted when the application is finished restoring windows, that is, when all the completion handlers from restoreWindowWithIdentifier:state:completionHandler: have been called.  This is always posted after NSApplicationWillFinishLaunching, but may be posted before or after NSApplicationDidFinishLaunching, depending on whether clients copy the completion handlers and invoke them later.  If there were no windows to restore, then this notification is still posted at the corresponding point in app launch (between NSApplicationWillFinishLaunchingNotification and NSApplicationDidFinishLaunchingNotification).  The object is NSApplication, and there is no user info.
-//  */
+// **/
 // APPKIT_EXTERN NSNotificationName const NSApplicationDidFinishRestoringWindowsNotification API_AVAILABLE(macos(10.7));
 
 
 // @interface NSWindow (NSUserInterfaceRestoration)
 
 // /* Determines whether the window should be restored on relaunch.  By default, windows with NSTitledWindowMask set in the styleMask are restorable, and windows without it set are not.
-//  */
+// **/
 // @property (getter=isRestorable) BOOL restorable API_AVAILABLE(macos(10.7));
 
 // /* Set and get the class that is responsible for restoring the window.  The default implementation of -[NSWindowController setDocument:] will set the restoration class of the window to the shared NSDocumentController's class.
-//  */
+// **/
 // @property (nullable, assign) Class<NSWindowRestoration> restorationClass API_AVAILABLE(macos(10.7));
 
 // /* Disable or enable snapshot restoration. While snapshot restoration is disabled, the window will not be snapshotted for restorable state. */
@@ -71,11 +71,11 @@
 // @interface NSResponder (NSRestorableState)
 
 // /* Method called on the main thread to save the receiver's restorable state.  The receiver is passed an NSCoder that supports keyed encoding (but not decoding), and should encode its restorable state. If you override this method, you should call through to super.  You should not otherwise invoke this method.  If you encode an object that implements the NSUserInterfaceItemIdentification protocol, the object itself is not archived; only its identifier is stored.  Thus, for example, a window may efficiently store its firstResponder as restorable state. If you have objects which may take a long time to fetch or encode, consider implementing encodeRestorableStateWithCoder:backgroundQueue: instead of this method.
-//  */
+// **/
 // - (void)encodeRestorableStateWithCoder:(NSCoder *)coder API_AVAILABLE(macos(10.7));
 
 // /* A variant of encodeRestorableStateWithCoder:. This method is also called on the main thread, and the receiver may use the provided thread-safe NSCoder to encode restorable state synchronously. In addition, the receiver may enqueue asynchronous work that will encode additional restorable state using the provided serial background NSOperationQueue, if that state is safe to be accessed and encoded in such a fashion. Encoding will be considered finished once the enqueued operations are finished. If you override this method, you should call through to super. You should not otherwise invoke this method.
-//  */
+// **/
 // - (void)encodeRestorableStateWithCoder:(NSCoder *)coder backgroundQueue:(NSOperationQueue *)queue API_AVAILABLE(macos(10.13));
 
 
@@ -105,7 +105,7 @@
 //  These methods act as a counter. Each call to -extend increments the counter, and must be matched with a corresponding call to -complete which decrements it.  When the counter reaches zero, the app is considered to have been fully restored, and any further calls are silently ignored.
  
 //  These methods are thread safe.
-//  */
+// **/
 // - (void)extendStateRestoration API_AVAILABLE(macos(10.7));
 // - (void)completeStateRestoration API_AVAILABLE(macos(10.7));
 

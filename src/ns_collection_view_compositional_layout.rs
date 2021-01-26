@@ -37,7 +37,7 @@
 // #ifndef FOUNDATION_HAS_DIRECTIONAL_GEOMETRY
 
 // /* Edge specification that should be interpreted according to the user interface layout direction.
-//  */
+// **/
 // typedef NS_OPTIONS(NSUInteger, NSDirectionalRectEdge) {
 //     NSDirectionalRectEdgeNone       = 0,
 //     NSDirectionalRectEdgeTop        = 1 << 0,
@@ -48,7 +48,7 @@
 // } API_AVAILABLE(macos(10.15));
 
 // /* Specifies edge insets that should be interpreted according to the user interface layout direction.  Specify positive values to inset, negative values to outset.
-//  */
+// **/
 // typedef struct __attribute__((objc_boxable)) NSDirectionalEdgeInsets {
 //     CGFloat top;
 //     CGFloat leading;
@@ -59,7 +59,7 @@
 // APPKIT_EXTERN const NSDirectionalEdgeInsets NSDirectionalEdgeInsetsZero API_AVAILABLE(macos(10.15));
 
 // /* Alignment specification that should be interpreted according to the user interface layout direction.
-//  */
+// **/
 // typedef NS_ENUM(NSInteger, NSRectAlignment) {
 //     NSRectAlignmentNone = 0,
 //     NSRectAlignmentTop,

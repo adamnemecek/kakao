@@ -36,7 +36,7 @@
 // @property double doubleValue;
 
 // /* Equivalent to [self setDoubleValue:[self doubleValue] + delta].
-//  */
+// **/
 // - (void)incrementBy:(double)delta;
 
 // @property double minValue;
@@ -45,7 +45,7 @@
 // #pragma mark Indeterminate progress indicator
 
 // /* YES if the NSProgressIndicator uses a thread instead of a timer (defaults to NO).
-//  */
+// **/
 // @property BOOL usesThreadedAnimation;
 
 // - (void)startAnimation:(nullable id)sender;
@@ -54,7 +54,7 @@
 // @property NSProgressIndicatorStyle style;
 
 // /* For the spinning style, it will size the view to its default size.  For the bar style, the height will be set to the recommended height.
-//  */
+// **/
 // - (void)sizeToFit;
 
 // @property (getter=isDisplayedWhenStopped) BOOL displayedWhenStopped;
@@ -64,7 +64,7 @@
 // #pragma mark Deprecated declarations
 
 // /* These constants do not accurately represent the geometry of NSProgressIndicator.  Use `controlSize` and `sizeToFit` instead.
-//  */
+// **/
 // typedef NS_ENUM(NSUInteger, NSProgressIndicatorThickness) {
 //     NSProgressIndicatorPreferredThickness API_DEPRECATED("These constants do not accurately represent the geometry of NSProgressIndicator.  Use `controlSize` and `sizeToFit` instead.", macos(10.0,10.14)) = 14,
 //     NSProgressIndicatorPreferredSmallThickness API_DEPRECATED("These constants do not accurately represent the geometry of NSProgressIndicator.  Use `controlSize` and `sizeToFit` instead.", macos(10.0,10.14)) = 10,
@@ -73,7 +73,7 @@
 // } API_DEPRECATED("These constants do not accurately represent the geometry of NSProgressIndicator.  Use `controlSize` and `sizeToFit` instead.", macos(10.0,10.14));
 
 // /* Please instead use the more modern versions of these constants.
-//  */
+// **/
 // static const NSProgressIndicatorStyle NSProgressIndicatorBarStyle API_DEPRECATED_WITH_REPLACEMENT("NSProgressIndicatorStyleBar", macos(10.2,10.14)) = NSProgressIndicatorStyleBar;
 // static const NSProgressIndicatorStyle NSProgressIndicatorSpinningStyle API_DEPRECATED_WITH_REPLACEMENT("NSProgressIndicatorStyleSpinning", macos(10.2,10.14)) = NSProgressIndicatorStyleSpinning;
 

@@ -17,7 +17,7 @@
 // /* The current position of the switch. The values `NSControlStateValueOff` and `NSControlStateValueOn` indicate that the switch is in either the off or on position respectively. If the state property is set to any other value, it is interpreted as on.
 
 //  If set through the animator proxy, the switch animates to the new value.
-//  */
+// **/
 // @property NSControlStateValue state;
 
 // @end

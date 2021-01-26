@@ -3,7 +3,7 @@
 // 	Application Kit
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
-//  */
+// **/
 
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -81,7 +81,7 @@
 // - (NSInteger)windowLevel;
 
 // /* Returns if the marked text is in vertical layout.
-//  */
+// **/
 // - (BOOL)drawsVerticallyForCharacterAtIndex:(NSUInteger)charIndex API_AVAILABLE(macos(10.6));
 // @end
 

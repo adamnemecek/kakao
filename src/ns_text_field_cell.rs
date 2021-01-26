@@ -38,7 +38,7 @@
 // - (void)setWantsNotificationForMarkedText:(BOOL)flag API_AVAILABLE(macos(10.5));
 
 // /* Returns an array of locale identifiers representing keyboard input sources allowed to be enabled when the receiver has the keyboard focus.
-//  */
+// **/
 // @property (nullable, copy) NSArray<NSString *> *allowedInputSourceLocales API_AVAILABLE(macos(10.5));
 
 // @end

@@ -19,7 +19,7 @@
 // } API_AVAILABLE(macos(10.11));
 
 // /* An array of this class should be returned from the NSTableView delegate method tableView:rowActionsForRow:edge:.
-//  */
+// **/
 // API_AVAILABLE(macos(10.11))
 // @interface NSTableViewRowAction : NSObject <NSCopying>
 
@@ -30,7 +30,7 @@
 // @property (null_resettable, copy) NSColor *backgroundColor; // The default background color is dependent on style. Generally this is red for destructive actions, and blue for others.
 
 // /* Prefer using an image over text for the row action button
-//  */
+// **/
 // @property (nullable, strong) NSImage *image API_AVAILABLE(macos(10.12));
 
 // @end

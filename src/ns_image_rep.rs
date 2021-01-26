@@ -118,7 +118,7 @@
 //  You should not need to take care to cache within an implementation of this method.  This main caller of this method is typically NSImage, and NSImage will hold onto the resulting CGImage if appropriate.
  
 //  The CGImageRef returned is guaranteed to live as long as the current autorelease pool.  The caller should not release the CGImage.  This is the standard Cocoa convention, but people may not realize that it applies to CFTypes.
-//  */
+// **/
 // - (nullable CGImageRef)CGImageForProposedRect:(nullable NSRect *)proposedDestRect context:(nullable NSGraphicsContext *)context hints:(nullable NSDictionary<NSImageHintKey, id> *)hints API_AVAILABLE(macos(10.6)) CF_RETURNS_NOT_RETAINED;
 
 // @end

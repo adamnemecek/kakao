@@ -36,7 +36,7 @@
 //  This property can be used from any thread.
  
 //  This property is KVO observable.
-//  */
+// **/
 // @property (nullable, strong) NSUserActivity *userActivity API_AVAILABLE(macos(10.10));
 
 // /* This method exists to be overridden and will be called from the main thread. You should save any state representing the user's activity into the NSUserActivity's userInfo via its -addUserInfoEntriesFromDictionary method. When the state is out of date, you should mark the userActivity as needing to save via the needsSave property, and your override will be invoked again at an appropriate time. */
@@ -52,7 +52,7 @@
 //  On OS X, NSUserActivities managed by NSDocument will automatically become current when any of the document window controller's window's become main. You will need to invoke [[document userActivity] becomeCurrent] at an appropriate time if there aren't any.
 
 //  If there is a CFBundleDocumentTypes entry for the document's type with a NSUbiquitousDocumentUserActivityType key, AppKit/UIKIt will automatically create an NSUserActivity with the given activityType when the document is ubiquitous. When it is non-ubiquitous, the userActivity will be nil. Note that userActivity is KVO observable, in case the userActivity is being shared with other objects that need to be kept in sync as the document moves into and out of iCloud.
-//  */
+// **/
 // @property (nullable, strong) NSUserActivity *userActivity API_AVAILABLE(macos(10.10));
 
 // /* On OS X, The default implementation of this will put the fileURL into the userInfo with the NSUserActivityDocumentURLKey. NSDocument will automatically call needsSave on the userActivity when the fileURL changes. */

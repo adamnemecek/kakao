@@ -178,7 +178,7 @@
 // - (void)cancelUserAttentionRequest:(NSInteger)request;
 
 // /*  Execute a block for each of the app's windows. Set *stop = YES if desired, to halt the enumeration early.
-//  */
+// **/
 // - (void)enumerateWindowsWithOptions:(NSWindowListOptions)options usingBlock:(void (NS_NOESCAPE ^)(NSWindow *window, BOOL *stop))block API_AVAILABLE(macos(10.12));
 
 // - (void)preventWindowOrdering;
@@ -189,17 +189,17 @@
 // @property (nullable, strong) NSMenu *mainMenu;
 
 // /* Set or get the Help menu for the app.  If a non-nil menu is set as the Help menu, Spotlight for Help will be installed in it; otherwise AppKit will install Spotlight for Help into a menu of its choosing (and that menu is not returned from -helpMenu).  If you wish to completely suppress Spotlight for Help, you can set a menu that does not appear in the menu bar.  NSApplication retains its Help menu and releases it when a different menu is set.
-//  */
+// **/
 // @property (nullable, strong) NSMenu *helpMenu API_AVAILABLE(macos(10.6));
 
 // @property (null_resettable, strong) NSImage *applicationIconImage;
 
 // /* Returns the activation policy of the application.
-//  */
+// **/
 // - (NSApplicationActivationPolicy)activationPolicy API_AVAILABLE(macos(10.6));
 
 // /* Attempts to modify the application's activation policy.  In OS X 10.9, any policy may be set; prior to 10.9, the activation policy may be changed to NSApplicationActivationPolicyProhibited or NSApplicationActivationPolicyRegular, but may not be changed to NSApplicationActivationPolicyAccessory.  This returns YES if setting the activation policy is successful, and NO if not.
-//  */
+// **/
 // - (BOOL)setActivationPolicy:(NSApplicationActivationPolicy)activationPolicy API_AVAILABLE(macos(10.6));
 
 
@@ -272,7 +272,7 @@
 
 // @interface NSApplication(NSFullKeyboardAccess)
 // /* Use this method to get the status of Full Keyboard Access, as configured in the Keyboard preference pane. You may use this status to implement your own key loop or to implement in-control tabbing behavior similar to NSTableView. Because of the nature of the preference storage, you will not be notified of changes to the key if you attempt to observe it via key-value observing; however, calling this method is fairly inexpensive, so you should always call it when you need the underlying value instead of caching it.
-//  */
+// **/
 // @property (getter=isFullKeyboardAccessEnabled, readonly) BOOL fullKeyboardAccessEnabled API_AVAILABLE(macos(10.6));
 // @end
 
@@ -303,7 +303,7 @@
 // - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender;
 
 // /* This will be called for any URLs your application is asked to open. This includes URL types (CFBundleURLTypes) defined in your Info.plist, and Document types (CFBundleDocumentTypes) that have no associated NSDocument class. Document URLs that have an associated NSDocument class will be opened through NSDocumentController. If this is implemented, application:openFiles: and application:openFile: will not be called.
-//  */
+// **/
 // - (void)application:(NSApplication *)application openURLs:(NSArray<NSURL *> *)urls API_AVAILABLE(macos(10.13));
 
 // - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename;
@@ -332,14 +332,14 @@
 // - (void)application:(NSApplication *)app didDecodeRestorableState:(NSCoder *)coder API_AVAILABLE(macos(10.7));
 
 // /* NSUserActivity support:
-//  */
+// **/
 
 // /*
  
 //  This will be called on the main thread as soon as the user indicates they want to continue an activity in your application. The NSUserActivity object may not be available instantly, so use this as an opportunity to show the user that an activity will be continued shortly. Return YES to indicate that you are doing so. Return NO (or leave it unimplemented) and AppKit/UIKit will put up a default UI.
  
 //  For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one invocation of application:continueUserActivity:restorationHandler: on success, or application:didFailToContinueUserActivityWithType:error: if an error was encountered.
-//  */
+// **/
 // - (BOOL)application:(NSApplication *)application willContinueUserActivityWithType:(NSString *)userActivityType API_AVAILABLE(macos(10.10));
 
 // /*
@@ -348,7 +348,7 @@
 //  You should create/fetch any restorable objects associated with the user activity, and pass them to the restorationHandler. They will then get the above restoreUserActivityState: method invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later, but must be invoked on the main thread.
  
 //  If this user activity was created automatically by having NSUbiquitousDocumentUserActivityType in a CFBundleDocumentTypes entry, AppKit can automatically restore the NSUserActivity on OS X if NO is returned, or this method is unimplemented. It will do so by creating a document of the appropriate type using the URL stored in the userInfo under the NSUserActivityDocumentURLKey. The document will have restoreUserActivity: called on it.
-//  */
+// **/
 // - (BOOL)application:(NSApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<NSUserActivityRestoring>> *restorableObjects))restorationHandler API_AVAILABLE(macos(10.10));
 
 // /* There are instances where continuing a NSUserActivity may fail. This will get called on the main thread if it does so. If it is unimplemented, AppKit will present the error. */
@@ -365,14 +365,14 @@
 // - (void)application:(NSApplication *)application userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)metadata API_AVAILABLE(macos(10.12));
 
 // /* Key Value Coding support:
-//  */
+// **/
 
 // /* Return YES if the receiving delegate object can respond to key value coding messages for a specific keyed attribute, to-one relationship, or to-many relationship.  Return NO otherwise.
 // */
 // - (BOOL)application:(NSApplication *)sender delegateHandlesKey:(NSString *)key;
 
 // /* Notifications:
-//  */
+// **/
 // - (void)applicationWillFinishLaunching:(NSNotification *)notification;
 // - (void)applicationDidFinishLaunching:(NSNotification *)notification;
 // - (void)applicationWillHide:(NSNotification *)notification;
@@ -441,7 +441,7 @@
 //  If your app should not be relaunched because it triggers a restart (e.g. an installer), then the recommended usage is to call [NSApp disableRelaunchOnLogin] immediately before you attempt to trigger a restart, and [NSApp enableRelaunchOnLogin] immediately after.  This is because the user may cancel restarting; if the user later restarts for another reason, then your app should be brought back.
  
 //  These methods are thread safe.
-//  */
+// **/
 // - (void)disableRelaunchOnLogin API_AVAILABLE(macos(10.7));
 // - (void)enableRelaunchOnLogin API_AVAILABLE(macos(10.7));
 // @end
@@ -512,7 +512,7 @@
 // /* User info keys for NSApplicationDidFinishLaunchingNotification */
 
 // /* The following key is present in the userInfo of NSApplicationDidFinishLaunchingNotification.  Its value is an NSNumber containing a bool.  It will be NO if the app was launched to open or print a file, to perform a Service, if the app had saved state that will be restored, or if the app launch was in some other sense not a "default" launch.  Otherwise its value will be YES.
-//  */
+// **/
 // APPKIT_EXTERN NSString * const NSApplicationLaunchIsDefaultLaunchKey API_AVAILABLE(macos(10.7));
 
 // /* The following key is present in the userInfo of NSApplicationDidFinishLaunchingNotification. It will be present if your application was launched because a user activated a notification in the Notification Center. Its value is an NSUserNotification object. */
@@ -530,15 +530,15 @@
 // @interface NSApplication (NSDeprecated)
 
 // /* -runModalForWindow:relativeToWindow: was deprecated in Mac OS X 10.0. Please use -[NSWindow beginSheet:completionHandler:] instead.
-//  */
+// **/
 // - (NSInteger)runModalForWindow:(null_unspecified NSWindow *)window relativeToWindow:(null_unspecified NSWindow *)docWindow API_DEPRECATED("Use -[NSWindow beginSheet:completionHandler:] instead", macos(10.0,10.0));
 
 // /* -beginModalSessionForWindow:relativeToWindow: was deprecated in Mac OS X 10.0. Please use -[NSWindow beginSheet:completionHandler:] instead.
-//  */
+// **/
 // - (NSModalSession)beginModalSessionForWindow:(null_unspecified NSWindow *)window relativeToWindow:(null_unspecified NSWindow *)docWindow NS_RETURNS_INNER_POINTER API_DEPRECATED("Use -[NSWindow beginSheet:completionHandler:] instead", macos(10.0,10.0));
 
 // /* -application:printFiles: was deprecated in Mac OS X 10.4. Implement application:printFiles:withSettings:showPrintPanels: in your application delegate instead.
-//  */
+// **/
 // - (void)application:(null_unspecified NSApplication *)sender printFiles:(null_unspecified NSArray<NSString *> *)filenames API_DEPRECATED("", macos(10.3,10.4));
 
 // enum {
@@ -548,7 +548,7 @@
 // };
 
 // /* NSWindow's -beginSheet:completionHandler: and -endSheet:returnCode: should be used instead.  NSApplication's -beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo: will continue to work as it previously did, leaking contextInfo and failing when there is already an existing sheet.
-//  */
+// **/
 // - (void)beginSheet:(NSWindow *)sheet modalForWindow:(NSWindow *)docWindow modalDelegate:(nullable id)modalDelegate didEndSelector:(nullable SEL)didEndSelector contextInfo:(null_unspecified void *)contextInfo API_DEPRECATED("Use -[NSWindow beginSheet:completionHandler:] instead", macos(10.0,10.10));
 // - (void)endSheet:(NSWindow *)sheet API_DEPRECATED("Use -[NSWindow endSheet:] instead", macos(10.0,10.10));
 // - (void)endSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode API_DEPRECATED("Use -[NSWindow endSheet:returnCode:] instead", macos(10.0,10.10));
@@ -556,7 +556,7 @@
 // - (nullable NSWindow *)makeWindowsPerform:(SEL)selector inOrder:(BOOL)flag API_DEPRECATED("Use -enumerateWindowsWithOptions:usingBlock: instead", macos(10.0,10.14));
 
 // /* This method is deprecated as of macOS 10.12. Beginning in OS X 10.11 it would always return nil. Prior to this it would return an undefined graphics context that was not generally suitable for drawing.
-//  */
+// **/
 // @property (nullable, readonly, strong) NSGraphicsContext *context API_DEPRECATED("This method always returns nil. If you need access to the current drawing context, use [NSGraphicsContext currentContext] inside of a draw operation.", macos(10.0,10.12));
 
 // @end

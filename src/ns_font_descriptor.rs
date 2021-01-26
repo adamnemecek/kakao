@@ -65,7 +65,7 @@
 // @property (nullable, readonly, copy) NSAffineTransform *matrix;
 // @property (readonly) NSFontDescriptorSymbolicTraits symbolicTraits;
 // /* YES indicates that any fonts matching the descriptor needs to be downloaded prior to instantiating a font. To ensure that the matching fonts are available before use, use NSFontAssetRequest to download. NO indicates that the descriptor is not available for download, has already been downloaded, or is backed by an installed font.
-//  */
+// **/
 // @property (readonly) BOOL requiresFontAssetRequest API_AVAILABLE(macos(10.13));
 
 // - (nullable id)objectForKey:(NSFontDescriptorAttributeName)attribute;
@@ -84,7 +84,7 @@
 // - (NSArray<NSFontDescriptor *> *)matchingFontDescriptorsWithMandatoryKeys:(nullable NSSet<NSFontDescriptorAttributeName> *)mandatoryKeys;
 
 // /* Returns a "normalized" font descriptor matching the receiver. It is the first element returned from -matchingFontDescriptorsWithMandatoryKeys:. mandatoryKeys is an NSSet instance containing keys that are required to be identical in order to be matched. mandatoryKeys can be nil.
-//  */
+// **/
 // - (nullable NSFontDescriptor *)matchingFontDescriptorWithMandatoryKeys:(nullable NSSet<NSFontDescriptorAttributeName> *)mandatoryKeys API_AVAILABLE(macos(10.5));
 
 // - (NSFontDescriptor *)fontDescriptorByAddingAttributes:(NSDictionary<NSFontDescriptorAttributeName, id> *)attributes; // the new attributes take precedence over the existing ones in the receiver
@@ -153,16 +153,16 @@
 
 // /* Font feature keys */
 // /* A number object specifying font feature type such as ligature, character shape, etc. Refer to ATS/SFNTLayoutTypes.h for predefined feature types.
-//  */
+// **/
 // APPKIT_EXTERN NSFontDescriptorFeatureKey NSFontFeatureTypeIdentifierKey API_AVAILABLE(macos(10.5));
 
 // /* A number object specifying font feature selector such as common ligature off, traditional character shape, etc. Refer to ATS/SFNTLayoutTypes.h for predefined feature selectors.
-//  */
+// **/
 // APPKIT_EXTERN NSFontDescriptorFeatureKey NSFontFeatureSelectorIdentifierKey API_AVAILABLE(macos(10.5));
 
 // /* Font weight trait */
 // /* Predefined symbolic weight values used for NSFontWeightTrait and +[NSFont systemFontOfSize:weight:].
-//  */
+// **/
 // APPKIT_EXTERN const NSFontWeight NSFontWeightUltraLight API_AVAILABLE(macos(10.11));
 // APPKIT_EXTERN const NSFontWeight NSFontWeightThin API_AVAILABLE(macos(10.11));
 // APPKIT_EXTERN const NSFontWeight NSFontWeightLight API_AVAILABLE(macos(10.11));
