@@ -119,3 +119,12 @@ macro_rules! foreign_obj_type {
         }
     };
 }
+
+mod ns_responder;
+pub use ns_responder::*;
+
+mod ns_view;
+pub use ns_view::*;
+
+mod ns_view_controller;
+pub use ns_view_controller::*;
