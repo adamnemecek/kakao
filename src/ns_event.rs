@@ -430,6 +430,9 @@ impl NSEventRef {
 
     //   /* the chars that would have been generated, regardless of modifier keys (except shift) */
     // @property (getter=isARepeat, readonly) BOOL ARepeat;
+    pub fn is_a_repeat(&self) -> bool {
+        unsafe { msg_send![self, isARepeat] }
+    }
     // /* this message is valid for keyup, keydown and flagschanged events */
     // @property (readonly) unsigned short keyCode;        /* device-independent key number */
     // /* these messages are valid for enter and exit events */

@@ -17,6 +17,7 @@
 // @class NSError, NSEvent, NSMenu, NSUndoManager, NSWindow;
 
 // @interface NSResponder : NSObject <NSCoding>
+use crate::prelude::*;
 
 pub enum NSResponderFFI {}
 
@@ -46,23 +47,69 @@ impl NSResponderRef {
     // - (BOOL)performKeyEquivalent:(NSEvent *)event;
     // - (nullable id)validRequestorForSendType:(nullable NSPasteboardType)sendType returnType:(nullable NSPasteboardType)returnType;
     // - (void)mouseDown:(NSEvent *)event;
-    // - (void)rightMouseDown:(NSEvent *)event;
-    // - (void)otherMouseDown:(NSEvent *)event;
+    pub fn mouse_down(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseDown: event] }
+    }
     // - (void)mouseUp:(NSEvent *)event;
+    pub fn mouse_up(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseUp: event] }
+    }
     // - (void)rightMouseUp:(NSEvent *)event;
+    pub fn right_mouse_up(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, rightMouseUp: event] }
+    }
     // - (void)otherMouseUp:(NSEvent *)event;
+    pub fn other_mouse_up(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, otherMouseUp: event] }
+    }
     // - (void)mouseMoved:(NSEvent *)event;
+    pub fn mouse_moved(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseMoved: event] }
+    }
     // - (void)mouseDragged:(NSEvent *)event;
+    pub fn mouse_dragged(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseDragged: event] }
+    }
     // - (void)scrollWheel:(NSEvent *)event;
+    pub fn scroll_wheel(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, scrollWheel: event] }
+    }
     // - (void)rightMouseDragged:(NSEvent *)event;
+    pub fn right_mouse_dragged(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, rightMouseDragged: event] }
+    }
     // - (void)otherMouseDragged:(NSEvent *)event;
+    pub fn other_mouse_dragged(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, otherMouseDragged: event] }
+    }
     // - (void)mouseEntered:(NSEvent *)event;
+    pub fn mouse_entered(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseEntered: event] }
+    }
     // - (void)mouseExited:(NSEvent *)event;
+    pub fn mouse_exited(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, mouseExited: event] }
+    }
     // - (void)keyDown:(NSEvent *)event;
+    pub fn key_down(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, keyDown: event] }
+    }
     // - (void)keyUp:(NSEvent *)event;
+    pub fn key_up(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, keyUp: event] }
+    }
     // - (void)flagsChanged:(NSEvent *)event;
+    pub fn flags_changed(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, flagsChanged: event] }
+    }
     // - (void)tabletPoint:(NSEvent *)event;
+    pub fn tablet_point(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, tabletPoint: event] }
+    }
     // - (void)tabletProximity:(NSEvent *)event;
+    pub fn tablet_proximity(&self, event: &NSEventRef) {
+        unsafe { msg_send![self, tabletProximity: event] }
+    }
     // - (void)cursorUpdate:(NSEvent *)event API_AVAILABLE(macos(10.5));
     // /* The following *WithEvent methods are available on 10.5.2 or later, and will be sent only on hardware capable of generating the corresponding NSEvent types
     // */

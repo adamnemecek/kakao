@@ -120,6 +120,8 @@ macro_rules! foreign_obj_type {
     };
 }
 
+mod prelude;
+
 mod ns_accessibility;
 pub use ns_accessibility::*;
 
