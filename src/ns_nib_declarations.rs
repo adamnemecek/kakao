@@ -1,26 +1,26 @@
-/*
-        NSNibDeclarations.h
-        Application Kit
-        Copyright (c) 1996-2019, Apple Inc.
-        All rights reserved.
-*/
+// /*
+//         NSNibDeclarations.h
+//         Application Kit
+//         Copyright (c) 1996-2019, Apple Inc.
+//         All rights reserved.
+// */
 
-#ifndef IBOutlet
-#define IBOutlet
-#endif
+// #ifndef IBOutlet
+// #define IBOutlet
+// #endif
 
-#ifndef IBAction
-#define IBAction void
-#endif
+// #ifndef IBAction
+// #define IBAction void
+// #endif
 
-#ifndef IBInspectable
-#define IBInspectable
-#endif
+// #ifndef IBInspectable
+// #define IBInspectable
+// #endif
 
-#ifndef IB_DESIGNABLE
-#define IB_DESIGNABLE
-#endif
+// #ifndef IB_DESIGNABLE
+// #define IB_DESIGNABLE
+// #endif
 
-#ifndef IBSegueAction
-#define IBSegueAction
-#endif
+// #ifndef IBSegueAction
+// #define IBSegueAction
+// #endif

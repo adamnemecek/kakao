@@ -1,27 +1,27 @@
-/*
-	NSAppleScriptExtensions.h
-	Application Kit
-	Copyright (c) 2002-2019, Apple Inc.
-	All rights reserved.
-*/
+// /*
+// 	NSAppleScriptExtensions.h
+// 	Application Kit
+// 	Copyright (c) 2002-2019, Apple Inc.
+// 	All rights reserved.
+// */
 
-#import <Foundation/NSAppleScript.h>
-#import <AppKit/AppKitDefines.h>
+// #import <Foundation/NSAppleScript.h>
+// #import <AppKit/AppKitDefines.h>
 
-NS_ASSUME_NONNULL_BEGIN
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// NS_ASSUME_NONNULL_BEGIN
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@class NSAttributedString;
+// @class NSAttributedString;
 
 
 
-@interface NSAppleScript(NSExtensions)
+// @interface NSAppleScript(NSExtensions)
 
-// Return the syntax-highlighted source code of the script if the script has been compiled and its source code is available, nil otherwise.  It is possible for an NSAppleScript that has been instantiated with -initWithContentsOfURL:error: to be a script for which the source code is not available, but is nonetheless executable.
-@property (nullable, readonly, strong) NSAttributedString *richTextSource;
+// // Return the syntax-highlighted source code of the script if the script has been compiled and its source code is available, nil otherwise.  It is possible for an NSAppleScript that has been instantiated with -initWithContentsOfURL:error: to be a script for which the source code is not available, but is nonetheless executable.
+// @property (nullable, readonly, strong) NSAttributedString *richTextSource;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
-NS_ASSUME_NONNULL_END
+// API_UNAVAILABLE_END
+// NS_ASSUME_NONNULL_END
 

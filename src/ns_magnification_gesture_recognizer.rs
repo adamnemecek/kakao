@@ -1,23 +1,23 @@
-/*
-    NSMagnificationGestureRecognizer.h
-    Application Kit
-    Copyright (c) 2013-2019, Apple Inc.
-    All rights reserved.
-*/
+// /*
+//     NSMagnificationGestureRecognizer.h
+//     Application Kit
+//     Copyright (c) 2013-2019, Apple Inc.
+//     All rights reserved.
+// */
 
-#import <Foundation/Foundation.h>
-#import <AppKit/NSGestureRecognizer.h>
-#import <AppKit/AppKitDefines.h>
+// #import <Foundation/Foundation.h>
+// #import <AppKit/NSGestureRecognizer.h>
+// #import <AppKit/AppKitDefines.h>
 
-NS_ASSUME_NONNULL_BEGIN
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// NS_ASSUME_NONNULL_BEGIN
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-API_AVAILABLE(macos(10.10))
-@interface NSMagnificationGestureRecognizer : NSGestureRecognizer
+// API_AVAILABLE(macos(10.10))
+// @interface NSMagnificationGestureRecognizer : NSGestureRecognizer
 
-@property CGFloat magnification;
+// @property CGFloat magnification;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
-NS_ASSUME_NONNULL_END
+// API_UNAVAILABLE_END
+// NS_ASSUME_NONNULL_END

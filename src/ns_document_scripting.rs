@@ -1,32 +1,32 @@
-/*
-        NSDocumentScripting.h
-        AppKit Framework
-        Copyright (c) 1997-2019, Apple Inc.
-        All rights reserved.
-*/
+// /*
+//         NSDocumentScripting.h
+//         AppKit Framework
+//         Copyright (c) 1997-2019, Apple Inc.
+//         All rights reserved.
+// */
 
-#import <AppKit/NSDocument.h>
-#import <AppKit/AppKitDefines.h>
+// #import <AppKit/NSDocument.h>
+// #import <AppKit/AppKitDefines.h>
 
-NS_ASSUME_NONNULL_BEGIN
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// NS_ASSUME_NONNULL_BEGIN
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@class NSCloseCommand;
-@class NSScriptCommand;
-@class NSScriptObjectSpecifier;
-@class NSString;
+// @class NSCloseCommand;
+// @class NSScriptCommand;
+// @class NSScriptObjectSpecifier;
+// @class NSString;
 
-@interface NSDocument (NSScripting)
+// @interface NSDocument (NSScripting)
 
-@property (copy) NSString *lastComponentOfFileName;
+// @property (copy) NSString *lastComponentOfFileName;
 
-- (nullable id)handleSaveScriptCommand:(NSScriptCommand *)command;
-- (nullable id)handleCloseScriptCommand:(NSCloseCommand *)command;
-- (nullable id)handlePrintScriptCommand:(NSScriptCommand *)command;
+// - (nullable id)handleSaveScriptCommand:(NSScriptCommand *)command;
+// - (nullable id)handleCloseScriptCommand:(NSCloseCommand *)command;
+// - (nullable id)handlePrintScriptCommand:(NSScriptCommand *)command;
 
-@property (readonly, strong) NSScriptObjectSpecifier *objectSpecifier;
+// @property (readonly, strong) NSScriptObjectSpecifier *objectSpecifier;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
-NS_ASSUME_NONNULL_END
+// API_UNAVAILABLE_END
+// NS_ASSUME_NONNULL_END

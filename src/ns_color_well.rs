@@ -1,30 +1,30 @@
-/*
-	NSColorWell.h
-	Application Kit
-	Copyright (c) 1994-2019, Apple Inc.
-	All rights reserved.
-*/
+// /*
+// 	NSColorWell.h
+// 	Application Kit
+// 	Copyright (c) 1994-2019, Apple Inc.
+// 	All rights reserved.
+// */
 
-#import <AppKit/NSControl.h>
-#import <AppKit/AppKitDefines.h>
+// #import <AppKit/NSControl.h>
+// #import <AppKit/AppKitDefines.h>
 
-NS_ASSUME_NONNULL_BEGIN
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// NS_ASSUME_NONNULL_BEGIN
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@interface NSColorWell : NSControl
+// @interface NSColorWell : NSControl
 
-- (void)deactivate;
-- (void)activate:(BOOL)exclusive;
-@property (getter=isActive, readonly) BOOL active;
+// - (void)deactivate;
+// - (void)activate:(BOOL)exclusive;
+// @property (getter=isActive, readonly) BOOL active;
 
-- (void)drawWellInside:(NSRect)insideRect;
+// - (void)drawWellInside:(NSRect)insideRect;
 
-@property (getter=isBordered) BOOL bordered;
+// @property (getter=isBordered) BOOL bordered;
 
-- (void)takeColorFrom:(nullable id)sender;
-@property (copy) NSColor *color;
+// - (void)takeColorFrom:(nullable id)sender;
+// @property (copy) NSColor *color;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
-NS_ASSUME_NONNULL_END
+// API_UNAVAILABLE_END
+// NS_ASSUME_NONNULL_END
