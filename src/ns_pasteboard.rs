@@ -180,7 +180,7 @@
 // #endif
 
 
-// /*** NSPasteboardWriting and NSPasteboardReading Protocols ***/
+// */* NSPasteboardWriting and NSPasteboardReading Protocols ***/
 
 
 // /* The NSPasteboardWriting protocol enables instances of a class to be used with the -writeObjects: method of NSPasteboard.  The Cocoa framework classes NSString, NSAttributedString, NSURL, NSColor, NSSound, NSImage, and NSPasteboardItem implement this protocol.  The protocol can also be implemented by custom application classes for use with -writeObjects:
@@ -248,7 +248,7 @@
 
 // @end
 
-// /*** NSURL Pasteboard Support ***/
+// */* NSURL Pasteboard Support ***/
 
 // /* The recommended approach for writing URLs to the pasteboard is as follows:
 
@@ -279,13 +279,13 @@
 // @end
 
 
-// /*** NSString Pasteboard Support ***/
+// */* NSString Pasteboard Support ***/
 
 // @interface NSString(NSPasteboardSupport) <NSPasteboardWriting, NSPasteboardReading>
 // @end
 
 
-// /*** File Contents ***/
+// */* File Contents ***/
 
 // /* The file contents pboard type allowed you to synthesize a pboard type for a file's contents based on the file's extension.  Using the UTI of a file to represent its contents now replaces this functionality.*/
 
@@ -306,7 +306,7 @@
 // APPKIT_EXTERN NSArray<NSString *> * _Nullable NSGetFileTypes(NSArray<NSPasteboardType> *pboardTypes);
 
 
-// /*** Deprecated ***/
+// */* Deprecated ***/
 
 // APPKIT_EXTERN NSPasteboardType NSStringPboardType API_DEPRECATED_WITH_REPLACEMENT("NSPasteboardTypeString", macos(10.0,10.14));
 // APPKIT_EXTERN NSPasteboardType NSFilenamesPboardType API_DEPRECATED("Create multiple pasteboard items with NSPasteboardTypeFileURL or kUTTypeFileURL instead", macos(10.0,10.14));

@@ -71,7 +71,7 @@
 // #endif
 // @interface NSTextView : NSText <NSColorChanging, NSMenuItemValidation, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSStandardKeyBindingResponding, NSTextInput, NSAccessibilityNavigableStaticText, NSTextContent>
 
-// /**************************** Initializing ****************************/
+// */************************** Initializing ****************************/
 
 // // Designated Initializer. container may be nil.
 // - (instancetype)initWithFrame:(NSRect)frameRect textContainer:(nullable NSTextContainer *)container NS_DESIGNATED_INITIALIZER;
@@ -81,7 +81,7 @@
 // // This variant will create the text network (textStorage, layoutManager, and a container).
 // - (instancetype)initWithFrame:(NSRect)frameRect;
 
-// /***************** Get/Set the container and other stuff *****************/
+// */*************** Get/Set the container and other stuff *****************/
 
 // // The set method should not be called directly, but you might want to override it.  Gets or sets the text container for this view.  Setting the text container marks the view as needing display.  The text container calls the set method from its setTextView: method.
 // @property (nullable, assign) NSTextContainer *textContainer;
@@ -102,16 +102,16 @@
 
 // @property (nullable, readonly, assign) NSTextStorage *textStorage;
 
-// /************************* Key binding entry-point *************************/
+// */*********************** Key binding entry-point *************************/
 
 // - (void)insertText:(id)insertString API_DEPRECATED("Use -insertText:replacementRange: from NSTextInputClient instead. Since the method is designed to be used solely by the input system, the message should never be sent to a text view from applications. Any content modifications should be via either NSTextStorage or NSText methods.", macos(10.0,10.11));
 
-// /*************************** Sizing methods ***************************/
+// */************************* Sizing methods ***************************/
 
 // // Sets the frame size of the view to desiredSize constrained within min and max size.
 // - (void)setConstrainedFrameSize:(NSSize)desiredSize;
 
-// /***************** New miscellaneous API above and beyond NSText *****************/
+// */*************** New miscellaneous API above and beyond NSText *****************/
 
 // // These two complete the set of range: type set methods. to be equivalent to the set of non-range taking varieties.
 // #if !TARGET_OS_IPHONE
@@ -119,7 +119,7 @@
 // - (void)setBaseWritingDirection:(NSWritingDirection)writingDirection range:(NSRange)range;
 // #endif
 
-// /*************************** New Font menu commands ***************************/
+// */************************* New Font menu commands ***************************/
 
 // - (void)turnOffKerning:(nullable id)sender;
 // - (void)tightenKerning:(nullable id)sender;
@@ -133,12 +133,12 @@
 // - (void)toggleTraditionalCharacterShape:(nullable id)sender API_DEPRECATED("Use the traditional shaped characters encoded in the Unicode standard. Access the characters via the character palette.", macos(10.0,10.11));
 // - (void)outline:(nullable id)sender;
 
-// /*************************** Find menu commands ***************************/
+// */************************* Find menu commands ***************************/
 
 // // See NSFindPanelAction for possible tags in sender
 // - (void)performFindPanelAction:(nullable id)sender;
 
-// /*************************** New Text commands ***************************/
+// */************************* New Text commands ***************************/
 
 // - (void)alignJustified:(nullable id)sender;
 // - (void)changeColor:(nullable id)sender;
@@ -149,7 +149,7 @@
 // - (void)orderFrontListPanel:(nullable id)sender;
 // - (void)orderFrontTablePanel:(nullable id)sender;
 
-// /*************************** Ruler support ***************************/
+// */************************* Ruler support ***************************/
 
 // - (void)rulerView:(NSRulerView *)ruler didMoveMarker:(NSRulerMarker *)marker;
 // - (void)rulerView:(NSRulerView *)ruler didRemoveMarker:(NSRulerMarker *)marker;
@@ -161,7 +161,7 @@
 // - (CGFloat)rulerView:(NSRulerView *)ruler willAddMarker:(NSRulerMarker *)marker atLocation:(CGFloat)location;
 // - (void)rulerView:(NSRulerView *)ruler handleMouseDown:(NSEvent *)event;
 
-// /*************************** Fine display control ***************************/
+// */************************* Fine display control ***************************/
 
 // // If flag is set, then this will attempt to avoid causing layout, if possible, when displaying the rect.  If flag is not set, this is equivalent to setNeedsDisplayInRect:.
 // - (void)setNeedsDisplayInRect:(NSRect)rect avoidAdditionalLayout:(BOOL)flag;
@@ -172,7 +172,7 @@
 // // This is the override point for view background drawing.
 // - (void)drawViewBackgroundInRect:(NSRect)rect;
 
-// /*************************** Especially for subclassers ***************************/
+// */************************* Especially for subclassers ***************************/
 
 // - (void)updateRuler;
 // - (void)updateFontPanel;
@@ -181,17 +181,17 @@
 
 // - (NSRange)selectionRangeForProposedRange:(NSRange)proposedCharRange granularity:(NSSelectionGranularity)granularity;
 
-// /*************************** Especially for subclassers ***************************/
+// */************************* Especially for subclassers ***************************/
 
 // // Cause the text view to act as if someone clicked on a piece of text with link as the value of NSLinkAttributeName.  If, for instance, you have a special attachment cell that can end up following links, you can use this method to ask the text view to follow a link once you decide it should.  This method is invoked by the text view during mouse tracking if the user is clicking a link as well.  This sends the textView:clickedOnLink: delegation if the delegate responds.
 // - (void)clickedOnLink:(id)link atIndex:(NSUInteger)charIndex;
 
-// /************************* Speech support *************************/
+// */*********************** Speech support *************************/
 
 // - (void)startSpeaking:(nullable id)sender;
 // - (void)stopSpeaking:(nullable id)sender;
 
-// /************************* Vertical text support *************************/
+// */*********************** Vertical text support *************************/
 
 // #if !TARGET_OS_IPHONE
 // // Changes the receiver's layout orientation and invalidates the contents.  Unlike other NSTextView properties, this is not shared by sibling views.  It also rotates the bounds 90 degrees, swaps horizontal and vertical bits of the autoresizing mask, and reconfigures isHorizontallyResizable and isVerticallyResizable properties accordingly.  Also, if -enclosingScrollView returns non-nil, it reconfigures horizontal and vertical ruler views, horizontal and vertical scrollers, and the frame.
@@ -201,21 +201,21 @@
 // // An action method that calls -setLayoutOrientation: with the sender's tag as the orientation.
 // - (void)changeLayoutOrientation:(nullable id)sender API_AVAILABLE(macos(10.7));
 
-// /************************* Helper for subclassers *************************/
+// */*********************** Helper for subclassers *************************/
 
 // // Here point is in view coordinates, and the return value is a character index appropriate for placing a zero-length selection for an insertion point associated with the mouse at the given point.  The NSTextInput method characterIndexForPoint: is not suitable for this role.
 // - (NSUInteger)characterIndexForInsertionAtPoint:(NSPoint)point API_AVAILABLE(macos(10.5));
 
-// /**************************** Ownership policy ****************************/
+// */************************** Ownership policy ****************************/
 // // Returns whether instances of the class operate in the object ownership policy introduced with macOS Sierra and later. When YES, the new object owner policy is used. Under the policy, each text view strongly retains its text storage and its text container weakly references the view. Also, the text views are compatible with __weak storage. The default is YES.
 // @property (readonly, class) BOOL stronglyReferencesTextStorage API_AVAILABLE(macos(10.12));
 
-// /*************************** Document Content Access ***************************/
+// */************************* Document Content Access ***************************/
 // #pragma mark Document Content Mutation
 // // Replaces the contents at the specified range with attributedString. In addition to invoking -[NSTextStorage replaceCharactersInRange:withAttributedString:], this method ensures that the change is validated with -shouldChangeTextInRange:replacementString:/-didChangeText. Returns YES if the change was validated and performed. Upon replacement, each attribute run in attributedString is complemented by the attributes at range.location.
 // - (BOOL)performValidatedReplacementInRange:(NSRange)range withAttributedString:(NSAttributedString *)attributedString API_AVAILABLE(macos(10.14));
 
-// /*************************** Dark Mode ***************************/
+// */************************* Dark Mode ***************************/
 // #pragma mark Dark Mode
 // // When YES, enables the adaptive color mapping mode. In this mode under the dark effective appearance, NSTextView maps all colors with NSColorTypeComponentBased by inverting the brightness whenever they are coming in and out of the model object, NSTextStorage. For example, when rendering, interacting with NSColorPanel and NSFontManager, and converting from/to the pasteboard and external formats, the color values are converted between the model and rendering contexts. Note that the color conversion algorithm compresses the brightness range and, therefore, does not retain the round-trip fidelity between the light and dark appearances. It may not be suitable for rich text authoring, so it is a good idea to provide a command or preference for your users to see and edit their docs without this option, or in light mode.
 // @property BOOL usesAdaptiveColorMappingForDarkAppearance API_AVAILABLE(macos(10.14));
@@ -223,7 +223,7 @@
 
 // @interface NSTextView (NSCompletion)
 
-// /************************* Completion support *********************/
+// */*********************** Completion support *********************/
 
 // // Responder method for invoking completion.  May be invoked programmatically if autocompletion is desired.
 // - (void)complete:(nullable id)sender;
@@ -241,7 +241,7 @@
 
 // @interface NSTextView (NSPasteboard)
 
-// /******************* Pasteboard support (mainly for subclassers) *******************/
+// */***************** Pasteboard support (mainly for subclassers) *******************/
 
 // // To implement support for writing a new type, override -writeSelectionToPasteboard:type: to support your new type (and call super if you're not going to handle it.)  Then you can override -writablePasteboardTypes and optionally the +registerForServices methods to enable the new type.
 
@@ -306,7 +306,7 @@
 // // The methods in this category deal with settings that need to be shared by all the NSTextViews of a single NSLayoutManager.  Many of these methods are overrides of NSText or NSResponder methods.
 // @interface NSTextView (NSSharing)
 
-// /*************************** Selected/Marked range ***************************/
+// */************************* Selected/Marked range ***************************/
 
 // @property (copy) NSArray<NSValue *> *selectedRanges;
 
@@ -333,11 +333,11 @@
 // // If set, then text with a link attribute will automatically be treated as if it had an implicit tooltip attribute with the same value as the link attribute.  An explicit tooltip attribute will take precedence over this implicit one.  The textView:willDisplayToolTip:forCharacterAtIndex: delegate method affects these tooltips as it does any other.
 // @property BOOL displaysLinkToolTips API_AVAILABLE(macos(10.5));
 
-// /************************* Glyph info support *************************/
+// */*********************** Glyph info support *************************/
 
 // @property BOOL acceptsGlyphInfo;
 
-// /*************************** Other NSTextView methods ***************************/
+// */************************* Other NSTextView methods ***************************/
 
 // @property BOOL usesRuler;
 
@@ -391,7 +391,7 @@
 // @property BOOL usesRolloverButtonForSelection API_AVAILABLE(macos(10.10));
 
 
-// /*************************** NSText methods ***************************/
+// */************************* NSText methods ***************************/
 
 // @property (nullable, weak) id<NSTextViewDelegate> delegate;
 // @property (getter=isEditable) BOOL editable;
@@ -406,7 +406,7 @@
 // - (void)setSelectedRange:(NSRange)charRange;
 //     // Other NSText methods are implemented in the base NSTextView implementation rather than in this category.  See NSText.h for declarations.
 
-// /*************************** Input Source support ***************************/
+// */************************* Input Source support ***************************/
 // /* Returns an array of locale identifiers representing keyboard input sources allowed to be enabled when the receiver has the keyboard focus.
 //  */
 // @property (nullable, copy) NSArray<NSString *> *allowedInputSourceLocales API_AVAILABLE(macos(10.5));
@@ -414,7 +414,7 @@
 
 // @interface NSTextView (NSTextChecking)
 
-// /*************************** Smart copy/paste/delete/substitution support ***************************/
+// */************************* Smart copy/paste/delete/substitution support ***************************/
 
 // @property BOOL smartInsertDeleteEnabled;
 // - (NSRange)smartDeleteRangeForProposedRange:(NSRange)proposedCharRange;
@@ -461,7 +461,7 @@
 
 // @interface NSTextView (NSQuickLookPreview)
 
-// /*************************** Quick Look support ***************************/
+// */************************* Quick Look support ***************************/
 // // This action message toggles the visibility state of the Quick Look preview panel if the receiver is the current Quick Look controller.
 // - (IBAction)toggleQuickLookPreviewPanel:(nullable id)sender API_AVAILABLE(macos(10.7));
 
@@ -474,7 +474,7 @@
 // @end
 
 // @interface NSTextView (NSTextView_SharingService)
-// /*************************** NSSharingService support ***************************/
+// */************************* NSSharingService support ***************************/
 
 // // Creates a new instance of NSSharingServicePicker based on the current selection & shows to the screen. The items passed to the NSSharingServicePicker initializer are determined using -itemsForSharingServiceInRanges:. When the current selection is 0 length, the whole document is passed to the method.
 // - (IBAction)orderFrontSharingServicePicker:(nullable id)sender API_AVAILABLE(macos(10.8));

@@ -10,7 +10,7 @@
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-// /*** Exception Constants ***/
+// */* Exception Constants ***/
 
 // // name for accessibility exception - declared in NSErrors.h
 // // APPKIT_EXTERN NSExceptionName NSAccessibilityException;
@@ -20,7 +20,7 @@
 // APPKIT_EXTERN NSString *const NSAccessibilityErrorCodeExceptionInfo;
 
 
-// /*** Accessibility Constants ***/
+// */* Accessibility Constants ***/
 
 // /* Standard attributes
 //  */

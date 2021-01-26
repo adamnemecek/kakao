@@ -48,7 +48,7 @@
 // APPKIT_EXTERN void NSOpenGLGetVersion(GLint * _Nullable major, GLint * _Nullable minor) NS_OPENGL_DEPRECATED(10.0, 10.14);
 
 
-// /*********************
+// */*******************
 //  ** NSOpenGLPixelFormat
 //  *********************/
 
@@ -128,7 +128,7 @@
 
 // @end
 
-// /*********************
+// */*******************
 //  ** NSOpenGLPixelBuffer
 //  *********************/
 
@@ -156,7 +156,7 @@
 // @end
 
 
-// /*****************
+// */***************
 //  ** NSOpenGLContext
 //  *****************/
 

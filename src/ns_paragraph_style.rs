@@ -140,7 +140,7 @@
 // @property NSLineBreakStrategy lineBreakStrategy API_AVAILABLE(macos(10.11), ios(9.0));
 // @end
 
-// /************************ Deprecated ************************/
+// */********************** Deprecated ************************/
 // // NSTextTabType and NSTextTab methods using the type are soft deprecated starting with OS X 10.11. It will be officially deprecated in a future release. Use NSTextAlignment-based API instead
 // typedef NS_ENUM(NSUInteger, NSTextTabType) {
 //     NSLeftTabStopType = 0,

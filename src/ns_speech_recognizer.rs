@@ -1,46 +1,46 @@
-/*
-	NSSpeechRecognizer.h
-	Application Kit
-	Copyright (c) 2003-2019, Apple Inc.
-	All rights reserved.
-*/
+// /*
+// 	NSSpeechRecognizer.h
+// 	Application Kit
+// 	Copyright (c) 2003-2019, Apple Inc.
+// 	All rights reserved.
+// */
 
-#import <AppKit/AppKitDefines.h>
-#import <Foundation/NSObject.h>
-#import <Foundation/NSArray.h>
+// #import <AppKit/AppKitDefines.h>
+// #import <Foundation/NSObject.h>
+// #import <Foundation/NSArray.h>
 
-NS_ASSUME_NONNULL_BEGIN
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// NS_ASSUME_NONNULL_BEGIN
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@class NSString;
-@protocol NSSpeechRecognizerDelegate;
+// @class NSString;
+// @protocol NSSpeechRecognizerDelegate;
 
 
-@interface NSSpeechRecognizer : NSObject
+// @interface NSSpeechRecognizer : NSObject
 
-- (nullable instancetype)init;
+// - (nullable instancetype)init;
 
-- (void)startListening;
-- (void)stopListening;
+// - (void)startListening;
+// - (void)stopListening;
 
-@property (nullable, weak) id<NSSpeechRecognizerDelegate> delegate;
+// @property (nullable, weak) id<NSSpeechRecognizerDelegate> delegate;
 
-@property (nullable, copy) NSArray<NSString *> *commands;
+// @property (nullable, copy) NSArray<NSString *> *commands;
 
-@property (nullable, copy) NSString *displayedCommandsTitle;
+// @property (nullable, copy) NSString *displayedCommandsTitle;
 
-@property BOOL listensInForegroundOnly;
+// @property BOOL listensInForegroundOnly;
 
-@property BOOL blocksOtherRecognizers;
+// @property BOOL blocksOtherRecognizers;
 
-@end
+// @end
 
-@protocol NSSpeechRecognizerDelegate <NSObject>
-@optional
-- (void)speechRecognizer:(NSSpeechRecognizer *)sender didRecognizeCommand:(NSString *)command;
+// @protocol NSSpeechRecognizerDelegate <NSObject>
+// @optional
+// - (void)speechRecognizer:(NSSpeechRecognizer *)sender didRecognizeCommand:(NSString *)command;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
-NS_ASSUME_NONNULL_END
+// API_UNAVAILABLE_END
+// NS_ASSUME_NONNULL_END
 

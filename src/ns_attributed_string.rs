@@ -20,7 +20,7 @@
 // NS_ASSUME_NONNULL_BEGIN
 // #if !TARGET_OS_IPHONE
 
-// /************************ Attributes ************************/
+// */********************** Attributes ************************/
 
 // // Predefined character attributes for text. If the key is not present in the dictionary, it indicates the default value described below.
 // APPKIT_EXTERN NSAttributedStringKey  NSFontAttributeName API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));                // NSFont, default Helvetica(Neue) 12
@@ -63,7 +63,7 @@
 // APPKIT_EXTERN NSAttributedStringKey NSGlyphInfoAttributeName;  // NSGlyphInfo specifying glyph for the associated attribute range
 
 
-// /************************ Attribute values ************************/
+// */********************** Attribute values ************************/
 // // This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName. These values are or'ed together to produce an underline style.
 // // Underlines will be drawn with a solid pattern by default, so NSUnderlineStylePatternSolid does not need to be specified.
 // typedef NS_OPTIONS(NSInteger, NSUnderlineStyle) {
@@ -97,7 +97,7 @@
 //     NSSpellingStateGrammarFlag API_AVAILABLE(macos(10.5))  = (1 << 1)
 // };
 
-// /************************ Attribute fixing ************************/
+// */********************** Attribute fixing ************************/
 
 // @interface NSMutableAttributedString (NSAttributedStringAttributeFixing)
 // // This method fixes attribute inconsistencies inside range.  It ensures NSFontAttributeName covers the characters, NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is assigned to NSAttachmentCharacter.  NSTextStorage automatically invokes this method via -ensureAttributesAreFixedInRange:.
@@ -109,7 +109,7 @@
 // @end
 
 
-// /************************ Document formats ************************/
+// */********************** Document formats ************************/
 
 // typedef NSString * NSAttributedStringDocumentType NS_TYPED_EXTENSIBLE_ENUM;
 
@@ -252,7 +252,7 @@
 // @end
 
 
-// /************************ Misc methods ************************/
+// */********************** Misc methods ************************/
 // @interface NSAttributedString (NSAttributedStringKitAdditions)
 // // Attributes which should be copied/pasted with "copy font".
 // - (NSDictionary<NSAttributedStringKey, id> *)fontAttributesInRange:(NSRange)range;
@@ -293,7 +293,7 @@
 // - (void)setBaseWritingDirection:(NSWritingDirection)writingDirection range:(NSRange)range;
 // @end
 
-// /************************ Deprecated ************************/
+// */********************** Deprecated ************************/
 // // NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and will be officially deprecated in a future release.  Please use the NSUnderlineStyle* equivalents instead.
 // // Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be specified.
 // static const NSUnderlineStyle NSUnderlinePatternSolid = NSUnderlineStylePatternSolid;

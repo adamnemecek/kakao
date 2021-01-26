@@ -35,7 +35,7 @@
 
 // API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0)) @interface NSTextStorage : NSMutableAttributedString <NSSecureCoding>
 
-// /**************************** Layout manager ****************************/
+// */************************** Layout manager ****************************/
 
 // // NSLayoutManager objects owned by the receiver.
 // @property (readonly, copy) NSArray<NSLayoutManager *> *layoutManagers;
@@ -47,7 +47,7 @@
 // - (void)removeLayoutManager:(NSLayoutManager *)aLayoutManager;
 
 
-// /**************************** Pending edit info ****************************/
+// */************************** Pending edit info ****************************/
 // // These methods return information about the editing status. Especially useful when there are outstanding beginEditing calls or during processEditing...
 
 // // The NSTextStorageEditActions mask indicating that there are pending changes for attributes, characters, or both.
@@ -60,12 +60,12 @@
 // @property (readonly) NSInteger changeInLength;
 
 
-// /**************************** Delegate ****************************/
+// */************************** Delegate ****************************/
 
 // @property (nullable, weak) id <NSTextStorageDelegate> delegate;
 
 
-// /**************************** Edit management ****************************/
+// */************************** Edit management ****************************/
 
 // // Notifies and records a recent change.  If there are no outstanding -beginEditing calls, this method calls -processEditing to trigger post-editing processes.  This method has to be called by the primitives after changes are made if subclassed and overridden.  editedRange is the range in the original string (before the edit).
 // - (void)edited:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
@@ -74,7 +74,7 @@
 // - (void)processEditing;
 
 
-// /**************************** Attribute fixing ****************************/
+// */************************** Attribute fixing ****************************/
 
 // // Indicates if the receiver fixes invalidated attributes lazily.  The concrete UIKit subclass fixes attributes lazily by default.  The abstract class (hence, all custom subclasses) is not lazy.
 // @property (readonly) BOOL fixesAttributesLazily;
@@ -87,7 +87,7 @@
 // @end
 
 
-// /****  NSTextStorage delegate methods ****/
+// */**  NSTextStorage delegate methods ****/
 
 // @protocol NSTextStorageDelegate <NSObject>
 // @optional
@@ -100,12 +100,12 @@
 
 // @end
 
-// /**** Notifications ****/
+// */** Notifications ****/
 
 // APPKIT_EXTERN NSNotificationName  NSTextStorageWillProcessEditingNotification API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0));
 // APPKIT_EXTERN NSNotificationName  NSTextStorageDidProcessEditingNotification API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0));
 
-// /**** Deprecations ****/
+// */** Deprecations ****/
 // // NSTextStorageEditedOptions is deprecated along with -[NSLayoutManager textStorage:edited:range:changeInLength:invalidatedRange:. Use NSTextStorageEditActions.
 // typedef NSUInteger NSTextStorageEditedOptions;
 

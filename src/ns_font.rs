@@ -16,7 +16,7 @@
 
 // @class NSFontDescriptor, NSAffineTransform, NSGraphicsContext;
 
-// /********* Font Matrix *********/
+// */******* Font Matrix *********/
 // /* This is a font matrix value representing [1 0 0 1 0 0].
 // */
 // APPKIT_EXTERN const CGFloat * NSFontIdentityMatrix;
@@ -24,7 +24,7 @@
 // NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 // @interface NSFont : NSObject <NSCopying, NSSecureCoding>
 
-// /********* Factory *********/
+// */******* Factory *********/
 // + (nullable NSFont *)fontWithName:(NSString *)fontName size:(CGFloat)fontSize;
 // + (nullable NSFont *)fontWithName:(NSString *)fontName matrix:(const CGFloat *)fontMatrix;
 // /* Instantiates an NSFont object matching fontDescriptor. If fontSize is greater than 0.0, it has precedence over NSFontSizeAttribute in fontDescriptor.
@@ -35,7 +35,7 @@
 // */
 // + (nullable NSFont *)fontWithDescriptor:(NSFontDescriptor *)fontDescriptor textTransform:(nullable NSAffineTransform *)textTransform;
 
-// /********* Meta Font *********/
+// */******* Meta Font *********/
 // /* User font settings
 // */
 // + (nullable NSFont *)userFontOfSize:(CGFloat)fontSize;	// Application font
@@ -76,7 +76,7 @@
 
 // + (CGFloat)systemFontSizeForControlSize:(NSControlSize)controlSize;
 
-// /********* Core font attribute *********/
+// */******* Core font attribute *********/
 // @property (readonly, copy) NSString *fontName;
 // @property (readonly) CGFloat pointSize;
 // @property (readonly) const CGFloat *matrix NS_RETURNS_INNER_POINTER;
@@ -85,12 +85,12 @@
 // @property (readonly, strong) NSFontDescriptor *fontDescriptor;
 // @property (readonly, copy) NSAffineTransform *textTransform;
 
-// /********* Glyph coverage *********/
+// */******* Glyph coverage *********/
 // @property (readonly) NSUInteger numberOfGlyphs;
 // @property (readonly) NSStringEncoding mostCompatibleStringEncoding;
 // @property (readonly, strong) NSCharacterSet *coveredCharacterSet;
 
-// /********* Font instance-wide metrics *********/
+// */******* Font instance-wide metrics *********/
 // /* These methods return scaled numbers.  If the font was created with a matrix, the matrix is applied automatically; otherwise the coordinates are multiplied by size.
 // */
 // @property (readonly) NSRect boundingRectForFont;
@@ -107,8 +107,8 @@
 // @property (readonly) CGFloat xHeight;
 // @property (getter=isFixedPitch, readonly) BOOL fixedPitch;
 
-// /********* Glyph metrics *********/
-// /********* Glyph metrics *********/
+// */******* Glyph metrics *********/
+// */******* Glyph metrics *********/
 // - (NSRect)boundingRectForCGGlyph:(CGGlyph)glyph API_AVAILABLE(macos(10.13));
 // - (NSSize)advancementForCGGlyph:(CGGlyph)glyph API_AVAILABLE(macos(10.13));
 
@@ -116,11 +116,11 @@
 // - (void)getBoundingRects:(NSRectArray)bounds forCGGlyphs:(const CGGlyph *)glyphs count:(NSUInteger)glyphCount API_AVAILABLE(macos(10.13));
 // - (void)getAdvancements:(NSSizeArray)advancements forCGGlyphs:(const CGGlyph *)glyphs count:(NSUInteger)glyphCount API_AVAILABLE(macos(10.13));
 
-// /********* NSGraphicsContext-related *********/
+// */******* NSGraphicsContext-related *********/
 // - (void)set;
 // - (void)setInContext:(NSGraphicsContext *)graphicsContext;
 
-// /********* Vertical mode *********/
+// */******* Vertical mode *********/
 // /* Returns a vertical version of the receiver if such a configuration is supported.  Returns the receiver if no vertical variant available.  A vertical font applies appropriate rotation to the text matrix in -setInContext:, returns vertical metrics, and enables the vertical glyph substitution feature by default. */
 // @property (readonly, copy) NSFont *verticalFont API_AVAILABLE(macos(10.7));
 
@@ -128,7 +128,7 @@
 // @property (getter=isVertical, readonly) BOOL vertical API_AVAILABLE(macos(10.7));
 // @end
 
-// /********* Notifications *********/
+// */******* Notifications *********/
 // /* This notification is posted when the antialias threshold is changed by the user.
 // */
 // APPKIT_EXTERN NSNotificationName NSAntialiasThresholdChangedNotification;
@@ -138,7 +138,7 @@
 // APPKIT_EXTERN NSNotificationName NSFontSetChangedNotification;
 
 
-// /********* Deprecated API *********/
+// */******* Deprecated API *********/
 // // NSGlyph and related API are soft deprecated. They will be formally deprecated in a future version. Use CGGlyph-based TextKit API instead
 // typedef unsigned int NSGlyph; // Use CGGlyph instead
 
@@ -148,7 +148,7 @@
 // };
 
 // // NSFontRenderingMode-related API is now deprecated.
-// /********* Screen Font Rendering Mode *********/
+// */******* Screen Font Rendering Mode *********/
 // typedef NS_ENUM(NSUInteger, NSFontRenderingMode) {
 //     NSFontDefaultRenderingMode = 0, // Determines the actual mode based on the user preference settings
 //     NSFontAntialiasedRenderingMode = 1, // Antialiased, floating-point advancements rendering mode (synonym to printerFont)
@@ -172,7 +172,7 @@
 // - (void)getAdvancements:(NSSizeArray)advancements forGlyphs:(const NSGlyph *)glyphs count:(NSUInteger)glyphCount; // Deprecated. Use -getAdvancements:forCGGlyphs:count: insteda
 // - (void)getAdvancements:(NSSizeArray)advancements forPackedGlyphs:(const void *)packedGlyphs length:(NSUInteger)length; // Deprecated. Use -getAdvancements:forCGGlyphs:count: instead
 
-// /********* Rendering mode *********/
+// */******* Rendering mode *********/
 // @property (readonly, copy) NSFont *printerFont;
 // @property (readonly, copy) NSFont *screenFont;
 // - (NSFont *)screenFontWithRenderingMode:(NSFontRenderingMode)renderingMode;

@@ -1,23 +1,23 @@
-/*
-        NSSecureTextField.h
-        Application Kit
-        Copyright (c) 1995-2019, Apple Inc.
-        All rights reserved.
-*/
+// /*
+//         NSSecureTextField.h
+//         Application Kit
+//         Copyright (c) 1995-2019, Apple Inc.
+//         All rights reserved.
+// */
 
-#import <AppKit/NSTextField.h>
-#import <AppKit/NSTextFieldCell.h>
-#import <AppKit/AppKitDefines.h>
+// #import <AppKit/NSTextField.h>
+// #import <AppKit/NSTextFieldCell.h>
+// #import <AppKit/AppKitDefines.h>
 
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@interface NSSecureTextField : NSTextField
-@end
+// @interface NSSecureTextField : NSTextField
+// @end
 
-@interface NSSecureTextFieldCell : NSTextFieldCell
+// @interface NSSecureTextFieldCell : NSTextFieldCell
 
-@property BOOL echosBullets;
+// @property BOOL echosBullets;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
+// API_UNAVAILABLE_END

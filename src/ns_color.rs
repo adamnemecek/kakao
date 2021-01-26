@@ -282,7 +282,7 @@
 // - (NSColor *)colorWithAlphaComponent:(CGFloat)alpha;
 
 
-// /*** Methods to get various components of colors. Not all of the methods apply to all colors; if called, they raise. ***/
+// */* Methods to get various components of colors. Not all of the methods apply to all colors; if called, they raise. ***/
 
 // /* Get the catalog and color name of standard colors from catalogs. Valid only on colors whose type is NSColorTypeCatalog. These colors are special colors which can have different device or appearance specific underlying colors.
 // */

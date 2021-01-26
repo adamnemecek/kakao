@@ -1,27 +1,27 @@
-/*
-        NSStepperCell.h
-        Application Kit
-        Copyright (c) 2000-2019, Apple Inc.
-        All rights reserved.
-*/
+// /*
+//         NSStepperCell.h
+//         Application Kit
+//         Copyright (c) 2000-2019, Apple Inc.
+//         All rights reserved.
+// */
 
-#import <AppKit/NSActionCell.h>
-#import <AppKit/AppKitDefines.h>
+// #import <AppKit/NSActionCell.h>
+// #import <AppKit/AppKitDefines.h>
 
-APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
+// APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-@interface NSStepperCell : NSActionCell
+// @interface NSStepperCell : NSActionCell
 
-@property double minValue;
+// @property double minValue;
 
-@property double maxValue;
+// @property double maxValue;
 
-@property double increment;
+// @property double increment;
 
-@property BOOL valueWraps;
+// @property BOOL valueWraps;
 
-@property BOOL autorepeat;
+// @property BOOL autorepeat;
 
-@end
+// @end
 
-API_UNAVAILABLE_END
+// API_UNAVAILABLE_END
