@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -28,11 +27,11 @@
 //     NSFontDescriptorTraitUIOptimized = 1u << 12,
 //     NSFontDescriptorTraitTightLeading = 1u << 15,
 //     NSFontDescriptorTraitLooseLeading = 1u << 16,
-    
+
 //     NSFontDescriptorTraitEmphasized API_UNAVAILABLE(macos) = NSFontDescriptorTraitBold,
 
 //     NSFontDescriptorClassMask = 0xF0000000,
-    
+
 //     NSFontDescriptorClassUnknown = 0u << 28,
 //     NSFontDescriptorClassOldStyleSerifs = 1u << 28,
 //     NSFontDescriptorClassTransitionalSerifs = 2u << 28,
@@ -98,7 +97,6 @@
 // @end
 
 // /* Predefined font attributes not defined in NSAttributedString.h */
-
 // APPKIT_EXTERN NSFontDescriptorAttributeName NSFontFamilyAttribute;
 // APPKIT_EXTERN NSFontDescriptorAttributeName NSFontNameAttribute;
 // APPKIT_EXTERN NSFontDescriptorAttributeName NSFontFaceAttribute;
@@ -228,8 +226,6 @@
 // // Returns a font descriptor containing the text style.
 // + (NSFontDescriptor *)preferredFontDescriptorForTextStyle:(NSFontTextStyle)style options:(NSDictionary<NSFontTextStyleOptionKey, id> *)options API_AVAILABLE(macos(11.0));
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

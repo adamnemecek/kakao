@@ -4,7 +4,6 @@
 //         Copyright (c) 1997-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/NSImageRep.h>
 // #import <AppKit/AppKitDefines.h>
 

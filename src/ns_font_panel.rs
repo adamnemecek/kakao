@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSPanel.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -12,7 +11,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSFontPanel, NSMutableDictionary, NSFontManager, NSMutableArray, NSTableView, NSFontDescriptor, NSFont;
-
 
 // typedef NS_OPTIONS(NSUInteger, NSFontPanelModeMask) {
 //     NSFontPanelModeMaskFace = 1 << 0,
@@ -59,7 +57,6 @@
 // - (void) reloadDefaultFontFamilies;
 
 // @end
-
 
 // // The following enum items are deprecated. Use NSFontPanelModeMask instead
 // enum {

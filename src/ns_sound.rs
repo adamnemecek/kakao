@@ -4,7 +4,6 @@
 //     Copyright (c) 1997-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSPasteboard.h>
 // #import <Foundation/NSArray.h>
@@ -32,7 +31,6 @@
 // */
 // - (nullable instancetype)initWithContentsOfURL:(NSURL *)url byReference:(BOOL)byRef;
 
-
 // - (nullable instancetype)initWithContentsOfFile:(NSString *)path byReference:(BOOL)byRef;
 
 // /* Whether the data comes in from disk, or via this method, NSSound expects it to have a proper magic number, sound header, and data.  Only uncompressed AIFF data is currently supported.
@@ -56,7 +54,6 @@
 // @property (getter=isPlaying, readonly) BOOL playing;
 
 // @property (nullable, weak) id<NSSoundDelegate> delegate;
-
 
 // /* Returns the duration of the sound in seconds.
 // */
@@ -89,7 +86,6 @@
 // */
 // - (null_unspecified NSArray *)channelMapping API_DEPRECATED("", macos(10.5,10.9));
 
-
 // @end
 
 // @interface NSSound (NSDeprecated)
@@ -118,4 +114,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

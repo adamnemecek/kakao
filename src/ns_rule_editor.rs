@@ -4,7 +4,6 @@
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/AppKitDefines.h>
@@ -32,10 +31,9 @@
 //     @"subrows" -> ordered to-many relation (e.g. NSMutableArray) containing the directly nested subrows for the given row
 //     @"displayValues" -> ordered to-many relation containing the display values for the row
 //     @"criteria" -> ordered to-many relation containing the criteria for the row
-    
+
 //     These key paths can be set using the set*KeyPath: methods below
 // */
-
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
@@ -51,7 +49,6 @@
 // APPKIT_EXTERN NSRuleEditorPredicatePartKey const NSRuleEditorPredicateOperatorType; /* NSNumber representing NSPredicateOperatorType; this value is required for a non-nil comparison predicate */
 // APPKIT_EXTERN NSRuleEditorPredicatePartKey const NSRuleEditorPredicateCustomSelector; /* NSString representing a custom selector; if specified, this will override the operator type, options, and comparison modifier */
 // APPKIT_EXTERN NSRuleEditorPredicatePartKey const NSRuleEditorPredicateCompoundType; /* NSNumber representing a NSCompoundPredicateType; if specified, the other keys are ignored and the predicate for the row will be an NSCompoundPredicate predicate, whose subpredicates are the predicates of the subrows of the given row. */
-
 // typedef NS_ENUM(NSUInteger, NSRuleEditorNestingMode) {
 //     NSRuleEditorNestingModeSingle,	    /* Only a single row is allowed.  Plus/minus buttons will not be shown */
 //     NSRuleEditorNestingModeList,	    /* Allows a single list, with no nesting and no compound rows */
@@ -59,17 +56,14 @@
 //     NSRuleEditorNestingModeSimple	    /* One compound row at the top with subrows beneath it, and no further nesting allowed */
 // };
 
-
 // typedef NS_ENUM(NSUInteger, NSRuleEditorRowType) {
 //     NSRuleEditorRowTypeSimple,
 //     NSRuleEditorRowTypeCompound
 // };
 
-
 // @interface NSRuleEditor : NSControl
 
 // /* -- Configuring NSRuleEditor -- */
-
 // /* Clients can call this method to set and get the delegate for the NSRuleEditor.  NSRuleEditor requires a delegate that implements the required NSRuleEditorDelegateMethods methods to function. */
 // @property (nullable, weak) id<NSRuleEditorDelegate> delegate;
 
@@ -95,7 +89,6 @@
 // @property BOOL canRemoveAllRows;
 
 // /* -- Predicate support -- */
-
 // /* Clients can call this to obtain the predicate for the view if the delegate implements - ruleEditor: predicatePartsForItem: withValue: inRow:row: .  If the delegate does not, or if the delegate does not return enough parts to construct a full predicate, this method returns nil. */
 // @property (nullable, readonly, strong) NSPredicate *predicate;
 
@@ -106,7 +99,6 @@
 // - (nullable NSPredicate *)predicateForRow:(NSInteger)row;
 
 // /* -- Obtaining row information -- */
-
 // /* Clients can call this to determine the number of rows */
 // @property (readonly) NSInteger numberOfRows;
 
@@ -129,7 +121,6 @@
 // - (NSInteger)parentRowForRow:(NSInteger)rowIndex;
 
 // /* -- Manipulating rows -- */
-
 // /* Adds "initial" rows, or a row to the end - useful as the target for the outside + button */
 // - (void)addRow:(nullable id)sender;
 
@@ -152,7 +143,6 @@
 // - (void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)extend;
 
 // /* -- Bindings support -- */
-
 // /* Sets the class used when creating a new row in the "rows" binding; this class should be KVC and KVO compliant for the key paths listed below.  By default this is NSMutableDictionary */
 // @property (assign) Class rowClass;
 
@@ -170,13 +160,11 @@
 
 // @end
 
-
 // @protocol NSRuleEditorDelegate <NSObject>
 
 // @required
 
 // /* -- Required delegate methods -- */
-
 // /* When called, you should return the number of child items of the given criterion.  If criterion is nil, you should return the number of root criteria for the given row type. Implementation of this method is required. */
 // - (NSInteger)ruleEditor:(NSRuleEditor *)editor numberOfChildrenForCriterion:(nullable id)criterion withRowType:(NSRuleEditorRowType)rowType;
 
@@ -189,8 +177,6 @@
 // @optional
 
 // /* -- Optional delegate methods -- */
-
-
 // /* When called, you should return an NSDictionary representing the parts of the predicate determined by the given criterion and value.  The keys of the dictionary should be the strings shown above that begin with NSRuleEditorPredicate..., and the values should be as described in the comments adjacent to the keys.  Implementation of this method is optional. */
 // - (nullable NSDictionary<NSRuleEditorPredicatePartKey, id> *)ruleEditor:(NSRuleEditor *)editor predicatePartsForCriterion:(id)criterion withDisplayValue:(id)value inRow:(NSInteger)row;
 
@@ -199,11 +185,9 @@
 
 // @end
 
-
 // /* Posted to the default notification center whenever the view's rows change.
 //  * The object is the NSRuleEditor; there is no userInfo */
 // APPKIT_EXTERN NSNotificationName const NSRuleEditorRowsDidChangeNotification;
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

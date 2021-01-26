@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSDictionary.h>
@@ -30,7 +29,6 @@
 //     NSPrintingPaginationModeFit = 1,
 //     NSPrintingPaginationModeClip = 2
 // };
-
 
 // typedef NSString * NSPrintInfoAttributeKey NS_TYPED_EXTENSIBLE_ENUM;
 
@@ -76,7 +74,6 @@
 // */
 // APPKIT_EXTERN NSPrintInfoAttributeKey const NSPrintHeaderAndFooter; // a boolean NSNumber for whether the results of -[NSView pageHeader] and -[NSView pageFooter] should be drawn on pages
 
-
 // /* Valid values for the NSPrintJobDisposition attribute.
 // **/
 // typedef NSString * NSPrintJobDispositionValue NS_TYPED_ENUM;
@@ -84,7 +81,6 @@
 // APPKIT_EXTERN NSPrintJobDispositionValue const NSPrintPreviewJob;
 // APPKIT_EXTERN NSPrintJobDispositionValue const NSPrintSaveJob;
 // APPKIT_EXTERN NSPrintJobDispositionValue const NSPrintCancelJob;
-
 
 // typedef NSString *NSPrintInfoSettingKey NS_SWIFT_BRIDGED_TYPEDEF;
 
@@ -134,22 +130,17 @@
 // */
 // - (void)setUpPrintOperationDefaultValues;
 
-
 // /* Return the imageable area of a page specified by this object, taking into account the current printer, paper, and orientation settings, but not scaling. "Imageable area" is the maximum area that can possibly be marked on by the printer hardware, not the area defined by the current margin settings. The rectangle is in a coordinate space measured by points, with (0, 0) being the lower-left corner of the oriented page and (paperWidth, paperHeight) being the upper-right corner of the oriented page. The imageable bounds may extend past the edges of the page when, for example, a printer driver specifies it so that borderless printing can be done reliably.
 // */
 // @property (readonly) NSRect imageablePageBounds;
-
-
 
 // /* Return the human-readable name of the currently selected paper size, suitable for presentation in user interfaces.  This will typically be different from the name returned by -paperName, which is almost never suitable for presentation to to the user.
 // */
 // @property (nullable, readonly, copy) NSString *localizedPaperName;
 
-
 // /* Return the default printer, if one has been selected by the user, nil otherwise.
 // */
 // @property (class, readonly, nullable, strong) NSPrinter *defaultPrinter;
-
 
 // /* The print info's print settings. You can put values in this dictionary to store them in any preset that the user creates while editing this print info with a print panel. Such values must be property list objects. This class is key-value coding (KVC) and key-value observing (KVO) compliant for "printSettings" so you can often bind controls in print panel accessory views directly to entries in this dictionary. You can also use this dictionary to get values that have been set by other parts of the printing system, like a printer driver's print dialog extension (the same sort of values that are returned by the Carbon Printing Manager's PMPrintSettingsGetValue() function). Other parts of the printing system often use key strings like "com.apple.print.PrintSettings.PMColorSyncProfileID" but dots like those in key strings wouldn't work well with KVC, so those dots are replaced with underscores in keys that appear in this dictionary, as in "com_apple_print_PrintSettings_PMColorSyncProfileID". You should use the same convention when adding entries to this dictionary.
 // */
@@ -165,8 +156,6 @@
 // */
 // - (void)updateFromPMPageFormat API_AVAILABLE(macos(10.5));
 // - (void)updateFromPMPrintSettings API_AVAILABLE(macos(10.5));
-
-
 
 // /* Set or get whether only the selected content should be printed.
 // */

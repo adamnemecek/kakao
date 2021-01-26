@@ -2,11 +2,10 @@
 // /*
 //         NSParagraphStyle.h
 //         Copyright (c) 1994-2019, Apple Inc.  All rights reserved.
- 
+
 // 	NSParagraphStyle and NSMutableParagraphStyle hold paragraph style information
 // 	NSTextTab holds information about a single tab stop
 // **/
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSText.h>
 
@@ -52,12 +51,10 @@
 
 // - (instancetype)initWithTextAlignment:(NSTextAlignment)alignment location:(CGFloat)loc options:(NSDictionary<NSTextTabOptionKey, id> *)options NS_DESIGNATED_INITIALIZER; // Initializes a text tab with the text alignment, location, and options.  The text alignment is used to determine the position of text inside the tab column.
 
-
 // @property (readonly) NSTextAlignment alignment;  // Defines the alignment of tab column contents. NSTextAlignmentNatural and NSTextAlignmentJustified are resolved either NSTextAlignmentLeft or NSTextAlignmentRight based on the user's preferred language.
 // @property (readonly) CGFloat location; // Location of the tab stop inside the line fragment rect coordinate system
 // @property (readonly) NSDictionary<NSTextTabOptionKey, id> *options; // Optional configuration attributes
 // @end
-
 
 // // NSParagraphStyle
 
@@ -108,7 +105,6 @@
 // @property (readonly) NSLineBreakStrategy lineBreakStrategy API_AVAILABLE(macos(10.11), ios(9.0));
 // @end
 
-
 // API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0)) @interface NSMutableParagraphStyle : NSParagraphStyle
 
 // @property CGFloat lineSpacing;
@@ -154,12 +150,9 @@
 // @property (readonly) NSTextTabType tabStopType; // Use -alignment and -options
 // @end
 
-
-
 // #endif // !TARGET_OS_IPHONE
 
 // NS_ASSUME_NONNULL_END
 // #else
 // #import <UIFoundation/NSParagraphStyle.h>
 // #endif
-

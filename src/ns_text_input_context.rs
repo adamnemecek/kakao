@@ -4,7 +4,6 @@
 // 	Copyright (c) 2008-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSTextInputClient.h>
@@ -32,7 +31,7 @@
 // */** Properties *****/
 // /* Returns the owner of this input context. The owner, typically an NSView, retains its NSTextInputContext instance. NSTextInputContext doesn't retain its client.
 // **/
-// @property(readonly) id <NSTextInputClient> client; 
+// @property(readonly) id <NSTextInputClient> client;
 
 // /* Indicates whether the client handles NSGlyphInfoAttributeName or not. The default value is determined by examining the return value sending -validAttributesForMarkedText to client at initialization.
 // **/
@@ -41,7 +40,6 @@
 // /* Specifies the set of keyboard input source locales allowed when this input context is active. NSAllRomanInputSourcesLocaleIdentifier can be specified as a valid locale.
 // **/
 // @property(nullable, copy) NSArray<NSString *> *allowedInputSourceLocales;
-
 
 // */** Activation *****/
 // /* Invoked when the receiver gets activated/deactivated.
@@ -62,11 +60,9 @@
 // **/
 // - (void)invalidateCharacterCoordinates;
 
-
 // */** Text Input sources handling ****/
 // /* Text Input source handling API identifies text input sources with text input source identifier strings (i.e. "com.apple.inputmethod.Kotoeri.Japanese") supplied by the underlying TextInputSources framework. The ID corresponds to the kTISPropertyInputSourceID attribute.
 // **/
-
 // /* The array of keyboard text input source identifier strings available to the receiver.
 // **/
 // @property(nullable, readonly) NSArray<NSTextInputSourceIdentifier> *keyboardInputSources;
@@ -74,7 +70,6 @@
 // /* The identifier string for the selected keyboard text input source.
 // **/
 // @property(nullable, copy) NSTextInputSourceIdentifier selectedKeyboardInputSource;
-
 
 // */** Text Input source attributes ****/
 // /* Returns the display name for inputSourceIdentifier.
@@ -89,4 +84,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

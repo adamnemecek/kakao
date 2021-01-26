@@ -4,7 +4,6 @@
 //  Copyright (c) 2015-2019, Apple Inc.
 //  All rights reserved.
 // */
-
 // #import <AppKit/NSTouchBarItem.h>
 // #if !TARGET_OS_IPHONE
 // #import <AppKit/NSApplication.h>
@@ -20,21 +19,21 @@
 // API_AVAILABLE(macos(10.12.2), ios(13.0))
 // @interface NSTouchBar : NSObject <NSCoding>
 
-// /* 
+// /*
 //     -init is a designated initializer.
 // */
 // - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
-// /* 
+// /*
 //     -initWithCoder: is also a designated initializer.
 // */
 // - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
-// /* 
+// /*
 //     A string uniquely identifying this bar for customization purposes. All bars with this identifier will have their items coordinated automatically during customization or instantiation.
 
 //     NSTouchBars lacking a customizationIdentifier are not customizable.
-    
+
 //     This property is archived.
 // */
 // @property (copy, nullable) NSTouchBarCustomizationIdentifier customizationIdentifier;
@@ -48,7 +47,7 @@
 
 // /*
 //     Some items are too important to be removed. The corresponding item identifiers should be listed here. During customization the user will be prevented from removing these items from the NSTouchBar.
-    
+
 //     This property is archived.
 // */
 // @property (copy) NSArray<NSTouchBarItemIdentifier> *customizationRequiredItemIdentifiers;
@@ -56,23 +55,23 @@
 // /*
 //     An array of identifiers specifying the items in this NSTouchBar. When constructing the instantiated items array, the identifiers in this array will be fed through the -itemForIdentifier: method.
 //     Item identifiers should be globally unique, excepting NSTouchBarItemIdentifierFixedSpaceSmall, NSTouchBarItemIdentifierFixedSpaceLarge, NSTouchBarItemIdentifierFlexibleSpace, and NSTouchBarItemIdentifierOtherItemsProxy.
-    
+
 //     This array also corresponds to the item ordering for the receiver in the “default set” in the customization palette.
- 
+
 //     This property is archived.
 // */
 // @property (copy) NSArray<NSTouchBarItemIdentifier> *defaultItemIdentifiers;
 
 // /*
 //     The resolved array of item identifiers. If the bar has not been customized this will match the defaultItemIdentifiers.
-    
+
 //     This property is not archived.
 // */
 // @property (copy, readonly) NSArray<NSTouchBarItemIdentifier> *itemIdentifiers;
 
 // /*
 //     Specifying a principal item identifier communicates that the item with that identifier has special significance to this NSTouchBar. Currently, that item will be placed in the center of the resolved  row. Note that multiple visible bars may each specify a principal item identifier - but only one of them can have the request honored.
-    
+
 //     This property is archived.
 // */
 // @property (copy, nullable) NSTouchBarItemIdentifier principalItemIdentifier;
@@ -85,14 +84,14 @@
 
 // /*
 //     Items in this set are the first step in resolving instantiated items from their identifiers. If an item identifier is specified in the itemIdentifiers array, and an item with that identifier is in this set, it will be added to the items array in the corresponding location.
- 
+
 //     This property is archived.
 // */
 // @property (copy) NSSet<NSTouchBarItem *> *templateItems;
 
 // /*
 //     The NSTouchBar delegate. The delegate can dynamically create items.
-    
+
 //     This property is conditionally archived (see -encodeConditionalObject:forKey:.)
 // */
 // @property (nullable, weak) id <NSTouchBarDelegate> delegate;
@@ -134,7 +133,7 @@
 
 // /*
 //     Instances of NSTouchBar are discovered by searching certain well known components of the application for objects that conform to the NSTouchBarProvider protocol.
-    
+
 //     Some specific objects in a process are searched to discover NSTouchBar providers. In order, these objects are:
 //     * the application delegate
 //     * the application object itself

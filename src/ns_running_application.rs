@@ -4,22 +4,18 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
-
-
 // /* NSRunningApplication is a class to manipulate and provide information for a single instance of an application.  Only user applications are tracked; this does not provide information about every process on the system.
- 
+
 //  Some properties of an application are fixed, such as the bundle identifier.  Other properties may vary over time, such as whether the app is hidden.  Properties that vary can be observed with KVO, in which case the description comment for the method will mention it.
- 
+
 //  Properties that vary over time are inherently race-prone.  For example, a hidden app may unhide itself at any time.  To ameliorate this, properties persist until the next turn of the main run loop in a common mode.  For example, if you repeatedly poll an unhidden app for its hidden property without allowing the run loop to run, it will continue to return NO, even if the app hides, until the next turn of the run loop.
- 
+
 //  NSRunningApplication is thread safe, in that its properties are returned atomically.  However, it is still subject to the main run loop policy described above.  If you access an instance of NSRunningApplication from a background thread, be aware that its time-varying properties may change from under you as the main run loop runs (or not).
- 
+
 //  An NSRunningApplication instance remains valid after the application exits.  However, most properties lose their significance, and some properties may not be available on a terminated application.
- 
+
 //  To access the list of all running applications, use the -runningApplications method on NSWorkspace.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSWorkspace.h>
@@ -32,26 +28,24 @@
 // typedef NS_OPTIONS(NSUInteger, NSApplicationActivationOptions) {
 //     /* By default, activation brings only the main and key windows forward.  If you specify NSApplicationActivateAllWindows, all of the application's windows are brought forward. */
 //     NSApplicationActivateAllWindows = 1 << 0,
-    
+
 //     /* By default, activation deactivates the calling app (assuming it was active), and then the new app is activated only if there is no currently active application.  This prevents the new app from stealing focus from the user, if the app is slow to activate and the user has switched to a different app in the interim.  However, if you specify NSApplicationActivateIgnoringOtherApps, the application is activated regardless of the currently active app, potentially stealing focus from the user.
-     
+
 //      You ALMOST NEVER want to pass this flag, because stealing key focus produces a very bad user experience. */
 //     NSApplicationActivateIgnoringOtherApps = 1 << 1
 // };
 
-
 // /* The following activation policies control whether and how an application may be activated.  They are determined by the Info.plist. */
 // typedef NS_ENUM(NSInteger, NSApplicationActivationPolicy) {
 //     /* The application is an ordinary app that appears in the Dock and may have a user interface.  This is the default for bundled apps, unless overridden in the Info.plist. */
-//     NSApplicationActivationPolicyRegular, 
-    
+//     NSApplicationActivationPolicyRegular,
+
 //     /* The application does not appear in the Dock and does not have a menu bar, but it may be activated programmatically or by clicking on one of its windows.  This corresponds to LSUIElement=1 in the Info.plist. */
 //     NSApplicationActivationPolicyAccessory,
-    
+
 //     /* The application does not appear in the Dock and may not create windows or be activated.  This corresponds to LSBackgroundOnly=1 in the Info.plist.  This is also the default for unbundled executables that do not have Info.plists. */
 //     NSApplicationActivationPolicyProhibited
 // };
-
 
 // @class NSLock, NSDate, NSImage, NSURL;
 
@@ -135,7 +129,7 @@
 // /* Returns an array of NSRunningApplications representing currently running applications.  The order of the array is unspecified, but it is stable, meaning that the relative order of particular applications will not change across multiple calls to runningApplications.
 
 //  Similar to NSRunningApplication's properties, this property will only change when the main run loop is run in a common mode.  Instead of polling, use key-value observing to be notified of changes to this array property.
- 
+
 //  This property is thread safe, in that it may be called from background threads and the result is returned atomically.  This property is observable through KVO.
 // **/
 // @property (readonly, copy) NSArray<NSRunningApplication *> *runningApplications API_AVAILABLE(macos(10.6));

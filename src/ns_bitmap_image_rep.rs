@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/NSImageRep.h>
@@ -85,7 +84,6 @@
 // - (instancetype)initWithCIImage:(CIImage *)ciImage API_AVAILABLE(macos(10.5));
 
 // + (NSArray<NSImageRep *> *)imageRepsWithData:(NSData *)data;	/* some file formats can contain multiple images */
-
 // + (nullable instancetype)imageRepWithData:(NSData *)data;	/* Convenience of initWithData: */
 // - (nullable instancetype)initWithData:(NSData *)data;
 
@@ -130,14 +128,12 @@
 
 // @property (nullable, readonly) CGImageRef CGImage API_AVAILABLE(macos(10.5));
 
-
 // @property (readonly, strong) NSColorSpace *colorSpace API_AVAILABLE(macos(10.6));
 
 // - (nullable NSBitmapImageRep *)bitmapImageRepByConvertingToColorSpace:(NSColorSpace *)targetSpace renderingIntent:(NSColorRenderingIntent)renderingIntent API_AVAILABLE(macos(10.6));
 // - (nullable NSBitmapImageRep *)bitmapImageRepByRetaggingWithColorSpace:(NSColorSpace *)newSpace API_AVAILABLE(macos(10.6));
 
 // @end
-
 
 // @interface NSBitmapImageRep (NSBitmapImageFileTypeExtensions)
 
@@ -149,7 +145,6 @@
 // - (nullable id)valueForProperty:(NSBitmapImageRepPropertyKey)property;
 
 // @end
-
 
 // static const NSBitmapImageFileType NSTIFFFileType API_DEPRECATED_WITH_REPLACEMENT("NSBitmapImageFileTypeTIFF", macos(10.0,10.14)) = NSBitmapImageFileTypeTIFF;
 // static const NSBitmapImageFileType NSBMPFileType API_DEPRECATED_WITH_REPLACEMENT("NSBitmapImageFileTypeBMP", macos(10.0,10.14)) = NSBitmapImageFileTypeBMP;
@@ -165,7 +160,6 @@
 // static const NSBitmapFormat NS32BitLittleEndianBitmapFormat API_DEPRECATED_WITH_REPLACEMENT("NSBitmapFormatThirtyTwoBitLittleEndian", macos(10.0,10.14)) = NSBitmapFormatThirtyTwoBitLittleEndian;
 // static const NSBitmapFormat NS16BitBigEndianBitmapFormat API_DEPRECATED_WITH_REPLACEMENT("NSBitmapFormatSixteenBitBigEndian", macos(10.0,10.14)) = NSBitmapFormatSixteenBitBigEndian;
 // static const NSBitmapFormat NS32BitBigEndianBitmapFormat API_DEPRECATED_WITH_REPLACEMENT("NSBitmapFormatThirtyTwoBitBigEndian", macos(10.0,10.14)) = NSBitmapFormatThirtyTwoBitBigEndian;
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

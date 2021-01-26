@@ -4,7 +4,6 @@
 //     Copyright (c) 2016-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -33,7 +32,6 @@
 // @property (strong, nullable) NSView *accessoryView;
 
 // @end
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

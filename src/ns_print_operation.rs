@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSRange.h>
 // #import <AppKit/AppKitDefines.h>
@@ -28,7 +27,7 @@
 //     */
 //     NSPrintRenderingQualityBest,
 
-//     /* Sacrifice the least possible amount of rendering quality for speed to maintain a responsive user interface. 
+//     /* Sacrifice the least possible amount of rendering quality for speed to maintain a responsive user interface.
 //        Note: Only do this after establishing that best quality rendering does indeed make the user interface unresponsive.
 //     */
 //     NSPrintRenderingQualityResponsive
@@ -71,13 +70,10 @@
 // */
 // @property (nullable, copy) NSString *jobTitle API_AVAILABLE(macos(10.5));
 
-
-
 // /* Whether the print and progress panels are shown during the operation.
 // */
 // @property BOOL showsPrintPanel;
 // @property BOOL showsProgressPanel;
-
 
 // /* The print panel to be presented by the operation when it is run, if showsProgressPanel is YES and isCopyingOperation is NO. -printPanel will create a new NSPrintPanel if one hasn't been set yet.
 // */
@@ -122,7 +118,6 @@
 // /* The first through last one-based page numbers of the operation as it's being previewed or printed. The first page number might not be 1, and the page count might be NSIntegerMax to indicate that the number of pages is not known, depending on what the printed view returned when sent an [NSView(NSPrinting) knowsPageRange:] message.
 // */
 // @property (readonly) NSRange pageRange API_AVAILABLE(macos(10.5));
-
 
 // /* The current one-based page number of the operation as it's being previewed or printed.
 // */

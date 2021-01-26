@@ -4,7 +4,6 @@
 //     Copyright (c) 2014-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSWindow.h>
 // #import <AppKit/NSImage.h>
@@ -19,60 +18,60 @@
 // typedef NS_ENUM(NSInteger, NSVisualEffectMaterial) {
 //     /// The material used by window titlebars.
 //     NSVisualEffectMaterialTitlebar = 3,
-    
+
 //     /// The material used in some table views, menus, etc., to indicate selection.
 //     NSVisualEffectMaterialSelection = 4,
-    
+
 //     /// The material used by menus.
 //     NSVisualEffectMaterialMenu API_AVAILABLE(macos(10.11)) = 5,
-    
+
 //     /// The material used in the background of NSPopover windows.
 //     NSVisualEffectMaterialPopover API_AVAILABLE(macos(10.11)) = 6,
-    
+
 //     /// The material used in the background of window sidebars.
 //     NSVisualEffectMaterialSidebar API_AVAILABLE(macos(10.11)) = 7,
-        
+
 //     /// The material used in various in-line header or footer views (e.g., by NSTableView).
 //     NSVisualEffectMaterialHeaderView API_AVAILABLE(macos(10.14)) = 10,
-    
+
 //     /// The material used as the background of sheet windows.
 //     NSVisualEffectMaterialSheet API_AVAILABLE(macos(10.14)) = 11,
-    
+
 //     /// The material used by opaque window backgrounds.
 //     NSVisualEffectMaterialWindowBackground API_AVAILABLE(macos(10.14)) = 12,
-    
+
 //     /// The material used as the background of heads-up display (HUD) windows.
 //     NSVisualEffectMaterialHUDWindow API_AVAILABLE(macos(10.14)) = 13,
-    
+
 //     /// The material used as the background of full-screen modal UI.
 //     NSVisualEffectMaterialFullScreenUI API_AVAILABLE(macos(10.14)) = 15,
-    
+
 //     /// The material used as the background of tool tips.
 //     NSVisualEffectMaterialToolTip API_AVAILABLE(macos(10.14)) = 17,
-    
+
 //     /// The material used as the opaque background of content (e.g., by NSScrollView, NSTableView, NSCollectionView, etc.).
 //     NSVisualEffectMaterialContentBackground API_AVAILABLE(macos(10.14)) = 18,
-    
+
 //     /// The material used under window backgrounds.
 //     NSVisualEffectMaterialUnderWindowBackground API_AVAILABLE(macos(10.14)) = 21,
-        
+
 //     /// The material used as the background behind document pages.
 //     NSVisualEffectMaterialUnderPageBackground API_AVAILABLE(macos(10.14)) = 22,
-    
+
 //     /// A default material appropriate for the view's effectiveAppearance.  You should instead choose an appropriate semantic material.
 //     NSVisualEffectMaterialAppearanceBased API_DEPRECATED("Use a specific semantic material instead.", macos(10.10, 10.14)) = 0,
-    
+
 //     // Materials with specific looks.  You should instead choose an appropriate semantic material.
 //     NSVisualEffectMaterialLight API_DEPRECATED("Use a semantic material instead.  To force the appearance of a view hierarchy, set the `appearance` property to an appropriate NSAppearance value.", macos(10.10, 10.14)) = 1,
 //     NSVisualEffectMaterialDark API_DEPRECATED("Use a semantic material instead.  To force the appearance of a view hierarchy, set the `appearance` property to an appropriate NSAppearance value.", macos(10.10, 10.14)) = 2,
 //     NSVisualEffectMaterialMediumLight API_DEPRECATED("Use a semantic material instead.  To force the appearance of a view hierarchy, set the `appearance` property to an appropriate NSAppearance value.", macos(10.11, 10.14)) = 8,
 //     NSVisualEffectMaterialUltraDark API_DEPRECATED("Use a semantic material instead.  To force the appearance of a view hierarchy, set the `appearance` property to an appropriate NSAppearance value.", macos(10.11, 10.14)) = 9,
 // } API_AVAILABLE(macos(10.10));
-                
+
 // typedef NS_ENUM(NSInteger, NSVisualEffectBlendingMode) {
 //     /// Blend with the area behind the window (such as the Desktop or other windows).
 //     NSVisualEffectBlendingModeBehindWindow,
-    
+
 //     /// Blend with the area behind the view in the window.
 //     NSVisualEffectBlendingModeWithinWindow,
 // } API_AVAILABLE(macos(10.10));
@@ -80,10 +79,10 @@
 // typedef NS_ENUM(NSInteger, NSVisualEffectState) {
 //     /// Use the active look only when the containing window is active.
 //     NSVisualEffectStateFollowsWindowActiveState,
-    
+
 //     /// Use the active look always.
 //     NSVisualEffectStateActive,
-    
+
 //     /// Use the inactive look always.
 //     NSVisualEffectStateInactive,
 // } API_AVAILABLE(macos(10.10));

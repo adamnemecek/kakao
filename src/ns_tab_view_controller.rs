@@ -4,7 +4,6 @@
 //     Copyright (c) 2014-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSViewController.h>
 // #import <AppKit/AppKitDefines.h>
@@ -17,13 +16,13 @@
 // typedef NS_ENUM(NSInteger, NSTabViewControllerTabStyle) {
 //     /// Uses an NSSegmentedControl to show the UI for the tabs. The control is on the top of the view.
 //     NSTabViewControllerTabStyleSegmentedControlOnTop = 0,
-    
+
 //     /// Uses an NSSegmentedControl to show the UI for the tabs. The control is on the bottom of the view.
 //     NSTabViewControllerTabStyleSegmentedControlOnBottom,
-    
+
 //     /// Automatically pushes the tabs into the window's toolbar as toolbar items, if non-nil. This style will cause the TabViewController to set its containing window's toolbar to its own and become that toolbar's delegate. The toolbar items can be customized or supplemented by overriding the relevant NSToolbarDelegate methods.
 //     NSTabViewControllerTabStyleToolbar,
-    
+
 //     /// NSTabViewController will not provide any of its own tab control UI. Separate UI, such as a NSSegmentedControl or NSPopupButton, can be easily bound to the TabViewController. Or \c tabView.tabViewType can be changed for the TabView itself to draw the UI.
 //     NSTabViewControllerTabStyleUnspecified = -1,
 // } API_AVAILABLE(macos(10.10));
@@ -81,7 +80,6 @@
 //  * \return The corresponding TabViewItem. Returns nil if \c viewController is not a child of the TabViewController.
 // **/
 // - (nullable NSTabViewItem *)tabViewItemForViewController:(NSViewController *)viewController;
-
 
 // /* Overridden methods from NSViewController. These require a call to super if overriden by a subclass. Override this to set the tabView before calling super. */
 // - (void)viewDidLoad NS_REQUIRES_SUPER;

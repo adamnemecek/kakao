@@ -4,7 +4,6 @@
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSKeyValueBinding.h>
 // #import <AppKit/NSNib.h>
@@ -78,7 +77,7 @@
 // @property (strong) IBOutlet NSView *view;
 
 // /* The default implementation of this method invokes [self nibName] and [self nibBundle] and then uses the NSNib class to load the nib with this object as the file's owner. If the "view" outlet of the file's owner in the nib is properly connected, the regular nib loading machinery will send this object a -setView: message. You can override this method to customize how nib loading is done, including merely adding new behavior immediately before or immediately after nib loading done by the default implementation. One can also use viewDidLoad to modify things after the view has been loaded. You should not invoke this method from other objects unless you take care to avoid redundant invocations; NSViewController's default implement can handle them but overrides in subclasses might not. (Typically other objects should instead invoke -view and let the view controller do whatever it takes to fulfill the request.) In general, you should not call this method, and let NSViewController call it when needed. If you need it called, simply call [viewController view].
- 
+
 // Prior to 10.10, -loadView would not have well defined behavior if [self nibName] returned nil. On 10.10 and later, if nibName is nil, NSViewController will automatically try to load a nib with the same name as the classname. This allows a convenience of doing [[MyViewController alloc] init] (which has a nil nibName) and having it automatically load a nib with the name "MyViewController".
 // */
 // - (void)loadView;
@@ -88,7 +87,6 @@
 // - (void)commitEditingWithDelegate:(nullable id)delegate didCommitSelector:(nullable SEL)didCommitSelector contextInfo:(nullable void *)contextInfo;
 // - (BOOL)commitEditing;
 // - (void)discardEditing;
-
 
 // /* Called after the view has been loaded. For view controllers created in code, this is after -loadView. For view controllers unarchived from a nib, this is after the view is set. Default does nothing.
 // */
@@ -131,7 +129,6 @@
 // - (void)viewDidLayout API_AVAILABLE(macos(10.10));
 
 // @end
-
 
 // @interface NSViewController (NSViewControllerPresentation)
 
@@ -177,7 +174,6 @@
 
 // @end
 
-
 // @interface NSViewController(NSViewControllerContainer)
 
 // /* Returns the ancestor of this view controller. Can return nil if this is the contentViewController, or there is no parent for the given view controller.
@@ -213,7 +209,6 @@
 
 // @end
 
-
 // /* A presentation animator is responsible for both presenting and dismissing a view controller's view. It can be presented in any way the animator wishes. Normally you do not need to implement this protocol, unless you want to have a custom presentation.
 // */
 // @protocol NSViewControllerPresentationAnimator <NSObject>
@@ -229,7 +224,6 @@
 // - (void)animateDismissalOfViewController:(NSViewController *)viewController fromViewController:(NSViewController *)fromViewController API_AVAILABLE(macos(10.10));
 
 // @end
-
 
 // /* These methods are used to support using Storyboards with your app.
 // */

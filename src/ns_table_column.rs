@@ -4,7 +4,6 @@
 //     Copyright (c) 1995-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/NSUserInterfaceItemIdentification.h>
@@ -83,7 +82,6 @@
 // /*
 //  * Deprecated Methods
 // **/
-
 // @interface NSTableColumn(NSDeprecated)
 
 // /* Deprecated in Mac OS 10.4.  If flag is YES, calls setResizingMask:(NSTableColumnUserResizingMask | NSTableColumnAutoresizingMask).  If flag is NO, calls setResizingMask:(NSTableColumnNoResizing).
@@ -97,8 +95,6 @@
 // - (id)dataCellForRow:(NSInteger)row; // Use a view-based NSTableView, and see -viewAtColumn:row:makeIfNecessary
 
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

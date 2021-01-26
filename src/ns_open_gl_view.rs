@@ -4,7 +4,6 @@
 //         Copyright (c) 2000-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSOpenGL.h>
 // #import <AppKit/AppKitDefines.h>
@@ -55,7 +54,6 @@
 // @property BOOL wantsExtendedDynamicRangeOpenGLSurface API_DEPRECATED("Use NSOpenGLView instead.", macos(10.11,10.14));
 
 // @end
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

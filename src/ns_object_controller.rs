@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSController.h>
 // #import <AppKit/NSUserInterfaceValidation.h>
@@ -40,7 +39,6 @@
 
 // @end
 
-
 // @interface NSObjectController (NSManagedController)
 
 // @property (nullable, strong) NSManagedObjectContext *managedObjectContext;
@@ -52,15 +50,11 @@
 
 // - (IBAction)fetch:(nullable id)sender;
 
-
-// @property BOOL usesLazyFetching API_AVAILABLE(macos(10.5)); // defaults to NO. 
+// @property BOOL usesLazyFetching API_AVAILABLE(macos(10.5)); // defaults to NO.
 
 // - (NSFetchRequest *)defaultFetchRequest API_AVAILABLE(macos(10.5));
-
 
 // @end
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-

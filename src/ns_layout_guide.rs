@@ -4,7 +4,6 @@
 // 	Copyright (c) 2015-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSLayoutConstraint.h>
 // #import <AppKit/NSLayoutAnchor.h>
@@ -33,11 +32,10 @@
 // // For ease of debugging.  'NS' prefix is reserved for system-created layout guides.
 // @property (copy) NSUserInterfaceItemIdentifier identifier;
 
-
-// /* 
+// /*
 //  These properties aid concise creation of constraints.  Layout guides can be constrained using simple code like the following:
 //  [view.topAnchor constraintEqualTo:someLayoutGuide.topAnchor constant:10];
- 
+
 //  See NSLayoutAnchor.h for more details.
 // **/
 // @property (readonly, strong) NSLayoutXAxisAnchor *leadingAnchor;
@@ -58,7 +56,6 @@
 // #endif
 
 // @end
-
 
 // /* A layout guide can be used in place of a view for layout purposes.
 // **/

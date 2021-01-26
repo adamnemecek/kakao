@@ -4,7 +4,6 @@
 //     Copyright (c) 2015-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSDictionary.h>
 // #import <Foundation/NSGeometry.h>
@@ -13,7 +12,6 @@
 
 // /* The NSCollectionViewLayout class is provided as an abstract class for subclassing to define custom collection layouts.  Defining a custom layout is an advanced operation intended for applications with complex needs.
 // */
-
 // typedef NS_ENUM(NSInteger, NSCollectionElementCategory) {
 //     NSCollectionElementCategoryItem,
 //     NSCollectionElementCategorySupplementaryView,
@@ -98,7 +96,6 @@
 
 // /* Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.  To get the truth on the current state of the collection view, call methods on NSCollectionView rather than these.
 // */
-
 // @property (nullable, readonly, weak) NSCollectionView *collectionView;
 
 // /* Call -invalidateLayout to indicate that the collection view needs to requery the layout information.  Subclasses must always call super if they override.

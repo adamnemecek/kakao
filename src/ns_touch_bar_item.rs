@@ -4,7 +4,6 @@
 //  Copyright (c) 2015-2019, Apple Inc.
 //  All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
 
@@ -21,7 +20,6 @@
 // static const NSTouchBarItemPriority NSTouchBarItemPriorityHigh API_AVAILABLE(macos(10.12.2), ios(13.0)) = 1000;
 // static const NSTouchBarItemPriority NSTouchBarItemPriorityNormal API_AVAILABLE(macos(10.12.2), ios(13.0)) = 0;
 // static const NSTouchBarItemPriority NSTouchBarItemPriorityLow API_AVAILABLE(macos(10.12.2), ios(13.0)) = -1000;
-
 
 // API_AVAILABLE(macos(10.12.2), ios(13.0))
 // @interface NSTouchBarItem : NSObject <NSCoding>

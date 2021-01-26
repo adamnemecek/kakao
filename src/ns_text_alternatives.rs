@@ -5,7 +5,6 @@
 // 	Copyright (c) 2011-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSNotification.h>
@@ -29,8 +28,6 @@
 // @end
 
 // APPKIT_EXTERN NSNotificationName NSTextAlternativesSelectedAlternativeStringNotification API_AVAILABLE(macos(10.8)); // @"NSAlternativeString"
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

@@ -4,7 +4,6 @@
 //  Copyright (c) 2015-2019, Apple Inc.
 //  All rights reserved.
 // */
-
 // #import <AppKit/NSTouchBarItem.h>
 
 // #if TARGET_OS_IPHONE
@@ -67,8 +66,8 @@
 // */
 // - (void)dismissPopover:(nullable id)sender;
 
-// /* 
-//     Returns a new gesture recognizer, already wired up to send this popover -showPopover:. It is the callers responsibility to attach this GR to a custom collapsedRepresentation view 
+// /*
+//     Returns a new gesture recognizer, already wired up to send this popover -showPopover:. It is the callers responsibility to attach this GR to a custom collapsedRepresentation view
 // */
 // - (NSGestureRecognizer *)makeStandardActivatePopoverGestureRecognizer API_UNAVAILABLE(ios);
 // @end

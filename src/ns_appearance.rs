@@ -4,7 +4,6 @@
 //         Copyright (c) 2011-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -17,7 +16,7 @@
 // typedef NSString * NSAppearanceName NS_TYPED_EXTENSIBLE_ENUM;
 
 // API_AVAILABLE(macos(10.9))
-// @interface NSAppearance : NSObject <NSSecureCoding> 
+// @interface NSAppearance : NSObject <NSSecureCoding>
 
 // @property (readonly, copy) NSAppearanceName name API_AVAILABLE(macos(10.9));
 
@@ -35,7 +34,7 @@
 // // Saves and restores the previous current appearance.
 // - (void)performAsCurrentDrawingAppearance:(void (NS_NOESCAPE ^)(void))block API_AVAILABLE(macos(11.0));
 
-// /* Finds and returns an NSAppearance based on the name. 
+// /* Finds and returns an NSAppearance based on the name.
 //  For standard appearances such as NSAppearanceNameAqua, a built-in appearance is returned.
 //  For other names, the main bundle is searched.
 // **/

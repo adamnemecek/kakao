@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -69,7 +68,6 @@
 
 // @interface NSPrinter(NSDeprecated)
 
-
 // /* PMPrinter API should be used instead. Return the status of the named table in the printer's PostScript Printer Description (PPD) if the PPD is available. NSPrinterTableNotFound is returned for every table name if no PPD is available.
 // **/
 // - (NSPrinterTableStatus)statusForTable:(NSString *)tableName API_DEPRECATED("", macos(10.0,10.9));
@@ -84,7 +82,6 @@
 // - (NSSize)sizeForKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));
 // - (nullable NSString *)stringForKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));
 // - (nullable NSArray *)stringListForKey:(nullable NSString *)key inTable:(NSString *)table API_DEPRECATED("", macos(10.0,10.9));
-
 
 // /* -[NSPrinter imageRectForPaper:] will attempt to determine and return the bounds of the imageable area for a particular paper name, but querying such information by paper name alone is not reliable. Use -[NSPrintInfo imageablePageBounds], which was introduced in Mac OS 10.2, instead.
 // */

@@ -4,7 +4,6 @@
 //  Copyright (c) 2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <AppKit/NSTouchBarItem.h>
 
 // NS_ASSUME_NONNULL_BEGIN

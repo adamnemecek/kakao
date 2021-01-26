@@ -4,8 +4,6 @@
 // 	Copyright (c) 2008-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSPasteboard.h>
@@ -33,7 +31,6 @@
 // The pasteboard item API is very similar to the NSPasteboard API for a single item.  One important difference is that NSPasteboardItem expects strings which are valid UTI strings.  If a type is specified that is not a valid UTI string, the method call will fail.  Similarly, all reported types are UTIs.  As of 10.6, NSPasteboard.h declares a number of NSPasteboardType constants which can be used to provide the correct UTI for common pasteboard types.
 
 // */
-
 // API_AVAILABLE(macos(10.6))
 // @interface NSPasteboardItem : NSObject <NSPasteboardWriting, NSPasteboardReading>
 // /* Returns an array of UTI strings of the data types supported by the receiver.
@@ -62,8 +59,6 @@
 
 // @end
 
-
-
 // @protocol NSPasteboardItemDataProvider <NSObject>
 // /* Implemented by the data provider of a pasteboard item, to provide the data for a particular UTI type.
 // */
@@ -79,4 +74,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

@@ -4,7 +4,6 @@
 //     Copyright (c) 2004-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
 // #import <AppKit/AppKitDefines.h>
@@ -81,7 +80,6 @@
 // @end
 
 // /*-----------------------------------------------------------------------------------------*/
-
 // typedef NSString * NSViewAnimationKey NS_TYPED_ENUM;
 // APPKIT_EXTERN NSViewAnimationKey NSViewAnimationTargetKey;       // NSWindow* or NSView* (required)
 // APPKIT_EXTERN NSViewAnimationKey NSViewAnimationStartFrameKey;   // NSValue*(NSRect) (optional)
@@ -142,11 +140,8 @@
 // + (nullable id)defaultAnimationForKey:(NSAnimatablePropertyKey)key API_AVAILABLE(macos(10.5));
 
 // @end /* @protocol NSAnimatablePropertyContainer */
-
 // APPKIT_EXTERN NSAnimatablePropertyKey NSAnimationTriggerOrderIn API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSAnimatablePropertyKey NSAnimationTriggerOrderOut API_AVAILABLE(macos(10.5));
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-

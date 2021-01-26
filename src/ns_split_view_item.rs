@@ -4,7 +4,6 @@
 //     Copyright (c) 2014-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSLayoutConstraint.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSAnimation.h>
@@ -31,7 +30,6 @@
 //     /// The item will collapse/uncollapse purely from a constraint animation, with a constraint priority of the item’s `holdingPriority`. This could result in a partial internal content resize and window resize, and has no implications for keeping the window on screen. External constraints can be used to tweak exactly how the animation affects item, sibling, and window size and positions.
 //     NSSplitViewItemCollapseBehaviorUseConstraints
 // } API_AVAILABLE(macos(10.11));
-
 
 // /// This constant can be used with any sizing related \c NSSplitViewItem properties to unset their values.
 // APPKIT_EXTERN const CGFloat NSSplitViewItemUnspecifiedDimension API_AVAILABLE(macos(10.11));

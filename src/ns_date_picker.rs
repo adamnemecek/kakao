@@ -4,7 +4,6 @@
 // 	Copyright (c) 2004-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSDatePickerCell.h>
 // #import <AppKit/AppKitDefines.h>
@@ -70,4 +69,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

@@ -4,7 +4,6 @@
 //         Copyright (c) 2000-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
 // #import <OpenGL/CGLTypes.h>
@@ -31,10 +30,8 @@
 //     NSOpenGLGOClearFormatCache NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 502,	/* Reset the pixel format cache if true          */
 //     NSOpenGLGORetainRenderers  NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 503,	/* Whether to retain loaded renderers in memory  */
 //     NSOpenGLGOUseBuildCache    NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 506,	/* Enable the function compilation block cache.  Off by default.  Must be enabled at startup. */
-    
 //     NSOpenGLGOResetLibrary     API_DEPRECATED("", macos(10.0,10.4)) = 504
 // } NS_OPENGL_DEPRECATED(10.0, 10.14);
-
 
 // /*
 //  ** Library global options.
@@ -47,11 +44,9 @@
 // **/
 // APPKIT_EXTERN void NSOpenGLGetVersion(GLint * _Nullable major, GLint * _Nullable minor) NS_OPENGL_DEPRECATED(10.0, 10.14);
 
-
 // */*******************
 //  ** NSOpenGLPixelFormat
 //  *********************/
-
 // /*
 //  ** Attribute names for [NSOpenGLPixelFormat initWithAttributes]
 //  ** and [NSOpenGLPixelFormat getValues:forAttribute:forVirtualScreen].
@@ -85,7 +80,6 @@
 //     NSOpenGLPFAAcceleratedCompute    NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14)  =  97,	/* choose a hardware accelerated compute device */
 //     NSOpenGLPFAOpenGLProfile         NS_OPENGL_ENUM_DEPRECATED(10.7, 10.14)  =  99,    /* specify an OpenGL Profile to use             */
 //     NSOpenGLPFAVirtualScreenCount    NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14)  = 128,	/* number of virtual screens in this format     */
-    
 //     NSOpenGLPFAStereo                API_DEPRECATED("", macos(10.0,10.12))     =   6,
 //     NSOpenGLPFAOffScreen             API_DEPRECATED("", macos(10.0,10.7))      =  53,
 //     NSOpenGLPFAFullScreen            API_DEPRECATED("", macos(10.0,10.6))      =  54,
@@ -110,7 +104,6 @@
 // /*
 //  ** NSOpenGLPixelFormat interface.
 // **/
-
 // NS_OPENGL_CLASS_DEPRECATED("Please use Metal or MetalKit.", 10.0, 10.14)
 // @interface NSOpenGLPixelFormat : NSObject <NSCoding>
 
@@ -131,7 +124,6 @@
 // */*******************
 //  ** NSOpenGLPixelBuffer
 //  *********************/
-
 // /* NOTE: PBuffers should be considered deprecated as of 10.7.  Use GL_EXT_framebuffer_object instead.
 // **/
 // API_DEPRECATED("Use GL_EXT_framebuffer_object instead", macos(10.2,10.7))
@@ -155,11 +147,9 @@
 // @property (readonly) GLint textureMaxMipMapLevel API_DEPRECATED("", macos(10.2,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // @end
 
-
 // */***************
 //  ** NSOpenGLContext
 //  *****************/
-
 // /* Parameter names for NSOpenGLContext -setValues:forParameter: and -getValues:forParameter: */
 // typedef NS_ENUM(NSInteger, NSOpenGLContextParameter) {
 //     NSOpenGLContextParameterSwapInterval           NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 222, /* 1 param.  0 -> Don't sync, 1 -> Sync to vertical retrace     */
@@ -172,7 +162,6 @@
 //     NSOpenGLContextParameterGPUFragmentProcessing  NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 311, /* 1 param.   Currently processing fragments with GPU (get)     */
 //     NSOpenGLContextParameterHasDrawable            NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 314, /* 1 param.   Boolean returned if drawable is attached          */
 //     NSOpenGLContextParameterMPSwapsInFlight        NS_OPENGL_ENUM_DEPRECATED(10.0, 10.14) = 315, /* 1 param.   Max number of swaps queued by the MP GL engine    */
-    
 //     NSOpenGLContextParameterSwapRectangle API_DEPRECATED("", macos(10.0,10.14)) = 200, /* 4 params.  Set or get the swap rectangle {x, y, w, h} */
 //     NSOpenGLContextParameterSwapRectangleEnable API_DEPRECATED("", macos(10.0,10.14)) = 201, /* Enable or disable the swap rectangle */
 //     NSOpenGLContextParameterRasterizationEnable API_DEPRECATED("", macos(10.0,10.14)) = 221, /* Enable or disable all rasterization */
@@ -216,7 +205,6 @@
 // - (void)setValues:(const GLint *)vals forParameter:(NSOpenGLContextParameter)param;
 // - (void)getValues:(GLint *)vals forParameter:(NSOpenGLContextParameter)param;
 
-
 // /* virtual screens */
 // @property GLint currentVirtualScreen;
 
@@ -243,7 +231,6 @@
 // - (nullable NSOpenGLPixelBuffer *)pixelBuffer API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // - (GLenum)pixelBufferCubeMapFace API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // - (GLint)pixelBufferMipMapLevel API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
-
 // /*
 //  ** NOTE: PBuffers have been Deprecated as of 10.7.  Use GL_EXT_framebuffer_object instead.
 //  **
@@ -253,7 +240,6 @@
 // **/
 // - (void)setTextureImageToPixelBuffer:(NSOpenGLPixelBuffer *)pixelBuffer colorBuffer:(GLenum)source API_DEPRECATED("", macos(10.3,10.7)); /* Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer. */
 // @end
-
 
 // static const NSOpenGLContextParameter NSOpenGLCPSwapInterval API_DEPRECATED_WITH_REPLACEMENT("NSOpenGLContextParameterSwapInterval", macos(10.5,10.14)) = NSOpenGLContextParameterSwapInterval;
 // static const NSOpenGLContextParameter NSOpenGLCPSurfaceOrder API_DEPRECATED_WITH_REPLACEMENT("NSOpenGLContextParameterSurfaceOrder", macos(10.0,10.14)) = NSOpenGLContextParameterSurfaceOrder;

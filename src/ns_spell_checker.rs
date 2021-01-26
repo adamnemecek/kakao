@@ -4,7 +4,6 @@
 //         Copyright (c) 1990-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -31,14 +30,12 @@
 // APPKIT_EXTERN NSTextCheckingOptionKey NSTextCheckingRegularExpressionsKey API_AVAILABLE(macos(10.7));  // NSArray of NSRegularExpressions to be matched in the text of the document
 // APPKIT_EXTERN NSTextCheckingOptionKey NSTextCheckingSelectedRangeKey      API_AVAILABLE(macos(10.12)); // NSValue containing NSRange, should be the portion of the selected range intersecting the string being checked, or a zero-length range if there is an insertion point in or adjacent to the string being checked, or NSMakeRange(NSNotFound, 0) if the selection is entirely outside of the string being checked.
 
-
 // /* The NSSpellChecker object is used by a client (e.g. a document in an application) to spell-check a given NSString.  There is only one NSSpellChecker instance per application (since spell-checking is interactive and you only have one mouse and one keyboard).
 
 // The string being spell-checked need only be valid for the duration of the call to checkSpellingOfString:... or countWordsInString:.
 
 // The usual usage of this is to implement a checkSpelling: method in an object that has text to check, then, upon receiving checkSpelling:, the object calls [[NSSpellChecker sharedInstance] checkSpellingOfString:...] with an NSString object consisting of the text that should be checked.  The caller is responsible for selecting the misspelled word that is found and for updating the panel UI if desired with the updateSpellPanelWithMisspelledWord: method.
 // */
-
 // @interface NSSpellChecker : NSObject
 
 // /* Only one per application. */
@@ -59,7 +56,7 @@
 // /* Initiates a grammar-check of a string.  Returns the range of the first flagged sentence (or similar grammatical unit), and optionally an array of dictionaries describing details within this sentence.  Keys in the details dictionaries are described in Foundation/NSSpellServer.h. */
 // - (NSRange)checkGrammarOfString:(NSString *)stringToCheck startingAt:(NSInteger)startingOffset language:(nullable NSString *)language wrap:(BOOL)wrapFlag inSpellDocumentWithTag:(NSInteger)tag details:(NSArray<NSDictionary<NSString *, id> *> * _Nullable * _Nullable)details API_AVAILABLE(macos(10.5));
 
-// /* Requests unified text checking for the given range of the given string.  The checkingTypes should be a bitmask of checking types from NSTextCheckingResult.h, describing which types of checking are desired.  The options dictionary allows clients to pass in options for certain types of checking.  The orthography and wordCount arguments will return by reference these two attributes of the range as a whole, while the return value is an array of NSTextCheckingResult objects describing particular items found during checking and their individual ranges, sorted by range origin, then range end, then result type. */  
+// /* Requests unified text checking for the given range of the given string.  The checkingTypes should be a bitmask of checking types from NSTextCheckingResult.h, describing which types of checking are desired.  The options dictionary allows clients to pass in options for certain types of checking.  The orthography and wordCount arguments will return by reference these two attributes of the range as a whole, while the return value is an array of NSTextCheckingResult objects describing particular items found during checking and their individual ranges, sorted by range origin, then range end, then result type. */
 // - (NSArray<NSTextCheckingResult *> *)checkString:(NSString *)stringToCheck range:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(nullable NSDictionary<NSTextCheckingOptionKey, id> *)options inSpellDocumentWithTag:(NSInteger)tag orthography:(NSOrthography * _Nullable * _Nullable)orthography wordCount:(nullable NSInteger *)wordCount API_AVAILABLE(macos(10.6));
 
 // /* Requests unified text checking in the background.  The return value is a monotonically increasing sequence number that can be used to keep track of requests in flight.  The completion handler will be called (in an arbitrary context) when results are available, with the sequence number and results.  The arguments and results are otherwise the same as for the previous method. */
@@ -118,7 +115,7 @@
 //     NSCorrectionResponseNone,       // No response was received from the user
 //     NSCorrectionResponseAccepted,   // The user accepted the correction
 //     NSCorrectionResponseRejected,   // The user rejected the correction
-//     NSCorrectionResponseIgnored,    // The user continued in such a way as to ignore the correction 
+//     NSCorrectionResponseIgnored,    // The user continued in such a way as to ignore the correction
 //     NSCorrectionResponseEdited,     // After the correction was accepted, the user edited the corrected word (to something other than its original form)
 //     NSCorrectionResponseReverted    // After the correction was accepted, the user reverted the correction back to the original word
 // };
@@ -165,7 +162,6 @@
 // @property (class, readonly, getter=isAutomaticTextCompletionEnabled) BOOL automaticTextCompletionEnabled API_AVAILABLE(macos(10.12.2));
 
 // /* Use of the following methods is discouraged; ordinarily language identification should be allowed to take place automatically, or else a specific language should be passed in to the methods that take such an argument, if the language is known in advance.  -setLanguage: allows programmatic setting of the language to spell-check in, for compatibility use if other methods are called with no language specified.  -setLanguage: accepts any of the language formats used by NSBundle, and tries to find the closest match among the available languages.  If -setLanguage: has been called, then -language will return that match; otherwise, it will return Multilingual if there is more than one element in -userPreferredLanguages, or the one element in that array if there is only one.  */
-
 // - (NSString *)language;
 // - (BOOL)setLanguage:(NSString *)language;
 
@@ -179,7 +175,6 @@
 // APPKIT_EXTERN NSNotificationName const NSSpellCheckerDidChangeAutomaticCapitalizationNotification API_AVAILABLE(macos(10.12));
 // APPKIT_EXTERN NSNotificationName const NSSpellCheckerDidChangeAutomaticPeriodSubstitutionNotification API_AVAILABLE(macos(10.12));
 // APPKIT_EXTERN NSNotificationName const NSSpellCheckerDidChangeAutomaticTextCompletionNotification API_AVAILABLE(macos(10.12.2));
-
 
 // @interface NSSpellChecker(NSDeprecated)
 

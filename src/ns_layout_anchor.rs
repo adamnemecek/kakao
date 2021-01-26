@@ -4,7 +4,6 @@
 //  Copyright (c) 2015-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -23,11 +22,11 @@
 
 // /*
 //  An NSLayoutAnchor represents an edge or dimension of a layout item.  Its concrete subclasses allow concise creation of constraints.  The idea is that instead of invoking +[NSLayoutConstraint constraintWithItem: attribute: relatedBy: toItem: attribute: multiplier: constant:] directly, you can instead do something like this:
- 
+
 //  [myView.topAnchor constraintEqualToAnchor:otherView.topAnchor constant:10];
- 
+
 //  The -constraint* methods are available in multiple flavors to support use of different relations and omission of unused options.
- 
+
 // **/
 // NSLAYOUTANCHOR_EXTERN API_AVAILABLE(macos(10.11), ios(9.0))
 // @interface NSLayoutAnchor<AnchorType> : NSObject
@@ -113,7 +112,6 @@
 // - (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c __attribute__((warn_unused_result));
 
 // @end
-
 
 // #endif // !TARGET_OS_IPHONE
 

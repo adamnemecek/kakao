@@ -4,7 +4,6 @@
 //     Copyright (c) 2000-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/NSView.h>
@@ -40,7 +39,7 @@
 // @property (nullable, strong) NSImage *image API_AVAILABLE(macos(10.10));
 // @property (nullable, strong) NSView *view;
 
-// /*! The view controller wrapped by the tab view item. This property must be set if the tab view item will be added to an NSTabViewController, but can also be used if the tab view item is added to an NSTabView. 
+// /*! The view controller wrapped by the tab view item. This property must be set if the tab view item will be added to an NSTabViewController, but can also be used if the tab view item is added to an NSTabView.
 //  * If this is set, the tab view item will forward \c -view calls onto the viewController. Setting a viewController will also set the following properties on the tab view item: \c -identifier from the address of the viewController, \c -label from the viewController's title, and \c -image based on the classname as the view controller.
 //  * An image named "ViewControllerClassName-TabViewItem" will be searched for first, followed by "ViewControllerClassName". It will search first using +[NSImage imageNamed:], then in \c viewController.nibBundle, and lastly in the bundle containing the view controller's class.
 //  * As defined by: -[NSImage imageNamed:imageName], -[viewController.nibBundle imageForResource:imageName], -[[NSBundle bundleForClass:[viewController class]] imageForResource:imageName]. One pass with imageName as [NSStringFromClass([viewController class]) stringByAppendingString:@"-TabViewItem"], followed by imageName as NSStringFromClass([viewController class]).
@@ -57,7 +56,6 @@
 // @property (nullable, copy) NSString *toolTip API_AVAILABLE(macos(10.6));
 
 // /* Tab Drawing/Measuring */
-
 // /* This method draws the tab label assuming a local coordinate system whose label axis runs along the x axis.  Assume the label axis runs along the length of the label (perpendicular to the direction of the tab).  'labelRect' is the area in between the curved end caps.  'shouldTruncateLabel' is a hint that the label should be truncated.  ie. if shouldTruncateLabel is YES, then labelRect.size < ceil([sizeOfLabel:NO])
 // */
 // - (void)drawLabel:(BOOL)shouldTruncateLabel inRect:(NSRect)labelRect;
@@ -70,4 +68,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

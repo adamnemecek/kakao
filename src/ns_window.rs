@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDate.h>
 // #import <Foundation/NSDictionary.h>
@@ -27,7 +26,7 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSButton, NSButtonCell, NSColor, NSImage, NSScreen, NSNotification, NSText, NSView, NSMutableSet, NSSet, NSDate, NSToolbar, NSGraphicsContext, NSURL, NSColorSpace, NSDockTile, NSViewController, NSTitlebarAccessoryViewController, NSEvent, NSWindowController, NSWindowTab, NSWindowTabGroup;
-    
+
 // @protocol NSWindowDelegate;
 
 // static const NSAppKitVersion NSAppKitVersionNumberWithCustomSheetPosition = 686.0;
@@ -39,24 +38,24 @@
 //     NSWindowStyleMaskClosable = 1 << 1,
 //     NSWindowStyleMaskMiniaturizable = 1 << 2,
 //     NSWindowStyleMaskResizable	= 1 << 3,
-    
+
 //     /* Specifies a window with textured background. Textured windows generally don't draw a top border line under the titlebar/toolbar. To get that line, use the NSUnifiedTitleAndToolbarWindowMask mask.
 //      */
 //     NSWindowStyleMaskTexturedBackground API_DEPRECATED("Textured window style should no longer be used", macos(10.2, 11.0)) = 1 << 8,
-    
+
 //     /* Specifies a window whose titlebar and toolbar have a unified look - that is, a continuous background. Under the titlebar and toolbar a horizontal separator line will appear.
 //      */
 //     NSWindowStyleMaskUnifiedTitleAndToolbar = 1 << 12,
-    
+
 //     /* When set, the window will appear full screen. This mask is automatically toggled when toggleFullScreen: is called.
 //      */
 //     NSWindowStyleMaskFullScreen API_AVAILABLE(macos(10.7)) = 1 << 14,
-    
+
 //     /* If set, the contentView will consume the full size of the window; it can be combined with other window style masks, but is only respected for windows with a titlebar.
 //      Utilizing this mask opts-in to layer-backing. Utilize the contentLayoutRect or auto-layout contentLayoutGuide to layout views underneath the titlebar/toolbar area.
 //      */
 //     NSWindowStyleMaskFullSizeContentView API_AVAILABLE(macos(10.10)) = 1 << 15,
-    
+
 //     /* The following are only applicable for NSPanel (or a subclass thereof)
 //      */
 //     NSWindowStyleMaskUtilityWindow			= 1 << 4,
@@ -85,7 +84,7 @@
 //     NSWindowCollectionBehaviorDefault = 0,
 //     NSWindowCollectionBehaviorCanJoinAllSpaces = 1 << 0,
 //     NSWindowCollectionBehaviorMoveToActiveSpace = 1 << 1,
-    
+
 //     /* You may specify at most one of NSWindowCollectionBehaviorManaged, NSWindowCollectionBehaviorTransient, or NSWindowCollectionBehaviorStationary.  If unspecified, the window gets the default behavior determined by its window level */
 //     NSWindowCollectionBehaviorManaged API_AVAILABLE(macos(10.6)) = 1 << 2,         // participates in spaces, exposé.  Default behavior if windowLevel == NSNormalWindowLevel
 //     NSWindowCollectionBehaviorTransient API_AVAILABLE(macos(10.6)) = 1 << 3,       // floats in spaces, hidden by exposé.  Default behavior if windowLevel != NSNormalWindowLevel
@@ -94,19 +93,18 @@
 //     /* You may specify at most one of NSWindowCollectionBehaviorParticipatesInCycle or NSWindowCollectionBehaviorIgnoresCycle.  If unspecified, the window gets the default behavior determined by its window level */
 //     NSWindowCollectionBehaviorParticipatesInCycle API_AVAILABLE(macos(10.6)) = 1 << 5,     // default behavior if windowLevel == NSNormalWindowLevel
 //     NSWindowCollectionBehaviorIgnoresCycle API_AVAILABLE(macos(10.6)) = 1 << 6,            // default behavior if windowLevel != NSNormalWindowLevel
-    
+
 //     /* You may specify at most one of NSWindowCollectionBehaviorFullScreenPrimary, NSWindowCollectionBehaviorFullScreenAuxiliary, or NSWindowCollectionBehaviorFullScreenNone. */
 //     NSWindowCollectionBehaviorFullScreenPrimary API_AVAILABLE(macos(10.7)) = 1 << 7,       // the frontmost window with this collection behavior will be the fullscreen window.
 //     NSWindowCollectionBehaviorFullScreenAuxiliary API_AVAILABLE(macos(10.7)) = 1 << 8,     // windows with this collection behavior can be shown with the fullscreen window.
 //     NSWindowCollectionBehaviorFullScreenNone API_AVAILABLE(macos(10.7)) = 1 << 9, // The window can not be made fullscreen when this bit is set
-    
+
 //     /* 	You may specify at most one of NSWindowCollectionBehaviorFullScreenAllowsTiling or NSWindowCollectionBehaviorFullScreenDisallowsTiling, or an assertion will be raised.
-     
+
 //      The default behavior is to allow any window to participate in full screen tiling, as long as it meets certain requirements, such as being resizable and not a panel or sheet. Windows which are not full screen capable can still become a secondary tile in full screen. A window can explicitly allow itself to be placed into a full screen tile by including NSWindowCollectionBehaviorFullScreenAllowsTiling. Even if a window allows itself to be placed in a tile, it still may not be put in the tile if its minFullScreenContentSize is too large to fit. A window can explicitly disallow itself from being placed in a full screen tile by including NSWindowCollectionBehaviorFullScreenDisallowsTiling. This is useful for non-full screen capable windows to explicitly prevent themselves from being tiled. It can also be used by a full screen window to prevent any other windows from being placed in its full screen tile. */
 //     NSWindowCollectionBehaviorFullScreenAllowsTiling API_AVAILABLE(macos(10.11)) = 1 << 11,       // This window can be a full screen tile window. It does not have to have FullScreenPrimary set.
 //     NSWindowCollectionBehaviorFullScreenDisallowsTiling API_AVAILABLE(macos(10.11)) = 1 << 12      // This window can NOT be made a full screen tile window; it still may be allowed to be a regular FullScreenPrimary window.
 // } API_AVAILABLE(macos(10.5));
-
 
 // typedef NS_ENUM(NSInteger, NSWindowAnimationBehavior) {
 //     NSWindowAnimationBehaviorDefault = 0,       // let AppKit infer animation behavior for this window
@@ -116,7 +114,6 @@
 //     NSWindowAnimationBehaviorUtilityWindow = 4,
 //     NSWindowAnimationBehaviorAlertPanel = 5
 // } API_AVAILABLE(macos(10.7));
-
 
 // /* Options used in +windowNumbersWithOptions:.  If no options are specified, the returned list contains window numbers for visible windows on the active space belonging to the calling application. */
 // typedef NS_OPTIONS(NSUInteger, NSWindowNumberListOptions) {
@@ -250,9 +247,8 @@
 // /* NOTE: you can use this method, or removeFromParentViewController, which ever is easier. */
 // - (void)removeTitlebarAccessoryViewControllerAtIndex:(NSInteger)index API_AVAILABLE(macos(10.10));
 
-
 // /* setRepresentedURL:
-// If url is not nil and its path is not empty, the window will show a document icon in the titlebar.  
+// If url is not nil and its path is not empty, the window will show a document icon in the titlebar.
 // If the url represents a filename or other resource with a known icon, that icon will be used as the document icon.  Otherwise the default document icon will be used.  The icon can be customized using [[NSWindow standardWindowButton:NSWindowDocumentIconButton] setImage:customImage].  If url is not nil and its path is not empty, the window will have a pop-up menu which can be shown via command-click on the area containing the document icon and title.  By default, this menu will display the path components of the url.  The presence and contents of this menu can be controlled by the delegate method window:shouldPopUpDocumentPathMenu:If the url is nil or has an empty path, the window will not show a document icon and will not have a pop-up menu available via command-click.
 // */
 // @property (nullable, copy) NSURL *representedURL API_AVAILABLE(macos(10.5));
@@ -385,7 +381,7 @@
 // - (NSRect)backingAlignedRect:(NSRect)rect options:(NSAlignmentOptions)options API_AVAILABLE(macos(10.7));
 
 // /* Returns the scale factor representing the number of backing store pixels corresponding to each linear unit in window space on this NSWindow. This method is provided for rare cases when the explicit scale factor is needed. Please use -convert*ToBacking: methods whenever possible. */
-// @property (readonly) CGFloat backingScaleFactor API_AVAILABLE(macos(10.7)); 
+// @property (readonly) CGFloat backingScaleFactor API_AVAILABLE(macos(10.7));
 
 // - (void)performClose:(nullable id)sender;
 // - (void)performMiniaturize:(nullable id)sender;
@@ -416,7 +412,6 @@
 // @property CGFloat alphaValue;
 // @property (getter=isOpaque) BOOL opaque;
 
-
 // /* -setSharingType: specifies whether the window content can be read and/or written from another process.  The default sharing type is NSWindowSharingReadOnly, which means other processes can read the window content (eg. for window capture) but cannot modify it.  If you set your window sharing type to NSWindowSharingNone, so that the content cannot be captured, your window will also not be able to participate in a number of system services, so this setting should be used with caution.  If you set your window sharing type to NSWindowSharingReadWrite, other processes can both read and modify the window content.
 // */
 // @property NSWindowSharingType sharingType API_AVAILABLE(macos(10.5));
@@ -428,7 +423,7 @@
 // @property BOOL displaysWhenScreenProfileChanges;
 
 // /*
-//  In recent macOS versions this method does not do anything and should not be called. 
+//  In recent macOS versions this method does not do anything and should not be called.
 // **/
 // - (void)disableScreenUpdatesUntilFlush;
 
@@ -436,14 +431,11 @@
 // */
 // @property BOOL canBecomeVisibleWithoutLogin API_AVAILABLE(macos(10.5));
 
-
 // @property NSWindowCollectionBehavior collectionBehavior API_AVAILABLE(macos(10.5));
-
 
 // /* Provides for per-window control over automatic orderFront/orderOut animation behaviors added in 10.7.  Can be set to NSWindowAnimationBehaviorNone to disable Appkit's automatic animations for a given window, or to one of the other non-Default NSWindowAnimationBehavior values to override AppKit's automatic inference of appropriate animation behavior based on the window's apparent type.
 // */
 // @property NSWindowAnimationBehavior animationBehavior API_AVAILABLE(macos(10.7));
-
 
 // /* Returns YES if this window is associated with the active space.  For visible windows, this API indicates whether the window is currently visible on the active space.  For offscreen windows, it indicates whether ordering the window onscreen would make it bring it onto the active space */
 // @property (getter=isOnActiveSpace, readonly) BOOL onActiveSpace API_AVAILABLE(macos(10.6));
@@ -470,7 +462,7 @@
 // @property NSSize contentMaxSize;
 
 // /* These are the min and max values for a full screen tiled window.
- 
+
 //  In general, one should not need to explicitly set the min/maxFullScreenContentSize. If an application does not change its window content upon entering full screen, then the normal auto layout min and max size will be sufficient, and one should not set these values. If an application does significantly rework the UI in full screen, then it may be necessary to set a min/maxFullScreenContentSize. This size is what is used to determine if a window can fit when it is in full screen in a tile. This property may be used even if the window does not support full screen, but are implicitly opted into supporting a full screen tile based on resizing behavior and window properties (see the collectionBehavior property). By default, the system uses auto layout to determine the min and max sizes. If auto layout is not used, contentMinSize and contentMaxSize are queried.
 // **/
 // @property NSSize minFullScreenContentSize API_AVAILABLE(macos(10.11));
@@ -482,7 +474,7 @@
 
 // /*
 //  This API presents modal-sheets on this window. It replaces NSApp's -beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo:.
- 
+
 //  If the window already has a presented sheet, it will queue up sheets presented after that. Once the presented sheet is dismissed, the next queued sheet will be presented, and so forth.
 //  Critical sheets will skip this queuing process and be immediately presented on top of existing sheets. The presented sheet will be temporarily disabled and be able to be interacted with after the critical sheet is dismissed, and will then continue as normal. Critical sheets should only be used for time-critical or important events, when the presentation of the sheet needs to be guaranteed (Critical Alerts will automatically use this API).
 // */
@@ -497,11 +489,10 @@
 
 // /* Returns the window that the sheet is directly attached to. This is based on the logical attachment of the sheet, not visual attachment.
 //  This relationship exists starting when the sheet is begun (using NSApplication's -beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo: or NSWindow's -beginSheet:completionHandler:), and ending once it is ordered out.
- 
+
 //  Returns nil if the window is not a sheet or has no sheet parent.
 // **/
 // @property (nullable, readonly, strong) NSWindow *sheetParent API_AVAILABLE(macos(10.9));
-
 
 // + (nullable NSButton *)standardWindowButton:(NSWindowButton)b forStyleMask:(NSWindowStyleMask)styleMask;
 // - (nullable NSButton *)standardWindowButton:(NSWindowButton)b;
@@ -521,9 +512,9 @@
 // */
 // - (BOOL)canRepresentDisplayGamut:(NSDisplayGamut)displayGamut  API_AVAILABLE(macos(10.12));
 
-// /* windowNumbersWithOptions: returns an autoreleased array of NSNumbers containing windowNumbers for all visible windows satisfying options.  If no options are specified, only visible windows belonging to the calling application and on the active space are included.  If options include NSWindowNumberListAllApplications, visible windows belonging to all applications are included.  If options include NSWindowNumberListAllSpaces, visible windows on all spaces are included.  Windows on the active space are returned in z-order.  
-//    Examples: 
-//       To get an array of windowNumbers visible on the current space and belonging to the calling application:  
+// /* windowNumbersWithOptions: returns an autoreleased array of NSNumbers containing windowNumbers for all visible windows satisfying options.  If no options are specified, only visible windows belonging to the calling application and on the active space are included.  If options include NSWindowNumberListAllApplications, visible windows belonging to all applications are included.  If options include NSWindowNumberListAllSpaces, visible windows on all spaces are included.  Windows on the active space are returned in z-order.
+//    Examples:
+//       To get an array of windowNumbers visible on the current space and belonging to the calling application:
 // 	windowNumbers = [NSWindow windowNumbersWithOptions:0];
 //       To get an array of windowNumbers visible on any space and belonging to any application:
 // 	windowNumbers = [NSWindow windowNumbersWithOptions:NSWindowNumberListAllApplications|NSWindowNumberListAllSpaces];
@@ -532,18 +523,17 @@
 // */
 // + (nullable NSArray<NSNumber *> *)windowNumbersWithOptions:(NSWindowNumberListOptions)options API_AVAILABLE(macos(10.6));
 
-// /* windowNumberAtPoint:belowWindowWithWindowNumber: returns the number of the frontmost window that would be hit by a mouseDown at the screen location "point".  "windowNum" can be specified to exclude a given window along with all windows above it, and may belong to any application.  If no windows are to be excluded, specify 0 for "windowNum".  The windowNumber returned may correspond to a window in another application.    
+// /* windowNumberAtPoint:belowWindowWithWindowNumber: returns the number of the frontmost window that would be hit by a mouseDown at the screen location "point".  "windowNum" can be specified to exclude a given window along with all windows above it, and may belong to any application.  If no windows are to be excluded, specify 0 for "windowNum".  The windowNumber returned may correspond to a window in another application.
 // */
 // + (NSInteger)windowNumberAtPoint:(NSPoint)point belowWindowWithWindowNumber:(NSInteger)windowNumber API_AVAILABLE(macos(10.6));
 
 // @property (readonly) NSWindowOcclusionState occlusionState API_AVAILABLE(macos(10.9));
 
 // /* Specifies the style of separator displayed between the window's titlebar and content.
- 
+
 //     The default value is NSTitlebarSeparatorStyleAutomatic. Changing this value will override any preference made by `NSSplitViewItem`.
 // **/
 // @property NSTitlebarSeparatorStyle titlebarSeparatorStyle API_AVAILABLE(macos(11.0));
-
 
 // #pragma mark - NSViewController Support
 
@@ -680,7 +670,6 @@
 // @property (readonly) void * /* WindowRef */windowRef NS_RETURNS_INNER_POINTER;
 // @end
 
-
 // @protocol NSWindowDelegate <NSObject>
 // @optional
 // - (BOOL)windowShouldClose:(NSWindow *)sender;
@@ -694,7 +683,7 @@
 // **/
 // - (NSRect)window:(NSWindow *)window willPositionSheet:(NSWindow *)sheet usingRect:(NSRect)rect;
 
-// /* If a window has a representedURL, the window will by default show a path popup menu for a command-click on a rectangle containing the window document icon button and the window title.  The window delegate may implement -window:shouldPopupDocumentPathMenu: to override NSWindow's default behavior for path popup menu.  A return of NO will prevent the menu from being shown.  A return of YES will cause the window to show the menu passed to this method, which by default will contain a menuItem for each path component of the representedURL.  If the representedURL has no path components, the menu will have no menu items.  Before returning YES, the window delegate may customize the menu by changing the menuItems.  menuItems may be added or deleted, and each menuItem title, action, or target may be modified. 
+// /* If a window has a representedURL, the window will by default show a path popup menu for a command-click on a rectangle containing the window document icon button and the window title.  The window delegate may implement -window:shouldPopupDocumentPathMenu: to override NSWindow's default behavior for path popup menu.  A return of NO will prevent the menu from being shown.  A return of YES will cause the window to show the menu passed to this method, which by default will contain a menuItem for each path component of the representedURL.  If the representedURL has no path components, the menu will have no menu items.  Before returning YES, the window delegate may customize the menu by changing the menuItems.  menuItems may be added or deleted, and each menuItem title, action, or target may be modified.
 // */
 // - (BOOL)window:(NSWindow *)window shouldPopUpDocumentPathMenu:(NSMenu *)menu API_AVAILABLE(macos(10.5));
 
@@ -706,11 +695,11 @@
 
 // - (NSApplicationPresentationOptions)window:(NSWindow *)window willUseFullScreenPresentationOptions:(NSApplicationPresentationOptions)proposedOptions API_AVAILABLE(macos(10.7));
 
-// /* The default animation between a window and its fullscreen representation is a crossfade.  With knowledge of the layout of a window before and after it enters fullscreen, an application can do a much better job on the animation.  The following API allows a window delegate to customize the animation by providing a custom window or windows containing layers or other effects.  In order to manage windows on spaces, we need the window delegate to provide a list of windows involved in the animation.  If an application does not do a custom animation, this method can be unimplemented or can return nil.  window:startCustomAnimationToEnterFullScreenWithDuration: will be called only if customWindowsToEnterFullScreenForWindow: returns non-nil.  
+// /* The default animation between a window and its fullscreen representation is a crossfade.  With knowledge of the layout of a window before and after it enters fullscreen, an application can do a much better job on the animation.  The following API allows a window delegate to customize the animation by providing a custom window or windows containing layers or other effects.  In order to manage windows on spaces, we need the window delegate to provide a list of windows involved in the animation.  If an application does not do a custom animation, this method can be unimplemented or can return nil.  window:startCustomAnimationToEnterFullScreenWithDuration: will be called only if customWindowsToEnterFullScreenForWindow: returns non-nil.
 // **/
 // - (nullable NSArray<NSWindow *> *)customWindowsToEnterFullScreenForWindow:(NSWindow *)window API_AVAILABLE(macos(10.7));
 
-// /* The system has started its animation into fullscreen, including transitioning to a new space.  Start the window fullscreen animation immediately, and perform the animation with the given duration to  be in sync with the system animation.  This method is called only if customWindowToEnterFullScreenForWindow: returned non-nil. 
+// /* The system has started its animation into fullscreen, including transitioning to a new space.  Start the window fullscreen animation immediately, and perform the animation with the given duration to  be in sync with the system animation.  This method is called only if customWindowToEnterFullScreenForWindow: returned non-nil.
 // */
 // - (void)window:(NSWindow *)window startCustomAnimationToEnterFullScreenWithDuration:(NSTimeInterval)duration API_AVAILABLE(macos(10.7));
 
@@ -718,11 +707,11 @@
 // */
 // - (void)windowDidFailToEnterFullScreen:(NSWindow *)window API_AVAILABLE(macos(10.7));
 
-// /* The window is about to exit fullscreen mode.  The following API allows a window delegate to customize the animation when the window is about to exit fullscreen.  In order to manage windows on spaces, we need the window delegate to provide a list of windows involved in the animation.  If an application does not do a custom animation, this method can be unimplemented or can return nil.  window:startCustomAnimationToExitFullScreenWithDuration: will be called only if customWindowsToExitFullScreenForWindow: returns non-nil. 
+// /* The window is about to exit fullscreen mode.  The following API allows a window delegate to customize the animation when the window is about to exit fullscreen.  In order to manage windows on spaces, we need the window delegate to provide a list of windows involved in the animation.  If an application does not do a custom animation, this method can be unimplemented or can return nil.  window:startCustomAnimationToExitFullScreenWithDuration: will be called only if customWindowsToExitFullScreenForWindow: returns non-nil.
 // */
 // - (nullable NSArray<NSWindow *> *)customWindowsToExitFullScreenForWindow:(NSWindow *)window API_AVAILABLE(macos(10.7));
 
-// /* The system has started its animation out of fullscreen, including transitioning back to the desktop space.  Start the window animation immediately, and perform the animation with the given duration to  be in sync with the system animation.  This method is called only if customWindowsToExitFullScreenForWindow: returned non-nil. 
+// /* The system has started its animation out of fullscreen, including transitioning back to the desktop space.  Start the window animation immediately, and perform the animation with the given duration to  be in sync with the system animation.  This method is called only if customWindowsToExitFullScreenForWindow: returned non-nil.
 // */
 // - (void)window:(NSWindow *)window startCustomAnimationToExitFullScreenWithDuration:(NSTimeInterval)duration API_AVAILABLE(macos(10.7));
 
@@ -781,7 +770,6 @@
 // - (void)windowDidChangeOcclusionState:(NSNotification *)notification API_AVAILABLE(macos(10.9));
 // @end
 
-
 // /* Notifications */
 // APPKIT_EXTERN NSNotificationName NSWindowDidBecomeKeyNotification;
 // APPKIT_EXTERN NSNotificationName NSWindowDidBecomeMainNotification;
@@ -806,7 +794,6 @@
 
 // APPKIT_EXTERN NSString * const NSBackingPropertyOldScaleFactorKey API_AVAILABLE(macos(10.7)); // added in 10.7.3; an NSNumber
 // APPKIT_EXTERN NSString * const NSBackingPropertyOldColorSpaceKey API_AVAILABLE(macos(10.7));  // added in 10.7.3; an NSColorSpace
-
 
 // /* NSWindowDidChangeScreenProfileNotification is posted when a window's display's color profile changes, or when the window moves to a display that has a different color profile.  When running on 10.7.3 or later, this notification is still posted for compatibility, but modern applications should instead watch for NSWindowDidChangeBackingPropertiesNotification, which is posted for both color space and resolution changes, and facilitates handling both in a single update and redisplay pass.
 // */
@@ -905,8 +892,5 @@
 // **/
 // static const NSWindowLevel NSDockWindowLevel API_DEPRECATED("", macos(10.0,10.13)) = kCGDockWindowLevel;
 
-
-
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

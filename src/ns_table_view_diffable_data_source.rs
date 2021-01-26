@@ -4,7 +4,6 @@
 //     Copyright (c) 2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSTableView.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -35,7 +34,6 @@
 // - (void)applySnapshot:(NSDiffableDataSourceSnapshot<SectionIdentifierType,ItemIdentifierType> *)snapshot animatingDifferences:(BOOL)animatingDifferences;
 
 // - (void)applySnapshot:(NSDiffableDataSourceSnapshot<SectionIdentifierType,ItemIdentifierType>*)snapshot animatingDifferences:(BOOL)animatingDifferences completion:(void(^ _Nullable)(void))completion;
-
 
 // // Row <-> item identifier conversion
 // - (nullable ItemIdentifierType)itemIdentifierForRow:(NSInteger)row;

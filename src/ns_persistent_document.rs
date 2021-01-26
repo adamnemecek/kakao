@@ -4,8 +4,6 @@
 // 	Copyright (c) 2004-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
-
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/NSDocument.h>
 // #import <AppKit/AppKitDefines.h>
@@ -23,10 +21,8 @@
 // // By default the framework will create a merged model of all models found in the main bundle. Subclasses can return a specific model to use for creating persistent stores.
 // @property (nullable, readonly, strong) NSManagedObjectModel *managedObjectModel;
 
-
 // // Configures the persistent store coordinator with the appropriate stores. Subclasses can create the store to save to or load from (invoked from within the other NSDocument methods to read/write files), which gives developers the ability to load/save from/to different persistent store types (default type is XML).
 // - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)url ofType:(NSString *)fileType modelConfiguration:(nullable NSString *)configuration storeOptions:(nullable NSDictionary<NSString *, id> *)storeOptions error:(NSError **)error API_AVAILABLE(macos(10.5));
-
 
 // - (NSString *)persistentStoreTypeForFileType:(NSString *)fileType;  // Returns the name identifying the store type to save to for the given fileType. The default implementation of this method returns information derived from the application's Info.plist. If no store type information is in the Info.plist, the default implementation returns NSXMLStoreType. See NSPersistentStoreCoordinator.h for store type information.
 
@@ -47,5 +43,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-

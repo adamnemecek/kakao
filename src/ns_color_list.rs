@@ -4,14 +4,12 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // /* An NSColorList is an ordered list of NSColors, identified by keys. These keys are used to identify the colors in the list and are used to display the color to the user in the color panel. Note that the key is only used in identifying a color in a color list; it has nothing to do with the contents of the color, unless, of course the color list was set up in such a way that the keys matched the color names.
 
 // Instances of NSColorList are created for all user-created color lists (those in the color panel) and various color catalogs available on the system.
 
 // NSColorLists post "NSColorListDidChangeNotification" when changed.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSNotification.h>
@@ -40,7 +38,6 @@
 // */
 // - (instancetype)initWithName:(NSColorListName)name;
 // - (nullable instancetype)initWithName:(NSColorListName)name fromFile:(nullable NSString *)path;	/* Load initial contents */
-
 // /* Name of the color list
 // */
 // @property (nullable, readonly, copy) NSColorListName name;
@@ -74,7 +71,7 @@
 // - (BOOL)writeToURL:(nullable NSURL *)url error:(NSError **)errPtr API_AVAILABLE(macos(10.11));
 
 // /* Save the color list using unkeyed archive format. Specify nil to save to the user's private colorlists directory (and also update availableColorLists), using the name of the color list.
- 
+
 //    Use of the unkeyed archive format (and hence this API) is discouraged since it cannot represent some colors (including custom colorspace based ones) without loss. Use writeToURL:error: instead.
 // */
 // - (BOOL)writeToFile:(nullable NSString *)path API_DEPRECATED("Use -writeToURL:error: instead", macos(10.0,10.14));
@@ -90,4 +87,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

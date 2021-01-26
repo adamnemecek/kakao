@@ -4,7 +4,6 @@
 // 	Copyright (c) 2016-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/NSAccessibilityProtocols.h>
 // #import <AppKit/AppKitDefines.h>
@@ -22,7 +21,6 @@
 //  * that allows assistive technologies to search the Pages document for all
 //  * headings.
 // **/
-
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
@@ -32,7 +30,6 @@
 
 // @protocol NSAccessibilityCustomRotorItemSearchDelegate;
 // @protocol NSAccessibilityCustomRotorItemLoadDelegate;
-
 
 // /*!
 //  * @brief Direction to search for an NSAccessibilityCustomRotorItemResult.
@@ -50,11 +47,11 @@
 // typedef NS_ENUM(NSInteger, NSAccessibilityCustomRotorType) {
 //     // Default if using a custom labeled rotor
 //     NSAccessibilityCustomRotorTypeCustom = 0,
-    
+
 //     // This type is used for searching the current
 //     // element for any type of item.
 //     NSAccessibilityCustomRotorTypeAny = 1,
-    
+
 //     // Common types of rotors
 //     NSAccessibilityCustomRotorTypeAnnotation,
 //     NSAccessibilityCustomRotorTypeBoldText,
@@ -76,7 +73,6 @@
 //     NSAccessibilityCustomRotorTypeUnderlinedText,
 //     NSAccessibilityCustomRotorTypeVisitedLink,
 // } API_AVAILABLE(macos(10.13));
-
 
 // /*!
 //  * @brief NSAccessibilityCustomRotors allow assistive technologies, like
@@ -132,16 +128,15 @@
 
 // @end
 
-
 // /*!
-//  * @brief NSAccessibilityCustomRotorSearchParameters is a container for 
+//  * @brief NSAccessibilityCustomRotorSearchParameters is a container for
 //  * search parameters. It should be examined to determine the next matching
 //  * NSAccessibilityCustomRotorItemResult.
 // **/
 // API_AVAILABLE(macos(10.13)) @interface NSAccessibilityCustomRotorSearchParameters : NSObject
 
 // /*!
-//  * @brief The currentItem determines where the search will start from. If 
+//  * @brief The currentItem determines where the search will start from. If
 //  * it is nil, the search should begin from, and include, the first or last
 //  * item, depending on which search direction is used (e.g. search direction
 //  * next will return the first item and previous will return the last item).
@@ -162,7 +157,6 @@
 // @property (copy) NSString *filterString;
 
 // @end
-
 
 // /*!
 //  * @brief NSAccessibilityCustomRotorItemResults are the objects returned
@@ -210,14 +204,13 @@
 // @property NSRange targetRange;
 
 // /*!
-//  * @brief A localized label that can be used instead of the default item 
+//  * @brief A localized label that can be used instead of the default item
 //  * label to describe the item result.
 //  * @remark Required if using the loader-based initializer. Optional otherwise.
 // **/
 // @property (nullable, copy) NSString *customLabel;
 
 // @end
-
 
 // API_AVAILABLE(macos(10.13)) @protocol NSAccessibilityCustomRotorItemSearchDelegate <NSObject>
 

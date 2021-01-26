@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSPanel.h>
 // #import <AppKit/NSApplication.h>
 // #import <AppKit/AppKitDefines.h>
@@ -38,8 +37,6 @@
 //     NSColorPanelCrayonModeMask		= 0x00000080,
 //     NSColorPanelAllModesMask		= 0x0000ffff
 // };
-    
-    
 
 // @interface NSColorPanel : NSPanel
 
@@ -78,7 +75,6 @@
 // /* Notifications */
 // APPKIT_EXTERN NSNotificationName NSColorPanelColorDidChangeNotification;
 
-
 // static const NSColorPanelMode NSNoModeColorPanel API_DEPRECATED_WITH_REPLACEMENT("NSColorPanelModeNone", macos(10.5,10.14)) = NSColorPanelModeNone;
 // static const NSColorPanelMode NSGrayModeColorPanel API_DEPRECATED_WITH_REPLACEMENT("NSColorPanelModeGray", macos(10.0,10.14)) = NSColorPanelModeGray;
 // static const NSColorPanelMode NSRGBModeColorPanel API_DEPRECATED_WITH_REPLACEMENT("NSColorPanelModeRGB", macos(10.0,10.14)) = NSColorPanelModeRGB;
@@ -91,4 +87,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

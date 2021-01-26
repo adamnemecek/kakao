@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSCell.h>
 // #import <AppKit/AppKitDefines.h>
@@ -93,9 +92,7 @@
 // **/
 // APPKIT_EXTERN NSNotificationName const NSPreferredScrollerStyleDidChangeNotification API_AVAILABLE(macos(10.7));
 
-
 // /* Deprecated API */
-
 // typedef NS_ENUM(NSUInteger, NSScrollArrowPosition) {
 //     NSScrollerArrowsMaxEnd        = 0,    /* previously deprecated */
 //     NSScrollerArrowsMinEnd        = 1,    /* previously deprecated */
@@ -130,8 +127,6 @@
 // - (void)drawArrow:(NSScrollerArrow)whichArrow highlight:(BOOL)flag API_DEPRECATED("Scrollers don't have arrows as of 10.7", macos(10.0,10.14));
 
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

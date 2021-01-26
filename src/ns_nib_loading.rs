@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSBundle.h>
 // #import <AppKit/NSNib.h>
@@ -19,7 +18,6 @@
 
 // - (BOOL)loadNibNamed:(NSNibName)nibName owner:(nullable id)owner topLevelObjects:(NSArray * _Nullable * _Nullable)topLevelObjects API_AVAILABLE(macos(10.8));
 //     /* Load a nib from this bundle with the specified file name and owner. Upon success, the method returns YES and the optional out-parameter topLevelObjects is populated with the top level objects of the nib. The objects adhere to the standard Cocoa memory management rules and are autoreleased. IBOutlet properties to top level objects should be strong (retain) to demonstrate ownership and prevent deallocation. Alternatively, one may hold a strong reference to the top level objects array. */
-
 // @end
 
 // @interface NSObject (NSNibAwaking)

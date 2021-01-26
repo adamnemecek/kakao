@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSNibDeclarations.h>
 // #import <AppKit/NSPanel.h>
@@ -26,7 +25,7 @@
 
 // @interface NSSavePanel : NSPanel
 
-// /* Creates a new instance of the NSSavePanel. This class is not a singleton. 
+// /* Creates a new instance of the NSSavePanel. This class is not a singleton.
 // */
 // + (NSSavePanel *)savePanel;
 
@@ -68,7 +67,6 @@
 // @property (nullable, weak) id<NSOpenSavePanelDelegate> delegate;
 
 // #pragma clang diagnostic pop
-
 
 // /*  NSSavePanel: Returns YES if the panel is expanded. Defaults to NO, and persists in the user defaults.
 //     NSOpenPanel: Not used.
@@ -154,7 +152,6 @@
 
 // @end
 
-
 // @protocol NSOpenSavePanelDelegate <NSObject>
 // @optional
 
@@ -164,7 +161,7 @@
 // */
 // - (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url API_AVAILABLE(macos(10.6));
 
-// /* Optional - URL validation for saving and opening files. 
+// /* Optional - URL validation for saving and opening files.
 //     NSSavePanel: The method is called once by the save panel when the user chooses the Save button. The user is intending to save a file at 'url'. Return YES if the 'url' is a valid location to save to. Note that an item at 'url' may not physically exist yet, unless the user decided to overwrite an existing item. Return NO and fill in the 'outError' with a user displayable error message for why the 'url' is not valid. If a recovery option is provided by the error, and recovery succeeded, the panel will attempt to close again.
 //     NSOpenPanel: The method is called once for each selected filename (or directory) when the user chooses the Open button. Return YES if the 'url' is acceptable to open. Return NO and fill in the 'outError' with a user displayable message for why the 'url' is not valid for opening. You would use this method over panel:shouldEnableURL: if the processing of the selected item takes a long time. If a recovery option is provided by the error, and recovery succeeded, the panel will attempt to close again.
 // */
@@ -214,8 +211,6 @@
 // **/
 // @property (nullable, copy) NSArray<NSString *> *allowedFileTypes API_DEPRECATED("Use -allowedContentTypes instead", macos(10.3,API_TO_BE_DEPRECATED));
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

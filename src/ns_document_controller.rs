@@ -4,7 +4,6 @@
 // 	Copyright (c) 1997-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSNibDeclarations.h>
 // #import <AppKit/NSMenu.h>
 // #import <AppKit/NSUserInterfaceValidation.h>
@@ -48,7 +47,7 @@
 
 // /* Given a URL, return the open document whose file or file package is located by the URL, or nil if there is no such open document. The default implementation of this method queries each open document to find one whose URL matches, and returns the first one whose URL does match.
 
-// For backward binary compatibility with Mac OS 10.3 and earlier, the default implementation of this method instead invokes [self documentForFileName:[url path]] if -documentForFileName: is overridden and the URL uses the "file:" scheme.  
+// For backward binary compatibility with Mac OS 10.3 and earlier, the default implementation of this method instead invokes [self documentForFileName:[url path]] if -documentForFileName: is overridden and the URL uses the "file:" scheme.
 // */
 // - (nullable __kindof NSDocument *)documentForURL:(NSURL *)url;
 
@@ -108,7 +107,7 @@
 // - (void)beginOpenPanel:(NSOpenPanel *)openPanel forTypes:(nullable NSArray<NSString *> *)inTypes completionHandler:(void (^)(NSInteger result))completionHandler API_AVAILABLE(macos(10.8));
 
 // /* Open a document located by a URL, present its user interface if displayDocument is YES, and invoke the passed-in completion handler at some point in the future, perhaps after the method invocation has returned. The completion handler must be invoked on the main thread. If successful, pass the document to the completion handler, and also whether the document was already open or being opened before this method was invoked. If not successful, pass a nil document and an NSError that encapsulates the reason why the document could not be opened.
- 
+
 // The default implementation of this method checks to see if the document is already open or being opened, and if it is not determines the type of the document, invokes -makeDocumentWithContentsOfURL:ofType:error: to instantiate it, invokes -addDocument: to record its opening, and sends the document -makeWindowControllers and -showWindows messages if displayDocument is YES. If the document is already open it is just sent a -showWindows message if displayDocument is YES. If the relevant document class returns YES when sent +canConcurrentlyReadDocumentsOfType: then the invocation of -makeDocumentWithContentsOfURL:ofType:error: is done on a thread other than the main one and when that has returned the rest of the operation is done on the main thread.
 
 // The default implementation of this method uses the file coordination mechanism that was added to the Foundation framework in Mac OS 10.7. All of the work it does is one big coordinated read, and it passes the document to +[NSFileCoordinator addFilePresenter:] right after -addDocument: is invoked. (The balancing invocation of +[NSFileCoordinator removeFilePresenter:] is in -[NSDocument close]).
@@ -130,7 +129,7 @@
 // #pragma mark *** Document Reopening ***
 
 // /* Reopen a document, perhaps located by a URL, perhaps not, by reading the contents for the document from another URL, which may or may not be a different URL, present its user interface if displayDocument is YES, and invoke the passed-in completion handler at some point in the future, perhaps after the method invocation has returned. The completion handler must be invoked on the main thread. If successful, pass the document to the completion handler, and also whether the document was already open or being opened before this method was invoked. If not successful, pass a nil document and an NSError that encapsulates the reason why the document could not be opened. A nil URL indicates that the opened document is to have no fileURL, much like an untitled document has.
- 
+
 // The default implementation of this method is very similar to -openDocumentWithContentsOfURL:display:completionHandler:'s, the primary difference being that it invokes -makeDocumentForURL:withContentsOfURL:ofType:error: instead of -makeDocumentWithContentsOfURL:ofType:error:.
 
 // You can override this method to customize how documents are reopened during application launching by the restorable state mechanism that was added to the AppKit framework in Mac OS 10.7. Its implemention however is somewhat complex so unless your customization is to do additional work before invoking super, or to invoke super with a completion handler that does additional work before invoking the original completion handler, you should investigate overriding one of the methods that it invokes instead.
@@ -178,13 +177,13 @@
 // #pragma mark *** Document Duplicating ***
 
 // /* Create a new document that will not yet have a location by reading the contents for the document from another URL, present its user interface, and return the document if successful. If not successful, return nil after setting *outError to an NSError that encapsulates the reason why a new document could not be created. If duplicateByCopying is YES then first copy the contents located at the passed-in URL into a file located in the same directory that is used for the autosaved contents of untitled documents and with the same sort of name. if displayNameOrNil is not nil then use that value to derive a display name for the new document that does not match one that is already in use by an open document.
- 
+
 // The default implementation of this method copies the file if specified, determines the type of the document, invokes -makeDocumentForURL:withContentsOfURL:ofType:error: to instantiate it, sends the document -setDisplayName: to name it if displayNameOrNil is not nil, invokes -addDocument: to record its opening, and sends the document -makeWindowControllers and -showWindows messages.
 
 // The default implementation of this method uses the file coordination mechanism that was added to the Foundation framework in Mac OS 10.7. It passes the document to +[NSFileCoordinator addFilePresenter:] right after -addDocument: is invoked. (The balancing invocation of +[NSFileCoordinator removeFilePresenter:] is in -[NSDocument close]).
 
 // You can override this method to customize how documents are duplicated. It is invoked by -[NSDocument duplicateAndReturnError:]. It may however also be invoked from other places in AppKit.
- 
+
 // We don't anticipate any uses for your application to invoke this method directly, but you may discover one.
 // */
 // - (nullable __kindof NSDocument *)duplicateDocumentWithContentsOfURL:(NSURL *)url copying:(BOOL)duplicateByCopying displayName:(nullable NSString *)displayNameOrNil error:(NSError **)outError API_AVAILABLE(macos(10.7));
@@ -192,9 +191,9 @@
 // #pragma mark *** Document Sharing ***
 
 // /* If YES, allows automatic insertion of a Share menu in the File menu.
- 
+
 //  By default, this will be YES if your application has any NSDocument subclasses for which autosavesInPlace is YES. To disable the Share menu entirely, or to enable custom placement or construction of the Share menu, applications can explicitly opt out of automatic share menu insertion by overriding this property to return NO.
- 
+
 //  Be aware that even if allowsAutomaticShareMenu is YES, NSDocumentController may choose not to insert the Share menu if it detects that the application already has a Share menu.
 // **/
 // @property (readonly) BOOL allowsAutomaticShareMenu API_AVAILABLE(macos(10.13));

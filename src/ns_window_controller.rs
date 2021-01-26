@@ -4,7 +4,6 @@
 //     Copyright (c) 1997-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSResponder.h>
 // #import <AppKit/NSNib.h>
 // #import <AppKit/NSNibDeclarations.h>
@@ -54,7 +53,6 @@
 // */
 // @property BOOL shouldCascadeWindows;
 
-
 // // -----------------------------------------------------------------------------
 // // Dealing with the document
 // // -----------------------------------------------------------------------------
@@ -84,13 +82,12 @@
 // */
 // - (NSString *)windowTitleForDocumentDisplayName:(NSString *)displayName;
 
-
 // /* The view controller for the window's contentView. Tracks the window property of the same name.
 // **/
 // @property (nullable, strong) NSViewController *contentViewController API_AVAILABLE(macos(10.10));
 
 // /* The window getter will load the nib file (if there is one and it has not yet been loaded) and then return the window.  If it has to load the window, it will first call -windowWillLoad, then -loadWindow, then -windowDidLoad.  To affect nib loading or do something before or after it happens, you should always override those other methods.
- 
+
 //     The window setter is used internally from -initWithWindow: or when a controller's nib file is loaded (as the "window" outlet gets connected).  You can also call it yourself if you want to create the window for a window controller lazily, but you aren't loading it from a nib.  This can also be used to set the window to nil for cases where your subclass might not want to keep the window it loaded from a nib, but rather only wants the contents of the window.  Setting the window to nil, after the nib has been loaded, does not reset the -isWindowLoaded state.  A window controller will only load its nib file once.  This method makes sure the window does not release when closed, and it sets the controller's -windowFrameAutosaveName onto the window and updates the window's dirty state to match the controller's document (if any).  It also calls -setWindowController: on the window.  You can override this if you need to know when the window gets set, but call super.
 // */
 // @property (nullable, strong) NSWindow *window;
@@ -139,5 +136,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-

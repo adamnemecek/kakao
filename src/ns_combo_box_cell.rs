@@ -4,7 +4,6 @@
 // 	Copyright (c) 1996-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSTextFieldCell.h>
 // #import <AppKit/AppKitDefines.h>
@@ -18,7 +17,7 @@
 // @interface NSComboBoxCell : NSTextFieldCell
 
 // @property BOOL hasVerticalScroller;
-// @property NSSize intercellSpacing; 
+// @property NSSize intercellSpacing;
 // @property CGFloat itemHeight;
 // @property NSInteger numberOfVisibleItems;
 
@@ -65,7 +64,7 @@
 // - (id)comboBoxCell:(NSComboBoxCell *)comboBoxCell objectValueForItemAtIndex:(NSInteger)index;
 
 // - (NSUInteger)comboBoxCell:(NSComboBoxCell *)comboBoxCell indexOfItemWithStringValue:(NSString *)string;
-// - (nullable NSString *)comboBoxCell:(NSComboBoxCell *)comboBoxCell completedString:(NSString *)uncompletedString; 
+// - (nullable NSString *)comboBoxCell:(NSComboBoxCell *)comboBoxCell completedString:(NSString *)uncompletedString;
 // @end
 
 // API_UNAVAILABLE_END

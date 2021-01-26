@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -35,12 +34,11 @@
 // @property (nullable, readonly, strong) NSColorSpace *colorSpace API_AVAILABLE(macos(10.6));
 
 // @property (readonly) const NSWindowDepth *supportedWindowDepths NS_RETURNS_INNER_POINTER; /* 0 terminated */
-
 // /* canRepresentDisplayGamut: returns YES if the colorSpace of the receiving screen is capable of representing the given display gamut
 // **/
 // - (BOOL)canRepresentDisplayGamut:(NSDisplayGamut)displayGamut API_AVAILABLE(macos(10.12));
 
-// /* Convert to/from the device pixel aligned coordinates sytem of a display 
+// /* Convert to/from the device pixel aligned coordinates sytem of a display
 // **/
 // - (NSRect)convertRectToBacking:(NSRect)rect API_AVAILABLE(macos(10.7));
 // - (NSRect)convertRectFromBacking:(NSRect)rect API_AVAILABLE(macos(10.7));
@@ -49,19 +47,16 @@
 // **/
 // - (NSRect)backingAlignedRect:(NSRect)rect options:(NSAlignmentOptions)options API_AVAILABLE(macos(10.7));
 
-// /* Returns the scale factor representing the number of backing store pixels corresponding to each linear unit in screen space on this NSScreen. This method is provided for rare cases when the explicit scale factor is needed.  Please use -convert*ToBacking: methods whenever possible. 
+// /* Returns the scale factor representing the number of backing store pixels corresponding to each linear unit in screen space on this NSScreen. This method is provided for rare cases when the explicit scale factor is needed.  Please use -convert*ToBacking: methods whenever possible.
 // **/
-// @property (readonly) CGFloat backingScaleFactor API_AVAILABLE(macos(10.7)); 
+// @property (readonly) CGFloat backingScaleFactor API_AVAILABLE(macos(10.7));
 
 // @property (readonly, copy) NSString *localizedName API_AVAILABLE(macos(10.15));
 
 // @end
 
-
 // /* Notifications */
 // APPKIT_EXTERN NSNotificationName const NSScreenColorSpaceDidChangeNotification API_AVAILABLE(macos(10.6)); /* The notification object is the screen whose profile has changed */
-
-
 // // Extended Dynamic Range
 // @interface NSScreen ()
 
@@ -78,7 +73,6 @@
 // @property (readonly) CGFloat maximumReferenceExtendedDynamicRangeColorComponentValue API_AVAILABLE(macos(10.15));
 
 // @end
-
 
 // @interface NSScreen (NSDeprecated)
 

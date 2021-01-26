@@ -4,7 +4,6 @@
 // 	Copyright (c) 2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSTouchBarItem.h>
 
 // #if !TARGET_OS_IPHONE

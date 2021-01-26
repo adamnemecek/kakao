@@ -4,7 +4,6 @@
 //  Copyright (c) 2011-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSPasteboard.h>
 // #import <Foundation/NSGeometry.h>
@@ -18,10 +17,8 @@
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
-
-// /* NSSharing can be used to share items to different kinds of local and remote services. Items are objects which respond to the NSPasteboardWriting protocol, like NSURL, NSImage or NSString. If an NSURL is a file URL (point to a video for example), then the content of the file will be shared. If the URL is remote, then the URL itself will be shared. 
+// /* NSSharing can be used to share items to different kinds of local and remote services. Items are objects which respond to the NSPasteboardWriting protocol, like NSURL, NSImage or NSString. If an NSURL is a file URL (point to a video for example), then the content of the file will be shared. If the URL is remote, then the URL itself will be shared.
 // **/
-
 // typedef NSString * NSSharingServiceName NS_TYPED_EXTENSIBLE_ENUM;
 
 // /* built-in sharing services
@@ -50,11 +47,10 @@
 // APPKIT_EXTERN NSSharingServiceName const NSSharingServiceNamePostVideoOnTudou API_DEPRECATED("This service is no longer included with the system.", macos(10.8,10.14));
 
 // /* This service differs from other NSSharingServices in that it allows the user to establishes a persistent sharing session for the specified items with potentially many participants, instead of sending a copy of the items. You can invoke this service with an NSItemProvider that has registered a CKShare & CKContainer via either -registerCloudKitShare:container: or -registerCloudKitShareWithPreparationHandler:. (Registering other types on the same provider to enable other sharing services is allowed.)
- 
+
 // When performed, this service gives the user the opportunity to invite participants and start sharing. If the content is already shared it instead allows the user to view or modify participation or stop sharing. To detect changes the service makes to the CKShare, implement -sharingService:didSaveShare: and -sharingService:didStopSharing:.
 // **/
 // APPKIT_EXTERN NSSharingServiceName const NSSharingServiceNameCloudSharing API_AVAILABLE(macos(10.12));
-
 
 // @protocol NSSharingServiceDelegate;
 
@@ -85,24 +81,20 @@
 // // NSArray of NSURL objects representing the files that were shared
 // @property (nullable, readonly, copy) NSArray<NSURL *> *attachmentFileURLs API_AVAILABLE(macos(10.9));
 
-
-
-// /* Returns a list of NSSharingServices which could share all the provided items together. sharingServicesForItems can be used to build a custom UI, or to populate a contextual NSMenu. 
+// /* Returns a list of NSSharingServices which could share all the provided items together. sharingServicesForItems can be used to build a custom UI, or to populate a contextual NSMenu.
 //    The items represent the objects to be shared and must conform to the <NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
 // **/
 // + (NSArray<NSSharingService *> *)sharingServicesForItems:(NSArray *)items;
 
-
-// /* Returns an NSSharingService representing one of the built-in services. 
+// /* Returns an NSSharingService representing one of the built-in services.
 // **/
 // + (nullable NSSharingService *)sharingServiceNamed:(NSSharingServiceName)serviceName;
-
 
 // /* Creates a custom NSSharingService object. Custom sharing services can be added to the NSSharingServicePicker with the sharingServicePicker:sharingServicesForItems:proposedSharingServices: delegate method.
 // **/
 // - (instancetype)initWithTitle:(NSString *)title image:(NSImage *)image alternateImage:(nullable NSImage *)alternateImage handler:(void (^)(void))block NS_DESIGNATED_INITIALIZER;
 
-// /* Use -initWithTitle:image:alternateImage:handler: instead 
+// /* Use -initWithTitle:image:alternateImage:handler: instead
 // **/
 // - (instancetype)init NS_UNAVAILABLE;
 
@@ -111,7 +103,6 @@
 // **/
 // - (BOOL)canPerformWithItems:(nullable NSArray *)items;
 
-
 // /* Manually performs the service on the provided items. In most cases this will display a sharing window.
 //    The items represent the objects to be shared and must conform to the <NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
 // **/
@@ -119,12 +110,11 @@
 
 // @end
 
-
-// /* Use the sharing scope to specify the nature of the things you are sharing.  
-//  - NSSharingContentScopeItem: use when sharing a clearly identified item, e.g. a file represented by its icon.  
+// /* Use the sharing scope to specify the nature of the things you are sharing.
+//  - NSSharingContentScopeItem: use when sharing a clearly identified item, e.g. a file represented by its icon.
 //  - NSSharingContentScopePartial: use when sharing a portion of a more global content, e.g. part of a webpage
 //  - NSSharingContentScopeFull: use when sharing the whole content of the current document, e.g. the url of the webpage
- 
+
 //  The sharing scope can be modified from the default value of NSSharingContentScopeItem by setting a different value in the out parameter in sharingService:sourceWindowForShareItems:sharingContentScope:
 // **/
 // typedef NS_ENUM(NSInteger, NSSharingContentScope) {
@@ -139,7 +129,6 @@
 // - (void)sharingService:(NSSharingService *)sharingService didFailToShareItems:(NSArray *)items error:(NSError *)error;
 // - (void)sharingService:(NSSharingService *)sharingService didShareItems:(NSArray *)items;
 
-
 // /* The following methods are invoked when the service is performed and the sharing window pops up, to present a transition between the original items and the sharing window.
 // **/
 // - (NSRect)sharingService:(NSSharingService *)sharingService sourceFrameOnScreenForShareItem:(id)item;
@@ -149,23 +138,22 @@
 // - (nullable NSWindow *)sharingService:(NSSharingService *)sharingService sourceWindowForShareItems:(NSArray *)items sharingContentScope:(NSSharingContentScope *)sharingContentScope;
 
 // /* The following method is invoked when the service is performed and wants to display its contents in a popover. The delegate should return the view that will act as the anchor of the popover, along with the target rectangle within the bounds of that view and preferred edge of that rectangle for the popover to appear. The delegate may also return nil, indicating that there is no anchoring view currently available, in which case the service may attempt to display the service via some other means.
- 
+
 //  The service named NSSharingServiceNameCloudSharing prefers to display itself using a popover anchored to an "Add People" or "Share" button. If no such button is available or visible, return nil.
 // **/
 // - (nullable NSView *)anchoringViewForSharingService:(NSSharingService *)sharingService showRelativeToRect:(NSRect *)positioningRect preferredEdge:(NSRectEdge *)preferredEdge;
 
 // @end
 
-
 // typedef NS_OPTIONS(NSUInteger, NSCloudKitSharingServiceOptions) {
 //     NSCloudKitSharingServiceStandard = 0, // Allow the user to configure the share with the standard set of options
-    
+
 //     NSCloudKitSharingServiceAllowPublic = 1 << 0, // The user is allowed to share publicly
 //     NSCloudKitSharingServiceAllowPrivate = 1 << 1, // The user is allowed to share privately
-    
+
 //     NSCloudKitSharingServiceAllowReadOnly = 1 << 4, // The user is allowed to grant participants read-only permissions
 //     NSCloudKitSharingServiceAllowReadWrite = 1 << 5, // The user is allowed to grant participants read/write permissions.
-    
+
 // } API_AVAILABLE(macos(10.12));
 
 // @protocol NSCloudSharingServiceDelegate <NSSharingServiceDelegate>
@@ -175,11 +163,9 @@
 // **/
 // - (void)sharingService:(NSSharingService *)sharingService didCompleteForItems:(NSArray *)items error:(nullable NSError *)error;
 
-
 // /* The options returned by this method describe how the user is allowed to configure the share: whether the share is public or private, and whether participants have read-only or read/write permissions. If this method is not implemented, NSCloudKitSharingServiceStandard is assumed.
 // **/
 // - (NSCloudKitSharingServiceOptions)optionsForSharingService:(NSSharingService *)cloudKitSharingService shareProvider:(NSItemProvider *)provider;
-
 
 // /* When an NSSharingServiceNameCloudSharing sharing service successfully saves modifications to the CKShare, it will invoke this method on the delegate with the last-known state of the CKShare on the server.
 // **/
@@ -190,8 +176,6 @@
 // - (void)sharingService:(NSSharingService *)sharingService didStopSharing:(CKShare *)share;
 
 // @end
-
-
 
 // @interface NSItemProvider (NSCloudKitSharing)
 
@@ -205,13 +189,10 @@
 
 // @end
 
-
-
-
 // @protocol NSSharingServicePickerDelegate;
 
 // API_AVAILABLE(macos(10.8))
-// @interface NSSharingServicePicker : NSObject 
+// @interface NSSharingServicePicker : NSObject
 
 // @property (nullable, weak) id <NSSharingServicePickerDelegate> delegate;
 
@@ -229,14 +210,13 @@
 
 // @end
 
-
 // @protocol NSSharingServicePickerDelegate <NSObject>
 // @optional
 
 // /* Allows the delegate to customize exactly what appears in the sharing service picker by reordering or removing the services before the picker is presented. It's possible to add custom services by mutating the proposedSharingServices array and adding new NSSharingService instances:
 //         NSMutableArray *sharingServices = [proposedServices mutableCopy];
-//         NSSharingService * customService = [[[NSSharingService alloc]   initWithTitle:@"Service Title" 
-//                                                                         image:image alternateImage:alternateImage 
+//         NSSharingService * customService = [[[NSSharingService alloc]   initWithTitle:@"Service Title"
+//                                                                         image:image alternateImage:alternateImage
 //                                                                         handler:^{
 //                                                                             [self doCustomServiceWithItems:items];
 //                                            }] autorelease];
@@ -246,11 +226,9 @@
 // **/
 // - (NSArray<NSSharingService *> *)sharingServicePicker:(NSSharingServicePicker *)sharingServicePicker sharingServicesForItems:(NSArray *)items proposedSharingServices:(NSArray<NSSharingService *> *)proposedServices;
 
-
 // /* Invoked when the user has selected a service and the picker is about to execute it.
 // **/
 // - (nullable id <NSSharingServiceDelegate>)sharingServicePicker:(NSSharingServicePicker *)sharingServicePicker delegateForSharingService:(NSSharingService *)sharingService;
-
 
 // /* Invoked when the user has selected a service and before it is executed. Service will be nil if the picker was dismissed.
 // **/
@@ -260,4 +238,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

@@ -4,7 +4,6 @@
 //  Copyright (c) 1996-2019, Apple Inc.
 //  All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSGeometry.h>
@@ -29,15 +28,14 @@
 // @property (copy) NSString *title;
 
 // /* Pops up the receiver as a context menu.  The menu is positioned such that the top left corner lies at the given event's location, interpreted in the coordinate system of the given view.  If this would cause the menu to scroll offscreen, it will be moved up to be onscreen.  The event must not be nil.
- 
+
 //  If a font is specified, then it will be applied to the menu.  In 10.6, the setFont: API below should be preferred.
 // */
- 
 // + (void)popUpContextMenu:(NSMenu*)menu withEvent:(NSEvent*)event forView:(NSView*)view;
 // + (void)popUpContextMenu:(NSMenu*)menu withEvent:(NSEvent*)event forView:(NSView*)view withFont:(nullable NSFont*)font;
 
 // /* Pops up the receiver as a popup menu. The top left or right corner of the given item (which must be present in the receiver) is positioned at the given location in the given view, interpreted in the view's own coordinate system.  If item is nil, the menu is positioned such that the top left or right of the menu content frame is at the given location.  If view is nil, the location is interpreted in the screen coordinate system. This allows you to pop up a menu disconnected from any window.  The method returns YES if menu tracking ended because an item was selected, and NO if menu tracking was cancelled for any reason.
- 
+
 //    This method determines whether to use the top left or right corner by calling userInterfaceLayoutDirection on the view or its cell (if implemented).  If not implemented, or if the view is nil, it inspects the userInterfaceLayoutDirection of the NSApplication.
 // */
 // - (BOOL)popUpMenuPositioningItem:(nullable NSMenuItem *)item atLocation:(NSPoint)location inView:(nullable NSView *)view API_AVAILABLE(macos(10.6));
@@ -46,7 +44,7 @@
 // + (void)setMenuBarVisible:(BOOL)visible;
 // + (BOOL)menuBarVisible;
 
-// /* Getter: Returns the menu containing the item that has the receiver as a submenu, or nil if this menu is not the submenu of an item in a menu. 
+// /* Getter: Returns the menu containing the item that has the receiver as a submenu, or nil if this menu is not the submenu of an item in a menu.
 //    Setter: If a menu item has the receiver as a submenu, then this method will be called when the menu containing that item changes.  You should never call this, but you may override it to take some action when the supermenu changes. */
 // @property (nullable, assign) NSMenu *supermenu;
 
@@ -101,10 +99,10 @@
 
 // /* Set and get whether the menu autoenables items.  If a menu autoenables items, then calls to -[NSMenuItem setEnabled:] are ignored, and the enabled state is computed via the NSMenuValidation informal protocol below.  Autoenabling is on by default. */
 // @property BOOL autoenablesItems;
- 
+
 //  /* If the receiver is set to autoenable items, then this triggers autovalidation of all menu items according to the NSMenuValidation informal protocol; otherwise this does nothing.  It is normally not necessary to call this; it will be called for you at the right time. */
 // - (void)update;
-  
+
 // /* Attempts to perform the given key equivalent.  If the event is a key down event that matches the key equivalent of a menu item in the receiver or, recursively, any menu item in a submenu of the receiver, then this triggers that menu item's action (if the item is enabled) and returns YES.  Otherwise, this returns NO.
 // */
 // - (BOOL)performKeyEquivalent:(NSEvent *)event;
@@ -188,7 +186,6 @@
 // /* Indicates that menu is about to highlight item.  Only one item per menu can be highlighted at a time.  If item is nil, it means all items in the menu are about to be unhighlighted. */
 // - (void)menu:(NSMenu *)menu willHighlightItem:(nullable NSMenuItem *)item API_AVAILABLE(macos(10.5));
 
-
 // /* Given a menu that is about to be opened on the given screen, return a rect, in screen coordinates, within which the menu will be positioned.  If you return NSZeroRect, or if the delegate does not implement this method, the menu will be confined to the bounds appropriate for the given screen.  The returned rect may not be honored in all cases, such as if it would force the menu to be too small.
 // */
 // - (NSRect)confinementRectForMenu:(NSMenu *)menu onScreen:(nullable NSScreen *)screen API_AVAILABLE(macos(10.6));
@@ -207,7 +204,7 @@
 // };
 
 // /* The following method may be called from delegate callbacks to determine which properties need to be updated and which may be skipped.  It is intended to allow more efficient updating of the menu in certain circumstances.  For example, if the NSMenuPropertyItemImage bit is zero, your delegate does not need to update the images of the menu items, because the images are not needed (for example, during key equivalent matching).  Calling this is optional: it is always acceptable to fully update the menu.
- 
+
 //  This may be called from the menu delegate method -menuNeedsUpdate:.  Calling this at other times will raise an exception.
 // **/
 // @interface NSMenu (NSMenuPropertiesToUpdate)

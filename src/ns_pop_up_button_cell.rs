@@ -4,7 +4,6 @@
 //         Copyright (c) 1997-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSMenu.h>
 // #import <AppKit/NSMenuItemCell.h>
@@ -33,7 +32,7 @@
 // // Behavior settings
 // // If usesItemFromMenu is true, then pull down popup buttons always show the first item in the menu.  That menu item is hidden via [menuItem setHidden:YES]; if you wish to make it visible you can unhide it with setHidden:NO
 // @property BOOL pullsDown;
-    
+
 // @property BOOL autoenablesItems;
 
 // @property NSRectEdge preferredEdge;
@@ -54,7 +53,6 @@
 // - (void)removeItemAtIndex:(NSInteger)index;
 // - (void)removeAllItems;
 
-
 // // Accessing the items
 // @property (readonly, copy) NSArray<NSMenuItem *> *itemArray;
 // @property (readonly) NSInteger numberOfItems;
@@ -69,7 +67,6 @@
 // - (nullable NSMenuItem *)itemWithTitle:(NSString *)title;
 // @property (nullable, readonly, strong) NSMenuItem *lastItem;
 
-
 // // Dealing with selection
 // - (void)selectItem:(nullable NSMenuItem *)item;
 // - (void)selectItemAtIndex:(NSInteger)index;
@@ -80,7 +77,6 @@
 // @property (nullable, readonly, strong) NSMenuItem *selectedItem;
 // @property (readonly) NSInteger indexOfSelectedItem;
 // - (void)synchronizeTitleAndSelectedItem;
-
 
 // // Title conveniences
 // - (NSString *)itemTitleAtIndex:(NSInteger)index;
@@ -95,7 +91,6 @@
 // @property NSPopUpArrowPosition arrowPosition;
 
 // @end
-
 
 // /* Notifications */
 // APPKIT_EXTERN NSNotificationName NSPopUpButtonCellWillPopUpNotification;

@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSDragging.h>
@@ -24,28 +23,25 @@
 // @protocol NSBrowserDelegate;
 
 // typedef NS_ENUM(NSUInteger, NSBrowserColumnResizingType) {
-// /* Column sizes are fixed and set by developer.     
+// /* Column sizes are fixed and set by developer.
 // **/
 //     NSBrowserNoColumnResizing = 0,
-    
-// /* No user resizing. Columns grow as window grows.  
+
+// /* No user resizing. Columns grow as window grows.
 // **/
 //     NSBrowserAutoColumnResizing = 1,
-    
-// /* Columns fixed as window grows.  User can resize. 
+
+// /* Columns fixed as window grows.  User can resize.
 // **/
 //     NSBrowserUserColumnResizing = 2,
 // };
 
-
-
 // /* In drag and drop, used to specify the drop operation from inside the delegate method browser:validateDrop:proposedRow:column:dropOperation. See the delegate method description for more information.
 // **/
-// typedef NS_ENUM(NSUInteger, NSBrowserDropOperation) { 
+// typedef NS_ENUM(NSUInteger, NSBrowserDropOperation) {
 //     NSBrowserDropOn,
 //     NSBrowserDropAbove,
 // } API_AVAILABLE(macos(10.5));
-
 
 // @interface NSBrowser : NSControl
 
@@ -138,11 +134,11 @@
 // **/
 // @property (copy) NSArray<NSIndexPath *> *selectionIndexPaths API_AVAILABLE(macos(10.6));
 
-// /* Sets the selected row 'indexes' in the matrix located at 'column'. 
+// /* Sets the selected row 'indexes' in the matrix located at 'column'.
 // **/
 // - (void)selectRowIndexes:(NSIndexSet *)indexes inColumn:(NSInteger)column API_AVAILABLE(macos(10.5));
 
-// /* Returns the selected cell indexes in the matrix located at 'column'. 
+// /* Returns the selected cell indexes in the matrix located at 'column'.
 // **/
 // - (nullable NSIndexSet *)selectedRowIndexesInColumn:(NSInteger)column API_AVAILABLE(macos(10.5));
 
@@ -163,7 +159,6 @@
 // @property (readonly) NSInteger numberOfVisibleColumns;
 // @property (readonly) NSInteger firstVisibleColumn;
 // @property (readonly) NSInteger lastVisibleColumn;
-
 
 // - (nullable id)loadedCellAtRow:(NSInteger)row column:(NSInteger)col;
 // - (void)selectAll:(nullable id)sender;
@@ -186,25 +181,25 @@
 // */
 // - (BOOL)getRow:(nullable NSInteger *)row column:(nullable NSInteger *)column forPoint:(NSPoint)point API_AVAILABLE(macos(10.6));
 
-// /* These methods convert between column width (the column's scrollview), and the content width (the matrix in the scrollview).  For example, to guarantee that 16 pixels of your browser cell are always visible, call [browser setMinColumnWidth:[browser columnWidthForColumnContentWidth:16]] 
+// /* These methods convert between column width (the column's scrollview), and the content width (the matrix in the scrollview).  For example, to guarantee that 16 pixels of your browser cell are always visible, call [browser setMinColumnWidth:[browser columnWidthForColumnContentWidth:16]]
 // */
 // - (CGFloat)columnWidthForColumnContentWidth:(CGFloat)columnContentWidth;
 // - (CGFloat)columnContentWidthForColumnWidth:(CGFloat)columnWidth;
 
-// /* Default is NSBrowserAutoColumnResizing.  This setting is persistent. 
+// /* Default is NSBrowserAutoColumnResizing.  This setting is persistent.
 // **/
 // @property NSBrowserColumnResizingType columnResizingType;
 
-// /* Default is NO.  This setting is persistent.  This setting only applies to NSBrowserUserColumnResizing type browsers.  If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used. 
+// /* Default is NO.  This setting is persistent.  This setting only applies to NSBrowserUserColumnResizing type browsers.  If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used.
 // **/
 // @property BOOL prefersAllColumnUserResizing;
 
-// /* setWidth:ofColumn: does nothing if columnResizingType is NSBrowserAutoColumnResizing.  Otherwise, Sets the width of the specified column.  Due to binary compatibility constraints, you may still set the default width for new columns by passing a columnIndex of -1; you are encouraged to use -setDefaultColumnWidth: instead.  NSBrowserColumnConfigurationDidChangeNotification will be posted (not immediately) if necessary.  The receiver will autosave its column configuration if necessary. 
+// /* setWidth:ofColumn: does nothing if columnResizingType is NSBrowserAutoColumnResizing.  Otherwise, Sets the width of the specified column.  Due to binary compatibility constraints, you may still set the default width for new columns by passing a columnIndex of -1; you are encouraged to use -setDefaultColumnWidth: instead.  NSBrowserColumnConfigurationDidChangeNotification will be posted (not immediately) if necessary.  The receiver will autosave its column configuration if necessary.
 // **/
 // - (void)setWidth:(CGFloat)columnWidth ofColumn:(NSInteger)columnIndex;
 // - (CGFloat)widthOfColumn:(NSInteger)column;
 
-// /* Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods 
+// /* Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods
 // **/
 // @property CGFloat rowHeight API_AVAILABLE(macos(10.6));
 
@@ -212,33 +207,31 @@
 // */
 // - (void)noteHeightOfRowsWithIndexesChanged:(NSIndexSet *)indexSet inColumn:(NSInteger)columnIndex API_AVAILABLE(macos(10.6));
 
-
-// /* Persistently sets the default width for new columns which don't otherwise have initial width from either defaults or the delegate. This method replaces -setWidth:ofColumn: with a columnIndex of -1. 
+// /* Persistently sets the default width for new columns which don't otherwise have initial width from either defaults or the delegate. This method replaces -setWidth:ofColumn: with a columnIndex of -1.
 // **/
 // - (void)setDefaultColumnWidth:(CGFloat)columnWidth API_AVAILABLE(macos(10.6));
 // - (CGFloat)defaultColumnWidth API_AVAILABLE(macos(10.6));
 
-// /* Sets the name used to automatically save the receivers column configuration.  This setting is persistent.  If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser.  Column configuration is defined as an array of column content widths.  One width is saved for each level the user has reached.  That is, browser saves column width based on depth, not based on unique paths.  To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself. 
+// /* Sets the name used to automatically save the receivers column configuration.  This setting is persistent.  If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser.  Column configuration is defined as an array of column content widths.  One width is saved for each level the user has reached.  That is, browser saves column width based on depth, not based on unique paths.  To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself.
 // **/
 // @property (copy) NSBrowserColumnsAutosaveName columnsAutosaveName;
 
-// /* Removes the column data stored under name from the applications user defaults. 
+// /* Removes the column data stored under name from the applications user defaults.
 // **/
 // + (void)removeSavedColumnsWithAutosaveName:(NSBrowserColumnsAutosaveName)name;
-
 
 // #pragma mark -
 // #pragma mark **** Drag and Drop Support ****
 
-// /* The return value indicates whether the receiver can attempt to initiate a drag for the given event. You can override this method and return NO to disallow initiating drags at the location in the given event. By default, the method will return YES if rowIndexes contains at least one item, and each item is enabled. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate. 
+// /* The return value indicates whether the receiver can attempt to initiate a drag for the given event. You can override this method and return NO to disallow initiating drags at the location in the given event. By default, the method will return YES if rowIndexes contains at least one item, and each item is enabled. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
 // **/
 // - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
 
-// /* This method computes and returns an image to use for dragging. You can override this to return a custom drag image, or call it to get the default drag image from the delegate method. 'rowIndexes' are the indexes of the cells being dragged in matrix 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image. A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. By default, an image will be created that contain the visible cells within 'rowIndexes'. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate. 
+// /* This method computes and returns an image to use for dragging. You can override this to return a custom drag image, or call it to get the default drag image from the delegate method. 'rowIndexes' are the indexes of the cells being dragged in matrix 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image. A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. By default, an image will be created that contain the visible cells within 'rowIndexes'. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
 // **/
 // - (nullable NSImage *)draggingImageForRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event offset:(nullable NSPointPointer)dragImageOffset API_AVAILABLE(macos(10.5));
 
-// /* Configures the value returned from -draggingSourceOperationMaskForLocal:. An isLocal value of YES indicates that 'mask' applies when the destination object is in the same application. By default, NSDragOperationEvery will be returned. An isLocal value of NO indicates that 'mask' applies when the destination object in an application outside the receiver's application. By default, NSDragOperationNone is returned. NSBrowser will save the values you set for each isLocal setting. You typically will invoke this method, and not override it. 
+// /* Configures the value returned from -draggingSourceOperationMaskForLocal:. An isLocal value of YES indicates that 'mask' applies when the destination object is in the same application. By default, NSDragOperationEvery will be returned. An isLocal value of NO indicates that 'mask' applies when the destination object in an application outside the receiver's application. By default, NSDragOperationNone is returned. NSBrowser will save the values you set for each isLocal setting. You typically will invoke this method, and not override it.
 // **/
 // - (void)setDraggingSourceOperationMask:(NSDragOperation)mask forLocal:(BOOL)isLocal API_AVAILABLE(macos(10.5));
 
@@ -272,7 +265,6 @@
 // @optional
 
 // /* As of Mac OS X 10.6, browser has two different mechanisms for populating columns. You may implement either the matrix or item delegate methods listed below. Many newer features of the browser are only available if you implement the item delegate methods. */
-
 // /* Implement one of the following two methods to populate the browser's columns with instances of NSMatrix.
 //    Note: the matrix based NSBrowser is deprecated in Mac OS 10.10.  New code should use the item based interface.
 // **/
@@ -288,7 +280,6 @@
 
 // /* Alternatively, implement all of the following methods, patterned after NSOutlineView's data source methods. Note that browsers with delegates implementing these methods do not use NSMatrix to populate columns; the implementation is private. The item parameter passed to each of these methods will be nil if the browser is querying about the root of the tree, unless -rootItemForBrowser: is implemented.
 // */
-
 // /* Return the number of children of the given item. */
 // - (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(nullable id)item API_AVAILABLE(macos(10.6));
 
@@ -311,7 +302,7 @@
 
 // #pragma mark -
 
-// /* Optional - Alternate root item. 
+// /* Optional - Alternate root item.
 //  By default, NSBrowser uses 'nil' to identify the root item. It can optionally use a different root item provided by this delegate method. To reload the rootItem that was previously set, call -loadColumnZero, and NSBrowser will call -rootItemForBrowser: again.
 // **/
 // - (nullable id)rootItemForBrowser:(NSBrowser *)browser API_AVAILABLE(macos(10.6));
@@ -353,34 +344,32 @@
 // /*
 //  * Delegate methods used by resizable column browsers.
 // **/
-
 // /* Optional for browsers with resize type NSBrowserNoColumnResizing, and NSBrowserUserColumnResizing.
 //  This method is used for both constraining column resize, and determining a columns initial size.  If 'forUserResize' is NO, this method should return the initial width for a newly added column.  If 'forUserResize' is YES, this method can be used to constrain resizing on a per-column basis.  (Currently per-column constraining is only implemented for single column resize).
 // **/
 // - (CGFloat)browser:(NSBrowser *)browser shouldSizeColumn:(NSInteger)columnIndex forUserResize:(BOOL)forUserResize toWidth:(CGFloat)suggestedWidth;
 
 // /* Optional for browsers with resize type NSBrowserUserColumnResizing only.
-//  This method returns the "ideal" width for a column.  This method is used when performing a "right-size-each" or "right-size-one" operation.  If columnIndex is -1, the result is used for a "right-size-all-simultaneous" operation.  In this case, you should return a best uniform right size for all column (every column will be set to this size).  You can opt out on a per column basis by returning -1 for that column. It is assumed that the implementation may be expensive, so it will be called only when necessary.  (See documentation for definitions of right-size one/each/all). 
+//  This method returns the "ideal" width for a column.  This method is used when performing a "right-size-each" or "right-size-one" operation.  If columnIndex is -1, the result is used for a "right-size-all-simultaneous" operation.  In this case, you should return a best uniform right size for all column (every column will be set to this size).  You can opt out on a per column basis by returning -1 for that column. It is assumed that the implementation may be expensive, so it will be called only when necessary.  (See documentation for definitions of right-size one/each/all).
 // **/
 // - (CGFloat)browser:(NSBrowser *)browser sizeToFitWidthOfColumn:(NSInteger)columnIndex;
 
 // /* Optional and used for browsers with resize type NSBrowserUserColumnResizing only.
-//  This method is intended to be used by clients wishing to implement their own column width persistence.  It is called when the width of any browser columns has changed.  User column resizing will cause a single notification to be posted when the user is finished resizing.  (See NSBrowserColumnConfigurationDidChangeNotification for more information.)  
+//  This method is intended to be used by clients wishing to implement their own column width persistence.  It is called when the width of any browser columns has changed.  User column resizing will cause a single notification to be posted when the user is finished resizing.  (See NSBrowserColumnConfigurationDidChangeNotification for more information.)
 // **/
 // - (void)browserColumnConfigurationDidChange:(NSNotification *)notification;
 
 // /* Optional - Expansion ToolTip support.
-//     Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell at 'row' in 'column'. See NSCell.h for more information on expansion tool tips. 
+//     Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell at 'row' in 'column'. See NSCell.h for more information on expansion tool tips.
 // **/
 // - (BOOL)browser:(NSBrowser *)browser shouldShowCellExpansionForRow:(NSInteger)row column:(NSInteger)column API_AVAILABLE(macos(10.5));
-
 
 // #pragma mark -
 // #pragma mark **** Optional Drag and Drop Support Methods ****
 
 // #pragma mark ** Dragging Source Methods **
 
-// /* This method is called after it has been determined that a drag should begin, but before the drag has been started.  To refuse the drag, return NO. To start a drag, declared the pasteboard types that you support with [pasteboard declareTypes:owner:], place your data on the pasteboard, and return YES from the method. The drag image and other drag related information will be set up and provided by the view once this call returns with YES. You need to implement this method for your browser to be a drag source. 
+// /* This method is called after it has been determined that a drag should begin, but before the drag has been started.  To refuse the drag, return NO. To start a drag, declared the pasteboard types that you support with [pasteboard declareTypes:owner:], place your data on the pasteboard, and return YES from the method. The drag image and other drag related information will be set up and provided by the view once this call returns with YES. You need to implement this method for your browser to be a drag source.
 // **/
 // - (BOOL)browser:(NSBrowser *)browser writeRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column toPasteboard:(NSPasteboard *)pasteboard API_AVAILABLE(macos(10.5));
 
@@ -388,7 +377,7 @@
 // **/
 // - (NSArray<NSString *> *)browser:(NSBrowser *)browser namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column API_DEPRECATED("Use NSFilePromiseReceiver objects instead", macos(10.5,10.13));
 
-// /* The delegate can control if some particular rows can be dragged or not for a particular event. You do not need to implement this method for your browser to be a drag source. 
+// /* The delegate can control if some particular rows can be dragged or not for a particular event. You do not need to implement this method for your browser to be a drag source.
 // **/
 // - (BOOL)browser:(NSBrowser *)browser canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
 
@@ -402,7 +391,7 @@
 
 //     To retarget a drop and specify a drop on row 2 (with the first visual row being row 0), one would set *row=2, and set *dropOperation=NSBrowserDropOn. To specify a drop below the last row, one would specify *row=[browser numberOfRows], and *dropOperation=NSBrowserDropAbove. To specify a drop on the entire column, you will specify *row=-1, and *dropOperation=NSBrowserDropOn. To specify a drop between rows 2 and 3, one would set *row=3 and *dropOperation=NSBrowserDropAbove.
 
-//     Note: to receive drag messages, you must first call [NSBrowser registerForDraggedTypes:] for the drag types you want to support (typically this is done in awakeFromNib). You must implement this method for your browser to be a drag destination. 
+//     Note: to receive drag messages, you must first call [NSBrowser registerForDraggedTypes:] for the drag types you want to support (typically this is done in awakeFromNib). You must implement this method for your browser to be a drag destination.
 // */
 // - (NSDragOperation)browser:(NSBrowser *)browser validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger *)row column:(NSInteger *)column  dropOperation:(NSBrowserDropOperation *)dropOperation API_AVAILABLE(macos(10.5));
 
@@ -420,7 +409,7 @@
 // - (nullable NSString *)browser:(NSBrowser *)browser typeSelectStringForRow:(NSInteger)row inColumn:(NSInteger)column API_AVAILABLE(macos(10.5));
 
 // /* Optional - Type select support
-//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began. 
+//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began.
 // **/
 // - (BOOL)browser:(NSBrowser *)browser shouldTypeSelectForEvent:(NSEvent *)event withCurrentSearchString:(nullable NSString *)searchString API_AVAILABLE(macos(10.5));
 

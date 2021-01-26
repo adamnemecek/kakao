@@ -4,7 +4,6 @@
 //     Copyright (c) 2015-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSCollectionView.h>
 // #import <AppKit/NSCollectionViewLayout.h>
 // #import <AppKit/AppKitDefines.h>
@@ -56,7 +55,6 @@
 // */
 // @property BOOL sectionHeadersPinToVisibleBounds API_AVAILABLE(macos(10.12));
 // @property BOOL sectionFootersPinToVisibleBounds API_AVAILABLE(macos(10.12));
-
 
 // #pragma mark *** Section Collapse ***
 

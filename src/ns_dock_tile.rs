@@ -4,7 +4,6 @@
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSString.h>
@@ -19,12 +18,12 @@
 // @class NSView;
 
 // API_AVAILABLE(macos(10.5))
-// @interface NSDockTile : NSObject 
+// @interface NSDockTile : NSObject
 // /* get the size of the dock tile, in screen coordinates
 // */
 // @property (readonly) NSSize size;
 
-// /* set the content view to view.  view should be height and width resizable.  In order to initiate drawing in view, you must call -[NSDockTile display]. 
+// /* set the content view to view.  view should be height and width resizable.  In order to initiate drawing in view, you must call -[NSDockTile display].
 // */
 // @property (nullable, strong) NSView *contentView;
 
@@ -46,8 +45,6 @@
 
 // @end
 
-
-
 // @class NSMenu;
 
 // /* An application may customize its dock tile when not running via a plugin whose principal class implements the NSDockTilePlugIn protocol.  The name of the plugin is indicated by a NSDockTilePlugIn key in the application's Info.plist file.  The plugin is loaded in a system process at login time or when the application tile is added to the Dock.  When the plugin is loaded, the principal class' implementation of -setDockTile: is invoked.  If the principal class implements -dockMenu, -dockMenu is invoked whenever the user causes the application's dock menu to be shown.  When the dock tile is no longer valid (eg. the application has been removed from the dock, -setDockTile: is invoked with a nil NSDockTile.
@@ -63,4 +60,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

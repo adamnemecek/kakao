@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -18,9 +17,7 @@
 // #import <AppKit/AppKitDefines.h>
 // #import <ApplicationServices/ApplicationServices.h>
 
-
 // #define NSIMAGE_UNAVAILABLE_MACCATALYST TARGET_OS_IPHONE
-
 
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
@@ -71,9 +68,7 @@
 // + (instancetype)allocWithZone:(nullable NSZone *)zone API_UNAVAILABLE(ios);
 // + (instancetype)alloc API_UNAVAILABLE(ios);
 // #endif /* NSIMAGE_UNAVAILABLE_MACCATALYST */
-
 // + (nullable NSImage *)imageNamed:(NSImageName)name;	/* If this finds & creates the image, only name is saved when archived */
-
 // + (nullable instancetype)imageWithSystemSymbolName:(NSString *)symbolName accessibilityDescription:(nullable NSString *)description API_AVAILABLE(macos(11.0));
 
 // - (instancetype)initWithSize:(NSSize)size NS_DESIGNATED_INITIALIZER;
@@ -136,17 +131,17 @@
 // @property NSImageCacheMode cacheMode;
 
 // /* The alignmentRect of an image is metadata that a client may use to help determine layout. The bottom of the rect gives the baseline of the image. The other edges give similar information in other directions.
- 
+
 //  A 20x20 image of a phone icon with a glow might specify an alignmentRect of {{2,2},{16,16}} that excludes the glow. NSButtonCell can take advantage of the alignmentRect to place the image in the same visual location as an 16x16 phone icon without the glow. A 5x5 star that should render high when aligned with text might specify a rect of {{0,-7},{5,12}}.
- 
+
 //  The alignmentRect of an image has no effect on methods such as drawInRect:fromRect:operation:Fraction: or drawAtPoint:fromRect:operation:fraction:. It is the client's responsibility to take the alignmentRect into account where applicable.
- 
-//  The default alignmentRect of an image is {{0,0},imageSize}. The rect is adjusted when setSize: is called. 
+
+//  The default alignmentRect of an image is {{0,0},imageSize}. The rect is adjusted when setSize: is called.
 // **/
 // @property NSRect alignmentRect API_AVAILABLE(macos(10.5));
 
 // /* The 'template' property is metadata that allows clients to be smarter about image processing.  An image should be marked as a template if it is basic glpyh-like black and white art that is intended to be processed into derived images for use on screen.
- 
+
 //  NSButtonCell applies effects to images based on the state of the button.  For example, images are shaded darker when the button is pressed.  If a template image is set on a cell, the cell can apply more sophisticated effects.  For example, it may be processed into an image that looks engraved when drawn into a cell whose interiorBackgroundStyle is NSBackgroundStyleRaised, like on a textured button.
 // **/
 // #if defined(__cplusplus)
@@ -156,37 +151,36 @@
 // @property (getter=isTemplate) BOOL template API_AVAILABLE(macos(10.5));
 // #endif
 
-
-// /* An accessibility description can be set on an image.  This description will be used automatically by interface elements that display images.  Like all accessibility descriptions, the string should be a short localized string that does not include the name of the interface element.  For instance, "delete" rather than "delete button". 
+// /* An accessibility description can be set on an image.  This description will be used automatically by interface elements that display images.  Like all accessibility descriptions, the string should be a short localized string that does not include the name of the interface element.  For instance, "delete" rather than "delete button".
 // */
 // @property (nullable, copy) NSString *accessibilityDescription API_AVAILABLE(macos(10.6));
 
 // /* Make an NSImage referencing a CGImage.  The client should not assume anything about the image, other than that drawing it is equivalent to drawing the CGImage.
- 
-//  If size is NSZeroSize, the pixel dimensions of cgImage are the returned image's size.   
- 
+
+//  If size is NSZeroSize, the pixel dimensions of cgImage are the returned image's size.
+
 //  This is not a designated initializer.
- 
+
 //  Size of an NSImage is distinct from pixel dimensions.  If an NSImage is placed in an NSButton, it will be drawn in a rect with the provided size in the ambient coordinate system.
 // **/
 // - (instancetype)initWithCGImage:(CGImageRef)cgImage size:(NSSize)size API_AVAILABLE(macos(10.6));
 
-// /* Returns a CGImage capturing the drawing of the receiver.  This method returns an existing CGImage if one is available, or creates one if not.  It behaves the same as drawing the image with respect to caching and related behaviors.  This method is typically called, not overridden.  
- 
+// /* Returns a CGImage capturing the drawing of the receiver.  This method returns an existing CGImage if one is available, or creates one if not.  It behaves the same as drawing the image with respect to caching and related behaviors.  This method is typically called, not overridden.
+
 //  An NSImage is potentially resolution independent, and may have representations that allow it to draw well in many contexts.  A CGImage is more like a single pixel-based representation.   This method produces a snapshot of how the NSImage would draw if it was asked to draw in *proposedDestRect in the passed context.  Producing this snapshot may be more expensive than just drawing the NSImage, so prefer to use -[NSImage drawInRect:fromRect:operation:fraction:] unless you require a CGImage.
- 
+
 //  The return value in *proposedDestRect tells the client where to draw the CGImage.  This rect may be outset from the requested rect, because a CGImage must have pixel-integral dimensions while an NSImage need not.
- 
+
 //  All input parameters are optional.  They provide hints for how to choose among existing CGImages, or how to create one if there isn't already a CGImage available.  The parameters are _only_ hints.  Any CGImage is a valid return.
- 
-//  If proposedDestRect is NULL, it defaults to the smallest pixel-integral rectangle containing {{0,0}, [self size]}.  The proposedDestRect is in user space in the reference context. 
- 
+
+//  If proposedDestRect is NULL, it defaults to the smallest pixel-integral rectangle containing {{0,0}, [self size]}.  The proposedDestRect is in user space in the reference context.
+
 //  If referenceContext is nil, the method behaves as if a window context scaled by the default user space scaling factor was passed, though no context is actually created.  The properties of the context are used as hints for choosing the best representation and for creating a CGImage if creation is necessary.  It also provides the coordinate space in which the proposedDestRect is interpreted.  Only the snapshotted state of the context at the moment its passed to this method is relevant. Future changes to the context have no bearing on image behavior.
- 
-//  The hints provide more context for selecting or generating a CGImage, and may override properties of the referenceContext.  Hints may be nil.  Any entries in a device description dictionary (see NSScreen) are valid, as are all CIContext creation options, plus a few extra hints defined below.  Unrecognized hints are ignored, but passed down to image reps (see -[NSImageRep CGImageForProposedRect:context:hints:]).  Explicit hints are particularly useful when it is not draw time and you don't have a context to pass in.  For example, if you want to pass a rect in pixels for proposedDestRect, you should pass a dictionary with the identity transform for NSImageHintCTM.  
-  
+
+//  The hints provide more context for selecting or generating a CGImage, and may override properties of the referenceContext.  Hints may be nil.  Any entries in a device description dictionary (see NSScreen) are valid, as are all CIContext creation options, plus a few extra hints defined below.  Unrecognized hints are ignored, but passed down to image reps (see -[NSImageRep CGImageForProposedRect:context:hints:]).  Explicit hints are particularly useful when it is not draw time and you don't have a context to pass in.  For example, if you want to pass a rect in pixels for proposedDestRect, you should pass a dictionary with the identity transform for NSImageHintCTM.
+
 //  This method will always return a valid CGImage provided the NSImage is able to draw.  If the receiver is unable to draw for whatever reason, the error behavior is the same as when drawing the image.
- 
+
 //  The CGImageRef returned is guaranteed to live as long as the current autorelease pool.  The caller should not release the CGImage.  This is the standard Cocoa convention, but people may not realize that it applies to CFTypes.
 // **/
 // - (nullable CGImageRef)CGImageForProposedRect:(nullable NSRect *)proposedDestRect context:(nullable NSGraphicsContext *)referenceContext hints:(nullable NSDictionary<NSImageHintKey, id> *)hints API_AVAILABLE(macos(10.6)) CF_RETURNS_NOT_RETAINED;
@@ -212,7 +206,6 @@
 // @interface NSImage () <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
 // @end
 // #endif /* !NSIMAGE_UNAVAILABLE_MACCATALYST */
-
 // @protocol NSImageDelegate <NSObject>
 // @optional
 
@@ -220,13 +213,12 @@
 
 // - (void)image:(NSImage *)image willLoadRepresentation:(NSImageRep *)rep;
 // - (void)image:(NSImage *)image didLoadRepresentationHeader:(NSImageRep *)rep;
-// - (void)image:(NSImage *)image didLoadPartOfRepresentation:(NSImageRep *)rep withValidRows:(NSInteger)rows; 
+// - (void)image:(NSImage *)image didLoadPartOfRepresentation:(NSImageRep *)rep withValidRows:(NSInteger)rows;
 // - (void)image:(NSImage *)image didLoadRepresentation:(NSImageRep *)rep withStatus:(NSImageLoadStatus)status;
 // @end
 
 // @interface NSBundle(NSBundleImageExtension)
 // - (nullable NSImage *)imageForResource:(NSImageName)name API_AVAILABLE(macos(10.7)); /* May return nil if no file found */
-
 // /* Neither of the following methods can return images with multiple representations in different files (for example, MyImage.png and MyImage@2x.png.) The above method is generally prefered.
 // **/
 // - (nullable NSString *)pathForImageResource:(NSImageName)name;	/* May return nil if no file found */
@@ -278,18 +270,17 @@
 // #pragma mark - Standard images
 
 // /* Standard images.
- 
+
 //  Most images are named by a specific function or situation where they are intended to be used.  In some cases, the artwork may be more generic than the name.  For example, the image for NSImageNameInvalidDataFreestandingTemplate is an arrow in 10.5.  Please do not use an image outside of the function for which it is intended - the artwork can change between releases.  The invalid data image could change to a yellow exclamation-point-in-triangle icon.  If there is no image available for the situation you're interested in, please file a bug report, and use your own custom art in the meantime.
- 
+
 //  The size of an image is also not guaranteed to be the same (or maintain the same aspect ratio) between releases, so you should explcitly size the image appropriately for your use.
 
 //  Constants that end in the word "Template" name black and clear images that return YES for isTemplate.  These images can be processed into variants appropriate for different situations.  For example, these images can invert in a selected table view row.  See -[NSImage setTemplate:] for more comments.  These images are inappropriate for display without further processing, but NSCell and its subclasses will perform the processing.
- 
+
 //  Some images also contain the word "Freestanding".  This indicates that an image is appropriate for use as a borderless button - it doesn't need any extra bezel artwork behind it.  For example, Safari uses NSImageNameStopProgressTemplate as the stop button in a button on its toolbar, while it uses NSImageNameStopProgressFreestandingTemplate in the downloads window where it appears inline with a progress indicator.
-  
+
 //  The string value of each symbol is typically the same as the constant name without the "ImageName" part.  For example, NSImageNameBonjour is @"NSBonjour".  This is documented so that images can be used by name in Interface Builder.
 // **/
-
 // APPKIT_EXTERN NSImageName const NSImageNameAddTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameBluetoothTemplate API_AVAILABLE(macos(10.5), ios(13.0));
 // APPKIT_EXTERN NSImageName const NSImageNameBonjour API_AVAILABLE(macos(10.5));
@@ -383,7 +374,7 @@
 // **/
 // APPKIT_EXTERN NSImageName const NSImageNameUser API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameUserGroup API_AVAILABLE(macos(10.5));
-// APPKIT_EXTERN NSImageName const NSImageNameEveryone API_AVAILABLE(macos(10.5));  
+// APPKIT_EXTERN NSImageName const NSImageNameEveryone API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSImageName const NSImageNameUserGuest API_AVAILABLE(macos(10.6));
 
 // /* These images are the default state images used by NSMenuItem.  Drawing these outside of menus is discouraged.

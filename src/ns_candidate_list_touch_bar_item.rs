@@ -4,7 +4,6 @@
 //     Copyright (c) 2016-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSTouchBar.h>
 // #import <AppKit/NSTouchBarItem.h>
 // #import <AppKit/NSView.h>
@@ -18,7 +17,6 @@
 
 // /* NSCandidateListTouchBarItem is an NSTouchBarItem that shows the word completion candidates for assisting users typing with text input capable views. In addition to candidates supplied by its client, the NSTouchBarItem can show candidates coming from the active input method. NSCandidateListTouchBarItem has two states: expanded and collapsed. When expanded, the item replaces any NSTouchBarItems occupying its location on the bar.
 // */
-
 // #pragma mark NSCandidateListTouchBarItem
 // API_AVAILABLE(macos(10.12.2)) API_UNAVAILABLE(macCatalyst)
 // @interface NSCandidateListTouchBarItem<CandidateType> : NSTouchBarItem
@@ -52,7 +50,7 @@
 
 // // Returns an array of candidate objects previously set via -setCandidates:forSelectedRange:inString:view:
 // @property (readonly, copy) NSArray<CandidateType> *candidates API_UNAVAILABLE(macCatalyst);
- 
+
 // // Sets an array of candidate objects to be displayed in the candidate list bar item. The candidate objects are interpreted by -attributedStringForCandidate if the property is non-nil. NSCandidateListTouchBarItem can format NSString, NSAttributedString, and NSTextCheckingResult without the formatting block specified. The NSTouchBarItem will decide which candidates to place in the candidates array and in which order. The selectedRange and originalString arguments tell the context the list of candidates was originally derived from. For NSTextCheckingResult candidates, the selectedRange and originalString arguments should match those passed in to NSSpellChecker. The NSTouchBarItem will also arrange to display candidates near the selection in the view when appropriate.
 // - (void)setCandidates:(NSArray<CandidateType> *)candidates forSelectedRange:(NSRange)selectedRange inString:(nullable NSString *)originalString API_UNAVAILABLE(macCatalyst);
 

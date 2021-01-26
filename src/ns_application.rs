@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/NSResponder.h>
@@ -87,7 +86,6 @@
 // APPKIT_EXTERN NSRunLoopMode NSModalPanelRunLoopMode;
 // APPKIT_EXTERN NSRunLoopMode NSEventTrackingRunLoopMode;
 
-
 // /* Pre-defined return values for -runModalFor: and -runModalSession:. The system also reserves all values below these. Other values can be used. */
 // typedef NSInteger NSModalResponse NS_TYPED_EXTENSIBLE_ENUM;
 // /// Also used as the default response for sheets
@@ -118,7 +116,7 @@
 
 //     NSApplicationPresentationFullScreen API_AVAILABLE(macos(10.7)) = (1 << 10),         // Application is in fullscreen mode
 //     NSApplicationPresentationAutoHideToolbar API_AVAILABLE(macos(10.7)) = (1 << 11),    // Fullscreen window toolbar is detached from window and hides/shows with autoHidden menuBar.  May be used only when both NSApplicationPresentationFullScreen and NSApplicationPresentationAutoHideMenuBar are also set
-    
+
 //     NSApplicationPresentationDisableCursorLocationAssistance API_AVAILABLE(macos(10.11.2)) = (1 << 12)    // "Shake mouse pointer to locate" is disabled for this application
 // } API_AVAILABLE(macos(10.6));
 
@@ -202,7 +200,6 @@
 // **/
 // - (BOOL)setActivationPolicy:(NSApplicationActivationPolicy)activationPolicy API_AVAILABLE(macos(10.6));
 
-
 // @property (readonly, strong) NSDockTile *dockTile API_AVAILABLE(macos(10.5));
 
 // - (void)reportException:(NSException *)exception;
@@ -279,21 +276,21 @@
 // // return values for -applicationShouldTerminate:
 // typedef NS_ENUM(NSUInteger, NSApplicationTerminateReply) {
 //         NSTerminateCancel = 0,
-//         NSTerminateNow = 1, 
+//         NSTerminateNow = 1,
 //         NSTerminateLater = 2
 // };
 
 // // return values for -application:printFiles:withSettings:showPrintPanels:.
 // typedef NS_ENUM(NSUInteger, NSApplicationPrintReply) {
 //     NSPrintingCancelled = 0,
-//     NSPrintingSuccess = 1, 
+//     NSPrintingSuccess = 1,
 //     NSPrintingFailure = 3,
 //     NSPrintingReplyLater = 2
 // };
 
 // @protocol NSApplicationDelegate <NSObject>
 // @optional
-// /* 
+// /*
 //     Allowable return values are:
 //         NSTerminateNow - it is ok to proceed with termination
 //         NSTerminateCancel - the application should not be terminated
@@ -333,20 +330,19 @@
 
 // /* NSUserActivity support:
 // **/
-
 // /*
- 
+
 //  This will be called on the main thread as soon as the user indicates they want to continue an activity in your application. The NSUserActivity object may not be available instantly, so use this as an opportunity to show the user that an activity will be continued shortly. Return YES to indicate that you are doing so. Return NO (or leave it unimplemented) and AppKit/UIKit will put up a default UI.
- 
+
 //  For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one invocation of application:continueUserActivity:restorationHandler: on success, or application:didFailToContinueUserActivityWithType:error: if an error was encountered.
 // **/
 // - (BOOL)application:(NSApplication *)application willContinueUserActivityWithType:(NSString *)userActivityType API_AVAILABLE(macos(10.10));
 
 // /*
 //  This will be called on the main thread after the NSUserActivity object is available. Use the data you stored in the NSUserActivity object to re-create what the user was doing. Return YES to indicate that the activity was handled. Return NO (or leave it unimplemented) and AppKit will attempt to continue the user activity.
- 
+
 //  You should create/fetch any restorable objects associated with the user activity, and pass them to the restorationHandler. They will then get the above restoreUserActivityState: method invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later, but must be invoked on the main thread.
- 
+
 //  If this user activity was created automatically by having NSUbiquitousDocumentUserActivityType in a CFBundleDocumentTypes entry, AppKit can automatically restore the NSUserActivity on OS X if NO is returned, or this method is unimplemented. It will do so by creating a document of the appropriate type using the URL stored in the userInfo under the NSUserActivityDocumentURLKey. The document will have restoreUserActivity: called on it.
 // **/
 // - (BOOL)application:(NSApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<NSUserActivityRestoring>> *restorableObjects))restorationHandler API_AVAILABLE(macos(10.10));
@@ -357,16 +353,14 @@
 // /* This will be called on the main thread when a user activity managed by AppKit/UIKit has been updated. You should use this as a last chance to add additional data to the userActivity. */
 // - (void)application:(NSApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity API_AVAILABLE(macos(10.10));
 
-
 // /* This will be called on the main thread after the user indicates they want to accept a CloudKit sharing invitation in your application.
- 
+
 //  You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a CKAcceptSharesOperation, then start using the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a zone matching that of the record's owner.
 // */
 // - (void)application:(NSApplication *)application userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)metadata API_AVAILABLE(macos(10.12));
 
 // /* Key Value Coding support:
 // **/
-
 // /* Return YES if the receiving delegate object can respond to key value coding messages for a specific keyed attribute, to-one relationship, or to-many relationship.  Return NO otherwise.
 // */
 // - (BOOL)application:(NSApplication *)sender delegateHandlesKey:(NSString *)key;
@@ -427,7 +421,6 @@
 
 // /* Bi-directional User Interface
 // */
-
 // @interface NSApplication (NSApplicationLayoutDirection)
 // @property (readonly) NSUserInterfaceLayoutDirection userInterfaceLayoutDirection API_AVAILABLE(macos(10.6)); // Returns the application-wide user interface layout direction.
 // @end
@@ -435,11 +428,11 @@
 // @interface NSApplication (NSRestorableUserInterface)
 
 // /* Disable or reenable relaunching this app on login, if the app was running at the time the user logged out.  These methods increment and decrement a counter respectively; if the counter is 0 at the time the user logs out, then the app may be relaunched when the user logs back in.  The counter is initially zero, so by default apps are relaunched.
- 
+
 //  If your app should not be relaunched because it launches via some other mechanism (e.g. launchd), then the recommended usage is to call [NSApp disableRelaunchOnLogin] once, and never pair it with an -enable call.
- 
+
 //  If your app should not be relaunched because it triggers a restart (e.g. an installer), then the recommended usage is to call [NSApp disableRelaunchOnLogin] immediately before you attempt to trigger a restart, and [NSApp enableRelaunchOnLogin] immediately after.  This is because the user may cancel restarting; if the user later restarts for another reason, then your app should be brought back.
- 
+
 //  These methods are thread safe.
 // **/
 // - (void)disableRelaunchOnLogin API_AVAILABLE(macos(10.7));
@@ -454,7 +447,6 @@
 //     NSRemoteNotificationTypeSound API_AVAILABLE(macos(10.8))   = 1 << 1,
 //     NSRemoteNotificationTypeAlert API_AVAILABLE(macos(10.8))   = 1 << 2,
 // };
-
 
 // @interface NSApplication (NSRemoteNotifications)
 // - (void)registerForRemoteNotifications API_AVAILABLE(macos(10.14));
@@ -471,11 +463,10 @@
 // @end
 
 // /* An Application's startup function */
-
 // APPKIT_EXTERN int NSApplicationMain(int argc, const char *_Nonnull argv[_Nonnull]);
 
 // /* NSApplicationLoad should be called when loading a Cocoa bundle in a Carbon app in order to initialize NSApplication and other Cocoa objects.  Redundant calls are ignored.
-// */  
+// */
 // APPKIT_EXTERN BOOL NSApplicationLoad(void);
 
 // /* NSShowsServicesMenuItem() always returns YES. */
@@ -510,7 +501,6 @@
 // APPKIT_EXTERN NSNotificationName NSApplicationDidChangeScreenParametersNotification;
 
 // /* User info keys for NSApplicationDidFinishLaunchingNotification */
-
 // /* The following key is present in the userInfo of NSApplicationDidFinishLaunchingNotification.  Its value is an NSNumber containing a bool.  It will be NO if the app was launched to open or print a file, to perform a Service, if the app had saved state that will be restored, or if the app launch was in some other sense not a "default" launch.  Otherwise its value will be YES.
 // **/
 // APPKIT_EXTERN NSString * const NSApplicationLaunchIsDefaultLaunchKey API_AVAILABLE(macos(10.7));
@@ -524,7 +514,6 @@
 
 // /* Upon receiving this notification, you can query the NSApplication for its occlusion state. Note that this only notifies about changes in the state of the occlusion, not when the occlusion region changes. You can use this notification to increase responsiveness and save power, by halting any expensive calculations that the user can not see. */
 // APPKIT_EXTERN NSNotificationName const NSApplicationDidChangeOcclusionStateNotification API_AVAILABLE(macos(10.9));
-
 
 // /* Deprecated Methods */
 // @interface NSApplication (NSDeprecated)
@@ -560,8 +549,6 @@
 // @property (nullable, readonly, strong) NSGraphicsContext *context API_DEPRECATED("This method always returns nil. If you need access to the current drawing context, use [NSGraphicsContext currentContext] inside of a draw operation.", macos(10.0,10.12));
 
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

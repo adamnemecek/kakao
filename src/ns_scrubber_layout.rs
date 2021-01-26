@@ -4,7 +4,6 @@
 //  Copyright (c) 2016-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -42,10 +41,9 @@
 // @interface NSScrubberLayout : NSObject <NSCoding>
 
 // #pragma mark Base Implementation
-// /* 
+// /*
 //  The following properties and methods are provided by the base implementation
 // **/
-
 // /// Specifies a class for describing layout attributes. By default, this is @c NSScrubberLayoutAttributes, but subclasses may override this method to use a custom subclass of @c NSScrubberLayoutAttributes.
 // @property (class, readonly) Class layoutAttributesClass;
 
@@ -62,10 +60,9 @@
 // - (void)invalidateLayout NS_REQUIRES_SUPER;
 
 // #pragma mark Subclassing Hooks
-// /* 
+// /*
 //  The following methods and properties should be implemented by subclasses.
 // **/
-
 // /// Following any invalidation in layout, @c NSScrubber will call @c prepareLayout on its layout object prior to requesting any other layout information. Subclasses should use this method to perform upfront calculations and caching. The base implementation of this method does nothing.
 // - (void)prepareLayout;
 

@@ -3,7 +3,6 @@
 //         NSStringDrawing.h
 //         Copyright (c) 1994-2019, Apple Inc.  All rights reserved.
 // */
-
 // #import <Foundation/NSString.h>
 // #import <AppKit/NSAttributedString.h>
 
@@ -49,7 +48,6 @@
 //     NSStringDrawingOneShot API_DEPRECATED("", macos(10.0,10.11)) = (1 << 4)
 // } API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));
 
-
 // // NOTE: All of the following methods will default to drawing on a baseline, limiting drawing to a single line.
 // // To correctly draw and size multi-line text, pass NSStringDrawingUsesLineFragmentOrigin in the options parameter.
 // @interface NSString (NSExtendedStringDrawing)
@@ -80,4 +78,3 @@
 // #else
 // #import <UIFoundation/NSStringDrawing.h>
 // #endif
-

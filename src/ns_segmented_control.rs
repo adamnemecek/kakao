@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSCell.h>
 // #import <AppKit/NSUserInterfaceCompression.h>
@@ -29,7 +28,7 @@
 //     NSSegmentStyleTexturedSquare = 4,
 //     NSSegmentStyleSmallSquare = 6,
 //     NSSegmentStyleSeparated API_AVAILABLE(macos(10.10)) = 8,
-    
+
 //     /* In Mac OS X 10.10 and later, the following styles have identical artwork */
 //     NSSegmentStyleTexturedRounded API_AVAILABLE(macos(10.5)) = 2,
 //     NSSegmentStyleCapsule API_AVAILABLE(macos(10.5)) = 5
@@ -38,16 +37,16 @@
 // typedef NS_ENUM(NSInteger, NSSegmentDistribution) {
 //     /// Dynamically sized segments will be sized to fit their contents, any remaining space will be left blank. This style is equivalent to the way segments were distributed on older systems.
 //     NSSegmentDistributionFit = 0,
-    
+
 //     /// Dynamically sized segments will be sized to fill the available space, with extra space being distributed equally among them. Default value.
 //     NSSegmentDistributionFill,
-    
+
 //     /// Dynamically sized segments will be sized to fill the available space, and kept the same size as each other.
 //     NSSegmentDistributionFillEqually,
-    
+
 //     /// Dynamically sized segments will be sized to fill the available space, and kept proportional to their fitting size.
 //     NSSegmentDistributionFillProportionally,
-    
+
 // } API_AVAILABLE(macos(10.13));
 
 // @interface NSSegmentedControl : NSControl <NSUserInterfaceCompression>

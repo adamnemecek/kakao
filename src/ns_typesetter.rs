@@ -1,11 +1,10 @@
 // #if !__has_include(<UIFoundation/NSTypesetter.h>)
 // /*
 // 	NSTypesetter.h
-// 	Copyright (c) 1994-2019, Apple Inc.  All rights reserved. 
+// 	Copyright (c) 1994-2019, Apple Inc.  All rights reserved.
 
-// 	An abstract class to lay glyphs out in horizontal or vertical boxes	
+// 	An abstract class to lay glyphs out in horizontal or vertical boxes
 // */
-
 // #import <CoreFoundation/CFCharacterSet.h> // for UTF32Char
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -110,7 +109,6 @@
 
 // - (CGFloat)baselineOffsetInLayoutManager:(NSLayoutManager *)layoutMgr glyphIndex:(NSUInteger)glyphIndex;
 
-
 // /* Factory methods */
 // @property (class, readonly, strong) __kindof NSTypesetter *sharedSystemTypesetter;
 // + (id)sharedSystemTypesetterForBehavior:(NSTypesetterBehavior)behavior;
@@ -162,7 +160,6 @@
 //     NSTypesetterContainerBreakAction = (1 << 5) // Causes container break
 // }; // Deprecated. Use NSControlCharacterAction instead
 
-
 // @interface NSTypesetter (NSTypesetter_Deprecated)
 // - (NSTypesetterControlCharacterAction)actionForControlCharacterAtIndex:(NSUInteger)charIndex; // Deprecated. Use -layoutManager:shouldUseAction:forControlCharacterAtIndex: instead
 // - (NSUInteger)getGlyphsInRange:(NSRange)glyphsRange glyphs:(null_unspecified NSGlyph *)glyphBuffer characterIndexes:(null_unspecified NSUInteger *)charIndexBuffer glyphInscriptions:(null_unspecified NSGlyphInscription *)inscribeBuffer elasticBits:(null_unspecified BOOL *)elasticBuffer bidiLevels:(null_unspecified unsigned char *)bidiLevelBuffer API_DEPRECATED("", macos(10.3,10.13));
@@ -171,8 +168,6 @@
 // - (void)insertGlyph:(NSGlyph)glyph atGlyphIndex:(NSUInteger)glyphIndex characterIndex:(NSUInteger)characterIndex API_DEPRECATED("", macos(10.3,10.13));
 // - (void)deleteGlyphsInRange:(NSRange)glyphRange API_DEPRECATED("", macos(10.3,10.13));
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

@@ -4,7 +4,6 @@
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // // NSTextView is an NSText subclass that displays the glyphs laid out in one NSTextContainer.
 
 // #import <AppKit/NSText.h>
@@ -61,7 +60,6 @@
 //     NSSelectionAffinityDownstream = 1
 // };
 
-
 // /* A meta locale identifier representing the set of Roman input sources available.  You can specify [NSArray arrayWithObject: NSAllRomanInputSourcesLocaleIdentifier] to restrict allowed input sources to Roman only.
 // */
 // APPKIT_EXTERN NSString * NSAllRomanInputSourcesLocaleIdentifier API_AVAILABLE(macos(10.5));
@@ -72,7 +70,6 @@
 // @interface NSTextView : NSText <NSColorChanging, NSMenuItemValidation, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSStandardKeyBindingResponding, NSTextInput, NSAccessibilityNavigableStaticText, NSTextContent>
 
 // */************************** Initializing ****************************/
-
 // // Designated Initializer. container may be nil.
 // - (instancetype)initWithFrame:(NSRect)frameRect textContainer:(nullable NSTextContainer *)container NS_DESIGNATED_INITIALIZER;
 
@@ -82,7 +79,6 @@
 // - (instancetype)initWithFrame:(NSRect)frameRect;
 
 // */*************** Get/Set the container and other stuff *****************/
-
 // // The set method should not be called directly, but you might want to override it.  Gets or sets the text container for this view.  Setting the text container marks the view as needing display.  The text container calls the set method from its setTextView: method.
 // @property (nullable, assign) NSTextContainer *textContainer;
 
@@ -103,16 +99,13 @@
 // @property (nullable, readonly, assign) NSTextStorage *textStorage;
 
 // */*********************** Key binding entry-point *************************/
-
 // - (void)insertText:(id)insertString API_DEPRECATED("Use -insertText:replacementRange: from NSTextInputClient instead. Since the method is designed to be used solely by the input system, the message should never be sent to a text view from applications. Any content modifications should be via either NSTextStorage or NSText methods.", macos(10.0,10.11));
 
 // */************************* Sizing methods ***************************/
-
 // // Sets the frame size of the view to desiredSize constrained within min and max size.
 // - (void)setConstrainedFrameSize:(NSSize)desiredSize;
 
 // */*************** New miscellaneous API above and beyond NSText *****************/
-
 // // These two complete the set of range: type set methods. to be equivalent to the set of non-range taking varieties.
 // #if !TARGET_OS_IPHONE
 // - (void)setAlignment:(NSTextAlignment)alignment range:(NSRange)range;
@@ -120,7 +113,6 @@
 // #endif
 
 // */************************* New Font menu commands ***************************/
-
 // - (void)turnOffKerning:(nullable id)sender;
 // - (void)tightenKerning:(nullable id)sender;
 // - (void)loosenKerning:(nullable id)sender;
@@ -134,12 +126,10 @@
 // - (void)outline:(nullable id)sender;
 
 // */************************* Find menu commands ***************************/
-
 // // See NSFindPanelAction for possible tags in sender
 // - (void)performFindPanelAction:(nullable id)sender;
 
 // */************************* New Text commands ***************************/
-
 // - (void)alignJustified:(nullable id)sender;
 // - (void)changeColor:(nullable id)sender;
 // - (void)changeAttributes:(nullable id)sender;
@@ -150,7 +140,6 @@
 // - (void)orderFrontTablePanel:(nullable id)sender;
 
 // */************************* Ruler support ***************************/
-
 // - (void)rulerView:(NSRulerView *)ruler didMoveMarker:(NSRulerMarker *)marker;
 // - (void)rulerView:(NSRulerView *)ruler didRemoveMarker:(NSRulerMarker *)marker;
 // - (void)rulerView:(NSRulerView *)ruler didAddMarker:(NSRulerMarker *)marker;
@@ -162,7 +151,6 @@
 // - (void)rulerView:(NSRulerView *)ruler handleMouseDown:(NSEvent *)event;
 
 // */************************* Fine display control ***************************/
-
 // // If flag is set, then this will attempt to avoid causing layout, if possible, when displaying the rect.  If flag is not set, this is equivalent to setNeedsDisplayInRect:.
 // - (void)setNeedsDisplayInRect:(NSRect)rect avoidAdditionalLayout:(BOOL)flag;
 
@@ -173,7 +161,6 @@
 // - (void)drawViewBackgroundInRect:(NSRect)rect;
 
 // */************************* Especially for subclassers ***************************/
-
 // - (void)updateRuler;
 // - (void)updateFontPanel;
 
@@ -182,17 +169,14 @@
 // - (NSRange)selectionRangeForProposedRange:(NSRange)proposedCharRange granularity:(NSSelectionGranularity)granularity;
 
 // */************************* Especially for subclassers ***************************/
-
 // // Cause the text view to act as if someone clicked on a piece of text with link as the value of NSLinkAttributeName.  If, for instance, you have a special attachment cell that can end up following links, you can use this method to ask the text view to follow a link once you decide it should.  This method is invoked by the text view during mouse tracking if the user is clicking a link as well.  This sends the textView:clickedOnLink: delegation if the delegate responds.
 // - (void)clickedOnLink:(id)link atIndex:(NSUInteger)charIndex;
 
 // */*********************** Speech support *************************/
-
 // - (void)startSpeaking:(nullable id)sender;
 // - (void)stopSpeaking:(nullable id)sender;
 
 // */*********************** Vertical text support *************************/
-
 // #if !TARGET_OS_IPHONE
 // // Changes the receiver's layout orientation and invalidates the contents.  Unlike other NSTextView properties, this is not shared by sibling views.  It also rotates the bounds 90 degrees, swaps horizontal and vertical bits of the autoresizing mask, and reconfigures isHorizontallyResizable and isVerticallyResizable properties accordingly.  Also, if -enclosingScrollView returns non-nil, it reconfigures horizontal and vertical ruler views, horizontal and vertical scrollers, and the frame.
 // - (void)setLayoutOrientation:(NSTextLayoutOrientation)orientation API_AVAILABLE(macos(10.7));
@@ -202,7 +186,6 @@
 // - (void)changeLayoutOrientation:(nullable id)sender API_AVAILABLE(macos(10.7));
 
 // */*********************** Helper for subclassers *************************/
-
 // // Here point is in view coordinates, and the return value is a character index appropriate for placing a zero-length selection for an insertion point associated with the mouse at the given point.  The NSTextInput method characterIndexForPoint: is not suitable for this role.
 // - (NSUInteger)characterIndexForInsertionAtPoint:(NSPoint)point API_AVAILABLE(macos(10.5));
 
@@ -224,7 +207,6 @@
 // @interface NSTextView (NSCompletion)
 
 // */*********************** Completion support *********************/
-
 // // Responder method for invoking completion.  May be invoked programmatically if autocompletion is desired.
 // - (void)complete:(nullable id)sender;
 
@@ -242,7 +224,6 @@
 // @interface NSTextView (NSPasteboard)
 
 // */***************** Pasteboard support (mainly for subclassers) *******************/
-
 // // To implement support for writing a new type, override -writeSelectionToPasteboard:type: to support your new type (and call super if you're not going to handle it.)  Then you can override -writablePasteboardTypes and optionally the +registerForServices methods to enable the new type.
 
 // // To implement support for reading a new type, override -readSelectionFromPasteboard:type: to support your new type (and call super if you're not going to handle it.)  Then you can override -readablePasteboardTypes and optionally the +registerForServices and acceptableDragTypes methods to enable the new type.  Advanced drag acceptance behavior can be implemented with dragOperationForDraggingInfo:type: and cleanUpAfterDragOperation.
@@ -307,7 +288,6 @@
 // @interface NSTextView (NSSharing)
 
 // */************************* Selected/Marked range ***************************/
-
 // @property (copy) NSArray<NSValue *> *selectedRanges;
 
 // // These multiple-range methods supersede the corresponding single-range methods.  The ranges argument must be a non-nil, non-empty array of objects responding to rangeValue.  The return value of selectedRanges obeys the same restrictions, and in addition its elements are sorted, non-overlapping, non-contiguous, and (except for the case of a single range) have non-zero-length.
@@ -334,11 +314,9 @@
 // @property BOOL displaysLinkToolTips API_AVAILABLE(macos(10.5));
 
 // */*********************** Glyph info support *************************/
-
 // @property BOOL acceptsGlyphInfo;
 
 // */************************* Other NSTextView methods ***************************/
-
 // @property BOOL usesRuler;
 
 // @property BOOL usesInspectorBar API_AVAILABLE(macos(10.7));
@@ -390,9 +368,7 @@
 // // Controls whether to show rollover button for extension service items inside text selection.  It's enabled by default.
 // @property BOOL usesRolloverButtonForSelection API_AVAILABLE(macos(10.10));
 
-
 // */************************* NSText methods ***************************/
-
 // @property (nullable, weak) id<NSTextViewDelegate> delegate;
 // @property (getter=isEditable) BOOL editable;
 // @property (getter=isSelectable) BOOL selectable;
@@ -415,7 +391,6 @@
 // @interface NSTextView (NSTextChecking)
 
 // */************************* Smart copy/paste/delete/substitution support ***************************/
-
 // @property BOOL smartInsertDeleteEnabled;
 // - (NSRange)smartDeleteRangeForProposedRange:(NSRange)proposedCharRange;
 // - (void)toggleSmartInsertDelete:(nullable id)sender;
@@ -475,12 +450,10 @@
 
 // @interface NSTextView (NSTextView_SharingService)
 // */************************* NSSharingService support ***************************/
-
 // // Creates a new instance of NSSharingServicePicker based on the current selection & shows to the screen. The items passed to the NSSharingServicePicker initializer are determined using -itemsForSharingServiceInRanges:. When the current selection is 0 length, the whole document is passed to the method.
 // - (IBAction)orderFrontSharingServicePicker:(nullable id)sender API_AVAILABLE(macos(10.8));
 
 // @end
-
 
 // #pragma mark NSTouchBar support
 // /* NSTextView provides support for text formatting and inputting NSTouchBarItems. -[NSTextView makeTouchBar] instantiates an NSTouchBar configured based on settings such as -automaticTextCompletionEnabled and -richText. NSTextView conforms to NSTouchBarDelegate and supplies NSTouchBarItems via -touchBar:makeItemForIdentifier:.
@@ -597,7 +570,6 @@
 
 // - (nullable NSUndoManager *)undoManagerForTextView:(NSTextView *)view;
 
-
 // // Delegate only. Invoked from -updateTouchBarItemIdentifiers before setting the item identifiers for textView's NSTouchBar.
 // - (NSArray<NSTouchBarItemIdentifier> *)textView:(NSTextView *)textView shouldUpdateTouchBarItemIdentifiers:(NSArray<NSTouchBarItemIdentifier> *)identifiers API_AVAILABLE(macos(10.12.2));
 
@@ -610,7 +582,6 @@
 // // Delegate only. Notifies the delegate that the user selected the candidate at index in -[NSCandidateListTouchBarItem candidates] for textView.candidateListTouchBarItem. When no candidate selected, index is NSNotFound. Returning YES allows textView to insert the candidate into the text storage if it's NSString, NSAttributedString, or NSTextCheckingResult.
 // - (BOOL)textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index API_AVAILABLE(macos(10.12.2));
 
-
 // // The following delegate-only methods are deprecated in favor of the more verbose ones above.
 // - (BOOL)textView:(NSTextView *)textView clickedOnLink:(null_unspecified id)link API_DEPRECATED("Use -textView:clickedOnLink:atIndex: instead", macos(10.0,10.6));
 // - (void)textView:(NSTextView *)textView clickedOnCell:(null_unspecified id <NSTextAttachmentCell>)cell inRect:(NSRect)cellFrame API_DEPRECATED("Use -textView:clickedOnCell:inRect:atIndex: instead", macos(10.0,10.6));
@@ -618,7 +589,6 @@
 // - (void)textView:(NSTextView *)view draggedCell:(null_unspecified id <NSTextAttachmentCell>)cell inRect:(NSRect)rect event:(null_unspecified NSEvent *)event API_DEPRECATED("Use -textView:draggedCell:inRect:event:atIndex: instead", macos(10.0,10.6));
 
 // @end
-
 
 // #pragma mark NSTouchBarItemIdentifiers
 // /* Standard NSTouchBarItemIdentifiers */
@@ -641,7 +611,6 @@
 // // An NSTouchBarItemIdentifier for a group of text format controls.
 // APPKIT_EXTERN NSTouchBarItemIdentifier const NSTouchBarItemIdentifierTextFormat API_AVAILABLE(macos(10.12.2));
 
-
 // // NSOldNotifyingTextView -> the old view, NSNewNotifyingTextView -> the new view.  The text view delegate is not automatically registered to receive this notification because the text machinery will automatically switch over the delegate to observe the new first text view as the first text view changes.
 // APPKIT_EXTERN NSNotificationName NSTextViewWillChangeNotifyingTextViewNotification;
 
@@ -650,9 +619,7 @@
 
 // APPKIT_EXTERN NSNotificationName NSTextViewDidChangeTypingAttributesNotification;
 
-
 // /* These constants are deprecated in favor of their NSTextFinder equivalents. */
-
 // /* Values for NSFindPanelAction */
 // typedef NS_ENUM(NSUInteger, NSFindPanelAction) {
 //     NSFindPanelActionShowFindPanel = 1,
@@ -668,7 +635,6 @@
 // };
 
 // /* Values for NSFindPanel search metadata */
-
 // APPKIT_EXTERN NSPasteboardType NSFindPanelSearchOptionsPboardType  API_AVAILABLE(macos(10.5));
 
 // typedef NSString * NSPasteboardTypeFindPanelSearchOptionKey NS_TYPED_ENUM;

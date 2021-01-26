@@ -4,7 +4,6 @@
 //  Copyright (c) 2016-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -88,7 +87,7 @@
 
 // /*!
 //  * @class NSScrubber
-//  * @abstract @c NSScrubber is a control designed for the NSTouchBar environment. 
+//  * @abstract @c NSScrubber is a control designed for the NSTouchBar environment.
 //  *
 //  * @c NSScrubber arranges a finite number of "items" (represented by views of type @c NSScrubberItemView ) according to a layout object (see @c NSScrubberLayout ), and provides several methods for navigating and selecting those items.
 //  *

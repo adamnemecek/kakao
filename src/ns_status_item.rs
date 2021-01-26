@@ -4,7 +4,6 @@
 //     Copyright (c) 1997-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/NSEvent.h>
 // #import <AppKit/AppKitDefines.h>
@@ -26,7 +25,7 @@
 //     /* Allow the user to remove the item. By default, an item is not removable. To provide consistency with system status items, RemovalAllowed should be set if your application remains usable without the status item. It is the application's responsibility to allow the user to re-add the item. Upon removal, -visible is set to NO. This is observable through KVO.
 //      */
 //     NSStatusItemBehaviorRemovalAllowed = (1 << 1),
-    
+
 //     /* The application terminates when the user removes the item. Implies NSStatusItemBehaviorRemovalAllowed.
 //      */
 //     NSStatusItemBehaviorTerminationOnRemoval = (1 << 2),
@@ -64,7 +63,6 @@
 
 // @end
 
-
 // @interface NSStatusItem (NSStatusItemDeprecated)
 // /* These methods simply forward their calls onto the button property. */
 // @property (nullable) SEL action API_DEPRECATED("Use the receiver's button.action instead", macos(10.0,10.14));
@@ -92,4 +90,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

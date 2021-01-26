@@ -4,7 +4,6 @@
 //     Copyright (c) 2015-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSCollectionViewLayout.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -32,7 +31,6 @@
 // */
 // @property CGFloat minimumLineSpacing;
 
-
 // #pragma mark *** Grid Parameters ***
 
 // /* The largest number of item rows to attempt to fit in the CollectionView's visible area (if enclosed in a ScrollView).  Defaults to 0, which is interpreted to mean there should be no limit other than minimumItemSize.height.
@@ -43,7 +41,6 @@
 // */
 // @property NSUInteger maximumNumberOfColumns;
 
-
 // #pragma mark *** Item Size Limits ***
 
 // /* The smallest allowed dimensions for an item's root view.  Defaults to NSZeroSize, which makes the layout attempt to infer minimum dimensions from the provided itemPrototype's view's frame size.
@@ -53,7 +50,6 @@
 // /* The largest allowed dimensions for an item's root view.  Defaults to NSZeroSize, which makes the layout attempt to infer maximum dimensions from the provided itemPrototype's view's frame size.
 // */
 // @property NSSize maximumItemSize;
-
 
 // #pragma mark *** Background Appearance ***
 

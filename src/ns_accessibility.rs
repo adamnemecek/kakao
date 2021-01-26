@@ -4,7 +4,6 @@
 // 	Copyright (c) 2001-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSErrors.h>
 // #import <Foundation/NSGeometry.h>
@@ -23,7 +22,6 @@
 // @class NSString, NSArray, NSView;
 
 // */* Accessibility Informal Protocol ***/
-
 // @interface NSObject (NSAccessibility)
 
 // /* Attribute methods
@@ -56,10 +54,8 @@
 // */
 // @property (nullable, readonly, strong) id accessibilityFocusedUIElement;
 
-
 // /* The following are optional methods to improve performance of accessible objects with large numbers of children or large numbers of UI Elements returned from attributes that return an array (selected children, or visible children, for instance).  The default implementation for these operations will call -accessibilityAttributeValue: to retrieve the entire array of values, and then perform the appropriate operation.  If these methods are implemented, they will be used instead.  For accessibility objects with many children, the results to these methods can sometimes be calculated without generating the entire array of children which can improve performance.
 // */
-
 // /* Given an accessibility child of an object, return the index of that child in the parent.  If the provided object is not a child of the receiver, this method should return NSNotFound.
 // */
 // - (NSUInteger)accessibilityIndexOfChild:(id)child;
@@ -74,19 +70,18 @@
 
 // /*
 //  Prior to OS X 10.9, the only accessible objects that could post accessibility notifications were those that inherited from NSView, NSWindow, or NSCell. An application's custom accessible object, subclassed from NSObject, could not post notifications.
- 
+
 //  In 10.9 and later, an application's custom accessible object may post accessibility notifications if it follows the following guidelines:
- 
+
 //  - the lifetime of the NSObject must match the lifetime of the corresponding element in the application's visual interface. It is common for a custom accessible object that acts as a proxy for an onscreen UI element to be autoreleased and deallocated very quickly, immediately after the application responds to a single accessibility request. This is not sufficient to support posting notifications, because any notification observers that are registered on the object will be removed as soon as the object is deallocated. Instead, the application must arrange for an accessible object that refers to a specific UI element to remain allocated as long as that UI element is visible.
- 
+
 //  - the object must post the NSAccessibilityUIElementDestroyed notification at appropriate times, typically when the corresponding UI element in the application's visual interface is removed from the screen, and certainly when the accessible object is deallocated.
- 
+
 //  - the object must implement -accessibilityNotifiesWhenDestroyed to return YES.
 // **/
 // @property (readonly) BOOL accessibilityNotifiesWhenDestroyed API_AVAILABLE(macos(10.9));
 
 // @end
-
 
 // @interface NSWorkspace (NSWorkspaceAccessibilityDisplay)
 
@@ -120,9 +115,7 @@
 // /* Notification posted to the NSWorkspace notification center when accessibility display options have changed. */
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceAccessibilityDisplayOptionsDidChangeNotification API_AVAILABLE(macos(10.10));
 
-
 // */* Accessibility Related Methods ***/
-
 // @interface NSObject (NSAccessibilityAdditions)
 
 // /* For changing the set of attributes on an instance - as an alternative to sub-classing.
@@ -137,7 +130,6 @@
 // // With a NSView and a relative point, return the frame in screen coordinates for accessibility
 // APPKIT_EXTERN NSPoint NSAccessibilityPointInView(NSView *parentView, NSPoint point) API_AVAILABLE(macos(10.10));
 
-
 // /* Setting whether the application may have protected content. Protected content is identified by a value of TRUE for the accessibility attribute NSAccessibilityContainsProtectedContentAttribute. If NSAccessibilityMayContainProtectedContent returns NO, then NSAccessibilityContainsProtectedContentAttribute is completely ignored.
 
 //     A return value of TRUE indicates success.
@@ -150,25 +142,20 @@
 // APPKIT_EXTERN NSString * _Nullable NSAccessibilityRoleDescriptionForUIElement(id element);
 // APPKIT_EXTERN NSString * _Nullable NSAccessibilityActionDescription(NSAccessibilityActionName action);
 
-
 // /* Error signaling for bad setter value or bad parameter.
 // */
 // APPKIT_EXTERN void NSAccessibilityRaiseBadArgumentException(_Null_unspecified id element, NSAccessibilityAttributeName _Null_unspecified attribute, _Null_unspecified id value) API_DEPRECATED("Exceptions are no longer appropriate for indicating errors in accessibility API. Unexpected values should be handled through appropriate type checking.", macos(10.1,10.11));
 
-
 // */* Ignored UIElements Utilities ***/
-
 // APPKIT_EXTERN _Nullable id NSAccessibilityUnignoredAncestor(id element);
 // APPKIT_EXTERN _Nullable id NSAccessibilityUnignoredDescendant(id element);
 // APPKIT_EXTERN NSArray *NSAccessibilityUnignoredChildren(NSArray *originalChildren);
 // APPKIT_EXTERN NSArray *NSAccessibilityUnignoredChildrenForOnlyChild(id originalChild);
 
-
 // */* Posting Notifications ***/
-
 // /* Posts a notification to accessibility client observers.  Note that accessibility notifications are not NSNotifications and do not use the NSNotificationCenter mechanism.  These notifications are received by client processes using the AX API defined in <HIServices/Accessibility.h> including AXUIElement.h.
 
-// For all notifications, the observer receives the provided notification string and the AX API representation of the provided element. 
+// For all notifications, the observer receives the provided notification string and the AX API representation of the provided element.
 
 // For most notifications, the provided element is checked for observers of the provided notification.
 
@@ -192,4 +179,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

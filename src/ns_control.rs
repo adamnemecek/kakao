@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSText.h>
@@ -117,7 +116,6 @@
 // APPKIT_EXTERN NSNotificationName NSControlTextDidBeginEditingNotification;	//	@"NSFieldEditor"
 // APPKIT_EXTERN NSNotificationName NSControlTextDidEndEditingNotification;	//	@"NSFieldEditor"
 // APPKIT_EXTERN NSNotificationName NSControlTextDidChangeNotification;		//	@"NSFieldEditor"
-
 
 // @interface NSControl (NSDeprecated)
 

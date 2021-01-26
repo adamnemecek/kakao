@@ -4,7 +4,6 @@
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/AppKitDefines.h>
@@ -17,7 +16,6 @@
 // @interface NSRulerMarker : NSObject <NSCopying, NSCoding>
 
 // */************************** Initialization ****************************/
-
 // /* Designated initializer.  Location is expressed in the client view's bounds coordinates.  Location is the x position if the ruler is horizontal or the y position if the ruler is vertical.  The image will not be scaled or rotated.  The image origin indicates the point in the image that will be placed on the ruler's baseline at the given location and is expressed in the image's coordinate system.  NSRulerMarkers are movable but not removable by default.  A removable object should have its dimmed image set.
 // **/
 // - (instancetype)initWithRulerView:(NSRulerView *)ruler markerLocation:(CGFloat)location image:(NSImage *)image imageOrigin:(NSPoint)imageOrigin NS_DESIGNATED_INITIALIZER;
@@ -25,11 +23,9 @@
 // - (instancetype)init NS_UNAVAILABLE;
 
 // */********************* Query/Set basic attributes ***********************/
-
 // /* Returns the ruler.
 // **/
 // @property (readonly, weak) NSRulerView *ruler;
-
 
 // /* The location is set by the -init... method and the -setLocation: method.  Location is an x position for horizontal rulers or a y position for vertical rulers.  It is expressed in the client view's coordinate system.
 // **/
@@ -57,7 +53,6 @@
 // @property (nullable, strong) id<NSCopying> representedObject;
 
 // */************************ Ruler facilities **************************/
-
 // /* Returns the rect that would be occupied by the object's image in the ruler's bounds coordinates.  This takes the flippedness of the ruler into account.
 // **/
 // @property (readonly) NSRect imageRectInRuler;

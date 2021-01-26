@@ -4,7 +4,6 @@
 // 	Copyright (c) 2000-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSToolbarItem.h>
 // #import <Foundation/Foundation.h>
 
@@ -13,7 +12,6 @@
 // #endif
 
 // /* NSToolbarItemGroup is a subclass of NSToolbarItem which can be used to create sets of NSToolbarItems that are always attached to one another and that are added, removed, or reordered as a single unit.  Properties that get set on the parent toolbar item, such as label or view, apply to the entire item.  Otherwise, the individual properties are displayed adjacent to one another.  */
-
 // NS_ASSUME_NONNULL_BEGIN
 
 // typedef NS_ENUM(NSInteger, NSToolbarItemGroupSelectionMode) {
@@ -74,4 +72,3 @@
 // @end
 
 // NS_ASSUME_NONNULL_END
-

@@ -4,7 +4,6 @@
 // 	Copyright (c) 1999-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -12,7 +11,7 @@
 // This file defines the protocols used by AppKit's standard user interface validation mechanism.  The NSValidatedUserInterfaceItem protocol must be implemented by validated objects. The validated object should send a -validateUserInterfaceItem: message to its validator.  A validator can be determined by calling the -[NSApplication targetForAction:to:from:] method from the -update method in the validated object.
 
 // You can extend this functionality by introducing a new set of protocols that are targeted to your specific validated objects.  NSMenuItem protocol is one example extending this validation machinary to allow validators to modify menu items being validated. These are the steps to extend UI validation:
- 
+
 //  1) Declare a subprotocol of NSValidatedUserInterfaceItem
 //     You can add as many features as you want for your validated objects in this protocol
 //     i.e.
@@ -53,17 +52,16 @@
 //     Now you can implement default validation methods for standard objects like NSTextView or NSDocument.
 //     i.e.
 //         @implementation NSTextView (NSToolbarItemValidation)
-    
+
 //         - (BOOL)validateToolbarItem:(id <NSValidatedToobarItem>)item {
 //             BOOL returnValue = [self validateUserInterfaceItem:item];
 
 //             // Your own validation
-        
+
 //             return returnValue;
 //         }
 //         @end
 // */
-
 // /* Protocol implemented by validated objects */
 // NS_ASSUME_NONNULL_BEGIN
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST

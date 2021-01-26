@@ -4,7 +4,6 @@
 //         Copyright (c) 1997-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSButton.h>
 // #import <AppKit/NSMenuItemCell.h>
@@ -25,7 +24,7 @@
 
 // // Behavior settings
 // @property BOOL pullsDown;
-    
+
 // @property BOOL autoenablesItems;
 
 // @property NSRectEdge preferredEdge;
@@ -40,7 +39,6 @@
 // - (void)removeItemAtIndex:(NSInteger)index;
 // - (void)removeAllItems;
 
-
 // // Accessing the items
 // @property (readonly, copy) NSArray<NSMenuItem *> *itemArray;
 // @property (readonly) NSInteger numberOfItems;
@@ -54,7 +52,6 @@
 // - (nullable NSMenuItem *)itemAtIndex:(NSInteger)index;
 // - (nullable NSMenuItem *)itemWithTitle:(NSString *)title;
 // @property (nullable, readonly, strong) NSMenuItem *lastItem;
-
 
 // // Dealing with selection
 // - (void)selectItem:(nullable NSMenuItem *)item;

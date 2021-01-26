@@ -4,7 +4,6 @@
 //     Copyright (c) 2006-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSTextFieldCell.h>
 // #import <AppKit/AppKitDefines.h>
@@ -16,7 +15,6 @@
 
 // /* Use the 'stringValue' or 'attributedStringValue' to set the display title for this component cell. Use 'image' and 'setImage:' to control the icon displayed for this component cell.
 // */
-
 // API_AVAILABLE(macos(10.5))
 // @interface NSPathComponentCell : NSTextFieldCell
 
@@ -30,4 +28,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

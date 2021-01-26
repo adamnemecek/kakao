@@ -4,7 +4,6 @@
 // 	Copyright (c) 2015-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSGeometry.h>
@@ -38,7 +37,6 @@
 // @required
 // /* Return the base filename (not a full path) for this promise item. Do not start writing the file yet. */
 // - (NSString *)filePromiseProvider:(NSFilePromiseProvider*)filePromiseProvider fileNameForType:(NSString *)fileType;
-
 
 // /* Write the contents of this promise item to the provided URL and call completionHandler when done. NSFilePromiseReceiver automatically wraps this message with NSFileCoordinator when the promise destination is an NSFilePromiseReceiver. Always use the supplied URL. Note: This request shall occur on the NSOperationQueue supplied by -promiseOperationQueue.
 // **/

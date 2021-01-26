@@ -4,7 +4,6 @@
 //     Copyright (c) 2005-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSViewController.h>
 // #import <AppKit/NSDragging.h>
@@ -27,14 +26,13 @@
 // */
 // typedef NS_OPTIONS(NSUInteger, NSCollectionViewScrollPosition) {
 //     NSCollectionViewScrollPositionNone                 = 0,
-    
+
 //     /* The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll positions.  Combining positions from the same grouping (horizontal or vertical) will result in an NSInvalidArgumentException.
 //     */
 //     NSCollectionViewScrollPositionTop                   = 1 << 0,
 //     NSCollectionViewScrollPositionCenteredVertically    = 1 << 1,
 //     NSCollectionViewScrollPositionBottom                = 1 << 2,
 //     NSCollectionViewScrollPositionNearestHorizontalEdge = 1 << 9, /* Nearer of Top,Bottom */
-    
 //     /* Likewise, the horizontal positions are mutually exclusive to each other.
 //     */
 //     NSCollectionViewScrollPositionLeft                 = 1 << 3,
@@ -90,7 +88,6 @@
 
 // /* An NSCollectionViewItem associates a visual representation (view subtree) with a representedObject of arbitrary type.  It also tracks whether the representedObject is part of the enclosing NSCollectionView's current selection.  Note that NSCollectionViewItem inherits some useful properties -- in particular, "representedObject" and "view" -- from NSViewController.
 // */
-
 // API_AVAILABLE(macos(10.5))
 // @interface NSCollectionViewItem : NSViewController <NSCopying, NSCollectionViewElement>
 
@@ -120,7 +117,6 @@
 
 // @end
 
-    
 // /* An NSCollectionView presents an ordered collection of items, with flexible, customizable appearance and layout.  The user may be permitted to select items, and/or drag items into and out of the CollectionView.
 // */
 // API_AVAILABLE(macos(10.5))
@@ -150,13 +146,11 @@
 // */
 // - (void)reloadData API_AVAILABLE(macos(10.11));
 
-
 // #pragma mark *** Delegate ***
 
 // /* An optional, non-retained delegate object, that will have the opportunity to influence the CollectionView's drag-and-drop, selection, highlighting, and layout transitioning behaviors.  See the NSCollectionViewDelegate protocol, declared below, for the methods this delegate may implement.  Defaults to nil, which leaves the CollectionView to determine its own behaviors.
 // */
 // @property (nullable, weak) id<NSCollectionViewDelegate> delegate;
-
 
 // #pragma mark *** Decoration ***
 
@@ -167,7 +161,6 @@
 // /* When YES, the CollectionView's backgroundView (if any) will match the CollectionView's frame and scroll with the CollectionView's items and other content.  When NO (the default, compatible with the behavior on OS X 10.11), the backgroundView is made to fill the CollectionView's visible area, and remains stationary when the CollectionView's content is scrolled.  Archived with the CollectionView's other persistent properties.
 // */
 // @property BOOL backgroundViewScrollsWithContent API_AVAILABLE(macos(10.12));
-
 
 // #pragma mark *** Layout ***
 
@@ -236,13 +229,13 @@
 // @property (copy) NSSet<NSIndexPath *> *selectionIndexPaths API_AVAILABLE(macos(10.11));
 
 // /* Adds the specified items to the selection, and optionally scrolls their bounding box into view according to the value of "scrollPosition".  This method does not cause any selection-related delegate methods to be invoked.
- 
+
 //  To animate the scroll (if any) and the view property changes that indicate selected state, use [[collectionView animator] selectItemsAtIndexPaths:scrollPosition:].
 // **/
 // - (void)selectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths scrollPosition:(NSCollectionViewScrollPosition)scrollPosition API_AVAILABLE(macos(10.11));
 
 // /* Removes the specified items from the selection, potentially in an animated way.  This method does not cause any selection-related delegate methods to be invoked.
- 
+
 //  To animate the view property changes that indicate deselected state, use [[collectionView animator] deselectItemsAtIndexPaths:].
 // **/
 // - (void)deselectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths API_AVAILABLE(macos(10.11));
@@ -255,7 +248,6 @@
 // **/
 // - (IBAction)deselectAll:(nullable id)sender;
 
-
 // /* For each item identifier that the collection view will use, register either a nib or class from which to instantiate an item, or provide a nib file or class whose name matches the identifier you plan to use.  If a nib is registered, it must contain exactly one top-level NSCollectionViewItem.  If a class is registered instead of a nib, it will be instantiated via alloc/init.
 // **/
 // - (void)registerClass:(nullable Class)itemClass forItemWithIdentifier:(NSUserInterfaceItemIdentifier)identifier API_AVAILABLE(macos(10.11));
@@ -267,13 +259,13 @@
 // - (void)registerNib:(nullable NSNib *)nib forSupplementaryViewOfKind:(NSCollectionViewSupplementaryElementKind)kind withIdentifier:(NSUserInterfaceItemIdentifier)identifier API_AVAILABLE(macos(10.11));
 
 // /* Call this method from your data source object when asked to provide a new item for the collection view.  This method dequeues an existing item if one is available or creates a new one based on the nib file or class you previously registered.  If you have not registered a nib file or class for the given identifier, CollectionView will try to load a nib file named identifier.nib, or (failing that) find and instantiate an NSCollectionViewItem subclass named "identifier".
- 
+
 //  If a new item must be created from a class, this method initializes the item by invoking its -init method.  For nib-based items, this method loads the item from the provided nib file.  If an existing item was available for reuse, this method invokes the item's -prepareForReuse method instead.
 // **/
 // - (__kindof NSCollectionViewItem *)makeItemWithIdentifier:(NSUserInterfaceItemIdentifier)identifier forIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(macos(10.11));
 
 // /* Call this method from your data source object when asked to provide a new supplementary view for the collection view.  This method dequeues an existing view if one is available or creates a new one based on the nib file or class you previously registered.  If you have not registered a nib file or class for the given identifier, CollectionView will try to load a nib file named identifier.nib, or (failing that) find and instantiate an NSView subclass named "identifier".
- 
+
 //  If a new view must be created from a class, this method initializes the view by invoking its -initWithFrame: method. For nib-based views, this method loads the view from the provided nib file.  If an existing view was available for reuse, this method invokes the view's -prepareForReuse method instead.
 // **/
 // - (__kindof NSView *)makeSupplementaryViewOfKind:(NSCollectionViewSupplementaryElementKind)elementKind withIdentifier:(NSUserInterfaceItemIdentifier)identifier forIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(macos(10.11));
@@ -301,11 +293,10 @@
 // - (nullable NSIndexPath *)indexPathForItem:(NSCollectionViewItem *)item API_AVAILABLE(macos(10.11));
 
 // /* Returns the index path of the item at the specified point in the collection view.
- 
+
 //  This method relies on the layout information provided by the associated layout object to determine which item contains the point.  It does not take opacity of the item's displayed content at that point into account.
 // */
 // - (nullable NSIndexPath *)indexPathForItemAtPoint:(NSPoint)point API_AVAILABLE(macos(10.11));
-
 
 // #pragma mark *** Finding Supplementary Views ***
 
@@ -321,14 +312,12 @@
 // **/
 // - (NSSet<NSIndexPath *> *)indexPathsForVisibleSupplementaryElementsOfKind:(NSCollectionViewSupplementaryElementKind)elementKind API_AVAILABLE(macos(10.11));
 
-
 // #pragma mark *** Modifying Items and Sections ***
 
 // /* Use the following methods to communicate imminent model changes to a dataSource-based CollectionView.  Their function is similar to that of NSOutlineView's insert/move/remove methods.
 
 // When invoking any of these methods, you can request an animated instead of immediate layout update by messaging the CollectionView's animator.  For example: [[collectionView animator] insertItemsAtIndexPaths:indexPaths]
 // */
-
 // /* Use this method to insert one or more sections into the collection view. This method adds the sections, and it is up to your data source to report the number of items in each section when asked for the information. The collection view then uses that information to get updated layout attributes for the newly inserted sections and items. If the insertions cause a change in the collection view’s visible content, those changes are animated into place.
 
 // You can also call this method from a block passed to the performBatchUpdates:completionHandler: method when you want to animate multiple separate changes into place at the same time. See the description of that method for more information.
@@ -397,13 +386,11 @@
 // */
 // - (void)performBatchUpdates:(void (NS_NOESCAPE ^_Nullable)(void))updates completionHandler:(void (^_Nullable)(BOOL finished))completionHandler API_AVAILABLE(macos(10.11));
 
-
 // #pragma mark *** Section Collapse ***
 
 // /* Toggles collapse of the CollectionView section that the sender resides in.  Typically you'll wire this action from a section header view's "sectionCollapse" button.  (See the NSCollectionViewSectionHeaderView protocol.)
 // **/
 // - (IBAction)toggleSectionCollapse:(id)sender API_AVAILABLE(macos(10.12));
-
 
 // #pragma mark *** Scrolling ***
 
@@ -412,7 +399,6 @@
 // To request an animated scroll, use [[collectionView animator] scrollToItemsAtIndexPaths:scrollPosition:].  You can use NSAnimationContext's completionHandler provisions to notify you when the animated scroll has finished.
 // */
 // - (void)scrollToItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths scrollPosition:(NSCollectionViewScrollPosition)scrollPosition API_AVAILABLE(macos(10.11));
-
 
 // #pragma mark *** Drag and Drop ***
 
@@ -430,7 +416,6 @@
 // - (NSImage *)draggingImageForItemsAtIndexes:(NSIndexSet *)indexes withEvent:(NSEvent *)event offset:(NSPointPointer)dragImageOffset API_AVAILABLE(macos(10.6));
 
 // @end
-
 
 // @protocol NSCollectionViewDataSource <NSObject>
 // @required
@@ -469,7 +454,6 @@
 
 // @end
 
-
 // @protocol NSCollectionViewPrefetching <NSObject>
 
 // @required
@@ -486,15 +470,12 @@
 
 // @end
 
-
 // @protocol NSCollectionViewDelegate <NSObject>
 // @optional
 
 // /* Drag and drop support */
-
 // /* To enable dealing with (section,item) NSIndexPaths now that NSCollectionView supports sections, many of the drag-and-drop delegate methods have been replaced with new versions that take NSIndexPath and array-of-NSIndexPath parameters.  In each such case, NSCollectionView will look for and invoke the newer method first.  If the delegate doesn't respond to the newer version, NSCollectionView will look for the old method, provided that the NSCollectionView has only a single section.  The old methods will not be invoked for a multi-section NSCollectionView.
 // */
-
 // /* The return value indicates whether the collection view can attempt to initiate a drag for the given event and items. If the delegate does not implement this method, the collection view will act as if it returned YES.
 // */
 // - (BOOL)collectionView:(NSCollectionView *)collectionView canDragItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths withEvent:(NSEvent *)event API_AVAILABLE(macos(10.11));
@@ -545,9 +526,7 @@
 // /* Old Form (Single Section Only) */
 // - (BOOL)collectionView:(NSCollectionView *)collectionView acceptDrop:(id <NSDraggingInfo>)draggingInfo index:(NSInteger)index dropOperation:(NSCollectionViewDropOperation)dropOperation API_AVAILABLE(macos(10.6));
 
-
 // /* Multi-image drag and drop */
-
 // /* Dragging Source Support - Required for multi-image drag and drop. Return a custom object that implements NSPasteboardWriting (or simply use NSPasteboardItem), or nil to prevent dragging for the item. For each valid item returned, NSCollectionView will create an NSDraggingItem with the draggingFrame equal to the frame of the item view at the given index path and components from -[NSCollectionViewItem draggingItem]. If this method is implemented, then -collectionView:writeItemsAtIndexPaths:toPasteboard: and -collectionView:draggingImageForItemsAtIndexPaths:withEvent:offset: will not be called.
 // */
 // - (nullable id <NSPasteboardWriting>)collectionView:(NSCollectionView *)collectionView pasteboardWriterForItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(macos(10.11));
@@ -569,7 +548,6 @@
 // /* Dragging Destination Support - Required for multi-image drag and drop. Implement this method to update dragging items as they are dragged over the view. Typically this will involve calling [draggingInfo enumerateDraggingItemsWithOptions:forView:classes:searchOptions:usingBlock:] and setting the draggingItem's imageComponentsProvider to a proper image based on the NSDraggingItem's -item value.
 // */
 // - (void)collectionView:(NSCollectionView *)collectionView updateDraggingItemsForDrag:(id <NSDraggingInfo>)draggingInfo;
-
 
 // #pragma mark *** Selection and Highlighting ***
 
@@ -595,7 +573,6 @@
 // */
 // - (void)collectionView:(NSCollectionView *)collectionView didDeselectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths API_AVAILABLE(macos(10.11));
 
-
 // #pragma mark *** Display Notification ***
 
 // /* Sent to notify the delegate that the CollectionView is about to add an NSCollectionViewItem.  The indexPath identifies the object that the item represents.
@@ -612,7 +589,6 @@
 
 // /* Sent to notify the delegate that the CollectionView is no longer displaying the given supplementary view. This happens when the model changes, or when a supplementary view is scrolled out of view. You should perform any actions necessary to help decommission the view (such as releasing expensive resources). The CollectionView may retain the view and later reuse it. */
 // - (void)collectionView:(NSCollectionView *)collectionView didEndDisplayingSupplementaryView:(NSView *)view forElementOfKind:(NSCollectionViewSupplementaryElementKind)elementKind atIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(macos(10.11));
-
 
 // #pragma mark *** Layout Transition Support ***
 

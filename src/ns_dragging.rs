@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObjCRuntime.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -31,7 +30,7 @@
 //     NSDragOperationMove		= 16,
 //     NSDragOperationDelete	= 32,
 //     NSDragOperationEvery	= NSUIntegerMax,
-    
+
 //     NSDragOperationAll_Obsolete	API_DEPRECATED("", macos(10.0,10.10)) = 15, // Use NSDragOperationEvery
 //     NSDragOperationAll API_DEPRECATED("", macos(10.0,10.10)) = NSDragOperationAll_Obsolete, // Use NSDragOperationEvery
 // };
@@ -96,7 +95,6 @@
 // /* Use the following enumerate method to modify the properties of each dragging item. For example, change the drag image and size.
 //    Note: All changes made here are only in effect while the drag is over the destination. When the drag exits the destination all properties return to the values last set by the dragging session.
 // */
-
 // /* Enumerate through each dragging item. Any changes made to the properties of the draggingItem are reflected in the drag and are automatically removed when the drag exits. Classes in the provided array must implement the NSPasteboardReading protocol. Cocoa classes that implement this protocol include NSImage, NSString, NSURL, NSColor, NSAttributedString, and NSPasteboardItem. For every item on the pasteboard, each class in the provided array will be queried for the types it can read using -readableTypesForPasteboard:. An instance will be created of the first class found in the provided array whose readable types match a conforming type contained in that pasteboard item. If an Instance is created from the pasteboard item data, it is placed into an NSDraggingItem along with the dragging properties of that item such as the dragging image. The NSDraggingItem is then passed as a parameter to the provided block. Additional search options, such as restricting the search to file URLs with particular content types, can be specified with a search options dictionary.  See the comments for the Pasteboard Reading Options keys in NSPasteboard.h for a full description. Note: all coordinate properties in the NSDraggingItem are in the coordinate system of view. If view is nil, the screen coordinate space is used.
 // */
 // - (void)enumerateDraggingItemsWithOptions:(NSDraggingItemEnumerationOptions)enumOpts forView:(nullable  NSView *)view classes:(NSArray<Class> *)classArray searchOptions:(NSDictionary<NSPasteboardReadingOptionKey, id> *)searchOptions usingBlock:(void (^)(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop))block API_AVAILABLE(macos(10.7));
@@ -107,7 +105,6 @@
 // - (void)resetSpringLoading API_AVAILABLE(macos(10.11));
 
 // @end
-
 
 // /* Methods implemented by an object that receives dragged images.  The
 //    destination view or window is sent these messages during dragging if it
@@ -131,12 +128,10 @@
 // - (void)updateDraggingItemsForDrag:(nullable id <NSDraggingInfo>)sender API_AVAILABLE(macos(10.7));
 // @end
 
-
 // @protocol NSDraggingSource <NSObject>
 // /* Methods implemented by an object that initiates a drag session. The source application is sent these messages during dragging.  The first must be implemented, the others are sent if the source responds to them.
 // */
-
-// @required 
+// @required
 // /* Declares what types of operations the source allows to be performed. Apple may provide more specific "within" values in the future. To account for this, for unrecongized localities, return the operation mask for the most specific context that you are concerned with. For example:
 //     switch(context) {
 //         case NSDraggingContextOutsideApplication:
@@ -160,14 +155,13 @@
 
 // @end
 
-
 // typedef NS_OPTIONS(NSUInteger, NSSpringLoadingOptions) {
 //     NSSpringLoadingDisabled	= 0,		// Spring loading disabled
 //     NSSpringLoadingEnabled	= 1UL << 0,	// Spring loading allowed (via Force Click release and hover timeout depending on user preferences)
-    
+
 //     /* Activate spring loading when user enters Force Click as opposed to release from Force Click. Spring loading is de-activated when Force Click is released. If hover is enabled, spring loading is activated on hover timeout and deactivates when the drag exits the target. This option should be used sparingly. */
 //     NSSpringLoadingContinuousActivation    = 1UL << 1,
-    
+
 //     /* Disable spring loading activation via hover. This option should be used sparingly, but there are some rare cases where spring loading via hover results in too many false positives, but is otherwise very useful with a Force Click. These are generally cases when the destination view is very large, such as a canvas. */
 //     NSSpringLoadingNoHover 	= 1UL << 3
 // } API_AVAILABLE(macos(10.11));
@@ -182,7 +176,6 @@
 // - (void)springLoadingHighlightChanged:(id <NSDraggingInfo>)draggingInfo API_AVAILABLE(macos(10.11));
 
 // /* Note: You must also implement either -springLoadingEntered: or -springLoadingUpdated: */
-
 // @optional
 // /* Called when a drag enters the spring loading destination. Return NSSpringLoadingEnabled to enable spring loading. A view is not considered valid spring loading drag destination if neither this method nor springLoadingUpdated: is implemented */
 // - (NSSpringLoadingOptions)springLoadingEntered:(id <NSDraggingInfo>)draggingInfo API_AVAILABLE(macos(10.11));
@@ -196,7 +189,6 @@
 // /* The drag & drop operation has ended. Un-spring if needed. Note: If this obejct is both an NSSpringLoadingDestination and NSDraggingDestination, draggingEnded: will only be called once. */
 // - (void)draggingEnded:(id <NSDraggingInfo>)draggingInfo API_AVAILABLE(macos(10.11));
 // @end
-
 
 // @interface NSObject(NSDraggingSourceDeprecated)
 // - (nullable NSArray<NSString *> *)namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination API_DEPRECATED("Use NSFilePromiseProvider objects instead", macos(10.0,10.13));

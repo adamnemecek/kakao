@@ -4,7 +4,6 @@
 //         Copyright (c) 2000-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSCell.h>
@@ -48,21 +47,18 @@
 // @interface NSTabView : NSView
 
 // 	/* Select */
-
 // - (void)selectTabViewItem:(nullable NSTabViewItem *)tabViewItem;
 // - (void)selectTabViewItemAtIndex:(NSInteger)index;				// May raise an NSRangeException
 // - (void)selectTabViewItemWithIdentifier:(id)identifier;                         // May raise an NSRangeException if identifier not found
 // - (void)takeSelectedTabViewItemFromSender:(nullable id)sender;			// May raise an NSRangeException
 
 // 	/* Navigation */
-
 // - (void)selectFirstTabViewItem:(nullable id)sender;
 // - (void)selectLastTabViewItem:(nullable id)sender;
 // - (void)selectNextTabViewItem:(nullable id)sender;
 // - (void)selectPreviousTabViewItem:(nullable id)sender;
 
 // 	/* Getters */
-
 // @property (nullable, readonly, strong) NSTabViewItem *selectedTabViewItem;	// return nil if none are selected
 // @property (strong) NSFont *font;						// returns font used for all tab labels.
 // @property NSTabViewType tabViewType;                                            // Use tabPosition and tabViewBorderType instead. Setting this will also set the tabPosition and tabViewBorderType. Setting tabPosition or tabViewBorderType will affect tabViewType
@@ -75,28 +71,23 @@
 // @property NSControlSize controlSize;
 
 // 	/* Add/Remove tabs */
-
 // - (void)addTabViewItem:(NSTabViewItem *)tabViewItem;				// Add tab at the end.
 // - (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(NSInteger)index;// May raise an NSRangeException
 // - (void)removeTabViewItem:(NSTabViewItem *)tabViewItem;				// tabViewItem must be an existing tabViewItem
 
 // 	/* Delegate */
-
 // @property (nullable, weak) id<NSTabViewDelegate> delegate;
 
 // 	/* Hit testing */
-
 // - (nullable NSTabViewItem *)tabViewItemAtPoint:(NSPoint)point;			// point in local coordinates. returns nil if none.
 
 // 	/* Geometry */
-
 // @property (readonly) NSRect contentRect;					// Return the rect available for a "page".
 
 // 	/* Query */
-
 // @property (readonly) NSInteger numberOfTabViewItems;
 // - (NSInteger)indexOfTabViewItem:(NSTabViewItem *)tabViewItem;			// NSNotFound if not found
-// - (NSTabViewItem *)tabViewItemAtIndex:(NSInteger)index;                         // May raise an NSRangeException	
+// - (NSTabViewItem *)tabViewItemAtIndex:(NSInteger)index;                         // May raise an NSRangeException
 // - (NSInteger)indexOfTabViewItemWithIdentifier:(id)identifier;			// NSNotFound if not found
 
 // @property NSControlTint controlTint API_DEPRECATED("The controlTint property is not respected on 10.14 and later.", macos(10.0, 10.14));

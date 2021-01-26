@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSString.h>
 // #import <AppKit/NSFont.h>
 
@@ -39,11 +38,8 @@
 // @property (readonly) NSCharacterCollection characterCollection;
 // @end
 
-
-
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END
 // #else
 // #import <UIFoundation/NSGlyphInfo.h>
 // #endif
-

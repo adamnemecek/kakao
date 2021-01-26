@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSActionCell.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -32,9 +31,9 @@
 // #endif
 
 // /* Determine the preferred width of the text field portion of the receiver. The preferred width is reflected in the cell's cellSize, which will be large enough to accommodate the title, bezel, and a text field of width preferredTextWidth. It is also reflected in the intrinsicContentSize of the NSForm. That is, under autolayout, the NSForm will try to size itself so that the text field cell is the given width, according to the usual content size constraint priorities.
- 
+
 //  If the width is negative, the cellSize matches the historic behavior, which is that it is large enough to accommodate the title, bezel, and the current text. The default is -1.
- 
+
 //  This method can aid migration to autolayout, and is sufficient for simple cases. However, for new apps, prefer to use NSTextFields directly instead of NSForm.
 // **/
 // @property CGFloat preferredTextFieldWidth API_AVAILABLE(macos(10.8));
@@ -50,8 +49,6 @@
 // @interface NSFormCell(NSFormCellAttributedStringMethods)
 // @property (copy) NSAttributedString *attributedTitle;
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

@@ -4,8 +4,6 @@
 // 	Copyright (c) 2004-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -15,7 +13,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSData;
-
 
 // typedef NS_ENUM(NSInteger, NSColorSpaceModel) {
 //     NSColorSpaceModelUnknown = -1,
@@ -71,7 +68,6 @@
 
 // @end
 
-
 // static const NSColorSpaceModel NSUnknownColorSpaceModel API_DEPRECATED_WITH_REPLACEMENT("NSColorSpaceModelUnknown", macos(10.0,10.14)) = NSColorSpaceModelUnknown;
 // static const NSColorSpaceModel NSGrayColorSpaceModel API_DEPRECATED_WITH_REPLACEMENT("NSColorSpaceModelGray", macos(10.0,10.14)) = NSColorSpaceModelGray;
 // static const NSColorSpaceModel NSRGBColorSpaceModel API_DEPRECATED_WITH_REPLACEMENT("NSColorSpaceModelRGB", macos(10.0,10.14)) = NSColorSpaceModelRGB;
@@ -83,6 +79,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-
-

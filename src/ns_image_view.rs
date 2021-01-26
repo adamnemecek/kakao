@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSImageCell.h>
 // #import <AppKit/NSMenu.h>
@@ -50,5 +49,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-

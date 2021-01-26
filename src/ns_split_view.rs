@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSLayoutConstraint.h>
 // #import <AppKit/AppKitDefines.h>
@@ -23,13 +22,11 @@
 //     NSSplitViewDividerStylePaneSplitter API_AVAILABLE(macos(10.6)) = 3,
 // } API_AVAILABLE(macos(10.5));
 
-
 // @interface NSSplitView : NSView
 
 // /* Set or get whether the long axes of a split view's dividers are oriented up-and-down (YES) or left-and-right (NO).
 // */
 // @property (getter=isVertical) BOOL vertical;
-
 
 // /* What kind of divider to use. NSSplitViewThickDividerStyle is the default.
 // */
@@ -39,8 +36,7 @@
 // */
 // @property (nullable, copy) NSSplitViewAutosaveName autosaveName API_AVAILABLE(macos(10.5));
 
-
-// /* Set or get the delegate of the split view. The delegate will be sent NSSplitViewDelegate messages to which it responds. 
+// /* Set or get the delegate of the split view. The delegate will be sent NSSplitViewDelegate messages to which it responds.
 //    For apps linked against 10.12, this property has zeroing weak memory semantics. When linked against an older SDK, or with objects that do not support zeroing weak references this falls back to having `assign` semantics.
 // */
 // @property (nullable, weak) id<NSSplitViewDelegate> delegate;
@@ -49,11 +45,9 @@
 // */
 // - (void)drawDividerInRect:(NSRect)rect;
 
-
 // /* Return the color of the dividers that the split view is drawing between subviews. The default implementation of this method returns [NSColor clearColor] for the thick divider style. It will also return [NSColor clearColor] for the thin divider style when the split view is in a textured window. All other thin dividers are drawn with a color that looks good between two white panes. You can override this method to change the color of dividers.
 // */
 // @property (readonly, copy) NSColor *dividerColor API_AVAILABLE(macos(10.5));
-
 
 // /* Return the thickness of the dividers that the split view is drawing between subviews. The default implementation returns a value that depends on the divider style. You can override this method to change the size of dividers.
 // */
@@ -67,10 +61,8 @@
 // */
 // - (BOOL)isSubviewCollapsed:(NSView *)subview;
 
-
 // /* Divider indices are zero-based, with the topmost (in horizontal split views) or leftmost (vertical) divider having an index of 0.
 // */
-
 // /* Get the minimum or maximum possible position of a divider. The position is "possible" in that it is dictated by the bounds of this view and the current position of other dividers. ("Allowable" positions are those that result from letting the delegate apply constraints to the possible positions.) You can invoke these methods to determine the range of values that can be usefully passed to -setPosition:ofDividerAtIndex:. You can also invoke them from delegate methods like -splitView:constrainSplitPosition:ofSubviewAt: to implement relatively complex behaviors that depend on the current state of the split view. The results of invoking these methods when -adjustSubviews has not been invoked recently enough for the subview frames to be valid are undefined.
 // */
 // - (CGFloat)minPossiblePositionOfDividerAtIndex:(NSInteger)dividerIndex API_AVAILABLE(macos(10.5));
@@ -80,8 +72,8 @@
 // */
 // - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex API_AVAILABLE(macos(10.5));
 
-// /* Sets the priority under which split view subviews hold their widths (for a vertical split view) or height (for a horizontal split view). The view with the lowest priority will be the first to take on additional width if the split view grows or shrinks. The default is NSLayoutPriorityDefaultLow. 
- 
+// /* Sets the priority under which split view subviews hold their widths (for a vertical split view) or height (for a horizontal split view). The view with the lowest priority will be the first to take on additional width if the split view grows or shrinks. The default is NSLayoutPriorityDefaultLow.
+
 //    There is no reason to use the default, but you should use priorities less than NSLayoutPriorityDragThatCannotResizeWindow (490)
 // **/
 // #if !TARGET_OS_IPHONE
@@ -130,16 +122,13 @@
 
 // /* Divider indices are zero-based, with the topmost (in horizontal split views) or leftmost (vertical) divider having an index of 0.
 // */
-
 // /* Return YES if a subview can be collapsed, NO otherwise. If a split view has no delegate, or if its delegate does not respond to this message, none of the split view's subviews can be collapsed. If a split view has a delegate, and the delegate responds to this message, it will be sent at least twice when the user clicks or double-clicks on one of the split view's dividers, once per subview on either side of the divider, and may be resent as the user continues to drag the divider. If a subview is collapsible, the current implementation of NSSplitView will collapse it when the user has dragged the divider more than halfway between the position that would make the subview its minimum size and the position that would make it zero size. The subview will become uncollapsed if the user drags the divider back past that point. The comments for -splitView:constrainMinCoordinate:ofSubviewAt: and -splitView:constrainMaxCoordinate:ofSubviewAt: describe how subviews' minimum sizes are determined. Collapsed subviews are hidden but retained by the split view. Collapsing of a subview will not change its bounds, but may set its frame to zero pixels high (in horizontal split views) or zero pixels wide (vertical).
 // */
 // - (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview;
 
-
 // /* Return YES if the subview should be collapsed because the user has double-clicked on an adjacent divider. If a split view has a delegate, and the delegate responds to this message, it will be sent once for the subview before a divider when the user double-clicks on that divider, and again for the subview after the divider, but only if the delegate returned YES when sent -splitView:canCollapseSubview: for the subview in question. When the delegate indicates that both subviews should be collapsed NSSplitView's behavior is undefined.
 // */
 // - (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex API_DEPRECATED("NSSplitView no longer supports collapsing sections via double-click. This delegate method is never called.", macos(10.5, 10.15));
-
 
 // /* Given a proposed minimum allowable position for one of the dividers of a split view, return the minimum allowable position for the divider. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that responds to this message by merely returning the proposed minimum. If a split view has a delegate, and the delegate responds to this message, it will be sent at least once when the user begins dragging one of the split view's dividers, and may be resent as the user continues to drag the divider.
 
@@ -163,12 +152,9 @@
 // */
 // - (void)splitView:(NSSplitView *)splitView resizeSubviewsWithOldSize:(NSSize)oldSize;
 
-
 // /* Given that a split view has been resized and is adjusting its subviews to accomodate the new size, return YES if -adjustSubviews can change the size of the indexed subview, NO otherwise. -adjustSubviews may change the origin of the indexed subview regardless of what this method returns. -adjustSubviews may also resize otherwise nonresizable subviews to prevent an invalid subview layout. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that returns YES when sent this message.
 // **/
 // - (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)view API_AVAILABLE(macos(10.6));
-
-
 
 // /* Given that a split view has been resized and is adjusting its subviews to accomodate the new size, or that the user is dragging a divider, return YES to allow the divider to be dragged or adjusted off the edge of the split view where it will not be visible. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that returns NO when sent this message.
 // */
@@ -181,7 +167,6 @@
 // /* Given a divider index, return an additional rectangular area (in the coordinate system established by the split view's bounds) in which mouse clicks should also initiate divider dragging, or NSZeroRect to not add one. If a split view has no delegate, or if its delegate does not respond to this message, only mouse clicks within the effective frame of a divider initiate divider dragging.
 // */
 // - (NSRect)splitView:(NSSplitView *)splitView additionalEffectiveRectOfDividerAtIndex:(NSInteger)dividerIndex API_AVAILABLE(macos(10.5));
-
 
 // /* Respond as if the delegate had registered for the NSSplitViewDidResizeSubviewsNotification or NSSplitViewWillResizeSubviewsNotification notification, described below. A split view's behavior is not explicitly affected by a delegate's ability or inability to respond to these messages, though the delegate may send messages to the split view in response to these messages.
 // */
@@ -197,7 +182,6 @@
 // /* A notification that is posted to the default notification center by NSSplitView when a split view has just resized its subviews either as a result of its own resizing or during the dragging of one of its dividers by the user. Starting in Mac OS 10.5, if the notification is being sent because the user is dragging a divider, the notification's user info dictionary contains an entry whose key is @"NSSplitViewDividerIndex" and whose value is an NSInteger-wrapping NSNumber that is the index of the divider being dragged.
 // */
 // APPKIT_EXTERN NSNotificationName NSSplitViewDidResizeSubviewsNotification;
-
 
 // @interface NSSplitView (NSDeprecated)
 

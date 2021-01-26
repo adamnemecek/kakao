@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -17,7 +16,6 @@
 
 // @class NSTextField, NSPanel, NSWindow, NSImage, NSButton, NSError;
 // @protocol NSAlertDelegate;
-
 
 // /* The default alert style is NSAlertStyleWarning.  NSAlertStyleCritical should be reserved for critical alerts and will cause the icon to be badged with a caution icon.
 // */
@@ -63,15 +61,13 @@
 
 // /* In order to customize a return value for a button:
 //    setTag:(NSInteger)tag;	setting a tag on a button will cause that tag to be the button's return value
-   
+
 //    Note that we reserve the use of the tag for this purpose.  We also reserve the use of the target and the action.
-   
+
 //    By default, the first button has a key equivalent of return which implies a pulsing default button, the button named "Cancel", if any, has a key equivalent of escape, and the button named "Don't Save", if any, has a key equivalent of cmd-d.  The following methods can be used to customize key equivalents:
 //    setKeyEquivalent:(NSString *)charCode:
 //    setKeyEquivalentModifierMask:(NSUInt)mask;
 // */
-
-
 // /* -setShowsHelp:YES adds a help button to the alert panel. When the help button is pressed, the delegate is first consulted.  If the delegate does not implement alertShowHelp: or returns NO, then -[NSHelpManager openHelpAnchor:inBook:] is called with a nil book and the anchor specified by -setHelpAnchor:, if any.  An exception will be raised if the delegate returns NO and there is no help anchor set.
 // */
 // @property BOOL showsHelp;
@@ -93,7 +89,6 @@
 // */
 // @property (nullable, readonly, strong) NSButton *suppressionButton API_AVAILABLE(macos(10.5));
 
-
 // /* -setAccessoryView: sets the accessory view displayed in the alert panel.  By default, the accessory view is positioned below the informative text and the suppression button (if any) and above the alert buttons, left-aligned with the informative text.  If you want to customize the location of the accessory view, you must first call -layout.  See the discussion of -layout for more information.
 // */
 // @property (nullable, strong) NSView *accessoryView API_AVAILABLE(macos(10.5));
@@ -101,7 +96,6 @@
 // /* -layout can be used to indicate that the alert panel should do immediate layout, overriding the default behavior of laying out lazily just before showing panel.  You should only call this method if you want to do your own custom layout after it returns.  You should call this method only after you have finished with NSAlert customization, including setting message and informative text, and adding buttons and an accessory view if needed.  You can make layout changes after this method returns, in particular to adjust the frame of an accessory view.  Note that the standard layout of the alert may change in the future, so layout customization should be done with caution.
 // */
 // - (void)layout API_AVAILABLE(macos(10.5));
-
 
 // /* Run the alert as an application-modal panel and return the result.
 // */
@@ -125,7 +119,6 @@
 // - (BOOL)alertShowHelp:(NSAlert *)alert;
 // @end
 
-
 // @interface NSAlert (NSAlertDeprecated)
 
 // /* This was intended for use by apps migrating from the C-based API.  This uses alternate return codes that were compatible with this C-based API, but not with modern alerts, see NSAlertDefaultReturn, etc. in NSPanel.h
@@ -143,4 +136,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

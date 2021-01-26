@@ -4,7 +4,6 @@
 //     Copyright (c) 2003-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/NSActionCell.h>
 // #import <AppKit/NSSegmentedControl.h>
@@ -44,10 +43,8 @@
 // - (void)setImage:(nullable NSImage *)image forSegment:(NSInteger)segment;
 // - (nullable NSImage *)imageForSegment:(NSInteger)segment;
 
-
 // - (void)setImageScaling:(NSImageScaling)scaling forSegment:(NSInteger)segment API_AVAILABLE(macos(10.5));
 // - (NSImageScaling)imageScalingForSegment:(NSInteger)segment API_AVAILABLE(macos(10.5));
-
 
 // - (void)setLabel:(NSString *)label forSegment:(NSInteger)segment;
 // - (nullable NSString *)labelForSegment:(NSInteger)segment;
@@ -84,4 +81,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

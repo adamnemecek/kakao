@@ -4,7 +4,6 @@
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSNotification.h>
 // #import <AppKit/NSAttributedString.h>
@@ -21,22 +20,19 @@
 //     NSTextStorageEditedCharacters API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0)) = (1 << 1)
 // } API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
 
-
 // /* Note for subclassing NSTextStorage: NSTextStorage is a semi-abstract subclass of NSMutableAttributedString. It implements change management (beginEditing/endEditing), verification of attributes, delegate handling, and layout management notification. The one aspect it does not implement is the actual attributed string storage --- this is left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two NSAttributedString primitives:
- 
+
 //  - (NSString *)string;
 //  - (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range;
 
 //  - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
 //  - (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range;
- 
+
 //  These primitives should perform the change then call edited:range:changeInLength: to get everything else to happen.
 // */
-
 // API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0)) @interface NSTextStorage : NSMutableAttributedString <NSSecureCoding>
 
 // */************************** Layout manager ****************************/
-
 // // NSLayoutManager objects owned by the receiver.
 // @property (readonly, copy) NSArray<NSLayoutManager *> *layoutManagers;
 
@@ -45,7 +41,6 @@
 
 // // Removes aLayoutManager from the receiver if already owned by it.  Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with nil.
 // - (void)removeLayoutManager:(NSLayoutManager *)aLayoutManager;
-
 
 // */************************** Pending edit info ****************************/
 // // These methods return information about the editing status. Especially useful when there are outstanding beginEditing calls or during processEditing...
@@ -59,23 +54,17 @@
 // // The length delta for the pending changes.
 // @property (readonly) NSInteger changeInLength;
 
-
 // */************************** Delegate ****************************/
-
 // @property (nullable, weak) id <NSTextStorageDelegate> delegate;
 
-
 // */************************** Edit management ****************************/
-
 // // Notifies and records a recent change.  If there are no outstanding -beginEditing calls, this method calls -processEditing to trigger post-editing processes.  This method has to be called by the primitives after changes are made if subclassed and overridden.  editedRange is the range in the original string (before the edit).
 // - (void)edited:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
 
 // // Sends out -textStorage:willProcessEditing, fixes the attributes, sends out -textStorage:didProcessEditing, and notifies the layout managers of change with the -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method.  Invoked from -edited:range:changeInLength: or -endEditing.
 // - (void)processEditing;
 
-
 // */************************** Attribute fixing ****************************/
-
 // // Indicates if the receiver fixes invalidated attributes lazily.  The concrete UIKit subclass fixes attributes lazily by default.  The abstract class (hence, all custom subclasses) is not lazy.
 // @property (readonly) BOOL fixesAttributesLazily;
 
@@ -86,9 +75,7 @@
 // - (void)ensureAttributesAreFixedInRange:(NSRange)range;
 // @end
 
-
 // */**  NSTextStorage delegate methods ****/
-
 // @protocol NSTextStorageDelegate <NSObject>
 // @optional
 
@@ -101,7 +88,6 @@
 // @end
 
 // */** Notifications ****/
-
 // APPKIT_EXTERN NSNotificationName  NSTextStorageWillProcessEditingNotification API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0));
 // APPKIT_EXTERN NSNotificationName  NSTextStorageDidProcessEditingNotification API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0));
 
@@ -113,8 +99,6 @@
 // - (void)textStorageWillProcessEditing:(NSNotification *)notification API_DEPRECATED("Use -textStorage:willProcessEditing:range:changeInLength: instead.", macos(10.0,10.11));
 // - (void)textStorageDidProcessEditing:(NSNotification *)notification API_DEPRECATED("Use -textStorage:didProcessEditing:range:changeInLength: instead.", macos(10.0,10.11));
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

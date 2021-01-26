@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSString.h> // for NSStringEncoding
 // #import <AppKit/AppKitDefines.h>
@@ -136,7 +135,6 @@
 // /* This notification is posted when the available font set is modified as a result of activation/deactivation.
 // */
 // APPKIT_EXTERN NSNotificationName NSFontSetChangedNotification;
-
 
 // */******* Deprecated API *********/
 // // NSGlyph and related API are soft deprecated. They will be formally deprecated in a future version. Use CGGlyph-based TextKit API instead

@@ -4,7 +4,6 @@
 //     Copyright (c) 2009-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -18,12 +17,12 @@
 
 // @class NSTextField, NSImageView, NSDraggingImageComponent;
 
-// /* View Based NSTableView: The NSTableCellView is a reusable container view shown for a particular cell in the table. See NSTableView.h for more information. 
+// /* View Based NSTableView: The NSTableCellView is a reusable container view shown for a particular cell in the table. See NSTableView.h for more information.
 // **/
 // API_AVAILABLE(macos(10.7))
 // @interface NSTableCellView : NSView
 
-// /* The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'. 
+// /* The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'.
 // **/
 // @property (nullable, strong) id objectValue;
 
@@ -36,7 +35,7 @@
 // **/
 // @property NSBackgroundStyle backgroundStyle;
 
-// /* The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information. 
+// /* The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information.
 // **/
 // @property NSTableViewRowSizeStyle rowSizeStyle;
 

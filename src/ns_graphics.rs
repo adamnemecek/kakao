@@ -4,8 +4,7 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
-// #import <Foundation/NSGeometry.h> 
+// #import <Foundation/NSGeometry.h>
 // #import <AppKit/AppKitDefines.h>
 
 // NS_ASSUME_NONNULL_BEGIN
@@ -31,7 +30,7 @@
 //     NSCompositingOperationPlusDarker,
 //     NSCompositingOperationHighlight API_DEPRECATED("Use NSCompositingOperationSourceOver instead", macos(10.0,10.0)),
 //     NSCompositingOperationPlusLighter,
-    
+
 //     /* Separable blend-modes */
 //     /* https://www.w3.org/TR/compositing-1/#blendingseparable */
 //     NSCompositingOperationMultiply	API_AVAILABLE(macos(10.10)),
@@ -45,7 +44,7 @@
 //     NSCompositingOperationHardLight	API_AVAILABLE(macos(10.10)),
 //     NSCompositingOperationDifference	API_AVAILABLE(macos(10.10)),
 //     NSCompositingOperationExclusion	API_AVAILABLE(macos(10.10)),
-    
+
 //     /* Non-separable blend-modes */
 //     /* https://www.w3.org/TR/compositing-1/#blendingnonseparable */
 //     NSCompositingOperationHue		API_AVAILABLE(macos(10.10)),
@@ -53,7 +52,6 @@
 //     NSCompositingOperationColor		API_AVAILABLE(macos(10.10)),
 //     NSCompositingOperationLuminosity	API_AVAILABLE(macos(10.10)),
 // };
-
 
 // static const NSCompositingOperation NSCompositeClear API_DEPRECATED_WITH_REPLACEMENT("NSCompositingOperationClear", macos(10.0,10.12)) = NSCompositingOperationClear;
 // static const NSCompositingOperation NSCompositeCopy API_DEPRECATED_WITH_REPLACEMENT("NSCompositingOperationCopy", macos(10.0,10.12)) = NSCompositingOperationCopy;
@@ -86,9 +84,6 @@
 // static const NSCompositingOperation NSCompositeColor API_DEPRECATED_WITH_REPLACEMENT("NSCompositingOperationColor", macos(10.0,10.12)) = NSCompositingOperationColor;
 // static const NSCompositingOperation NSCompositeLuminosity API_DEPRECATED_WITH_REPLACEMENT("NSCompositingOperationLuminosity", macos(10.0,10.12)) = NSCompositingOperationLuminosity;
 
-
-
-
 // /* Types of window backing stores.
 // **/
 // typedef NS_ENUM(NSUInteger, NSBackingStoreType) {
@@ -120,7 +115,6 @@
 //     NSFocusRingTypeExterior = 2
 // };
 
-
 // // values interchangeable with CGColorRenderingIntent values
 // typedef NS_ENUM(NSInteger, NSColorRenderingIntent) {
 //     NSColorRenderingIntentDefault, //  = kCGRenderingIntentDefault,
@@ -129,7 +123,6 @@
 //     NSColorRenderingIntentPerceptual, // = kCGRenderingIntentPerceptual,
 //     NSColorRenderingIntentSaturation // = kCGRenderingIntentSaturation
 // } API_AVAILABLE(macos(10.5));
-
 
 // typedef NSString * NSColorSpaceName NS_TYPED_ENUM;
 // /* Predefined colorspace names.
@@ -142,14 +135,12 @@
 // APPKIT_EXTERN NSColorSpaceName NSNamedColorSpace;		/* Used for "catalog" colors */
 // APPKIT_EXTERN NSColorSpaceName NSPatternColorSpace;
 // APPKIT_EXTERN NSColorSpaceName NSCustomColorSpace;		/* Used to indicate a custom gstate in images */
-
 // /* Prefer colorspaces where 1.0 means white.
 // **/
 // APPKIT_EXTERN NSColorSpaceName NSCalibratedBlackColorSpace     /* 1.0 == black */ API_DEPRECATED("", macos(10.0,10.6));
 // APPKIT_EXTERN NSColorSpaceName NSDeviceBlackColorSpace 	/* 1.0 == black */ API_DEPRECATED("", macos(10.0,10.6));
 
-
-// /* NSWindowDepth defines the values used in setting window depth limits. "0" indicates default depth. Window depths should not be made persistent as they will not be the same across systems. Use the functions NSBitsPerSampleFromDepth(), NSColorSpaceFromDepth(), NSBitsPerPixelFromDepth(), and NSPlanarFromDepth() to extract info from an NSWindowDepth 
+// /* NSWindowDepth defines the values used in setting window depth limits. "0" indicates default depth. Window depths should not be made persistent as they will not be the same across systems. Use the functions NSBitsPerSampleFromDepth(), NSColorSpaceFromDepth(), NSBitsPerPixelFromDepth(), and NSPlanarFromDepth() to extract info from an NSWindowDepth
 
 // On Mac OS X 10.5 and earlier, use NSBestDepth() to compute window depths. NSBestDepth() will try to accomodate all the parameters (match or better); if there are multiple matches, it gives the closest, with matching colorSpace first, then bps, then planar, then bpp. bpp is "bits per pixel"; 0 indicates default (same as the number of bits per plane, either bps or bps * NSNumberOfColorComponents()); other values maybe used as hints to provide backing stores of different configuration; for instance, 8 bit color. exactMatch is optional and indicates whether all the parameters matched exactly.
 
@@ -168,8 +159,6 @@
 // APPKIT_EXTERN NSInteger NSBitsPerPixelFromDepth(NSWindowDepth depth);
 // APPKIT_EXTERN NSInteger NSNumberOfColorComponents(NSColorSpaceName colorSpaceName);
 // APPKIT_EXTERN const NSWindowDepth *NSAvailableWindowDepths(void); /* returns pointer to 0-terminated array */
-
-
 // /* Standard gray values for the 2-bit deep grayscale colorspace.
 // */
 // APPKIT_EXTERN const CGFloat NSWhite;
@@ -181,7 +170,7 @@
 // **/
 // typedef NS_ENUM(NSInteger, NSDisplayGamut) {
 //     NSDisplayGamutSRGB = 1,
-//     NSDisplayGamutP3 
+//     NSDisplayGamutP3
 // } API_AVAILABLE(macos(10.12));
 
 // /* Keys for deviceDescription dictionaries.
@@ -193,8 +182,6 @@
 // APPKIT_EXTERN NSDeviceDescriptionKey NSDeviceIsScreen;		/* "YES" or not there */
 // APPKIT_EXTERN NSDeviceDescriptionKey NSDeviceIsPrinter;		/* "YES" or not there */
 // APPKIT_EXTERN NSDeviceDescriptionKey NSDeviceSize;			/* NSValue containing NSSize */
-
-
 // /* Graphics functions
 // */
 // APPKIT_EXTERN void NSRectFill(NSRect rect);
@@ -241,13 +228,12 @@
 // ** 'size' specifies how big the effect should be.  Use NSZeroSize to get the default size.
 // ** 'animationDelegate' is optionally, an object that wants to know when the effect has completed.
 // ** 'didEndSelector' will be invoked in the animationDelegate when the animation has completed.
-// **  
+// **
 // ** The didEndSelector should have the following signature:
 // ** 	- (void)animationEffectDidEnd:(void *)contextInfo;
 // */
-
 // typedef NS_ENUM(NSUInteger, NSAnimationEffect) {
-// 	// The default effect used to indicate removal of an item from a collection, 
+// 	// The default effect used to indicate removal of an item from a collection,
 // 	// such as toolbar (indicates removal, without destroying the underlying data).
 // 	NSAnimationEffectDisappearingItemDefault = 0,
 

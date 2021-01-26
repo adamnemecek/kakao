@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -68,7 +67,6 @@
 // @end
 
 // /* Deprecated Interfaces */
-
 // @interface NSBox (NSDeprecated)
 
 // @property NSBorderType borderType API_DEPRECATED("borderType is only applicable to NSBoxOldStyle, which is deprecated. To replace a borderType of NSNoBorder, use the `transparent` property.", macos(10.0, 10.15));
@@ -82,9 +80,6 @@
 
 // /* Draws a border in the style of Mac OS X 10.2 and earlier. This style is not recommended. */
 // static const NSBoxType NSBoxOldStyle API_DEPRECATED("NSBoxOldStyle is discouraged in modern application design. It should be replaced with either NSBoxPrimary or NSBoxCustom.", macos(10.0, 10.15)) = (NSBoxType)3;
-
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

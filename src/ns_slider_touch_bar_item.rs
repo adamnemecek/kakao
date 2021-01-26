@@ -4,7 +4,6 @@
 //  Copyright (c) 2016-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <AppKit/NSUserInterfaceCompression.h>
 // #import <AppKit/NSTouchBarItem.h>
 

@@ -4,7 +4,6 @@
 //     Copyright (c) 2013-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/Foundation.h>
 // #import <CoreGraphics/CoreGraphics.h>
 // #import <AppKit/NSTouch.h>
@@ -19,14 +18,14 @@
 // API_AVAILABLE(macos(10.10))
 // typedef NS_ENUM(NSInteger, NSGestureRecognizerState) {
 //     NSGestureRecognizerStatePossible,   // the recognizer has not yet recognized its gesture, but may be evaluating events. this is the default state
-    
+
 //     NSGestureRecognizerStateBegan,      // the recognizer has received events recognized as the gesture. the action method will be called at the next turn of the run loop
 //     NSGestureRecognizerStateChanged,    // the recognizer has received events recognized as a change to the gesture. the action method will be called at the next turn of the run loop
 //     NSGestureRecognizerStateEnded,      // the recognizer has received events recognized as the end of the gesture. the action method will be called at the next turn of the run loop and the recognizer will be reset to NSGestureRecognizerStatePossible
 //     NSGestureRecognizerStateCancelled,  // the recognizer has received events resulting in the cancellation of the gesture. the action method will be called at the next turn of the run loop. the recognizer will be reset to NSGestureRecognizerStatePossible
-    
+
 //     NSGestureRecognizerStateFailed,     // the recognizer has received an event sequence that can not be recognized as the gesture. the action method will not be called and the recognizer will be reset to NSGestureRecognizerStatePossible
-    
+
 //     // Discrete Gestures – gesture recognizers that recognize a discrete event but do not report changes (for example, a click) do not transition through the Began and Changed states and can not fail or be cancelled
 //     NSGestureRecognizerStateRecognized = NSGestureRecognizerStateEnded // the recognizer has received events recognized as the gesture. the action method will be called at the next turn of the run loop and the recognizer will be reset to NSGestureRecognizerStatePossible
 // };

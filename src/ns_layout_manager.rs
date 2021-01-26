@@ -5,7 +5,6 @@
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSTextStorage.h>
 // #import <AppKit/NSFont.h>
@@ -65,15 +64,12 @@
 // API_AVAILABLE(macos(10.7), ios(7.0), tvos(9.0)) @interface NSLayoutManager : NSObject <NSSecureCoding>
 
 // */************************** Initialization ****************************/
-
 // // Designated Initializer.  Sets up this instance.  The NSLayoutManager starts off without an NSTextStorage.
 // - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 // - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
-
 // */************************* Text storage ***************************/
-
 // // Accessor for the NSTextStorage object owning the receiver.
 // // Avoid assigning a text storage directly through this property.  Adding a layout manager to a text storage through -[NSTextStorage addLayoutManager:] will use the property for assigning the new text storage.
 // @property (nullable, assign) NSTextStorage *textStorage;
@@ -81,9 +77,7 @@
 // // This method should be used instead of the primitive -setTextStorage: if you need to replace a NSLayoutManager's NSTextStorage with a new one, leaving all related objects intact.  This method deals with all the work of making sure the NSLayoutManager doesn't get deallocated and transferring all the NSLayoutManagers on the old NSTextStorage to the new one.
 // - (void)replaceTextStorage:(NSTextStorage *)newTextStorage;
 
-
 // */************************** Text containers ****************************/
-
 // // NSTextContainer objects owner by the receiver.
 // @property (readonly) NSArray<NSTextContainer *> *textContainers;
 
@@ -102,14 +96,10 @@
 // // Called by NSTextContainer whenever its textView changes.  Used to keep notifications in sync.
 // - (void)textContainerChangedTextView:(NSTextContainer *)container;
 
-
 // */************************** Delegate ****************************/
-
 // @property (nullable, weak) id <NSLayoutManagerDelegate> delegate;
 
-
 // */********************* Global layout manager options ***********************/
-
 // // If YES, then whitespace and other "invisible" characters will be shown with special glyphs or other drawing.  The default is NO.
 // @property BOOL showsInvisibleCharacters;
 
@@ -134,10 +124,8 @@
 // // These methods allow you to set/query whether the NSLayoutManager will lay out text in the background, i.e. on the main thread when it is idle.  The default is YES, but this should be set to NO whenever the layout manager is being accessed from other threads.
 // @property BOOL backgroundLayoutEnabled;
 
-
 // // Specifies the default behavior desired if an attachment image is too large to fit in a text container.  Note that attachment cells control their own size and drawing, so this setting can only be advisory for them, but kit-supplied attachment cells will respect it.  The default is NSImageScaleNone, meaning that images will clip rather than scaling.
 // @property NSImageScaling defaultAttachmentScaling;
-
 
 // */********************* Typesetter ***********************/
 // // By default an NSLayoutManager uses the shared default typesetter.  Setting the typesetter invalidates all glyphs in the NSLayoutManager.  It can't just invalidate layout because the typesetter may have contributed to the actual glyphs as well (e.g. hyphenation).
@@ -146,9 +134,7 @@
 // // Specifies the typesetter behavior (compatibility setting) value for the layout manager.  The default is determined by the version of AppKit against which the application is linked.
 // @property NSTypesetterBehavior typesetterBehavior;
 
-
 // */************************ Invalidation **************************/
-
 // // This removes all glyphs for the old character range, adjusts the character indices of all the subsequent glyphs by the change in length, and invalidates the new character range.  If actualCharRange is non-NULL it will be set to the actual range invalidated after any necessary expansion.
 // - (void)invalidateGlyphsForCharacterRange:(NSRange)charRange changeInLength:(NSInteger)delta actualCharacterRange:(nullable NSRangePointer)actualCharRange;
 
@@ -162,9 +148,7 @@
 // // Sent from processEditing in NSTextStorage.  The newCharRange is the range in the final string which was explicitly edited.  The invalidatedRange includes portions that changed as a result of attribute fixing. invalidatedRange is either equal to newCharRange or larger.  Layout managers should not change the contents of the text storage during the execution of this message.
 // - (void)processEditingForTextStorage:(NSTextStorage *)textStorage edited:(NSTextStorageEditActions)editMask range:(NSRange)newCharRange changeInLength:(NSInteger)delta invalidatedRange:(NSRange)invalidatedCharRange API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
 
-
 // */********************** Causing glyph generation and layout ************************/
-
 // // These methods allow clients to specify exactly the portions of the document for which they wish to have glyphs or layout.  This is particularly important if non-contiguous layout is enabled.  The layout manager still reserves the right to perform glyph generation or layout for larger ranges.  If non-contiguous layout is not enabled, then the range in question will always effectively be extended to start at the beginning of the text.
 // - (void)ensureGlyphsForCharacterRange:(NSRange)charRange;
 // - (void)ensureGlyphsForGlyphRange:(NSRange)glyphRange;
@@ -173,15 +157,11 @@
 // - (void)ensureLayoutForTextContainer:(NSTextContainer *)container;
 // - (void)ensureLayoutForBoundingRect:(NSRect)bounds inTextContainer:(NSTextContainer *)container;
 
-
 // */********************** Set glyphs and glyph properties ************************/
-
 // // Sets the initial glyphs and properties for a character range.  This method is invoked mainly from the glyph generation process.  Only place apps are allowed to directly call this method is from -layoutManager:shouldGenerateGlyphs:properties:characterIndexes:forGlyphRange:.  Each array has glyphRange.length items.  charIndexes must be contiguous (no skipped indexes).  It allows multiple items to have a same character index (a character index generating multiple glyph IDs).  Due to the font substitution, aFont passed into this method might not match the font in the attributes dictionary.  Calling this method for a range with the layout information invalidates the layout and display.
 // - (void)setGlyphs:(const CGGlyph *)glyphs properties:(const NSGlyphProperty *)props characterIndexes:(const NSUInteger *)charIndexes font:(NSFont *)aFont forGlyphRange:(NSRange)glyphRange API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
 
-
 // */********************** Get glyphs and glyph properties ************************/
-
 // // Returns the total number of glyphs.  If non-contiguous layout is not enabled, this will force generation of glyphs for all characters.
 // @property (readonly) NSUInteger numberOfGlyphs;
 
@@ -202,9 +182,7 @@
 // // Fills a passed-in buffer with a sequence of CGGlyphs.  They will also optionally fill other passed-in buffers with the glyph properties, character indexes, and bidi levels corresponding to these glyphs.  Each pointer passed in should either be NULL, or else point to sufficient memory to hold glyphRange.length elements.  These methods return the number of glyphs filled in.
 // - (NSUInteger)getGlyphsInRange:(NSRange)glyphRange glyphs:(nullable CGGlyph *)glyphBuffer properties:(nullable NSGlyphProperty *)props characterIndexes:(nullable NSUInteger *)charIndexBuffer bidiLevels:(nullable unsigned char *)bidiLevelBuffer API_AVAILABLE(macos(10.5), ios(7.0), tvos(9.0));
 
-
 // */********************** Set layout information ************************/
-
 // // Associates the given container with the given range of glyphs.  This method should be called by the typesetter first, before setting line fragment rect or any of the layout bits, for each range of glyphs it lays out.  This method will reset several key layout attributes (like not shown and draws outside line fragment) to their default values.  In the course of layout, all glyphs should end up being included in a range passed to this method.  The range passed in is not expected to be the entire range of glyphs for that text container; usually, in fact, it will be the range for a given line fragment being laid out in that container.
 // - (void)setTextContainer:(NSTextContainer *)container forGlyphRange:(NSRange)glyphRange;
 
@@ -226,9 +204,7 @@
 // // For a glyph corresponding to an attachment, this method should be called to set the size the attachment cell will occupy.
 // - (void)setAttachmentSize:(NSSize)attachmentSize forGlyphRange:(NSRange)glyphRange;
 
-
 // */********************** Get layout information ************************/
-
 // // Returns (by reference for the "get" method) the character index or glyph index or both of the first unlaid character/glyph in the layout manager at this time.
 // - (void)getFirstUnlaidCharacterIndex:(nullable NSUInteger *)charIndex glyphIndex:(nullable NSUInteger *)glyphIndex;
 // - (NSUInteger)firstUnlaidCharacterIndex;
@@ -237,7 +213,6 @@
 // // Returns the container in which the given glyph is laid and (optionally) by reference the whole range of glyphs that are in that container.  This will cause glyph generation and layout for the line fragment containing the specified glyph, or if non-contiguous layout is not enabled, up to and including that line fragment; if non-contiguous layout is not enabled and effectiveGlyphRange is non-NULL, this will additionally cause glyph generation and layout for the entire text container containing the specified glyph.
 // - (nullable NSTextContainer *)textContainerForGlyphAtIndex:(NSUInteger)glyphIndex effectiveRange:(nullable NSRangePointer)effectiveGlyphRange;
 // - (nullable NSTextContainer *)textContainerForGlyphAtIndex:(NSUInteger)glyphIndex effectiveRange:(nullable NSRangePointer)effectiveGlyphRange withoutAdditionalLayout:(BOOL)flag API_AVAILABLE(macos(10.0), ios(9.0), tvos(9.0));
-
 
 // // Returns the container's currently used area.  This determines the size that the view would need to be in order to display all the glyphs that are currently laid into the container.  This causes neither glyph generation nor layout.  Used rects are always in container coordinates.
 // - (NSRect)usedRectForTextContainer:(NSTextContainer *)container;
@@ -255,7 +230,6 @@
 // @property (readonly) NSRect extraLineFragmentUsedRect;
 // @property (nullable, readonly) NSTextContainer *extraLineFragmentTextContainer;
 
-
 // // Returns the location for the given glyph within its line fragment.  If this glyph does not have an explicit location set for it (i.e., it is part of (but not first in) a sequence of nominally spaced characters), the location is calculated by glyph advancements from the location of the most recent preceding glyph with a location set.  Glyph locations are relative to their line fragment rect's origin.  This will cause glyph generation and layout for the line fragment containing the specified glyph, or if non-contiguous layout is not enabled, up to and including that line fragment.
 // - (NSPoint)locationForGlyphAtIndex:(NSUInteger)glyphIndex;
 
@@ -268,13 +242,10 @@
 // // For a glyph corresponding to an attachment, this method returns the size the attachment cell will occupy.  Returns {-1,-1} if no attachment size has been set for the specified glyph.
 // - (NSSize)attachmentSizeForGlyphAtIndex:(NSUInteger)glyphIndex;
 
-
 // // Returns a range of truncated glyph range for a line fragment containing the specified index.  When there is no truncation for the line fragment, it returns {NSNotFound, 0}.
 // - (NSRange)truncatedGlyphRangeInLineFragmentForGlyphAtIndex:(NSUInteger)glyphIndex API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
 
-
 // */********************** More sophisticated queries ************************/
-
 // // Returns the range of glyphs that are generated from the characters in the given charRange.  If actualCharRange is not NULL, it will return by reference the actual range of characters that fully define the glyph range returned.  This range may be identical to or slightly larger than the requested character range.  For example, if the text storage contains the characters "o" and (umlaut) and the glyph store contains the single precomposed glyph (o-umlaut), and if the character range given encloses only the first or second character, then actualCharRange will be set to enclose both characters.  If the length of charRange is zero, the resulting glyph range will be a zero-length range just after the glyph(s) corresponding to the preceding character, and actualCharRange will also be zero-length.  If non-contiguous layout is not enabled, this will force the generation of glyphs for all characters up to and including the end of the specified range.
 // - (NSRange)glyphRangeForCharacterRange:(NSRange)charRange actualCharacterRange:(nullable NSRangePointer)actualCharRange;
 
@@ -294,7 +265,7 @@
 // - (NSRange)glyphRangeForBoundingRect:(NSRect)bounds inTextContainer:(NSTextContainer *)container;
 // - (NSRange)glyphRangeForBoundingRectWithoutAdditionalLayout:(NSRect)bounds inTextContainer:(NSTextContainer *)container;
 
-// // Returns the index of the glyph falling under the given point, expressed in the given container's coordinate system.  If no glyph is under the point, the nearest glyph is returned, where nearest is defined according to the requirements of selection by touch or mouse.  Clients who wish to determine whether the the point actually lies within the bounds of the glyph returned should follow this with a call to boundingRectForGlyphRange:inTextContainer: and test whether the point falls in the rect returned by that method.  If partialFraction is non-NULL, it will return by reference the fraction of the distance between the location of the glyph returned and the location of the next glyph. 
+// // Returns the index of the glyph falling under the given point, expressed in the given container's coordinate system.  If no glyph is under the point, the nearest glyph is returned, where nearest is defined according to the requirements of selection by touch or mouse.  Clients who wish to determine whether the the point actually lies within the bounds of the glyph returned should follow this with a call to boundingRectForGlyphRange:inTextContainer: and test whether the point falls in the rect returned by that method.  If partialFraction is non-NULL, it will return by reference the fraction of the distance between the location of the glyph returned and the location of the next glyph.
 // - (NSUInteger)glyphIndexForPoint:(NSPoint)point inTextContainer:(NSTextContainer *)container fractionOfDistanceThroughGlyph:(nullable CGFloat *)partialFraction;
 // - (NSUInteger)glyphIndexForPoint:(NSPoint)point inTextContainer:(NSTextContainer *)container;
 // - (CGFloat)fractionOfDistanceThroughGlyphForPoint:(NSPoint)point inTextContainer:(NSTextContainer *)container;
@@ -310,7 +281,6 @@
 
 // // Enumerates enclosing rects for glyphRange in textContainer.  If a selected range is given in the second argument, the rectangles returned will be correct for drawing the selection.  Selection rectangles are generally more complicated than enclosing rectangles and supplying a selected range is the clue these methods use to determine whether to go to the trouble of doing this special work.  If the caller is interested in this more from an enclosing point of view rather than a selection point of view, pass {NSNotFound, 0} as the selected range.  This method will do the minimum amount of work required to answer the question.
 // - (void)enumerateEnclosingRectsForGlyphRange:(NSRange)glyphRange withinSelectedGlyphRange:(NSRange)selectedRange inTextContainer:(NSTextContainer *)textContainer usingBlock:(void (^)(NSRect rect, BOOL *stop))block API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
-
 
 // */********************** Drawing support ************************/
 // // These methods are primitives for drawing.  You can override these to perform additional drawing, or to replace text drawing entirely, but not to change layout.  You can call them if you want, but focus must already be locked on the destination view or image.  -drawBackgroundForGlyphRange:atPoint: draws the background color and selection and marked range aspects of the text display, along with block decoration such as table backgrounds and borders.  -drawGlyphsForGlyphRange:atPoint: draws the actual glyphs, including attachments, as well as any underlines or strikethroughs.  In either case all of the specified glyphs must lie in a single container.
@@ -334,7 +304,6 @@
 // // This is the primitive for actually drawing an attachment cell.  The attachment should be drawn within the given rect.  The character index is provided for those cells that alter their appearance based on their location.
 // - (void)showAttachmentCell:(NSCell *)cell inRect:(NSRect)rect characterIndex:(NSUInteger)attachmentIndex;
 
-
 // */************************ Block information **************************/
 // // Used to set and get information about layout of text blocks.  These methods cause glyph generation but not layout.  The latter two will return NSZeroRect if no rect has been set for the specified block and range since the last invalidation.  Block layout rects and bounds rects are always in container coordinates.
 // - (void)setLayoutRect:(NSRect)rect forTextBlock:(NSTextBlock *)block glyphRange:(NSRange)glyphRange;
@@ -345,7 +314,6 @@
 // // Similar to the above, but they can be passed any index in the range and will return the range by reference if effectiveGlyphRange is not NULL.
 // - (NSRect)layoutRectForTextBlock:(NSTextBlock *)block atIndex:(NSUInteger)glyphIndex effectiveRange:(nullable NSRangePointer)effectiveGlyphRange;
 // - (NSRect)boundsRectForTextBlock:(NSTextBlock *)block atIndex:(NSUInteger)glyphIndex effectiveRange:(nullable NSRangePointer)effectiveGlyphRange;
-
 
 // */********************** Temporary attribute support ************************/
 // // Temporary attributes provide a way to override attributes for drawing on a per-layout manager basis, without affecting the underlying stored text.  Clients may set any attributes they wish, but the only attributes that the layout manager will recognize for drawing are those that do not affect layout (color, underline, etc.).
@@ -358,7 +326,6 @@
 // - (nullable id)temporaryAttribute:(NSAttributedStringKey)attrName atCharacterIndex:(NSUInteger)location longestEffectiveRange:(nullable NSRangePointer)range inRange:(NSRange)rangeLimit API_AVAILABLE(macos(10.5));
 // - (NSDictionary<NSAttributedStringKey, id> *)temporaryAttributesAtCharacterIndex:(NSUInteger)location longestEffectiveRange:(nullable NSRangePointer)range inRange:(NSRange)rangeLimit API_AVAILABLE(macos(10.5));
 // - (void)addTemporaryAttribute:(NSAttributedStringKey)attrName value:(id)value forCharacterRange:(NSRange)charRange API_AVAILABLE(macos(10.5));
-
 
 // */***************************** Font metrics ******************************/
 // // Returns the default line height specified by the layout manager's typesetter behavior for the given font.
@@ -390,7 +357,6 @@
 // // This is sent whenever layoutManager is about to store the initial glyph information via -setGlyphs:properties:characterIndexes:forGlyphRange:.  This method allows customizing the initial glyph generation process.  It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph information.  The return value specifies the actual glyph range stored in this method.  By returning 0, it can indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange could lead to recursion since the data might not be available, yet.
 // - (NSUInteger)layoutManager:(NSLayoutManager *)layoutManager shouldGenerateGlyphs:(const CGGlyph *)glyphs properties:(const NSGlyphProperty *)props characterIndexes:(const NSUInteger *)charIndexes font:(NSFont *)aFont forGlyphRange:(NSRange)glyphRange API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0));
 
-
 // */********************** Line layout ************************/
 // // These methods are invoked while each line is laid out.  They allow NSLayoutManager delegate to customize the shape of line.
 
@@ -418,7 +384,6 @@
 // // Allows NSLayoutManagerDelegate to customize the line fragment geometry before committing to the layout cache. The implementation of this method should make sure that the modified fragments are still valid inside the text container coordinate. When it returns YES, the layout manager uses the modified rects. Otherwise, it ignores the rects returned from this method.
 // - (BOOL)layoutManager:(NSLayoutManager *)layoutManager shouldSetLineFragmentRect:(inout NSRect *)lineFragmentRect lineFragmentUsedRect:(inout NSRect *)lineFragmentUsedRect baselineOffset:(inout CGFloat *)baselineOffset inTextContainer:(NSTextContainer *)textContainer forGlyphRange:(NSRange)glyphRange API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0));
 
-
 // */********************** Layout processing ************************/
 // // This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout complete.
 // - (void)layoutManagerDidInvalidateLayout:(NSLayoutManager *)sender API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0));
@@ -432,7 +397,6 @@
 // // This is sent when the layout manager is drawing and needs to decide whether to use temporary attributes or not.  The delegate returns a dictionary of temporary attributes to be used, or nil to suppress the use of temporary attributes altogether.  The effectiveCharRange argument is both an in and out by-reference effective range for those attributes.  The default behavior if this method is not implemented is to use temporary attributes only when drawing to the screen, so an implementation to match that behavior would return attrs if toScreen is YES and nil otherwise, without changing effectiveCharRange.
 // - (nullable NSDictionary<NSAttributedStringKey, id> *)layoutManager:(NSLayoutManager *)layoutManager shouldUseTemporaryAttributes:(NSDictionary<NSAttributedStringKey, id> *)attrs forDrawingToScreen:(BOOL)toScreen atCharacterIndex:(NSUInteger)charIndex effectiveRange:(nullable NSRangePointer)effectiveCharRange API_AVAILABLE(macos(10.5));
 // @end
-
 
 // */********************** Deprecated ************************/
 // enum {
@@ -461,7 +425,6 @@
 
 // @property BOOL usesScreenFonts API_DEPRECATED("", macos(10.0,10.11));
 // - (NSFont *)substituteFontForFont:(NSFont *)originalFont API_DEPRECATED("", macos(10.0,10.11));
-
 
 // - (void)insertGlyphs:(const NSGlyph *)glyphs length:(NSUInteger)length forStartingGlyphAtIndex:(NSUInteger)glyphIndex characterIndex:(NSUInteger)charIndex API_DEPRECATED("Use -setGlyphs:properties:characterIndexes:font:forGlyphRange instead", macos(10.0,10.11));
 // - (void)insertGlyph:(NSGlyph)glyph atGlyphIndex:(NSUInteger)glyphIndex characterIndex:(NSUInteger)charIndex API_DEPRECATED("Use -setGlyphs:properties:characterIndexes:font:forGlyphRange instead", macos(10.0,10.11));
@@ -493,11 +456,8 @@
 // @property (strong) NSGlyphGenerator *glyphGenerator;
 // @end
 
-
-
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END
 // #else
 // #import <UIFoundation/NSLayoutManager.h>
 // #endif
-

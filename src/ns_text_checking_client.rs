@@ -4,7 +4,6 @@
 //         Copyright (c) 2018-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -44,10 +43,8 @@
 
 // /* These methods suppose that ranges of text in the document may have attached to them certain annotations relevant for text checking, represented by dictionaries with various keys, such as NSSpellingStateAttributeName for ranges of text marked as misspelled. They allow an NSTextCheckingController instance to set and retrieve these annotations, and to perform other actions required for text checking.  The keys and values in these annotation dictionaries will always be strings.
 // */
-
 // /* In all of these methods, the standard range adjustment policy is as follows:  if the specified range lies only partially within the bounds of the document, the receiver is responsible for adjusting the range so as to limit it to the bounds of the document. If the specified range is {NSNotFound, 0}, then the receiver should replace it with the entire range of the document. Otherwise, if none of the range lies within the bounds of the document, then these methods should have no effect, and return nil where appropriate. The beginning and end of the document are not considered as lying outside of the bounds of the document, and zero-length ranges are acceptable (although in some cases they may have no effect).
 // */
-
 // /* Returns annotated string specified by range. The range should be adjusted according to the standard range adjustment policy, and in addition for this method alone it should be adjusted to begin and end on paragraph boundaries (with possible exceptions for paragraphs exceeding some maximum length). If the range lies within the bounds of the document but is of zero length, it should be adjusted to include the enclosing paragraph. This method should return nil if none of the range lies within the bounds of the document, but if only a zero-length portion of the adjusted range lies within the bounds of the document, as may happen with an empty document or at the end of the document, then an empty attributed string should be returned rather than nil. If the return value is non-nil and actualRange is non-NULL, then actualRange returns the actual adjusted range used.
 // */
 // - (nullable NSAttributedString *)annotatedSubstringForProposedRange:(NSRange)range actualRange:(nullable NSRangePointer)actualRange;

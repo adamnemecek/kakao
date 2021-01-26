@@ -4,7 +4,6 @@
 // 	Copyright (c) 2000-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #if !TARGET_OS_IPHONE
 // #import <AppKit/NSText.h>
 // #import <AppKit/NSMenu.h>
@@ -52,7 +51,7 @@
 // /* The menu form of a toolbar item's purpose is twofold.  First, when the window is too small to display an item, it will be clipped but remain accessible from a "clipped items" menu containing the menu item returned here.  Second, in text only mode, the menu returned will be used to create the displayed items.  Singleton menu items will be clickable, while submenu items will be represented as a pull down.  For instance, say you want a button that allows you to switch between modes A, B, and C.  You could represent this as a menu by :  a menu item "mode" with three submenu items "A", "B", and "C".   By default, this method returns a singleton menu item with item label as the title.  For standard items, the target, action is set.  */
 // @property (nullable, strong) NSMenuItem *menuFormRepresentation API_UNAVAILABLE(ios);
 
-// /* Tag for your own custom purpose. (forwards to -view if it responds) */ 
+// /* Tag for your own custom purpose. (forwards to -view if it responds) */
 // @property NSInteger tag;
 
 // /* Set and get the action of an item. (forwards to -view if it responds) */
@@ -100,17 +99,13 @@
 // /* When a toolbar does not have enough space to fit all its items, it must push some into the overflow menu.  Items with the highest visibility priority level are choosen last for the overflow menu.  The default visibilityPriority value is NSToolbarItemVisibilityPriorityStandard.  To suggest that an item always remain visible, give it a value greater than NSToolbarItemVisibilityPriorityStandard, but less than NSToolbarItemVisibilityPriorityUser.   In 10.7, users can no longer modify the toolbar item visibility priority. */
 // @property NSToolbarItemVisibilityPriority visibilityPriority;
 
-
 // // ----- Validation of the items -----
 
 // /* Typically you should not invoke this method.  This method is called by its toolbar during validation.  Standard items validate themselves by sending the validateToolbarItem: validate message to the current validator.  Since items with custom views don't always have meaningful target/actions, they do nothing.  So for your custom items it may be useful to override this method and invent your own validation. */
 // - (void)validate API_AVAILABLE(ios(13.0));
 
-
 // /* By default NSToolbar automatically invokes its items validate method on a regular basis.  To be in complete control of when the -validate method is invoked, you can disable automatic validation on a per-item basis.  In particular, if your validation code is slow, you may want to do this for performance reasons. */
 // @property BOOL autovalidates API_AVAILABLE(ios(13.0));
-
-
 
 // // ----- Controlling Duplicates In The Toolbar -----
 
@@ -149,7 +144,6 @@
 // #endif
 
 // /* standard toolbar item identifiers */
-
 // APPKIT_EXTERN NSToolbarItemIdentifier NSToolbarSeparatorItemIdentifier API_DEPRECATED("This item is no longer recommended and will be ignored on 10.7 and later.", macos(10.0, 11.0)) API_UNAVAILABLE(ios);
 // APPKIT_EXTERN NSToolbarItemIdentifier NSToolbarSpaceItemIdentifier API_AVAILABLE(ios(13.0));
 // APPKIT_EXTERN NSToolbarItemIdentifier NSToolbarFlexibleSpaceItemIdentifier API_AVAILABLE(ios(13.0));

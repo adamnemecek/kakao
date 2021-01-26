@@ -4,7 +4,6 @@
 //         Copyright (c) 1997-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/NSButtonCell.h>
 // #import <AppKit/NSMenu.h>
 // #import <AppKit/NSMenuItem.h>
@@ -19,7 +18,6 @@
 // - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
 // @property (nullable, strong) NSMenuItem *menuItem;
-
 
 // @property BOOL needsSizing;
 // - (void)calcSize;

@@ -11,7 +11,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // */* Exception Constants ***/
-
 // // name for accessibility exception - declared in NSErrors.h
 // // APPKIT_EXTERN NSExceptionName NSAccessibilityException;
 
@@ -19,9 +18,7 @@
 // **/
 // APPKIT_EXTERN NSString *const NSAccessibilityErrorCodeExceptionInfo;
 
-
 // */* Accessibility Constants ***/
-
 // /* Standard attributes
 // **/
 // typedef NSString * NSAccessibilityAttributeName NS_TYPED_ENUM;
@@ -49,7 +46,6 @@
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityValueDescriptionAttribute	//(NSString *)  - text description of value
 // API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilitySharedFocusElementsAttribute API_AVAILABLE(macos(10.10));  //(NSArray *)  - elements that share focus
-
 
 // /* Misc attributes
 // **/
@@ -90,13 +86,11 @@
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityAlternateUIVisibleAttribute API_AVAILABLE(macos(10.10));  //(NSNumber *) - (boolValue)
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityRequiredAttribute API_AVAILABLE(macos(10.12));  //(NSNumber *) - (boolValue) whether a form field is required to have content for successful submission of the form
 
-
 // /* Linkage attributes
 // **/
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityTitleUIElementAttribute;		//(id)	      - UIElement for the title
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityServesAsTitleForUIElementsAttribute; //(NSArray *) - UIElements this titles
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityLinkedUIElementsAttribute;		//(NSArray *) - corresponding UIElements
-
 
 // /* Text-specific attributes
 // **/
@@ -110,7 +104,6 @@
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilitySelectedTextRangesAttribute	//(NSArray<NSValue *> *) - array of NSValue (rangeValue) ranges of selected text
 // API_AVAILABLE(macos(10.5));
 
-
 // /* Parameterized text-specific attributes
 // **/
 // typedef NSString * NSAccessibilityParameterizedAttributeName NS_TYPED_ENUM;
@@ -123,7 +116,6 @@
 // APPKIT_EXTERN NSAccessibilityParameterizedAttributeName const NSAccessibilityRTFForRangeParameterizedAttribute;		//(NSData *)   - rtf for text; param:(NSValue * - rangeValue)
 // APPKIT_EXTERN NSAccessibilityParameterizedAttributeName const NSAccessibilityStyleRangeForIndexParameterizedAttribute;	//(NSValue *)  - (rangeValue) extent of style run; param:(NSNumber *)
 // APPKIT_EXTERN NSAccessibilityParameterizedAttributeName const NSAccessibilityAttributedStringForRangeParameterizedAttribute; //(NSAttributedString *) - does _not_ use attributes from Appkit/AttributedString.h
-
 
 // /* Text attributed string attributes and constants
 // **/
@@ -149,16 +141,15 @@
 
 // /*
 //  About MisspelledText attributes for attribute strings:
- 
+
 //  NSAccessibilityMisspelledTextAttribute was the original attribute to indicate misspelled text. In OS X 10.4, the Cocoa text system added support for NSAccessibilityMarkedMisspelledTextAttribute, which was used to indicate a word that was visibly marked as misspelled (for example, with a red squiggle underneath); the original MisspelledText attribute could also be used on text that was not visibly marked as mispelled (for example, a misspelled word that was currently being edited by the user).
- 
+
 //  Typically, a screen reader only wants to vocalize what a sighted user could see, and so the MarkedMisspelledText attribute was adopted by VoiceOver to provide feedback to the user about misspelled text. In OS X 10.9, VoiceOver has entirely stopped using the original MisspelledText attribute, and now only checks for MarkedMisspelledText.
- 
+
 //  When implementing accessibility for a custom text-editing engine, you should generally provide the MarkedMisspelledText attribute in order to support VoiceOver, especially in OS X 10.9 and later. You may optionally also support the MisspelledText attribute for compatibility with other accessibility clients.
 // **/
 // APPKIT_EXTERN NSAttributedStringKey const NSAccessibilityMisspelledTextAttribute;		//(NSNumber *)	    - (boolValue)
 // APPKIT_EXTERN NSAttributedStringKey const NSAccessibilityMarkedMisspelledTextAttribute API_AVAILABLE(macos(10.4));	//(NSNumber *) - (boolValue)
-
 
 // APPKIT_EXTERN NSAttributedStringKey const NSAccessibilityLanguageTextAttribute API_AVAILABLE(macos(10.13)); //(NSString *) - BCP-47 langugage code to identify the language of a segment of string
 
@@ -188,7 +179,6 @@
 // APPKIT_EXTERN NSAccessibilityFontAttributeKey const NSAccessibilityFontFamilyKey;	// optional
 // APPKIT_EXTERN NSAccessibilityFontAttributeKey const NSAccessibilityVisibleNameKey;	// optional
 // APPKIT_EXTERN NSAccessibilityFontAttributeKey const NSAccessibilityFontSizeKey;	// required
-
 
 // /* Window-specific attributes
 // **/
@@ -228,13 +218,11 @@
 // APPKIT_EXTERN NSAccessibilityOrientationValue const NSAccessibilityHorizontalOrientationValue;
 // APPKIT_EXTERN NSAccessibilityOrientationValue const NSAccessibilityUnknownOrientationValue;
 
-
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityColumnTitlesAttribute;	//(NSArray *)  - UIElements for titles
 
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilitySearchButtonAttribute;	//(id)         - UIElement for search field search btn
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilitySearchMenuAttribute;	//(id)         - UIElement for search field menu
 // APPKIT_EXTERN NSAccessibilityAttributeName const NSAccessibilityClearButtonAttribute;	//(id)         - UIElement for search field clear btn
-
 
 // /* Table/outline view attributes
 // **/
@@ -453,7 +441,6 @@
 // **/
 // APPKIT_EXTERN NSAccessibilityNotificationName const NSAccessibilityAnnouncementRequestedNotification API_AVAILABLE(macos(10.7));
 
-
 // /* Roles
 // **/
 // typedef NSString * NSAccessibilityRole NS_TYPED_ENUM;
@@ -567,12 +554,9 @@
 // **/
 // APPKIT_EXTERN NSAccessibilityNotificationUserInfoKey const NSAccessibilityAnnouncementKey API_AVAILABLE(macos(10.7));
 
-
 // /* This function allows an accessibility notification to be posted with a user info dictionary.  The user info dictionary can be nil.  Valid contents of the user info dictionary are limited to classes which can be returned to an accessibility client.  That list currently includes NSString, NSNumber, NSArray, NSValues of points, ranges, sizes, rects, and valid NSAccessibility objects.  Most accessibility notifications do not require a user info dictionary.
 // **/
 // APPKIT_EXTERN void NSAccessibilityPostNotificationWithUserInfo(id element, NSAccessibilityNotificationName notification, NSDictionary<NSAccessibilityNotificationUserInfoKey, id> * _Nullable userInfo) API_AVAILABLE(macos(10.7));
-
-
 
 // /* System defined priority levels.  This priority level should be included for every NSAccessibilityAnnouncementRequestedNotification.
 // **/
@@ -581,7 +565,6 @@
 //     NSAccessibilityPriorityMedium = 50,
 //     NSAccessibilityPriorityHigh = 90
 // } API_AVAILABLE(macos(10.9));
-
 
 // // token type for loading search element
 // typedef id<NSSecureCoding, NSObject> NSAccessibilityLoadingToken;

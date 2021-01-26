@@ -4,7 +4,6 @@
 // 	Copyright (c) 2010-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <Foundation/NSError.h>
@@ -23,14 +22,13 @@
 // typedef NS_OPTIONS(NSUInteger, NSFontCollectionVisibility) {
 //     // Visible within this process, not persistent
 //     NSFontCollectionVisibilityProcess = (1UL << 0),
-    
+
 //     // Visible to all processes, stored persistently
 //     NSFontCollectionVisibilityUser = (1UL << 1),
-    
+
 //     // Visible to all users, stored persistently
 //     NSFontCollectionVisibilityComputer = (1UL << 2)
 // };
-
 
 // /*
 //  Matching options
@@ -44,7 +42,6 @@
 
 // // NSNumber BOOL specifying that auto-activation should not be used to find missing fonts
 // APPKIT_EXTERN NSFontCollectionMatchingOptionKey const NSFontCollectionDisallowAutoActivationOption API_AVAILABLE(macos(10.7));
-
 
 // typedef NSString * NSFontCollectionName NS_TYPED_EXTENSIBLE_ENUM;
 
@@ -66,18 +63,17 @@
 // // Return a collection with fonts for the specified locale.
 // + (nullable NSFontCollection *)fontCollectionWithLocale:(NSLocale *)locale;
 
-// /* 
+// /*
 //  Naming collections
- 
+
 //  These methods allow you to associate a name with a collection. Named collections are shown by user interfaces such as NSFontPanel.
- 
+
 //  Set the visibility to NSFontCollectionVisibilityProcess if you wish to make the collection visible to the current process, but not to other processes. NSFontCollectionVisibilityUser will archive the collection to persistent storage and make it visible to other processes. NSFontCollectionVisibilityComputer is like NSFontCollectionVisibilityUser but makes the collection visible to all users of the computer.
- 
+
 //  There is no association between the the NSFontCollection instance and the name from which it was created. When you change the collection, you must show it again to see the changes reflected on disk or in font UI.
- 
+
 //  Errors returned from these methods are NSFileManager errors.
 // **/
-
 // // Make the font collection visible by giving it a name
 // + (BOOL)showFontCollection:(NSFontCollection *)collection withName:(NSFontCollectionName)name visibility:(NSFontCollectionVisibility)visibility error:(NSError **)error;
 
@@ -99,7 +95,6 @@
 // /*
 //  Descriptor matching
 // **/
-
 // // The list of NSFontDescriptors to match. The matching descriptors are produced by matching this list of descriptors.
 // @property (nullable, readonly, copy) NSArray<NSFontDescriptor *> *queryDescriptors;
 
@@ -153,7 +148,7 @@
 
 // /*
 //  NSFontCollectionDidChangeNotification
- 
+
 //  This notification is sent to the local notification center when a named, persistent collection is modified.
 //  User info key NSFontCollectionNotificationAction describes the nature of the change.
 // **/
@@ -174,7 +169,7 @@
 
 // /*
 //  Standard named collections
- 
+
 //  Standard mutable collection names -- these names are included in the list of allFontCollectionNames -- they have special meaning to the
 //  Cocoa font system and should not be hidden or renamed.
 // **/
@@ -185,4 +180,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

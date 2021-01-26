@@ -4,7 +4,6 @@
 //     Copyright (c) 2009-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObjCRuntime.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
@@ -51,7 +50,7 @@
 // @property (readonly) NSPoint normalizedPosition; // Scaled absolute position is in [0,1], where (0, 0) is the lower left of the surface.
 // @property (readonly, getter=isResting) BOOL resting;
 
-// /* Properties of the underlying touch device */ 
+// /* Properties of the underlying touch device */
 // @property (nullable, readonly, strong) id device; // The digitizer that generated the touch. Useful to distinguish touches emanating from multiple-device scenario
 
 // /* The range of the touch device in points (72ppi). Note: 0,0 is the lower left of the surface.
@@ -71,4 +70,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

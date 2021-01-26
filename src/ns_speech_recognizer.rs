@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -14,7 +13,6 @@
 
 // @class NSString;
 // @protocol NSSpeechRecognizerDelegate;
-
 
 // @interface NSSpeechRecognizer : NSObject
 
@@ -43,4 +41,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

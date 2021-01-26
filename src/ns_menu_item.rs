@@ -4,7 +4,6 @@
 //         Copyright (c) 1996-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -31,7 +30,6 @@
 // /* Never call the set method directly it is there only for subclassers.
 // **/
 // @property (nullable, assign) NSMenu *menu;
-
 
 // @property (readonly) BOOL hasSubmenu;
 // @property (nullable, strong) NSMenu *submenu;
@@ -88,7 +86,6 @@
 // /* Set (and get) the visibility of a menu item.  Hidden menu items (or items with a hidden superitem) do not appear in a menu and do not participate in command key matching.  isHiddenOrHasHiddenAncestor returns YES if the item is hidden or any of its superitems are hidden. */
 // @property (getter=isHidden) BOOL hidden API_AVAILABLE(macos(10.5));
 // @property (getter=isHiddenOrHasHiddenAncestor, readonly) BOOL hiddenOrHasHiddenAncestor API_AVAILABLE(macos(10.5));
-
 
 // @property (nullable, copy) NSString *toolTip;
 

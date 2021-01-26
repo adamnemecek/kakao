@@ -4,7 +4,6 @@
 //     Copyright (c) 2004-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSLevelIndicatorCell.h>
 // #import <AppKit/AppKitDefines.h>
@@ -14,10 +13,10 @@
 // typedef NS_ENUM(NSInteger, NSLevelIndicatorPlaceholderVisibility) {
 //     /* Placeholders are always displayed for standalone indicators. For level indicators inside a table view, placeholders draw only in the selected row and while the control is being edited. */
 //     NSLevelIndicatorPlaceholderVisibilityAutomatic = 0,
-    
+
 //     /* Always display placeholders */
 //     NSLevelIndicatorPlaceholderVisibilityAlways = 1,
-    
+
 //     /* Only display placeholders while the control is being edited */
 //     NSLevelIndicatorPlaceholderVisibilityWhileEditing = 2
 // };
@@ -74,9 +73,9 @@
 // @property (strong, nullable) NSImage *ratingImage API_AVAILABLE(macos(10.13));
 
 // /*! If non-nil, sets the image used by the Rating indicator style in place of the default faded placeholder image. The default value is nil.
- 
+
 //  If the custom placeholder is a template image, its fill opacity can be adjusted by modifying the opacity of the template image.
- 
+
 //  If both a ratingImage and ratingPlaceholderImage are set, each rating position is sized such that either image will fit without scaling (i.e. sized to the maximum width and height of both images). */
 // @property (strong, nullable) NSImage *ratingPlaceholderImage API_AVAILABLE(macos(10.13));
 

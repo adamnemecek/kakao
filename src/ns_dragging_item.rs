@@ -4,7 +4,6 @@
 // 	Copyright (c) 2010-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSGeometry.h>
@@ -55,7 +54,7 @@
 // */
 // @property (readonly, strong) id item;
 
-// /* The dragging frame that provides the spatial relationship between NSDraggingItems in the NSDraggingFormationNone. Note: The exact coordinate space of this rect depends on where it is used. See NSDraggingSession and NSDraggingInfo. 
+// /* The dragging frame that provides the spatial relationship between NSDraggingItems in the NSDraggingFormationNone. Note: The exact coordinate space of this rect depends on where it is used. See NSDraggingSession and NSDraggingInfo.
 // */
 // @property NSRect draggingFrame;
 

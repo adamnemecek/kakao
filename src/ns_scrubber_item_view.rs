@@ -4,7 +4,6 @@
 //  Copyright (c) 2016-2019, Apple Inc.
 //  All rights reserved.
 //  */
-
 // #import <AppKit/NSImageCell.h>
 // #import <AppKit/NSView.h>
 // #import <AppKit/AppKitDefines.h>
@@ -66,7 +65,7 @@
 
 // /*!
 //  @class NSScrubberTextItemView
-//  @abstract A simple @c NSScrubberItemView for displaying an image. 
+//  @abstract A simple @c NSScrubberItemView for displaying an image.
 //  @discussion If the provided image is larger than the view's frame, it is scaled proportionally to fill the entire frame. The cropped portion of the image is determined by the @c imageAlignment property.
 //  */
 // API_AVAILABLE(macos(10.12.2))

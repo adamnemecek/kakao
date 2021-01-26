@@ -9,7 +9,6 @@
 //         NSTextTableBlock is a subclass used to represent a block that is a cell in a table.
 //         NSTextTable represents a whole table.
 // */
-
 // #import <AppKit/NSText.h>
 
 // @class NSTextTable;
@@ -124,8 +123,6 @@
 // - (void)drawBackgroundForBlock:(NSTextTableBlock *)block withFrame:(NSRect)frameRect inView:(NSView *)controlView characterRange:(NSRange)charRange layoutManager:(NSLayoutManager *)layoutManager;
 
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 

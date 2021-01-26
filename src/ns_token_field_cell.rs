@@ -5,7 +5,6 @@
 // 	All rights reserved.
 
 // */
-
 // #import <AppKit/NSTextFieldCell.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
@@ -48,7 +47,7 @@
 
 // // Each element in the array should be an NSString or an array of NSStrings.
 // // substring is the partial string that is being completed.  tokenIndex is the index of the token being completed.
-// // selectedIndex allows you to return by reference an index specifying which of the completions should be selected initially. 
+// // selectedIndex allows you to return by reference an index specifying which of the completions should be selected initially.
 // // The default behavior is not to have any completions.
 // - (NSArray *)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex;
 
@@ -63,7 +62,7 @@
 // - (nullable NSString *)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell editingStringForRepresentedObject:(id)representedObject;
 // - (nullable id)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell representedObjectForEditingString: (NSString *)editingString;
 
-// // We put the string on the pasteboard before calling this delegate method. 
+// // We put the string on the pasteboard before calling this delegate method.
 // // By default, we write the NSStringPboardType as well as an array of NSStrings.
 // - (BOOL)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell writeRepresentedObjects:(NSArray *)objects toPasteboard:(NSPasteboard *)pboard;
 
@@ -72,7 +71,7 @@
 
 // // By default the tokens have no menu.
 // - (nullable NSMenu *)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell menuForRepresentedObject:(id)representedObject;
-// - (BOOL)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell hasMenuForRepresentedObject:(id)representedObject; 
+// - (BOOL)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell hasMenuForRepresentedObject:(id)representedObject;
 
 // // This method allows you to change the style for individual tokens as well as have mixed text and tokens.
 // - (NSTokenStyle)tokenFieldCell:(NSTokenFieldCell *)tokenFieldCell styleForRepresentedObject:(id)representedObject;

@@ -4,7 +4,6 @@
 //     Copyright (c) 1995-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/NSControl.h>
@@ -31,17 +30,17 @@
 //     /* Turn off column autoresizing
 //      */
 //     NSTableViewNoColumnAutoresizing = 0,
-    
+
 //     /* Autoresize all columns by distributing equal shares of space simultaeously
 //      */
 //     NSTableViewUniformColumnAutoresizingStyle,
-    
+
 //     /* Autoresize each table column one at a time.  Proceed to the next column when
 //      the current column can no longer be autoresized (when it reaches maximum/minimum size).
 //      */
 //     NSTableViewSequentialColumnAutoresizingStyle,        // Start with the last autoresizable column, proceed to the first.
 //     NSTableViewReverseSequentialColumnAutoresizingStyle, // Start with the first autoresizable column, proceed to the last.
-    
+
 //     /* Autoresize only one table column one at a time.  When that table column can no longer be
 //      resized, stop autoresizing.  Normally you should use one of the Sequential autoresizing
 //      modes instead.
@@ -62,10 +61,10 @@
 // typedef NS_ENUM(NSInteger, NSTableViewRowSizeStyle) {
 //     /* The table will use the system default layout size: small, medium or large. */
 //     NSTableViewRowSizeStyleDefault = -1,
-    
+
 //     /* The table will use the -rowHeight or ask the delegate for a variable row height (if implemented) and cell layout is not changed. */
 //     NSTableViewRowSizeStyleCustom = 0,
-    
+
 //     /* The table will use a row height specified for a small/medium or large table.
 //      It is required that all sizes be fully tested and supported if NSTableViewRowSizeStyleCustom is not used.
 //      Some standard Aqua metrics may be applied to cells based on the current size. Specifically, the metrics will be applied to the NSTableCellView's textField and imageView outlets. Don't use these and add your own outlets if you wish to control the metrics yourself. */
@@ -95,35 +94,33 @@
 //     /* The highlight style to show no highlight at all. Available in MacOS 10.6 and higher.
 //      */
 //     NSTableViewSelectionHighlightStyleNone API_AVAILABLE(macos(10.6)) = -1,
-    
+
 //     /* The regular highlight style of NSTableView. On the current OS, a light blue ([NSColor alternateSelectedControlColor]) or light gray color ([NSColor secondarySelectedControlColor]) is used to highlight selected rows.
 //      */
 //     NSTableViewSelectionHighlightStyleRegular = 0,
-    
+
 //     // To be deprecated. See NSTableViewStyleSourceList.
 //     NSTableViewSelectionHighlightStyleSourceList API_DEPRECATED("Set the NSTableView.style property to NSTableViewStyleSourceList instead.", macos(10.5, API_TO_BE_DEPRECATED)) = 1,
 // };
-
 
 // typedef NS_ENUM(NSInteger, NSTableViewDraggingDestinationFeedbackStyle) {
 //     /* Provides no feedback when the user drags over the table view. This option exists to allow subclasses to implement their dragging destination highlighting, or to make it not show anything all.
 //      */
 //     NSTableViewDraggingDestinationFeedbackStyleNone = -1,
-    
+
 //     /* Draws a solid selection rectangle background on drop target rows, and an insertion marker between rows. This style should be used in most cases.
 //      */
 //     NSTableViewDraggingDestinationFeedbackStyleRegular = 0,
-    
+
 //     /* On Mac OS 10.0.2, this style is now identical to NSTableViewDraggingDestinationFeedbackStyleRegular. On previous released it draws an outline on drop target rows, and an insertion marker between rows. This style will automatically be set for source lists when [table setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList] is called, as it is the standard look for Source Lists, but may be used in other areas as needed.
 //      */
 //     NSTableViewDraggingDestinationFeedbackStyleSourceList = 1,
-    
+
 //     /* Provides a gap insertion when dragging over the table. Note that this style is only officially supported for View Based TableViews, but may partially work in Cell Based TableViews. The decision to use the gap style (compared to another style) can be made in tableView:draggingSession:willBeginAtPoint:forRowIndexes:, or it can dynamically be changed.
 //      */
 //     NSTableViewDraggingDestinationFeedbackStyleGap API_AVAILABLE(macos(10.9)) = 2,
-    
-// } API_AVAILABLE(macos(10.6));
 
+// } API_AVAILABLE(macos(10.6));
 
 // /* NSTableRowActionEdge is used in the delegate method: tableView:rowActionsForRow:edge: */
 // typedef NS_ENUM(NSInteger, NSTableRowActionEdge) {
@@ -158,7 +155,7 @@
 // **/
 // @property BOOL allowsColumnReordering;
 
-// /* Get and set the allowsColumnResizing. Controls whether the user can attempt to resize columns by dragging between headers. If flag is YES the user can resize columns; if flag is NO the user can't. Columns can only be resized if a column allows user resizing. See -[NSTableColumn setResizingMask:] for more details. You can always change columns programmatically regardless of this setting. The default value is YES. 
+// /* Get and set the allowsColumnResizing. Controls whether the user can attempt to resize columns by dragging between headers. If flag is YES the user can resize columns; if flag is NO the user can't. Columns can only be resized if a column allows user resizing. See -[NSTableColumn setResizingMask:] for more details. You can always change columns programmatically regardless of this setting. The default value is YES.
 // **/
 // @property BOOL allowsColumnResizing;
 
@@ -167,7 +164,7 @@
 // **/
 // @property NSTableViewColumnAutoresizingStyle columnAutoresizingStyle;
 
-// /* Get and set the gridStyleMask. Values can be bitwise or'ed together, however, only one horizontal style can be used at a time. The default value is NSTableViewGridNone. 
+// /* Get and set the gridStyleMask. Values can be bitwise or'ed together, however, only one horizontal style can be used at a time. The default value is NSTableViewGridNone.
 // **/
 // @property NSTableViewGridLineStyle gridStyleMask;
 
@@ -179,7 +176,7 @@
 // **/
 // @property BOOL usesAlternatingRowBackgroundColors;
 
-// /* Get and set the backgroundColor. On Mac OS 10.5 and higher, the alpha portion of 'color' is properly used when drawing the backgroundColor. To have a transparent tableView, set the backgroundColor to [NSColor clearColor], and set the enclosing NSScrollView to not draw its background with: [[tableView enclosingScrollView] setDrawsBackground:NO]. NSTableView uses NSCompositeSourceOver when drawing the background color. The default value is [NSColor controlBackgroundColor]. 
+// /* Get and set the backgroundColor. On Mac OS 10.5 and higher, the alpha portion of 'color' is properly used when drawing the backgroundColor. To have a transparent tableView, set the backgroundColor to [NSColor clearColor], and set the enclosing NSScrollView to not draw its background with: [[tableView enclosingScrollView] setDrawsBackground:NO]. NSTableView uses NSCompositeSourceOver when drawing the background color. The default value is [NSColor controlBackgroundColor].
 // **/
 // @property (copy) NSColor *backgroundColor;
 
@@ -194,7 +191,6 @@
 // /* Returns the effective row size style for the table. If the rowSizeStyle is NSTableViewRowSizeStyleDefault, then this method returns the default size for this particular table.
 // **/
 // @property (readonly) NSTableViewRowSizeStyle effectiveRowSizeStyle API_AVAILABLE(macos(10.7));
-
 
 // /* Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height tableViews (ones that have the delegate implement -tableView:heightOfRow:), -rowHeight will be used to draw alternating rows past the last row in the tableView. The actual -rectOfRow: is equal to the -rowHeight plus the intercellSpacing.height. The default value is 17.0 for applications linked on 10.5 and higher (the height acceptable for [NSFont systemFontSize]). The default value is 16.0 for 10.4 and lower. Group rows will follow the system defined height.
 // **/
@@ -250,7 +246,7 @@
 // **/
 // - (void)reloadData;
 
-// /* 
+// /*
 //  Cell Based TableView: This method tells the table that there may be more (or less) rows available and to reload state based on that information.
 //  View Based TableView: This method can only be used to increase or decrease the number of rows in the table. The table will query the datasource for the new number of rows, and properly insert (or remove) rows at the end of the table as necessary with an animation. This method does *NOT* work for NSOutlineView, and should not be called.
 // **/
@@ -260,7 +256,7 @@
 // **/
 // - (void)reloadDataForRowIndexes:(NSIndexSet *)rowIndexes columnIndexes:(NSIndexSet *)columnIndexes API_AVAILABLE(macos(10.6));
 
-// /* 
+// /*
 //  Cell Based TableView: Returns the column and row that is being edited. editedRow will be -1 if there is no editing session happening. editedColumn will be -1 if there is no editing session, or the currently edited row is a "full width" row.
 //  View Based TableView: Not applicable. Subviews are responsible for editing.
 // **/
@@ -293,8 +289,8 @@
 // **/
 // @property BOOL verticalMotionCanBeginDrag;
 
-// /* The return value indicates whether the receiver can attempt to initiate a row drag at 'mouseDownPoint'. Return NO to disallow initiating drags at the given location. 
-    
+// /* The return value indicates whether the receiver can attempt to initiate a row drag at 'mouseDownPoint'. Return NO to disallow initiating drags at the given location.
+
 //     For applications linked on and after Leopard, NSCell hit testing will determine if a row can be dragged or not. Custom cells should properly implement [NSCell(NSCellHitTest) hitTestForEvent:inRect:ofView]; see NSCell.h for more information. NSTableView will not begin a drag if cell returns NSCellHitTrackableArea (ie: NSButtonCells).
 // */
 // - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint;
@@ -332,16 +328,16 @@
 
 // - (void)deselectAll:(nullable id)sender;
 
-// /* Sets the column selection using the indexes.  Selection is set/extended based on the extend flag. 
+// /* Sets the column selection using the indexes.  Selection is set/extended based on the extend flag.
 //    Compatability Note: This method replaces selectColumn:byExtendingSelection:
 //        If a subclasser implements only the deprecated single-index method (selectColumn:byExtendingSelection:), the single-index method will be invoked for each index.  If a subclasser implements the multi-index method (selectColumnIndexes:byExtendingSelection:), the deprecated single-index version method will not be used.  This allows subclassers already overriding the single-index method to still receive a selection message.  Note: to avoid cycles, subclassers of this method and single-index method should not call each other.
 // */
 // - (void)selectColumnIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)extend;
 
 // /* Sets the row selection using 'indexes'. Selection is set/extended based on the extend flag. On 10.5 and greater, selectRowIndexes:byExtendingSelection: will allow you to progrmatically select more than one index, regardless of the allowsMultipleSelection and allowsEmptySelection options set on the table.
- 
+
 //    View Based TableViews: This method is animatable by using the animator proxy. IE: [tableView.animator selectRowIndexes:.. byExtendingSelection:..];
- 
+
 //    Compatability Note: This method replaces selectRow:byExtendingSelection:
 //        If a subclasser implements only the deprecated single-index method (selectRow:byExtendingSelection:), the single-index method will be invoked for each index.  If a subclasser implements the multi-index method (selectRowIndexes:byExtendingSelection:), the deprecated single-index version method will not be used.  This allows subclassers already overriding the single-index method to still receive a selection message.  Note: to avoid cycles, subclassers of this method and single-index method should not call each other.
 // */
@@ -364,7 +360,6 @@
 
 // /* Allow type selection in this tableView. The default value is YES.
 // **/
-
 // @property BOOL allowsTypeSelect API_AVAILABLE(macos(10.5));
 
 // // The table view style. Defaults to NSTableViewStyleAutomatic
@@ -389,7 +384,7 @@
 // **/
 // - (NSRect)rectOfRow:(NSInteger)row;
 
-// /* Returns the indexes for columns in 'rect'. NSTableColumns which have -isHidden == YES are not returned. If 'rect' is empty, no indexes will be returned. Introduced in Mac OS 10.5. 
+// /* Returns the indexes for columns in 'rect'. NSTableColumns which have -isHidden == YES are not returned. If 'rect' is empty, no indexes will be returned. Introduced in Mac OS 10.5.
 // **/
 // - (NSIndexSet *)columnIndexesInRect:(NSRect)rect API_AVAILABLE(macos(10.5));
 
@@ -418,27 +413,26 @@
 
 // /* On Mac OS 10.5 and higher, NSTableView supports sub-cell focusing. The following set of methods control the focusing.
 // **/
-
 // /* View Based TableView: This method attempts to make the view at 'column/row' the first responder, which will begin editing if the view supports editing.
 //    Cell Based TableView: This method edits the NSCell located at 'column/row' by calling the following NSCell method:
- 
+
 //  - (void)editWithFrame:(NSRect)rect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)delegate event:(NSEvent *)event;
- 
+
 //  or, if 'select' is YES:
- 
+
 //  - (void)selectWithFrame:(NSRect)rect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)delegate start:(NSInteger)selStart length:(NSInteger)selLength;
- 
+
 // **/
 // - (void)editColumn:(NSInteger)column row:(NSInteger)row withEvent:(nullable NSEvent *)event select:(BOOL)select;
 
 // /* View Based TableView: This method should not be subclassed or overridden for a "View Based TableView". Instead, row drawing customization can be done by subclassing NSTableRowView.
-//    Cell Based TableView: This method can be overriden to customize drawing for 'row'. 
+//    Cell Based TableView: This method can be overriden to customize drawing for 'row'.
 // **/
 // - (void)drawRow:(NSInteger)row clipRect:(NSRect)clipRect;
- 
+
 // /* View Based TableView: This method should not be subclassed or overridden for a "View Based TableView". Instead, row drawing customization can be done by subclassing NSTableRowView.
-//  Cell Based TableView: This method can be overriden to customize selection highlighting. 
- 
+//  Cell Based TableView: This method can be overriden to customize selection highlighting.
+
 //  10.10: This method will not be called if the selectionHighlightStyle is set to NSTableViewSelectionHighlightStyleSourceList.
 // **/
 // - (void)highlightSelectionInClipRect:(NSRect)clipRect;
@@ -455,10 +449,9 @@
 // #pragma mark ***** View Based TableView Support *****
 
 // /* View Based TableView: Access to a view (or row view) for a particular 'row' / 'column'. Returns 'nil' if there is no view at that location. An exception will be thrown if 'row' is not within the numberOfRows. The returned result is always an 'id' for easy assignment to local types, however, -viewAtColumn:row: will always return an NSView, and rowViewAtRow: will always return an NSTableRowView (or subclass thereof). The returned result should generally not be held onto for longer than the current run loop cycle.
- 
+
 //  This method will first attempt to return a currently displayed view in the visible area. If there is no visible view, and makeIfNecessary is YES, a prepared temporary view is returned. If makeIfNecessary is NO, and the view is not visible, nil will be returned. In general, makeIfNecessary should be YES if you require a resulting view, and NO if you only want to update properties on a view only if it is available (generally this means it is visible).
 // **/
-
 // - (nullable __kindof NSView *)viewAtColumn:(NSInteger)column row:(NSInteger)row makeIfNecessary:(BOOL)makeIfNecessary API_AVAILABLE(macos(10.7));
 // - (nullable __kindof NSTableRowView *)rowViewAtRow:(NSInteger)row makeIfNecessary:(BOOL)makeIfNecessary API_AVAILABLE(macos(10.7));
 
@@ -468,7 +461,7 @@
 // - (NSInteger)columnForView:(NSView *)view API_AVAILABLE(macos(10.7));
 
 // /* View Based TableView: Returns an autoreleased view with a particular 'identifier'. Typically the 'identifier' is associated with a particular "cell view" in IB. The TableView will automatically instantiate the embedded view with the provided owner. This method will typically be called by the delegate in -viewForTableColumn:row:, but it can also be overridden to provide custom views for a particular 'identifier'. This method may also return a reused view with the same 'identifier' that was no longer available on screen. 'identifier' can not be nil. Note that 'owner' will get an 'awakeFromNib:' call each time the object is instantiated.
-// **/ 
+// **/
 // - (nullable __kindof NSView *)makeViewWithIdentifier:(NSUserInterfaceItemIdentifier)identifier owner:(nullable id)owner API_AVAILABLE(macos(10.7));
 
 // /* Enumerates all available NSTableRowViews. This includes all views in the -visibleRect, however, it may also include ones that are "in flight" due to animations or other various attributes of the table.
@@ -487,7 +480,6 @@
 // #pragma mark ***** Insert / Remove / Delete Rows *****
 
 // /* NSTableView Animation Options */
-
 // typedef NS_OPTIONS(NSUInteger, NSTableViewAnimationOptions) {
 // /* Use to not apply any animation effect (the default). Specifying any animation from the effect groups below negates this effect.
 // **/
@@ -506,9 +498,8 @@
 //     NSTableViewAnimationSlideRight = 0x40, // Animates a row in by sliding from the right. Animates a row out by sliding towards the right.
 // } API_AVAILABLE(macos(10.7));
 
-    
 // /* View Based TableView: Multiple row changes (inserts/deletes/moves/scrolling) can be animated simultaneously by surrounding calls around a beginUpdates/endUpdates pair. When changing rows, the prior state before -beginUpdates is the starting point assumed for all deletion and move calls. Calls are nestable. -selectedRowIndexes is properly maintained based on the series of inserts/deletes/moves. If a selected row is deleted, a selection changed notification will happen after endUpdates is called. It is not necessary to call beginUpdates/endUpdates if only one insertion/deletion/move is happening. Note that these methods should be called to reflect changes in your model; they do not make any underlying model changes.
- 
+
 //    Cell Based TableView: Any row modifications must first be wrapped in a -beginUpdates/-endUpdates block -- this is required to properly maintain state and to allow animations to happen.
 // **/
 // - (void)beginUpdates API_AVAILABLE(macos(10.7));
@@ -563,7 +554,6 @@
 // **/
 // @property BOOL usesAutomaticRowHeights API_AVAILABLE(macos(10.13));
 
-
 // @end
 
 // #pragma mark -
@@ -574,11 +564,11 @@
 // #pragma mark -
 // #pragma mark ***** View Based TableView Support *****
 
-// /* View Based TableView: 
+// /* View Based TableView:
 //  Non-bindings: This method is required if you wish to turn on the use of NSViews instead of NSCells. The implementation of this method will usually call -[tableView makeViewWithIdentifier:[tableColumn identifier] owner:self] in order to reuse a previous view, or automatically unarchive an associated prototype view for that identifier. The -frame of the returned view is not important, and it will be automatically set by the table. 'tableColumn' will be nil if the row is a group row. Returning nil is acceptable, and a view will not be shown at that location. The view's properties should be properly set up before returning the result.
- 
+
 //  Bindings: This method is optional if at least one identifier has been associated with the TableView at design time. If this method is not implemented, the table will automatically call -[self makeViewWithIdentifier:[tableColumn identifier] owner:[tableView delegate]] to attempt to reuse a previous view, or automatically unarchive an associated prototype view. If the method is implemented, the developer can setup properties that aren't using bindings.
- 
+
 //  The autoresizingMask of the returned view will automatically be set to NSViewHeightSizable to resize properly on row height changes.
 // **/
 // - (nullable NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row API_AVAILABLE(macos(10.7));
@@ -600,9 +590,8 @@
 
 // /* Note: cell-based NSTableViews are deprecated in Mac OS 10.10.  Prefer the view-based interface.
 // **/
-
 // /* Allows the delegate to provide further setup for 'cell' in 'tableColumn'/'row'. It is not safe to do drawing inside this method, and you should only setup state for 'cell'.
-// **/ 
+// **/
 // - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row;
 // - (BOOL)tableView:(NSTableView *)tableView shouldEditTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row;
 
@@ -613,7 +602,7 @@
 
 // /* Optional - Expansion ToolTip support
 //     View Based TableView: This method is not called or used.
-//     Cell Based TableView: Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell in a given row and tableColumn. See NSCell.h for more information on expansion tool tips. 
+//     Cell Based TableView: Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell in a given row and tableColumn. See NSCell.h for more information on expansion tool tips.
 // **/
 // - (BOOL)tableView:(NSTableView *)tableView shouldShowCellExpansionForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row API_AVAILABLE(macos(10.5));
 
@@ -624,7 +613,7 @@
 
 // /*  Optional - Different cells for each row
 //  A different data cell can be returned for any particular tableColumn and row, or a cell that will be used for the entire row (a full width cell). The returned cell should properly implement copyWithZone:, since the cell may be copied by NSTableView. If the tableColumn is non-nil, and nil is returned, then the table will use the default cell from [tableColumn dataCellForRow:row].
- 
+
 //  When each row is being drawn, this method will first be called with a nil tableColumn. At this time, you can return a cell that will be used to draw the entire row, acting like a group. If you do return a cell for the 'nil' tableColumn, be prepared to have the other corresponding datasource and delegate methods to be called with a 'nil' tableColumn value. If don't return a cell, the method will be called once for each tableColumn in the tableView, as usual.
 // **/
 // - (nullable NSCell *)tableView:(NSTableView *)tableView dataCellForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row API_AVAILABLE(macos(10.5));
@@ -636,7 +625,7 @@
 // **/
 // - (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView;
 
-// /* Optional - Return YES if 'row' should be selected and NO if it should not. For better performance and better control over the selection, you should use tableView:selectionIndexesForProposedSelection:. 
+// /* Optional - Return YES if 'row' should be selected and NO if it should not. For better performance and better control over the selection, you should use tableView:selectionIndexesForProposedSelection:.
 // */
 // - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row;
 
@@ -666,11 +655,11 @@
 // - (NSInteger)tableView:(NSTableView *)tableView nextTypeSelectMatchFromRow:(NSInteger)startRow toRow:(NSInteger)endRow forString:(NSString *)searchString API_AVAILABLE(macos(10.5));
 
 // /* Optional - Type select support
-//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began. 
+//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began.
 // */
 // - (BOOL)tableView:(NSTableView *)tableView shouldTypeSelectForEvent:(NSEvent *)event withCurrentSearchString:(nullable NSString *)searchString API_AVAILABLE(macos(10.5));
 
-// /* Optional - Group rows. 
+// /* Optional - Group rows.
 //     Implement this method and return YES to indicate a particular row should have the "group row" style drawn for that row. If the cell in that row is an NSTextFieldCell and contains only a stringValue, the "group row" style attributes will automatically be applied for that cell. Group rows are drawn differently depending on the selectionHighlightStyle. For NSTableViewSelectionHighlightStyleRegular, there is a blue gradient background. For NSTableViewSelectionHighlightStyleSourceList, the text is light blue, and there is no background. Also see the related floatsGroupRows property.
 // */
 // - (BOOL)tableView:(NSTableView *)tableView isGroupRow:(NSInteger)row API_AVAILABLE(macos(10.5));
@@ -681,12 +670,12 @@
 // - (CGFloat)tableView:(NSTableView *)tableView sizeToFitWidthOfColumn:(NSInteger)column API_AVAILABLE(macos(10.6));
 
 // /*  Optional - Control of column reordering.
-//  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable. 
+//  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable.
 // **/
 // - (BOOL)tableView:(NSTableView *)tableView shouldReorderColumn:(NSInteger)columnIndex toColumn:(NSInteger)newColumnIndex API_AVAILABLE(macos(10.6));
 
 // /* Optional - Row actions for a "swipe to delete" feature to show a button on the left or right of a row to do some action (typically deletion).
- 
+
 //  View Based TableView: Return an array of NSTableViewRowAction objects to be shown on the ‘edge’, where the NSTableRowActionEdge is either the leading or trailing edge of an NSTableRowView. The edge is determined automatically by the table based on the swipe direction. Return an empty array to not show any actions on a given edge.
 // **/
 // - (NSArray<NSTableViewRowAction *> *)tableView:(NSTableView *)tableView rowActionsForRow:(NSInteger)row edge:(NSTableRowActionEdge)edge API_AVAILABLE(macos(10.11));
@@ -697,7 +686,7 @@
 // - (void)tableViewSelectionDidChange:(NSNotification *)notification;
 // - (void)tableViewColumnDidMove:(NSNotification *)notification;
 // - (void)tableViewColumnDidResize:(NSNotification *)notification;
-    
+
 // /* Optional -  Called when the selection is about to be changed, but note, tableViewSelectionIsChanging: is only called when mouse events are changing the selection and not keyboard events.
 // **/
 // - (void)tableViewSelectionIsChanging:(NSNotification *)notification;
@@ -742,7 +731,7 @@
 // **/
 // - (nullable id <NSPasteboardWriting>)tableView:(NSTableView *)tableView pasteboardWriterForRow:(NSInteger)row API_AVAILABLE(macos(10.7));
 
-// /* Dragging Source Support - Optional. Implement this method to know when the dragging session is about to begin and to potentially modify the dragging session.'rowIndexes' are the row indexes being dragged, excluding rows that were not dragged due to tableView:pasteboardWriterForRow: returning nil. The order will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -tableView:acceptDrop:row:dropOperation: when enumerating the NSDraggingInfo's pasteboard classes. 
+// /* Dragging Source Support - Optional. Implement this method to know when the dragging session is about to begin and to potentially modify the dragging session.'rowIndexes' are the row indexes being dragged, excluding rows that were not dragged due to tableView:pasteboardWriterForRow: returning nil. The order will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -tableView:acceptDrop:row:dropOperation: when enumerating the NSDraggingInfo's pasteboard classes.
 // **/
 // - (void)tableView:(NSTableView *)tableView draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes API_AVAILABLE(macos(10.7));
 
@@ -777,17 +766,14 @@
 // /*
 //  * Deprecated delegate methods
 // **/
- 
 // /* Deprecated in Mac OS 10.4.  You should implement tableView:writeRowsWithIndexes:toPasteboard: instead. See that method for more details.
 // */
 // - (BOOL)tableView:(NSTableView *)tableView writeRows:(NSArray *)rows toPasteboard:(NSPasteboard *)pboard API_DEPRECATED("", macos(10.0,10.4));
 
 // @end
 
-
 // /* Deprecated methods */
-
-// @interface NSTableView(NSDeprecated) 
+// @interface NSTableView(NSDeprecated)
 
 // /* Deprecated in Mac OS 10.3.  Calls setGridStyleMask:, setting grid style to either None, or vertical and horizonal solid grid lines as appropriate.
 // */
@@ -814,7 +800,7 @@
 // - (NSEnumerator *)selectedRowEnumerator API_DEPRECATED("", macos(10.0,10.3));
 
 // /* Deprecated in Mac OS 10.4.  You should use / override dragImageForRowsWithIndexes:tableColumns:event:dragImageOffset: instead.
-// */ 
+// */
 // - (nullable NSImage *)dragImageForRows:(NSArray *)dragRows event:(NSEvent *)dragEvent dragImageOffset:(NSPointPointer)dragImageOffset API_DEPRECATED("", macos(10.0,10.4));
 
 // /* Deprecated in Mac OS 10.4.  You should use setColumnAutoresizingStyle: instead.  To preserve compatibility, if flag is YES, This method calls setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle.  If flag is NO, this method calls setColumnAutoresizingStyle:NSTableViewLastColumnOnlyAutoresizingStyle.
@@ -822,7 +808,7 @@
 // - (void)setAutoresizesAllColumnsToFit:(BOOL)flag API_DEPRECATED("", macos(10.0,10.4));
 // - (BOOL)autoresizesAllColumnsToFit API_DEPRECATED("", macos(10.0,10.4));
 
-// /* Deprecated in Mac OS 10.5. Since an NSTableColumn can have visible=NO, it is no longer possible to return a valid range of columns given a rect. Use columnIndexesInRect: 
+// /* Deprecated in Mac OS 10.5. Since an NSTableColumn can have visible=NO, it is no longer possible to return a valid range of columns given a rect. Use columnIndexesInRect:
 // */
 // - (NSRange)columnsInRect:(NSRect)rect API_DEPRECATED("", macos(10.0,10.5));
 
@@ -839,8 +825,6 @@
 // - (void)setFocusedColumn:(NSInteger)focusedColumn  API_DEPRECATED("Use a View Based TableView; make a particular view the first responder with [window makeFirstResponder:view] to focus it.", macos(10.6,10.10));
 // - (void)performClickOnCellAtColumn:(NSInteger)column row:(NSInteger)row  API_DEPRECATED("Use a View Based TableView; directly interact with a particular view as required and call -performClick: on it, if necessary", macos(10.6,10.10));
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

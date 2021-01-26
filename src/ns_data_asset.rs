@@ -4,7 +4,6 @@
 // 	Copyright (c) 2015-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -16,7 +15,6 @@
 
 // /* An NSDataAsset instance provides access to a data entry in an asset catalog such as Images.xcassets. Data entries and image entries in asset catalogs do not share the same namespace. For example, if an asset catalog contains an image entry named @"foo" but no data entry named @"foo", [[NSDataAsset alloc] initWithName:@"foo"] will return nil.
 // */
-
 // API_AVAILABLE(ios(9.0), macos(10.11), tvos(9.0), watchos(2.0)) @interface NSDataAsset : NSObject<NSCopying>
 
 // - (instancetype)init NS_UNAVAILABLE;

@@ -4,7 +4,6 @@
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSComparisonPredicate.h>
@@ -35,7 +34,7 @@
 // - (NSPredicate *)predicateWithSubpredicates:(nullable NSArray<NSPredicate *> *)subpredicates;
 
 // /* for a given predicate, returns the subpredicates that should be made subrows.  For NSCompoundPredicate, this returns the array of subpredicates; it returns nil for other types of predicates.  This is only called if matchForPredicate: returns a positive value for the given predicate.  Developers can override this to create custom templates that handle complicated compound predicates.
-// */ 
+// */
 // - (nullable NSArray<NSPredicate *> *)displayableSubpredicatesOfPredicate:(NSPredicate *)predicate;
 
 // /* creates a template of the popup-popup-popup form, with the left and right popups representing the left and right expression arrays, and the center popup representing the operators.
@@ -68,4 +67,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

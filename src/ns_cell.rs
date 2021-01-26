@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSGeometry.h>
@@ -62,7 +61,7 @@
 //     NSImageScaleAxesIndependently,      // Scale each dimension to exactly fit destination. Do not preserve aspect ratio.
 //     NSImageScaleNone,                   // Do not scale.
 //     NSImageScaleProportionallyUpOrDown, // Scale image to maximum possible dimensions while (1) staying within destination area (2) preserving aspect ratio
-    
+
 //     NSScaleProportionally API_DEPRECATED("Use NSImageScaleProportionallyDown instead", macos(10.0,10.10)) = 0,
 //     NSScaleToFit API_DEPRECATED("Use NSImageScaleAxesIndependently instead", macos(10.0,10.10)),
 //     NSScaleNone API_DEPRECATED("Use NSImageScaleNone instead", macos(10.0,10.10))
@@ -239,7 +238,6 @@
 // @end
 
 // /* Cell Hit testing support */
-
 // typedef NS_OPTIONS(NSUInteger, NSCellHitResult) {
 //     // An empty area, or did not hit in the cell
 //     NSCellHitNone = 0,
@@ -256,10 +254,10 @@
 
 //     By default, NSCell will look at the cell type and do the following:
 
-//     NSImageCellType: 
+//     NSImageCellType:
 //         If the image exists, and the event point is in the image return NSCellHitContentArea, else NSCellHitNone.
 
-//     NSTextCellType (also applies to NSTextFieldCell): 
+//     NSTextCellType (also applies to NSTextFieldCell):
 //         If there is text:
 //             If the event point hits in the text, return NSCellHitContentArea. Additionally, if the cell is enabled return NSCellHitContentArea | NSCellHitEditableTextArea.
 //         If there is not text:
@@ -273,7 +271,7 @@
 // @end
 
 // @interface NSCell(NSCellExpansion)
-// /*  Allows the cell to return an expansion cell frame if cellFrame is too small for the entire contents in the view. When the mouse is hovered over the cell in certain controls, the full cell contents will be shown in a special floating tool tip view. If the frame is not too small, return an empty rect, and no expansion tool tip view will be shown. By default, NSCell returns NSZeroRect, while some subclasses (such as NSTextFieldCell) will return the proper frame when required. 
+// /*  Allows the cell to return an expansion cell frame if cellFrame is too small for the entire contents in the view. When the mouse is hovered over the cell in certain controls, the full cell contents will be shown in a special floating tool tip view. If the frame is not too small, return an empty rect, and no expansion tool tip view will be shown. By default, NSCell returns NSZeroRect, while some subclasses (such as NSTextFieldCell) will return the proper frame when required.
 // */
 // - (NSRect)expansionFrameWithFrame:(NSRect)cellFrame inView:(NSView *)view API_AVAILABLE(macos(10.5));
 
@@ -302,8 +300,8 @@
 // **/
 // @property NSBackgroundStyle backgroundStyle API_AVAILABLE(macos(10.5));
 
-// /* Describes the surface drawn onto in -[NSCell drawInteriorWithFrame:inView:]. This is often the same as the backgroundStyle, but a button that draws a bezel would have a different interiorBackgroundStyle.  
- 
+// /* Describes the surface drawn onto in -[NSCell drawInteriorWithFrame:inView:]. This is often the same as the backgroundStyle, but a button that draws a bezel would have a different interiorBackgroundStyle.
+
 //  This is both an override point and a useful method to call. A button that draws a custom bezel would override this to describe that surface. A cell that has custom interior drawing might query this method to help pick an image that looks good on the cell. Calling this method gives you some independence from changes in framework art style.
 // **/
 // @property (readonly) NSBackgroundStyle interiorBackgroundStyle API_AVAILABLE(macos(10.5));
@@ -366,8 +364,6 @@
 //     NSDoubleType API_DEPRECATED("Use formatters instead", macos(10.0,10.0)) = 6,
 //     NSPositiveDoubleType API_DEPRECATED("Use formatters instead", macos(10.0,10.0)) = 7
 // };
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -23,7 +22,6 @@
 //     NSExcludeQuickDrawElementsIconCreationOption    = 1 << 1,
 //     NSExclude10_4ElementsIconCreationOption	    = 1 << 2
 // };
-
 
 // @interface NSWorkspace : NSObject
 
@@ -81,9 +79,9 @@
 // @property (readonly, copy) NSArray<NSColor *> *fileLabelColors API_AVAILABLE(macos(10.6));
 
 // /* Asynchronous file operations.  recycleURLs moves the given files to the trash, and duplicateURLs duplicates them in the same manner as the Finder.  If completionHandler is not nil, it will be called when the operation is complete, on the same dispatch queue that was used for the recycleURLs: call.  Within the completion handler, the newURLs dictionary parameter maps the given URLs to their new URLs in the Trash.  Files that could not be moved to the Trash will not be present in the dictionary.
- 
+
 // If the operation succeeded for every file, the error parameter will be nil.  If it failed for one or more files, the error parameter will describe the overall result of the operation in a manner suitable for presentation to the user.  The completionHandler may be nil if you are not interested in the results.
- 
+
 //  These methods may show a progress indicator, or other user interface elements, at AppKit's discretion.  In Mac OS X 10.6, these methods require that the main run loop be run in a common mode.
 // */
 // - (void)recycleURLs:(NSArray<NSURL *> *)URLs completionHandler:(void (^ _Nullable)(NSDictionary<NSURL *, NSURL *> * newURLs, NSError * _Nullable error))handler API_AVAILABLE(macos(10.6));
@@ -176,7 +174,6 @@
 
 // @end
 
-
 // /* The following keys may be specified or returned in the options dictionary for setDesktopImageURL:forScreen:options:error: and desktopImageOptionsForScreen:. */
 // typedef NSString * NSWorkspaceDesktopImageOptionKey NS_TYPED_ENUM;
 
@@ -191,7 +188,6 @@
 // /* The value is an NSColor, which is used to fill any empty space around the image.  If not specified, a default value is used.  Currently, only colors that use or can be converted to use NSCalibratedRGBColorSpace are supported, and any alpha value is ignored.
 // **/
 // APPKIT_EXTERN NSWorkspaceDesktopImageOptionKey const NSWorkspaceDesktopImageFillColorKey API_AVAILABLE(macos(10.6));
-
 
 // /* Desktop images */
 // @interface NSWorkspace (NSDesktopImages)
@@ -212,7 +208,6 @@
 
 // @end
 
-
 // typedef NS_ENUM(NSInteger, NSWorkspaceAuthorizationType) {
 //     NSWorkspaceAuthorizationTypeCreateSymbolicLink,
 //     NSWorkspaceAuthorizationTypeSetAttributes,
@@ -230,26 +225,26 @@
 // @interface NSFileManager (NSWorkspaceAuthorization)
 
 // /* The following method returns an NSFileManager instance that can perform file system operations previously allowed by the user via -[NSWorkspace requestAuthorizationOfType:completionHandler:]. Each NSWorkspaceAuthorization you receive requires creating a new NSFileManager instance using this method.
- 
+
 //  Only the following NSFileManager methods currently take advantage of an authorization:
- 
+
 //  -createSymbolicLinkAtURL:withDestinationURL:error:  (NSWorkspaceAuthorizationTypeCreateSymbolicLink)
 //  -setAttributes:ofItemAtPath:error:  (NSWorkspaceAuthorizationTypeSetAttributes)
 //  -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error:  (NSWorkspaceAuthorizationTypeReplaceFile)
- 
+
 //  Note that an NSWorkspaceAuthorizationTypeSetAttributes authorization only enables -setAttributes:ofItemAtPath:error: to modify the following attributes:
- 
+
 //  - NSFileOwnerAccountID
 //  - NSFileGroupOwnerAccountID
 //  - NSFilePosixPermissions
- 
+
 //  Also note that for -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error:, the backupItemName and options parameters will be ignored.
- 
+
 //  These methods may also fail with any of the following errors:
 //  - NSWorkspaceAuthorizationInvalidError: The provided NSWorkspaceAuthorization expired or is invalid.
 //  - NSFileWriteUnknownError: The application failed to communicate with a helper process, or a file system error occurred.
 //  - NSFileWriteNoPermissionError: The operation failed for any other reason, including the user denying access to the resource, or access to a resource is denied by system policy.
- 
+
 //  All other NSFileManager methods invoked on this instance will behave normally.
 // **/
 // + (instancetype)fileManagerWithAuthorization:(NSWorkspaceAuthorization *)authorization API_AVAILABLE(macos(10.14));
@@ -257,7 +252,6 @@
 // @end
 
 // /* Application notifications */
-
 // /* In Mac OS X 10.6 and later, all application notifications have the following key in their userInfo.  Its value is an instance of NSRunningApplication, representing the affected app.
 // **/
 // APPKIT_EXTERN NSString * const NSWorkspaceApplicationKey API_AVAILABLE(macos(10.6));
@@ -270,9 +264,7 @@
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidActivateApplicationNotification API_AVAILABLE(macos(10.6));
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidDeactivateApplicationNotification API_AVAILABLE(macos(10.6));
 
-
 // /* Volume notifications */
-
 // /* In Mac OS X 10.6 and later, the following keys are available in the userInfo of NSWorkspaceDidMountNotification, NSWorkspaceWillUnmountNotification, NSWorkspaceDidUnmountNotification, and NSWorkspaceDidRenameVolumeNotification.
 // */
 // APPKIT_EXTERN NSString * const NSWorkspaceVolumeLocalizedNameKey API_AVAILABLE(macos(10.6)); //NSString containing the user-visible name of the volume
@@ -291,7 +283,6 @@
 // **/
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidRenameVolumeNotification API_AVAILABLE(macos(10.6));
 
-
 // /* Power notifications */
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceWillPowerOffNotification;
 
@@ -305,15 +296,12 @@
 // APPKIT_EXTERN NSNotificationName NSWorkspaceSessionDidBecomeActiveNotification;
 // APPKIT_EXTERN NSNotificationName NSWorkspaceSessionDidResignActiveNotification;
 
-
 // /* Miscellaneous notifications */
-
 // /* NSWorkspaceDidChangeFileLabelsNotification is posted when the user changes a file label color name or the color itself.  The notification object is always NSWorkspace, and there is no user info.
 // **/
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceDidChangeFileLabelsNotification API_AVAILABLE(macos(10.6));
 
 // APPKIT_EXTERN NSNotificationName const NSWorkspaceActiveSpaceDidChangeNotification API_AVAILABLE(macos(10.6));
-
 
 // /* Everything remaining in this header is deprecated and should not be used. */
 // typedef NSString * NSWorkspaceFileOperationName API_DEPRECATED("", macos(10.0,10.11)) NS_TYPED_ENUM;
@@ -342,7 +330,6 @@
 // APPKIT_EXTERN NSWorkspaceLaunchConfigurationKey const NSWorkspaceLaunchConfigurationEnvironment API_DEPRECATED("Use -[NSWorkspaceOpenConfiguration setEnvironment:] instead.", macos(10.6, 11.0)); //an NSDictionary, mapping NSStrings to NSStrings, containing environment variables to set for the new app. Ignored if a new instance is not launched.
 // APPKIT_EXTERN NSWorkspaceLaunchConfigurationKey const NSWorkspaceLaunchConfigurationArchitecture API_DEPRECATED("Do not specify an architecutre. When unspecified, the architecture for a new application instance will be determined based on the available architectures in its executable.", macos(10.6, 11.0)); //an NSNumber containing an NSBundleExecutableArchitecture (from NSBundle.h). Ignored if a new instance is not launched.
 
-
 // @interface NSWorkspace (NSDeprecated)
 
 // /* Open a file at some path. If you use the variant without the withApplication: parameter, or if you pass nil for this parameter, the default application is used. The appName parameter may be a full path to an application, or just the application's name, with or without the .app extension. If you pass YES for andDeactivate:, or call a variant without this parameter, the calling app is deactivated before the new app is launched, so that the new app may come to the foreground unless the user switches to another application in the interim. Passing YES for andDeactivate: is generally recommended.
@@ -355,7 +342,7 @@
 // - (BOOL)launchApplication:(NSString *)appName API_DEPRECATED("Use -[NSWorkspace openApplicationAtURL:configuration:completionHandler:] instead.", macos(10.0, 11.0));
 
 // /* Launches the app at the given URL. If the app is successfully launched, a reference to the new running app is returned. If the app is already running, and NSWorkspaceLaunchNewInstance is not specified, then a reference to the existing app is returned. If the app could not be launched, nil is returned and an NSError is returned by reference.
- 
+
 //  The configuration dictionary can be used to pass additional options to the app. The configuration dictionary may be empty, in which case default behavior applies.
 // **/
 // - (nullable NSRunningApplication *)launchApplicationAtURL:(NSURL *)url options:(NSWorkspaceLaunchOptions)options configuration:(NSDictionary<NSWorkspaceLaunchConfigurationKey, id> *)configuration error:(NSError **)error API_DEPRECATED("Use -[NSWorkspace openApplicationAtURL:configuration:completionHandler:] instead.", macos(10.6, 11.0));
@@ -391,7 +378,6 @@
 // - (BOOL)userDefaultsChanged API_DEPRECATED("", macos(10.0,10.6));
 // - (nullable NSArray *)mountNewRemovableMedia API_DEPRECATED("", macos(10.0,10.6));
 
-
 // /* The following methods return information about an application as a dictionary containing as many of the following keys as are available:
 //  NSApplicationPath (the full path to the application, as a string)
 //  NSApplicationName (the application's name, as a string)
@@ -401,7 +387,6 @@
 //  NSApplicationProcessSerialNumberLow (the low long of the PSN, as an NSNumber)
 //  The same information will now be provided in the userInfo of the NSWorkspace notifications for application launch and termination.
 // **/
-
 // /* Get an NSDictionary representing the currently frontmost app, with the above keys.  The NSWorkspaceApplicationKey is also provided.  On Mac OS X 10.7 and later, use -frontmostApplication. */
 // - (nullable NSDictionary *)activeApplication API_DEPRECATED("Use -[NSWorkspace frontmostApplication] instead.", macos(10.0,10.11));
 
@@ -411,14 +396,12 @@
 // /* Get the mount paths of all volumes backed by removable media, such as DVDs. On Mac OS X 10.6 and later, use -[NSFileManager mountedVolumeURLsIncludingResourceValuesForKeys:options:] instead. */
 // - (nullable NSArray *)mountedRemovableMedia API_DEPRECATED("Use -[NSFileManager mountedVolumeURLsIncludingResourceValuesForKeys:options:] instead.", macos(10.0,10.11));
 
-
 // /* Gets an array of NSDictionaries with the above keys.  In addition, the NSWorkspaceApplicationKey is provided, and vends an instance of NSRunningApplication.  This method does not return applications that are UIElement or BackgroundOnly.  To access the entire list of running applications, use the -[NSWorkspace runningApplications] method, declared in NSRunningApplication.h.
 // **/
 // - (nullable NSArray *)launchedApplications API_DEPRECATED("Use -[NSWorkspace runningApplications] instead.", macos(10.0,10.7));
 
 // /* Open a file with an animation.  This currently does the same thing as openFile: and its use is discouraged. */
 // - (BOOL)openFile:(NSString *)fullPath fromImage:(nullable NSImage *)image at:(NSPoint)point inView:(nullable NSView *)view API_DEPRECATED("Use -[NSWorkspace openURL:] instead.", macos(10.0,10.11));
-
 
 // /* Performs the given file operation, blocking until complete.  source should be the directory containing the file(s).  For operations that require a destination, such as Move and Copy, destination should be the destination directory; otherwise it should be nil.  files is an array of file names that are in the source directory.
 //  A value is returned by reference in the tag parameter, either 0 for success, or -1 for failure.  tag may be NULL.

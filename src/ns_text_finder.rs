@@ -4,7 +4,6 @@
 //         Copyright (c) 2003-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSGeometry.h>
@@ -34,7 +33,6 @@
 //     NSTextFinderActionHideReplaceInterface = 13
 // } API_AVAILABLE(macos(10.7));
 
-
 // /* Values for communicating NSTextFinder search options via pasteboard. Use the NSPasteboardTypeTextFinderOptions type.
 // */
 // typedef NSString * NSPasteboardTypeTextFinderOptionKey NS_TYPED_ENUM;
@@ -47,7 +45,6 @@
 //     NSTextFinderMatchingTypeFullWord = 2,
 //     NSTextFinderMatchingTypeEndsWith = 3
 // } API_AVAILABLE(macos(10.7));
-
 
 // API_AVAILABLE(macos(10.7))
 // @interface NSTextFinder : NSObject <NSCoding>
@@ -65,18 +62,14 @@
 // /* This property must be set to support the find bar. When the find bar is requested to be shown, NSTextFinder will call -showFindBarView: on the container, passing the view for the find bar, which it should display somewhere that is easily associated with the content being searched. NSScrollView already implements NSTextFinderBarContainer and is an excellent place to display the find bar, in most circumstances. The container may freely modify the find bar view's width and origin, but not its height. If this property is not set, then the find bar cannot be shown. */
 // @property (nullable, assign) IBOutlet id <NSTextFinderBarContainer> findBarContainer;
 
-
 // /* Find indicator control - NSTextFinder and NSView will handle the find indicator correctly when a content view is resized, moved, or removed from the view hierarchy. If your content view's scrolling is done by an NSScrollView, the find indicator will also be handled for you during scrolling. The following methods allow a client to deal with situations outside of these. */
-
 // /* There may be some circumstances where the find indicator should be immediately cancelled or hidden, such as when the view's content or selection is changed without the knowledge of the NSTextFinder. This method will immediately cancel the current find indicator. */
 // - (void)cancelFindIndicator;
 
 // /* If your client's document is not scrolled by NSScrollView, then you should set this property to YES when scrolling occurs to cause the find indicator to be updated appropriately. */
 // @property BOOL findIndicatorNeedsUpdate;
 
-
 // /* Incremental Search */
-
 // /* An NSTextFinder uses this property's value to determine if it should perform regular or incremental searches. If YES, then the find bar will do incremental searches. If it returns NO, then the find bar will behave regularly. The default value is NO. */
 // @property (getter=isIncrementalSearchingEnabled) BOOL incrementalSearchingEnabled;
 
@@ -94,15 +87,13 @@
 
 // @end
 
-
 // @protocol NSTextFinderClient <NSObject>
 
 // /*
 //  All user interface items that control text finding ("Find...", "Find Next", etc.) have -performTextFinderAction: as their action and a tag that corresponds to one of the values in the NSTextFinderAction enum. A responder may implement this method by calling +performAction:forClient: on an NSTextFinder instance. The responder passes both the sender's tag, and the client that the NSTextFinder will interact with.
- 
+
 //  The responder to -performTextFinderAction: should also implement -validateUserInterfaceItem:. When the parameter to this method has an action equal to -performTextFinderAction:, the responder should call +[NSTextFinder validateAction:forClient:], passing the item's tag and the client in a similar manner to its implementation of -performTextFinderAction:.
 // **/
-
 // @optional
 
 // /* NSTextFinder uses the following properties to validate individual actions. If these properties are not implemented, NSTextFinder will act as if they returned YES. */
@@ -110,25 +101,21 @@
 // @property (readonly) BOOL allowsMultipleSelection;
 // @property (getter=isEditable, readonly) BOOL editable;
 
-
 // /* The client must implement at least one of the following two sets of API to provide NSTextFinder access to the content to be searched. If both sets are implemented by the client, the last one will be preferred over the first. */
-
 // /* If the client contains a single string, then the client can implement this property to return that string to be searched. */
 // @property (readonly, strong) NSString *string;
 
 // /*
 //  If the client cannot logically or efficiently flatten itself into a single string, then the following two methods should be used instead. These methods require the client to conceptually map its content to a single string, which is composed of a concatenation of all its substrings.
- 
+
 //  The first method asks for the string that contains the given character index, which the client should return. This client should also return, by reference, the "effective range" of that substring in the full conceptually concatenated string. Finally, the client should return whether the substring ends with a "search boundary", meaning that NSTextFinder should not attempt to find any matches that overlap this boundary.
- 
+
 //  The client should report the full length of the conceptually concatenated string in the second model -- the sum of the lengths of all of its substrings.
 // */
 // - (NSString *)stringAtIndex:(NSUInteger)characterIndex effectiveRange:(NSRangePointer)outRange endsWithSearchBoundary:(BOOL *)outFlag;
 // - (NSUInteger)stringLength;
 
-
 // /* When an action is sent via +performAction:withClient:, NSTextFinder will perform that action, but it may need additional information from the client, or it may require the client to perform some actions on its behalf. The following methods and properties provide the hooks NSTextFinder needs for each of the actions it supports. If the client does not implement one of these methods or properties, then the action that requires it will be disabled. */
-
 // /* This property is required for the NextMatch, PreviousMatch, Replace, ReplaceAndFind, and SetSearchString actions. The client just needs to return its first selected range, or {index, 0} to indicate the location of the insertion point if there is no selection. */
 // @property (readonly) NSRange firstSelectedRange;
 
@@ -143,7 +130,6 @@
 // - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)string;
 // - (void)didReplaceCharacters;
 
-
 // /* This method is used when displaying feedback about find operations to the user. The client should return the view the contains the character at the given index. It should also return by reference the entire range of the string displayed by the view. */
 // - (NSView *)contentViewAtIndex:(NSUInteger)index effectiveCharacterRange:(NSRangePointer)outRange;
 
@@ -157,7 +143,6 @@
 // - (void)drawCharactersInRange:(NSRange)range forContentView:(NSView *)view;
 
 // @end
-
 
 // @protocol NSTextFinderBarContainer <NSObject>
 

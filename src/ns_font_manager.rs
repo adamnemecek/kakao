@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
@@ -39,11 +38,9 @@
 //     NSUnitalicFontMask			= 0x01000000
 // };
 
-
 // typedef NS_OPTIONS(NSUInteger, NSFontCollectionOptions) {
 //    NSFontCollectionApplicationOnlyMask = 1 << 0
 // };
-
 
 // /* And these "actions" are really tag values in Font Menu cells which send any of the action messages listed above.  Normally, they're pre-defined in the font panel.
 // **/
@@ -90,7 +87,6 @@
 // @property (getter=isEnabled) BOOL enabled;
 // @property SEL action;
 // @property (nullable, assign) id delegate API_DEPRECATED("NSFontManager doesn't have any delegate method. This property should not be used.", macos(10.0,10.11));
-
 
 // - (BOOL)sendAction;
 
@@ -156,4 +152,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

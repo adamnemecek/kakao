@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSActionCell.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -104,8 +103,5 @@
 
 // static const NSSliderType NSLinearSlider API_DEPRECATED_WITH_REPLACEMENT("NSSliderTypeLinear", macos(10.0,10.12)) = NSSliderTypeLinear;
 // static const NSSliderType NSCircularSlider API_DEPRECATED_WITH_REPLACEMENT("NSSliderTypeCircular", macos(10.0,10.12)) = NSSliderTypeCircular;
-
-
-
 
 // API_UNAVAILABLE_END

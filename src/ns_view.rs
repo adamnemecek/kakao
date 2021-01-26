@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSDictionary.h>
 // #import <Foundation/NSGeometry.h>
@@ -52,7 +51,7 @@
 //     NSViewLayerContentsRedrawNever = 0,
 //     // Map view -setNeedsDisplay...: activity to the layer, and redraw affected layer parts by invoking the view's -drawRect:, but don't mark the view or layer as needing display when the view's size changes.
 //     NSViewLayerContentsRedrawOnSetNeedsDisplay = 1,
-//     // Resize the layer and redraw the view to the layer when the view's size changes. If the resize is animated, AppKit will drive the resize animation itself and will do this resize+redraw at each step of the animation. Affected parts of the layer will also be redrawn when the view is marked as needing display. (This mode is a superset of NSViewLayerContentsRedrawOnSetNeedsDisplay.) 
+//     // Resize the layer and redraw the view to the layer when the view's size changes. If the resize is animated, AppKit will drive the resize animation itself and will do this resize+redraw at each step of the animation. Affected parts of the layer will also be redrawn when the view is marked as needing display. (This mode is a superset of NSViewLayerContentsRedrawOnSetNeedsDisplay.)
 //     NSViewLayerContentsRedrawDuringViewResize = 2,
 //     // Resize the layer and redraw the view to the layer when the view's size changes. This will be done just once at the beginning of a resize animation, not at each frame of the animation. Affected parts of the layer will also be redrawn when the view is marked as needing display. (This mode is a superset of NSViewLayerContentsRedrawOnSetNeedsDisplay.)
 //     NSViewLayerContentsRedrawBeforeViewResize = 3,
@@ -159,7 +158,6 @@
 // - (NSRect)centerScanRect:(NSRect)rect;
 
 // /* New methods for converting to and from backing store pixels */
-
 // - (NSPoint)convertPointToBacking:(NSPoint)point API_AVAILABLE(macos(10.7));
 // - (NSPoint)convertPointFromBacking:(NSPoint)point API_AVAILABLE(macos(10.7));
 // - (NSSize)convertSizeToBacking:(NSSize)size API_AVAILABLE(macos(10.7));
@@ -181,7 +179,6 @@
 // @property BOOL canDrawConcurrently API_AVAILABLE(macos(10.6));
 
 // /* Sets whether AppKit may invoke the view's -drawRect: method on a background thread, where it would otherwise be invoked on the main thread.  Defaults to NO for most kinds of views.  May be set to YES to enable threaded drawing for a particular view instance.  The view's window must also have its "allowsConcurrentViewDrawing" property set to YES (the default) for threading of view drawing to actually take place. */
-
 // @property (readonly) BOOL canDraw API_DEPRECATED("If a view needs display, -drawRect: or -updateLayer will be called automatically when the view is able to draw.  To check whether a view is in a window, call -window.  To check whether a view is hidden, call -isHiddenOrHasHiddenAncestor.", macos(10.0,10.14));
 // - (void)setNeedsDisplayInRect:(NSRect)invalidRect;
 // @property BOOL needsDisplay;
@@ -334,11 +331,11 @@
 // **/
 // @property (readonly) BOOL inLiveResize;
 
-// /* A view that returns YES for -preservesContentDuringLiveResize is responsible for invalidating its own dirty rects during live resize 
+// /* A view that returns YES for -preservesContentDuringLiveResize is responsible for invalidating its own dirty rects during live resize
 // **/
 // @property (readonly) BOOL preservesContentDuringLiveResize;
 
-// /* -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view 
+// /* -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view
 // **/
 // @property (readonly) NSRect rectPreservedDuringLiveResize;
 
@@ -351,14 +348,14 @@
 // @property (nullable, readonly, strong) NSTextInputContext *inputContext API_AVAILABLE(macos(10.6));
 
 // /* Return the complete rect of the most appropriate content grouping at the specified location. For example, if your content is divided into three columns, return the entire rect of the column that contains the location. NSScrollView will attempt to magnify such that the width fits inside the scroll view while remaining within the minMagnification, maxMagnification range.
- 
+
 //  If your content layout is sub-divided further than one level deep (for example, two boxes that each contain multiple text boxes), then use the visibleRect parameter to determine when to provide the rect of a sub-grouping. Always return a rect for the appropriate grouping. If there is no deeper content grouping, return the rect for the deepest grouping. NSScrollView will determine when to pan, magnify in, and magnify out.
- 
+
 //  Return NSZeroRect for the default behavior.
 // **/
 // - (NSRect)rectForSmartMagnificationAtPoint:(NSPoint)location inRect:(NSRect)visibleRect API_AVAILABLE(macos(10.8));
 
-// /* Get and set the user interface layout direction. By default, a basic NSView may not respect the User Interface Layout Direction that is uniquely set on it, and it is up to the developer and supporting subclasses to correctly implement a Right To Left layout implementation. The default value is set to [NSApp userInterfaceLayoutDirection]. 
+// /* Get and set the user interface layout direction. By default, a basic NSView may not respect the User Interface Layout Direction that is uniquely set on it, and it is up to the developer and supporting subclasses to correctly implement a Right To Left layout implementation. The default value is set to [NSApp userInterfaceLayoutDirection].
 // **/
 // @property NSUserInterfaceLayoutDirection userInterfaceLayoutDirection API_AVAILABLE(macos(10.8));
 
@@ -379,7 +376,7 @@
 // @property NSRect preparedContentRect API_AVAILABLE(macos(10.9));
 
 // /* allowsVibrancy is queried when a vibrant appearance is used on a view hierarchy. When allowsVibrancy returns YES, the view will have an appropriate measure taken to ensure it is vibrant on top of its given material.
- 
+
 //  Specific subclasses, such as NSControl, will answer this question based on the artwork they draw for a given appearance.
 // **/
 // @property (readonly) BOOL allowsVibrancy API_AVAILABLE(macos(10.10));
@@ -468,7 +465,6 @@
 // - (void)endPage;
 // @end
 
-
 // @interface NSView(NSDrag)
 // /* Starts a dragging session with a group of NSDraggingItems. The frame property of each NSDraggingItem must be in the view's coordinate system. The images may animate (flock) from thier initial layout into a system defined formation. Flocking or may not be done immediately. (see NSDraggingSession's flockOnBeginDrag. The visible area of the view is used as the clip rect.
 // */
@@ -486,12 +482,11 @@
 // APPKIT_EXTERN NSViewFullScreenModeOptionKey const NSFullScreenModeWindowLevel API_AVAILABLE(macos(10.5));                     // NSNumber numberWithInt:windowLevel
 // APPKIT_EXTERN NSViewFullScreenModeOptionKey const NSFullScreenModeApplicationPresentationOptions API_AVAILABLE(macos(10.5));  // NSNumber numberWithUnsignedInteger:(NSApplicationPresentationOptions flags)
 
-// @interface NSView (NSFullScreenMode) 
+// @interface NSView (NSFullScreenMode)
 // - (BOOL)enterFullScreenMode:(NSScreen *)screen withOptions:(nullable NSDictionary<NSViewFullScreenModeOptionKey, id> *)options API_AVAILABLE(macos(10.5));
 // - (void)exitFullScreenModeWithOptions:(nullable NSDictionary<NSViewFullScreenModeOptionKey, id> *)options API_AVAILABLE(macos(10.5));
-// @property (getter=isInFullScreenMode, readonly) BOOL inFullScreenMode API_AVAILABLE(macos(10.5)); 
+// @property (getter=isInFullScreenMode, readonly) BOOL inFullScreenMode API_AVAILABLE(macos(10.5));
 // @end
-
 
 // /* NSDefinitionPresentationTypeKey is an optional key in 'options' that specifies the presentation type of the definition display.  The possible values are NSDefinitionPresentationTypeOverlay that produces a small overlay window at the string location, or NSDefinitionPresentationTypeDictionaryApplication that invokes 'Dictionary' application to display the definition.  Without this option, the definition will be shown in either of those presentation forms depending on the 'Contextual Menu:' setting in Dictionary application preferences.
 // **/
@@ -504,25 +499,24 @@
 
 // @interface NSView(NSDefinition)
 // /* Shows a window that displays the definition (or other subject depending on available dictionaries) of the specified attributed string.  This method can be used for implementing the same functionality as NSTextView's 'Look Up in Dictionary' contextual menu on a custom view.
- 
+
 //  textBaselineOrigin specifies the baseline origin of attrString in the receiver view coordinate system.  If a small overlay window is selected as default presentation (see NSDefinitionPresentationTypeKey option for details), the overlay text would be rendered starting from the location.  Otherwise, 'Dictionary' application will be invoked to show the definition of the specified string.
- 
+
 //  This method is equivalent to using showDefinitionForAttributedString:range:options:baselineOriginProvider: and passing attrString with the whole range, nil options, and an originProvider which returns textBaselineOrigin.
 // **/
 // - (void)showDefinitionForAttributedString:(nullable NSAttributedString *)attrString atPoint:(NSPoint)textBaselineOrigin API_AVAILABLE(macos(10.6));
 
 // /* Takes a whole attributed string with the target range (normally, this is the selected range), and shows a window displaying the definition of the specified range.  The caller can pass a zero-length range and the appropriate range will be auto-detected around the range's offset.  That's the recommended approach when there is no selection.
- 
+
 //  This method also an 'options' dictionary containing options described below as key-value pairs (can be nil).
- 
+
 //  Except when NSDefinitionPresentationTypeKey with NSDefinitionPresentationTypeDictionaryApplication is specified in options, the caller must supply an originProvider Block which returns the baseline origin of the first character at proposed adjustedRange in the receiver view coordinate system.
- 
+
 //  If the receiver is an NSTextView, both attrString and originProvider may be nil, in which case the text view will automatically supply values suitable for displaying definitions for the specified range within its text content.  This method does not cause scrolling, so clients should perform any necessary scrolling before calling this method.
 // **/
 // - (void)showDefinitionForAttributedString:(nullable NSAttributedString *)attrString range:(NSRange)targetRange options:(nullable NSDictionary<NSDefinitionOptionKey, id> *)options baselineOriginProvider:(NSPoint (^ _Nullable)(NSRange adjustedRange))originProvider API_AVAILABLE(macos(10.6));
 
 // @end
-
 
 // @interface NSView(NSFindIndicator)
 
@@ -531,8 +525,6 @@
 // @property (getter=isDrawingFindIndicator, readonly) BOOL drawingFindIndicator API_AVAILABLE(macos(10.7));
 
 // @end
-
-
 
 // @interface NSView (NSGestureRecognizer)
 // @property (copy) NSArray<__kindof NSGestureRecognizer *> *gestureRecognizers API_AVAILABLE(macos(10.10));
@@ -591,12 +583,10 @@
 // - (oneway void)releaseGState API_DEPRECATED("", macos(10.0,10.10));
 // - (void)setUpGState API_DEPRECATED("", macos(10.0,10.10));
 // - (void)renewGState API_DEPRECATED("", macos(10.0,10.10));
-                                      
+
 // @end
 
-
 // /* Notifications */
-
 // /* Sent when the frame changes for a view. This is only sent if postsFrameChangedNotifications is set to YES.
 // **/
 // APPKIT_EXTERN NSNotificationName NSViewFrameDidChangeNotification;
@@ -606,7 +596,6 @@
 // **/
 // APPKIT_EXTERN NSNotificationName NSViewBoundsDidChangeNotification;
 
-
 // /* This notification is sent whenever an NSView that has an attached NSOpenGLContext changes size or changes screens (thus potentially changing graphics hardware drivers).
 // **/
 // APPKIT_EXTERN NSNotificationName NSViewGlobalFrameDidChangeNotification API_DEPRECATED("Use NSOpenGLView instead.", macos(10.0,10.14));
@@ -615,8 +604,5 @@
 // **/
 // APPKIT_EXTERN NSNotificationName NSViewDidUpdateTrackingAreasNotification API_AVAILABLE(macos(10.5));
 
-
-
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

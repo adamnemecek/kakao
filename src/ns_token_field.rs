@@ -4,7 +4,6 @@
 // 	Copyright (c) 2004-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSTextContainer.h>
 // #import <AppKit/NSTextField.h>
 // #import <AppKit/NSTokenFieldCell.h>
@@ -15,7 +14,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSTokenField;
-
 
 // @protocol NSTokenFieldDelegate <NSTextFieldDelegate>
 
@@ -52,9 +50,7 @@
 // // This method allows you to change the style for individual tokens as well as have mixed text and tokens.
 // - (NSTokenStyle)tokenField:(NSTokenField *)tokenField styleForRepresentedObject:(id)representedObject;
 
-
 // @end
-
 
 // @interface NSTokenField : NSTextField
 

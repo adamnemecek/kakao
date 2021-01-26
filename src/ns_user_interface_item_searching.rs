@@ -4,7 +4,6 @@
 //     Copyright (c) 2008-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSString.h>
 // #import <AppKit/NSApplication.h>
@@ -29,7 +28,7 @@
 
 // @optional
 
-// /* Called when the user selects a search result in Help menu. For example, the default implementation brings up Help Viewer for a Help item. 
+// /* Called when the user selects a search result in Help menu. For example, the default implementation brings up Help Viewer for a Help item.
 // **/
 // - (void)performActionForItem:(id)item;
 
@@ -38,7 +37,6 @@
 // - (void)showAllHelpTopicsForSearchString:(NSString *)searchString;
 
 // @end
-
 
 // @interface NSApplication (NSUserInterfaceItemSearching)
 
@@ -50,8 +48,8 @@
 // **/
 // - (void)unregisterUserInterfaceItemSearchHandler:(id<NSUserInterfaceItemSearching>)handler API_AVAILABLE(macos(10.6));
 
-// /* returns YES if searchString matches the supplied range of stringToBeSearched according to Spotlight for Help default matching rules  
-//  * if found range is non null then the matching range is returned in it 
+// /* returns YES if searchString matches the supplied range of stringToBeSearched according to Spotlight for Help default matching rules
+//  * if found range is non null then the matching range is returned in it
 // **/
 // - (BOOL)searchString:(NSString *)searchString inUserInterfaceItemString:(NSString *)stringToSearch searchRange:(NSRange)searchRange foundRange:(nullable NSRange *)foundRange API_AVAILABLE(macos(10.6));
 
@@ -59,4 +57,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

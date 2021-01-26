@@ -4,7 +4,6 @@
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSCell.h>
 
@@ -21,14 +20,12 @@
 // @class NSTextAttachmentCell;
 // @protocol NSTextAttachmentCell;
 
-
 // // This protocol defines the interface to attachment objects from NSLayoutManager
 // @protocol NSTextAttachmentContainer <NSObject>
 // // This protocol is available only for Objective-C 2 or later architecture
 
 // // Returns the image object rendered by NSLayoutManager at imageBounds inside textContainer.  It should return an image appropriate for the target rendering context derived by arguments to this method.  The NSTextAttachment implementation returns -image when non-nil.  If -image==nil, it returns an image based on -contents and -fileType properties.
 // - (nullable NSImage *)imageForBounds:(NSRect)imageBounds textContainer:(nullable NSTextContainer *)textContainer characterIndex:(NSUInteger)charIndex  API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
-
 
 // // Returns the layout bounds to the layout manager.  The bounds origin is interpreted to match position inside lineFrag.  The NSTextAttachment implementation returns -bounds if not CGRectZero; otherwise, it derives the bounds value from -[image size].  Conforming objects can implement more sophisticated logic for negotiating the frame size based on the available container space and proposed line fragment rect.
 // - (NSRect)attachmentBoundsForTextContainer:(nullable NSTextContainer *)textContainer proposedLineFragment:(NSRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
@@ -38,22 +35,18 @@
 // API_AVAILABLE(macos(10.0), ios(7.0), watchos(2.0), tvos(9.0)) @interface NSTextAttachment : NSObject <NSTextAttachmentContainer, NSSecureCoding>
 
 // */************************** Initialization ****************************/
-
 // // Designated initializer.  Both arguments can be nil.  When contentData==nil || uti==nil, the receiver is consider to be an attachment without document contents.  In this case, the NSAttributedString methods writing external file format tries to save the return value of -[NSTextAttachment image] instead.
 // - (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
 
 // // Previous designated initializer on OS X. This method invokes -initWithData:ofType: with nil arguments, then, fills -fileWrapper property.
 // - (instancetype)initWithFileWrapper:(nullable NSFileWrapper *)fileWrapper;
 
-
 // */************************** Content properties ****************************/
-
 // // These two properties define the contents for the text attachment.  Modifying these properties have a side effect of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
 // @property (nullable, copy) NSData *contents API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
 // @property (nullable, copy) NSString *fileType API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
 
 // */************************** Rendering/layout properties ****************************/
-
 // // Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and -FileWrapper properties.
 // @property (nullable, strong) NSImage *image API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
 
@@ -61,7 +54,6 @@
 // @property NSRect bounds API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));
 
 // */************************** Non-image contents properties ****************************/
-
 // // Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of invalidating -image, -contents, and fileType properties.
 // @property (nullable, strong) NSFileWrapper *fileWrapper;
 
@@ -99,13 +91,10 @@
 // - (NSRect)cellFrameForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(NSRect)lineFrag glyphPosition:(NSPoint)position characterIndex:(NSUInteger)charIndex;
 // @end
 
-
 // // Simple class to provide basic attachment cell functionality. By default this class causes NSTextView to send out delegate messages when the attachment is clicked on or dragged.
 // @interface NSTextAttachmentCell : NSCell <NSTextAttachmentCell>
 
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

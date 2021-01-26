@@ -4,7 +4,6 @@
 //  Copyright (c) 2013-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/NSAccessibilityConstants.h>
 // #import <AppKit/NSAccessibilityCustomAction.h>
@@ -208,7 +207,6 @@
 // - (void)setAccessibilityFrame:(NSRect)frame;
 
 // @end
-
 
 // #pragma mark  Element Loading
 

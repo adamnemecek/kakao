@@ -4,7 +4,6 @@
 //         Copyright (c) 1997-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/NSFont.h>
@@ -143,7 +142,7 @@
 // 			       startAngle:(CGFloat)startAngle
 // 				 endAngle:(CGFloat)endAngle
 // 				clockwise:(BOOL)clockwise;
-// // As above with clockwise == NO. */	
+// // As above with clockwise == NO. */
 // - (void)appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius
 // 			       startAngle:(CGFloat)startAngle
 // 				 endAngle:(CGFloat)endAngle;

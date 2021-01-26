@@ -4,7 +4,6 @@
 //     Copyright (c) 2017-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/Foundation.h>
 // #import <AppKit/NSWindow.h>
 // #import <AppKit/AppKitDefines.h>
@@ -45,7 +44,6 @@
 // - (void)removeWindow:(NSWindow *)window;
 
 // @end
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

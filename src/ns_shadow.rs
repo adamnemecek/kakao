@@ -5,9 +5,7 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // /* NSShadow stores the properties of a drop shadow to be added to drawing.  */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/AppKitDefines.h>
@@ -30,7 +28,6 @@
 // - (void)set;
 
 // @end
-
 
 // #endif // !TARGET_OS_IPHONE
 

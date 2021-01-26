@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSDate.h>
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSScroller.h>
@@ -118,7 +117,6 @@
 // */
 // - (void)addFloatingSubview:(NSView *)view forAxis:(NSEventGestureAxis)axis API_AVAILABLE(macos(10.9));
 
-
 // /*  Automatically sets the scroll view's contentInsets property to account for any overlapping title bar. Defaults to YES.
 // */
 // @property BOOL automaticallyAdjustsContentInsets API_AVAILABLE(macos(10.10));
@@ -129,7 +127,6 @@
 
 // /* The distance the scrollers are inset from the edge of the scroll view. */
 // @property NSEdgeInsets scrollerInsets API_AVAILABLE(macos(10.10));
-
 
 // @end
 
@@ -157,7 +154,6 @@
 // */
 // APPKIT_EXTERN NSNotificationName const NSScrollViewDidEndLiveScrollNotification API_AVAILABLE(macos(10.9));
 
-
 // @interface NSScrollView (NSRulerSupport)
 
 // @property (class, null_resettable) Class rulerViewClass;
@@ -183,8 +179,6 @@
 // @property NSScrollViewFindBarPosition findBarPosition API_AVAILABLE(macos(10.7));
 
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

@@ -4,7 +4,6 @@
 //     Copyright (c) 1997-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSTableView.h>
 // #import <AppKit/AppKitDefines.h>
@@ -56,15 +55,15 @@
 // */
 // - (void)expandItem:(nullable id)item expandChildren:(BOOL)expandChildren;
 
-// /* Calls expandItem:expandChildren with 'expandChildren == NO' 
+// /* Calls expandItem:expandChildren with 'expandChildren == NO'
 // */
 // - (void)expandItem:(nullable id)item;
 
-// /* Collapses 'item' and all children if 'collapseChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will collapse each item under the root. 
+// /* Collapses 'item' and all children if 'collapseChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will collapse each item under the root.
 // */
 // - (void)collapseItem:(nullable id)item collapseChildren:(BOOL)collapseChildren;
 
-// /* Calls collapseItem:collapseChildren with 'collapseChildren == NO' 
+// /* Calls collapseItem:collapseChildren with 'collapseChildren == NO'
 // */
 // - (void)collapseItem:(nullable id)item;
 
@@ -72,7 +71,7 @@
 // */
 // - (void)reloadItem:(nullable id)item reloadChildren:(BOOL)reloadChildren;
 
-// /* Calls reloadItem:reloadChildren with 'reloadChildren == NO' 
+// /* Calls reloadItem:reloadChildren with 'reloadChildren == NO'
 // */
 // - (void)reloadItem:(nullable id)item;
 
@@ -109,11 +108,10 @@
 
 // /* Returns the frame of the outline cell for a particular row, considering the current indentation and indentationMarkerFollowsCell value. If 'row' is not an expandable row, it will return NSZeroRect. This method can be overridden by subclassers to return a custom frame for the outline button cell. If an empty rect is returned, no outline cell will be drawn for that row.
 // */
-// - (NSRect)frameOfOutlineCellAtRow:(NSInteger)row API_AVAILABLE(macos(10.5)); 
+// - (NSRect)frameOfOutlineCellAtRow:(NSInteger)row API_AVAILABLE(macos(10.5));
 
 // /* Drag and Drop
 // */
-
 // /* To be used from validateDrop: in order to "re-target" the proposed drop.  To specify a drop on an item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.  To specify a drop between child 2 and 3 of an item I, on would specify item=I, and index=3 (children are zero-base indexed).  To specify a drop on an un-expandable item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.
 // */
 // - (void)setDropItem:(nullable id)item dropChildIndex:(NSInteger)index;
@@ -171,7 +169,6 @@
 
 // /* NOTE: it is not acceptable to call reloadData or reloadItem from the implementation of any of the following four methods, and doing so can cause corruption in NSOutlineViews internal structures.
 // **/
-
 // - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(nullable id)item;
 // - (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(nullable id)item;
 // - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item;
@@ -202,12 +199,11 @@
 
 // /* Optional - Drag and Drop support
 // */
-
 // /* Dragging Source Support - Required for multi-image dragging. Implement this method to allow the table to be an NSDraggingSource that supports multiple item dragging. Return a custom object that implements NSPasteboardWriting (or simply use NSPasteboardItem). Return nil to prevent a particular item from being dragged. If this method is implemented, then outlineView:writeItems:toPasteboard: will not be called.
 // **/
 // - (nullable id <NSPasteboardWriting>)outlineView:(NSOutlineView *)outlineView pasteboardWriterForItem:(id)item API_AVAILABLE(macos(10.7));
 
-// /* Dragging Source Support - Optional. Implement this method know when the dragging session is about to begin and to potentially modify the dragging session. 'draggedItems' is an array of items that we dragged, excluding items that were not dragged due to outlineView:pasteboardWriterForItem: returning nil. This array will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -outlineView:acceptDrop:item:childIndex: when enumerating the NSDraggingInfo's pasteboard classes. 
+// /* Dragging Source Support - Optional. Implement this method know when the dragging session is about to begin and to potentially modify the dragging session. 'draggedItems' is an array of items that we dragged, excluding items that were not dragged due to outlineView:pasteboardWriterForItem: returning nil. This array will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -outlineView:acceptDrop:item:childIndex: when enumerating the NSDraggingInfo's pasteboard classes.
 // **/
 // - (void)outlineView:(NSOutlineView *)outlineView draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forItems:(NSArray *)draggedItems API_AVAILABLE(macos(10.7));
 
@@ -270,7 +266,7 @@
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(nullable NSTableColumn *)tableColumn item:(id)item;
 // - (BOOL)selectionShouldChangeInOutlineView:(NSOutlineView *)outlineView;
 
-// /* Optional - Return YES if 'item' should be selected and 'NO' if it should not. For better performance, and greater control, it is recommended that you use outlineView:selectionIndexesForProposedSelection:. 
+// /* Optional - Return YES if 'item' should be selected and 'NO' if it should not. For better performance, and greater control, it is recommended that you use outlineView:selectionIndexesForProposedSelection:.
 // */
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item;
 
@@ -299,7 +295,6 @@
 // */
 // - (nullable NSTintConfiguration *)outlineView:(NSOutlineView *)outlineView tintConfigurationForItem:(id)item API_AVAILABLE(macos(11.0));
 
-
 // /* Optional - Type select support
 //     Implement this method if you want to control the string that is used for type selection. You may want to change what is searched for based on what is displayed, or simply return nil for that row and/or column to not be searched. By default, all cells with text in them are searched. The default value when this delegate method is not implemented is [[outlineView preparedCellForColumn:tableColumn row:[outlineView rowForItem:item]] stringValue], and this value can be returned from the delegate method if desired.
 // */
@@ -311,12 +306,12 @@
 // - (nullable id)outlineView:(NSOutlineView *)outlineView nextTypeSelectMatchFromItem:(id)startItem toItem:(id)endItem forString:(NSString *)searchString API_AVAILABLE(macos(10.5));
 
 // /* Optional - Type select support
-//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began. 
+//     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began.
 // */
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldTypeSelectForEvent:(NSEvent *)event withCurrentSearchString:(nullable NSString *)searchString API_AVAILABLE(macos(10.5));
 
 // /* Optional - Expansion ToolTip support
-//     Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell at 'item' in 'tableColumn'. See NSCell.h for more information on expansion tool tips. 
+//     Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell at 'item' in 'tableColumn'. See NSCell.h for more information on expansion tool tips.
 // */
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldShowCellExpansionForTableColumn:(nullable NSTableColumn *)tableColumn item:(id)item API_AVAILABLE(macos(10.5));
 
@@ -332,8 +327,8 @@
 // */
 // - (nullable NSCell *)outlineView:(NSOutlineView *)outlineView dataCellForTableColumn:(nullable NSTableColumn *)tableColumn item:(id)item API_AVAILABLE(macos(10.5));
 
-// /* Optional - Group rows. 
-//     Implement this method and return YES to indicate a particular row should have the "group row" style drawn for that row. If the cell in that row is an NSTextFieldCell and contains only a stringValue, the "group row" style attributes will automatically be applied for that cell. 
+// /* Optional - Group rows.
+//     Implement this method and return YES to indicate a particular row should have the "group row" style drawn for that row. If the cell in that row is an NSTextFieldCell and contains only a stringValue, the "group row" style attributes will automatically be applied for that cell.
 // */
 // - (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item API_AVAILABLE(macos(10.5));
 
@@ -353,13 +348,12 @@
 // - (void)outlineView:(NSOutlineView *)outlineView willDisplayOutlineCell:(id)cell forTableColumn:(nullable NSTableColumn *)tableColumn item:(id)item;
 
 // /* Optional - Autosizing table columns
-//  Implement this method if you want to control how wide a column is made when the user double clicks on the resize divider. By default, NSTableView iterates every row in the table, accesses a cell via preparedCellAtRow:column:, and requests the "cellSize" to find the appropriate largest width to use. For large row counts, a monte carlo simulation is done instead of interating every row. For accurate performance, it is recommended that this method is implemented when using large tables. 
+//  Implement this method if you want to control how wide a column is made when the user double clicks on the resize divider. By default, NSTableView iterates every row in the table, accesses a cell via preparedCellAtRow:column:, and requests the "cellSize" to find the appropriate largest width to use. For large row counts, a monte carlo simulation is done instead of interating every row. For accurate performance, it is recommended that this method is implemented when using large tables.
 // */
-
 // - (CGFloat)outlineView:(NSOutlineView *)outlineView sizeToFitWidthOfColumn:(NSInteger)column API_AVAILABLE(macos(10.6));
 
 // /*  Optional - Control of column reordering.
-//  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable. 
+//  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable.
 // **/
 // - (BOOL)outlineView:(NSOutlineView *)outlineView shouldReorderColumn:(NSInteger)columnIndex toColumn:(NSInteger)newColumnIndex API_AVAILABLE(macos(10.6));
 
@@ -381,13 +375,12 @@
 
 // @end
 
-
 // /* The following NSOutlineView*Keys are used by the View Based NSOutlineView to create the "disclosure button" used to collapse and expand items. The NSOutlineView creates these buttons by calling [self makeViewWithIdentifier:owner:] passing in the key as the identifier and the delegate as the owner. Custom NSButtons (or subclasses thereof) can be provided for NSOutlineView to use in the following two ways:
 //  1. makeViewWithIdentifier:owner: can be overridden, and if the identifier is (for instance) NSOutlineViewDisclosureButtonKey, a custom NSButton can be configured and returned. Be sure to set the button.identifier to be NSOutlineViewDisclosureButtonKey.
 //  2. At design time, a button can be added to the outlineview which has this identifier, and it will be unarchived and used as needed.
- 
+
 //  When a custom button is used, it is important to properly set up the target/action to do something (probably expand or collapse the rowForView: that the sender is located in). Or, one can call super to get the default button, and copy its target/action to get the normal default behavior.
- 
+
 //  NOTE: These keys are backwards compatible to 10.7, however, the symbol is not exported prior to 10.9 and the regular string value must be used (i.e.: @"NSOutlineViewDisclosureButtonKey").
 // **/
 // APPKIT_EXTERN NSUserInterfaceItemIdentifier const NSOutlineViewDisclosureButtonKey API_AVAILABLE(macos(10.9)); // The normal triangle disclosure button
@@ -400,7 +393,6 @@
 // APPKIT_EXTERN NSNotificationName NSOutlineViewColumnDidResizeNotification;                // @"NSTableColumn", @"NSOldWidth"
 // APPKIT_EXTERN NSNotificationName NSOutlineViewSelectionIsChangingNotification;
 
-
 // /* Note for the following NSOutlineViewItem*Notifications:
 //    The 'userInfo' dictionary in the notification will have an @"NSObject" key where the value is the changed (id)item.
 // */
@@ -411,4 +403,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

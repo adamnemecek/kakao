@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -63,7 +62,6 @@
 // APPKIT_EXTERN NSSpeechPropertyKey const NSSpeechResetProperty API_AVAILABLE(macos(10.5));
 // APPKIT_EXTERN NSSpeechPropertyKey const NSSpeechOutputToFileURLProperty API_AVAILABLE(macos(10.5));  // NSURL
 
-
 // // NSVoiceLanguage has been replaced by NSVoiceLocaleIdentifier
 // APPKIT_EXTERN NSVoiceAttributeKey const NSVoiceLanguage API_DEPRECATED("", macos(10.0,10.5));
 
@@ -73,7 +71,6 @@
 //     NSSpeechWordBoundary,
 //     NSSpeechSentenceBoundary
 // } API_AVAILABLE(macos(10.5));
-
 
 // @interface NSSpeechSynthesizer : NSObject
 
@@ -160,6 +157,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-
-
-

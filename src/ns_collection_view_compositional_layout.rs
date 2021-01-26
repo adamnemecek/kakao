@@ -4,7 +4,6 @@
 //     Copyright (c) 2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #if !TARGET_OS_IPHONE
 
 // #import <AppKit/NSCollectionViewLayout.h>
@@ -31,9 +30,7 @@
 // @class NSCollectionLayoutEdgeSpacing;
 // @class NSCollectionLayoutAnchor;
 
-
 // /* These geometry type declarations are being relocated to Foundation/NSGeometry.h */
-
 // #ifndef FOUNDATION_HAS_DIRECTIONAL_GEOMETRY
 
 // /* Edge specification that should be interpreted according to the user interface layout direction.
@@ -80,8 +77,6 @@
 // #endif
 
 // /* End temporary declarations */
-
-
 // API_AVAILABLE(macos(10.15))
 // @interface NSCollectionViewCompositionalLayoutConfiguration : NSObject<NSCopying>
 // @property NSCollectionViewScrollDirection scrollDirection;
@@ -110,21 +105,21 @@
 // typedef NS_ENUM(NSInteger,NSCollectionLayoutSectionOrthogonalScrollingBehavior) {
 //     // default behavior. Section will layout along main layout axis (i.e. configuration.scrollDirection)
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorNone,
-    
+
 //     // NOTE: For each of the remaining cases, the section content will layout orthogonal to the main layout axis (e.g. main layout axis == .vertical, section will scroll in .horizontal axis)
-    
+
 //     // Standard scroll view behavior
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorContinuous,
-    
+
 //     // Scrolling will come to rest on the leading edge of a group boundary
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorContinuousGroupLeadingBoundary,
-    
+
 //     // Standard scroll view paging behavior with page size == extent of the collection view's bounds
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorPaging,
-    
+
 //     // Fractional size paging behavior determined by the sections layout group's dimension
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorGroupPaging,
-    
+
 //     // Same of group paging with additional leading and trailing content insets to center each group's contents along the orthogonal axis
 //     NSCollectionLayoutSectionOrthogonalScrollingBehaviorGroupPagingCentered,
 // } API_AVAILABLE(macos(10.15));
@@ -155,7 +150,6 @@
 // // decoration views anchored to the section's geometry (e.g. background decoration view)
 // @property(copy) NSArray<NSCollectionLayoutDecorationItem*> *decorationItems;
 // @end
-
 
 // API_AVAILABLE(macos(10.15))
 // @interface NSCollectionLayoutItem : NSObject<NSCopying>

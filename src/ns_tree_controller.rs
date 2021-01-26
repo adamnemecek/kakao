@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <AppKit/NSObjectController.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSArray.h>
@@ -14,7 +13,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSSortDescriptor, NSTreeNode;
-
 
 // @interface NSTreeController : NSObjectController
 
@@ -70,9 +68,7 @@
 // - (nullable NSString *)countKeyPathForNode:(NSTreeNode *)node API_AVAILABLE(macos(10.5));
 // - (nullable NSString *)leafKeyPathForNode:(NSTreeNode *)node API_AVAILABLE(macos(10.5));
 
-
 // @end
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

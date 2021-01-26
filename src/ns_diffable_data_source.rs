@@ -4,7 +4,6 @@
 //     Copyright (c) 2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <TargetConditionals.h>
 
 // #if !TARGET_OS_IPHONE
@@ -28,7 +27,6 @@
 
 //      2. If you pass duplicate values in an item or section array (e.g. `-appendItemsWithIdentifiers:`), the system will throw an exception.
 // */
-
 // API_AVAILABLE(macos(10.15),ios(13.0),tvos(13.0),watchos(6.0))
 // @interface NSDiffableDataSourceSnapshot<SectionIdentifierType,ItemIdentifierType> : NSObject<NSCopying>
 
@@ -86,7 +84,6 @@
 // typedef NSCollectionViewItem * _Nullable (^NSCollectionViewDiffableDataSourceItemProvider)(NSCollectionView * _Nonnull, NSIndexPath * _Nonnull, ItemIdentifierType _Nonnull);
 
 // typedef NSView * _Nullable (^NSCollectionViewDiffableDataSourceSupplementaryViewProvider)(NSCollectionView* _Nonnull, NSString * _Nonnull, NSIndexPath * _Nonnull);
-
 
 // /* Creates a new NSCollectionViewDiffableDataSource that automatically wires itself up as the given `collectionView`'s `dataSource`.  The data source is initially empty.  To put items into the `collectionView`, you must create an NSDiffableDataSourceSnapshot, add the desired section and item identifiers to the snapshot, and apply the snapshot to the diffable data source.  The required `itemProvider` closure serves the same purpose as NSCollectionViewDataSource `-collectionView:itemForRepresentedObjectAtIndexPath:` method: Its job is to ask the `collectionView` to make an item of the desired type, configure its content and appearance to represent the model object specified by the given identifier and NSIndexPath, and return the configured item.
 // */

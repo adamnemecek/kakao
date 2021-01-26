@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -60,17 +59,14 @@
 // */
 // - (nullable NSDictionary<NSBindingInfoKey, id> *)infoForBinding:(NSBindingName)binding;
 
-// /* Returns an array of NSAttributeDescriptions that describe the options for aBinding. The descriptions are used by Interface Builder to build the options editor UI of the bindings inspector. Each binding may have multiple options. The options and attribute descriptions have 3 properties in common: 
+// /* Returns an array of NSAttributeDescriptions that describe the options for aBinding. The descriptions are used by Interface Builder to build the options editor UI of the bindings inspector. Each binding may have multiple options. The options and attribute descriptions have 3 properties in common:
 
-// - The option "name" is derived from the attribute description name. 
+// - The option "name" is derived from the attribute description name.
 
-// - The type of UI built for the option is based on the attribute type. 
+// - The type of UI built for the option is based on the attribute type.
 
 // - The default value shown in the options editor comes from the attribute description's defaultValue.*/
-
-
 // - (NSArray<NSAttributeDescription *> *)optionDescriptionsForBinding:(NSBindingName)binding API_AVAILABLE(macos(10.5));
-
 
 // @end
 
@@ -87,7 +83,6 @@
 // - (void)discardEditing;    // forces changing to end (reverts back to the original value)
 // - (BOOL)commitEditing;    // returns whether end editing was successful (while trying to apply changes to a model object, there might be validation problems or so that prevent the operation from being successful
 
-
 // /* Given that the receiver has been registered with -objectDidBeginEditing: as the editor of some object, and not yet deregistered by a subsequent invocation of -objectDidEndEditing:, attempt to commit the result of the editing. When committing has either succeeded or failed, send the selected message to the specified object with the context info as the last parameter. The method selected by didCommitSelector must have the same signature as:
 
 //     - (void)editor:(id)editor didCommit:(BOOL)didCommit contextInfo:(void *)contextInfo;
@@ -96,9 +91,8 @@
 // */
 // - (void)commitEditingWithDelegate:(nullable id)delegate didCommitSelector:(nullable SEL)didCommitSelector contextInfo:(nullable void *)contextInfo;
 
-
 // /* During autosaving, commit editing may fail, due to a pending edit.  Rather than interrupt the user with an unexpected alert, this method provides the caller with the option to either present the error or fail silently, leaving the pending edit in place and the user's editing uninterrupted.  This method attempts to commit editing, but if there is a failure the error is returned to the caller to be presented or ignored as appropriate.  If an error occurs while attempting to commit, an implementation of this method should return NO as well as the generated error by reference.  Returns YES if commit is successful.
- 
+
 //  If you have enabled autosaving in your application, and your application has custom objects that implement or override the NSEditor protocol, you must also implement this method in those NSEditors.
 // **/
 // - (BOOL)commitEditingAndReturnError:(NSError **)error API_AVAILABLE(macos(10.7));
@@ -241,4 +235,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

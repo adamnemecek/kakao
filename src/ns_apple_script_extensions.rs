@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSAppleScript.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -12,8 +11,6 @@
 // APPKIT_API_UNAVAILABLE_BEGIN_MACCATALYST
 
 // @class NSAttributedString;
-
-
 
 // @interface NSAppleScript(NSExtensions)
 
@@ -24,4 +21,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSControl.h>
 // #import <AppKit/NSUserInterfaceValidation.h>
@@ -17,7 +16,6 @@
 // @protocol NSMatrixDelegate;
 
 // /* Matrix Constants */
-
 // typedef NS_ENUM(NSUInteger, NSMatrixMode) {
 //     NSRadioModeMatrix			= 0,
 //     NSHighlightModeMatrix		= 1,
@@ -30,11 +28,9 @@
 // **/
 // @interface NSMatrix : NSControl <NSUserInterfaceValidations, NSViewToolTipOwner>
 
-
 // - (instancetype)initWithFrame:(NSRect)frameRect;
 // - (instancetype)initWithFrame:(NSRect)frameRect mode:(NSMatrixMode)mode prototype:(NSCell *)cell numberOfRows:(NSInteger)rowsHigh numberOfColumns:(NSInteger)colsWide;
 // - (instancetype)initWithFrame:(NSRect)frameRect mode:(NSMatrixMode)mode cellClass:(nullable Class)factoryId numberOfRows:(NSInteger)rowsHigh numberOfColumns:(NSInteger)colsWide;
-
 
 // @property (assign) Class cellClass;
 // @property (nullable, copy) __kindof NSCell *prototype;
@@ -111,8 +107,8 @@
 // - (void)setToolTip:(nullable NSString *)toolTipString forCell:(NSCell *)cell;
 // - (nullable NSString *)toolTipForCell:(NSCell *)cell;
 
-// /* Determine whether the receiver autorecalculates its cellSize. The default is NO. If set to YES, then the receiver will adjust its cellSize to accommodate its largest cell. Changing the cellSize does not directly affect the frame of the receiver; however it does affect the intrinsic content size, which may cause the receiver to resize under autolayout. 
- 
+// /* Determine whether the receiver autorecalculates its cellSize. The default is NO. If set to YES, then the receiver will adjust its cellSize to accommodate its largest cell. Changing the cellSize does not directly affect the frame of the receiver; however it does affect the intrinsic content size, which may cause the receiver to resize under autolayout.
+
 //    The default is NO. When using autolayout, you typically want this to be set to YES.
 // **/
 // @property BOOL autorecalculatesCellSize API_AVAILABLE(macos(10.8));
@@ -126,8 +122,5 @@
 
 // @protocol NSMatrixDelegate <NSControlTextEditingDelegate> @end
 
-
-
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

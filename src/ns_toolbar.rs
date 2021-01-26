@@ -4,7 +4,6 @@
 // 	Copyright (c) 2000-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
 
@@ -22,7 +21,6 @@
 //     NSToolbarDisplayModeIconOnly,
 //     NSToolbarDisplayModeLabelOnly
 // } API_AVAILABLE(ios(13.0));
-
 
 // typedef NS_ENUM(NSUInteger, NSToolbarSizeMode) {
 //     NSToolbarSizeModeDefault,
@@ -53,7 +51,6 @@
 // - (void)runCustomizationPalette:(nullable id)sender;
 // @property (readonly) BOOL customizationPaletteIsRunning;
 
-
 // // ----- Toolbar Attributes  -----
 
 // @property NSToolbarDisplayMode displayMode;
@@ -70,7 +67,6 @@
 // /* This flag controls whether or not users can configure the toolbar by dragging items around, and whether or not the customization palette can be used.  The default value is NO, but can be changed at any time.  For instance, a developer may not want users to be able to edit the toolbar while some event is being processed.  */
 // @property BOOL allowsUserCustomization;
 
-
 // // ----- Accessing toolbar info -----
 
 // /* All toolbars with the same name will share the same display attributes, and item order.  Also, if a toolbar autosaves its configuration, the item identifier will be used as the autosave name. */
@@ -84,11 +80,10 @@
 
 // /*
 //  The item with the specified identifier will be positioned in the absolute center of the Toolbar relative to the window assuming space allows. When the window shrinks, the highest priority is to have the most items visible. Thus, centering is broken first (it'll be pushed off to the left/right as necessary). Next, items will be shrunk down a little at a time towards their min size, at the same rate. Finally, items will be removed based on their visibility priority.
- 
+
 //  This property is archived.
 // **/
 // @property (nullable, copy) NSToolbarItemIdentifier centeredItemIdentifier API_AVAILABLE(macos(10.14));
-
 
 // // ----- Autosaving The Configuration -----
 
@@ -99,10 +94,9 @@
 // - (void)setConfigurationFromDictionary:(NSDictionary<NSString *, id> *)configDict API_UNAVAILABLE(ios);
 // @property (readonly, copy) NSDictionary<NSString *, id> *configurationDictionary API_UNAVAILABLE(ios);
 
-
 // // ----- Validation of the items -----
 
-// /* Typically you should not invoke this method.  This method is called on window updates with the purpose of validating 
+// /* Typically you should not invoke this method.  This method is called on window updates with the purpose of validating
 //  each of the visible items.  The toolbar will iterate through the list of visible items, sending each a -validate message. */
 // - (void)validateVisibleItems API_UNAVAILABLE(ios);
 
@@ -121,7 +115,7 @@
 
 // /* Given an item identifier, this method returns an item.  Note that, it is expected that each toolbar receives its own distinct copies.   If the item has a custom view, that view should be in place when the item is returned.  Finally, do not assume the returned item is going to be added as an active item in the toolbar.  In fact, the toolbar may ask for items here in order to construct the customization palette (it makes copies of the returned items).  if willBeInsertedIntoToolbar is YES, the returned item will be inserted, and you can expect toolbarWillAddItem: is about to be posted.  */
 // - (nullable NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag;
-    
+
 // /* Returns the ordered list of items to be shown in the toolbar by default.   If during initialization, no overriding values are found in the user defaults, or if the user chooses to revert to the default items this set will be used. */
 // - (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar;
 
@@ -134,7 +128,6 @@
 // - (NSArray<NSToolbarItemIdentifier> *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar;
 
 //     /* Notifications */
-
 // /* Before an new item is added to the toolbar, this notification is posted.  This is the best place to notice a new item is going into the toolbar.  For instance, if you need to cache a reference to the toolbar item or need to set up some initial state, this is the best place to do it.   The notification object is the toolbar to which the item is being added.  The item being added is found by referencing the @"item" key in the userInfo.  */
 // - (void)toolbarWillAddItem:(NSNotification *)notification;
 
@@ -158,9 +151,9 @@
 
 // /*
 //  The following properties control the minimum and maximum height of the accessory view. The minimum height is used when the menu bar is hidden, and the max height to a fully revealed menu bar. During the reveal, the accessory view's frame is interpolated between its minimum and maximum height.
- 
+
 //  If the minimum height is zero (which it is by default), the accessory view is not resized; instead a special transition is used to reveal it with the menu bar. This simplifies the accessory view's task, because it does not have to handle the case of being set to zero height. To create a fixed-height accessory view, set the min and max height to be equal.
- 
+
 //  By default, the min height is 0 and the max height gets set to the height of the accessory view's frame when it is set.
 // **/
 // @property CGFloat fullScreenAccessoryViewMinHeight API_DEPRECATED("Use NSTitlebarAccessoryViewController and its fullScreenMinHeight property with NSWindow instead.", macos(10.7,10.13));

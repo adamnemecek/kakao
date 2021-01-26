@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <AppKit/NSApplication.h>
@@ -25,9 +24,9 @@
 // @property (class, readonly, strong) NSCursor *currentCursor;
 
 // /* Returns an NSCursor whose image and hot spot match those of the cursor that is currently being displayed on the system, regardless of which application set that cursor. For example, this allows an inactive application to examine the image and hot spot of a cursor set by the active application. This API doesn't care whether the cursor is hidden; it will return an NSCursor whose image matches the cursor you would see if it were visible.
- 
+
 //  Only the cursor image and hot spot are replicated in the returned NSCursor. Other properties (such as isSetOnMouseExited and isSetOnMouseEntered) will not necessarily be accurate.
- 
+
 //  This method returns nil if the currently displayed cursor could not be fetched.
 // **/
 // @property (class, readonly, nullable, strong) NSCursor *currentSystemCursor API_AVAILABLE(macos(10.6));

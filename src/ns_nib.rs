@@ -12,7 +12,6 @@
 
 // As are all NSObjects, instantiated nib objects are allocated in a memory zone (NSZone).  If an NSNibOwner is provided for instantiation, then the objects will be allocated in the owner's zone.  If no NSNibOwner is provided, the resulting objects will be allocated in the default zone.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/Foundation.h>
 
@@ -32,7 +31,7 @@
 
 // // Initializes an instance with nib data and specified bundle for locating resources
 // // such as images and localized strings. If bundle is nil, the main bundle is assumed.
-// // 
+// //
 // - (instancetype)initWithNibData:(NSData *)nibData bundle:(nullable NSBundle *)bundle API_AVAILABLE(macos(10.8));
 
 // // Instantiates objects in the nib file with the specified owner.

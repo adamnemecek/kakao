@@ -5,7 +5,6 @@
 //         Copyright (c) 2002-2019, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/NSTypesetter.h>
 // #import <AppKit/NSParagraphStyle.h>
 
@@ -60,7 +59,6 @@
 // - (CGFloat)paragraphSpacingAfterGlyphAtIndex:(NSUInteger)glyphIndex withProposedLineFragmentRect:(NSRect)rect;
 
 // /* Cocoa Text System interface methods */
-
 // // Friend classes
 // @property (nullable, readonly, assign) NSLayoutManager *layoutManager;
 // @property (nullable, readonly, assign) NSTextContainer *currentTextContainer;
@@ -92,8 +90,6 @@
 // // Glyph data
 // - (NSUInteger)getGlyphsInRange:(NSRange)glyphsRange glyphs:(null_unspecified NSGlyph *)glyphBuffer characterIndexes:(null_unspecified NSUInteger *)charIndexBuffer glyphInscriptions:(null_unspecified NSGlyphInscription *)inscribeBuffer elasticBits:(null_unspecified BOOL *)elasticBuffer API_DEPRECATED("", macos(10.3,10.13));
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

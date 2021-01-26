@@ -4,7 +4,6 @@
 //     Copyright (c) 2013-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSObjCRuntime.h>
 // #import <Foundation/NSObject.h>
 // #import <AppKit/NSEvent.h>
@@ -27,7 +26,6 @@
 // */
 // - (void)set;
 // @end
-
 
 // @interface NSView (NSPressureConfiguration)
 

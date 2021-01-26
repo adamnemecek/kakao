@@ -4,7 +4,6 @@
 // 	Copyright (c) 2003-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSTextFieldCell.h>
 // #import <AppKit/NSSearchField.h>
@@ -71,4 +70,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

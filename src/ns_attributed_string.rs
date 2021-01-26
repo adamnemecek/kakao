@@ -3,10 +3,9 @@
 //         NSAttributedString.h
 //         Copyright (c) 1994-2019, Apple Inc.
 //         All rights reserved.
- 
+
 //         This file defines Application Kit extensions to NSAttributedString and NSMutableAttributedString.
 // */
-
 // #import <Foundation/NSAttributedString.h>
 // #import <Foundation/NSItemProvider.h>
 // #import <AppKit/NSFontManager.h>
@@ -21,7 +20,6 @@
 // #if !TARGET_OS_IPHONE
 
 // */********************** Attributes ************************/
-
 // // Predefined character attributes for text. If the key is not present in the dictionary, it indicates the default value described below.
 // APPKIT_EXTERN NSAttributedStringKey  NSFontAttributeName API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));                // NSFont, default Helvetica(Neue) 12
 // APPKIT_EXTERN NSAttributedStringKey  NSParagraphStyleAttributeName API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));      // NSParagraphStyle, default defaultParagraphStyle
@@ -58,10 +56,8 @@
 
 // APPKIT_EXTERN NSAttributedStringKey NSSpellingStateAttributeName;  // NSSpellingStateAttributeName is used and recognized only as a temporary attribute (see NSLayoutManager.h).  It indicates that spelling and/or grammar indicators should be shown for the specified characters, default 0: no spelling or grammar indicator
 
-
 // APPKIT_EXTERN NSAttributedStringKey NSSuperscriptAttributeName; // NSNumber containing integer, default 0
 // APPKIT_EXTERN NSAttributedStringKey NSGlyphInfoAttributeName;  // NSGlyphInfo specifying glyph for the associated attribute range
-
 
 // */********************** Attribute values ************************/
 // // This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName. These values are or'ed together to produce an underline style.
@@ -98,7 +94,6 @@
 // };
 
 // */********************** Attribute fixing ************************/
-
 // @interface NSMutableAttributedString (NSAttributedStringAttributeFixing)
 // // This method fixes attribute inconsistencies inside range.  It ensures NSFontAttributeName covers the characters, NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is assigned to NSAttachmentCharacter.  NSTextStorage automatically invokes this method via -ensureAttributesAreFixedInRange:.
 // - (void)fixAttributesInRange:(NSRange)range API_AVAILABLE(macos(10.0), ios(7.0), watchos(2.0), tvos(9.0));
@@ -108,9 +103,7 @@
 // - (void)fixAttachmentAttributeInRange:(NSRange)range;
 // @end
 
-
 // */********************** Document formats ************************/
-
 // typedef NSString * NSAttributedStringDocumentType NS_TYPED_EXTENSIBLE_ENUM;
 
 // // Supported document types for the NSDocumentTypeDocumentAttribute key in the document attributes dictionary.
@@ -164,7 +157,6 @@
 // // NSPlainTextDocumentType document attributes
 // APPKIT_EXTERN NSAttributedStringDocumentAttributeKey  NSCharacterEncodingDocumentAttribute API_AVAILABLE(macos(10.0), ios(7.0), watchos(2.0), tvos(9.0));  // @"CharacterEncoding", NSNumber containing integer specifying NSStringEncoding for the file; default for plain text is the default encoding.  This key in options can specify the string encoding for reading the data.  Upon return, the document attributes can contain the actual encoding used.  For writing methods, this value is used for generating the plain text data.
 // APPKIT_EXTERN NSAttributedStringDocumentAttributeKey  NSDefaultAttributesDocumentAttribute API_AVAILABLE(macos(10.11), ios(7.0), watchos(2.0), tvos(9.0));  // @"DefaultAttributes", NSDictionary containing attributes to be applied to plain files.  Used by reader methods.  This key in options can specify the default attributes applied to the entire document contents.  The document attributes can contain this key indicating the actual attributes used.
-
 
 // // NSRTFTextDocumentType and NSRTFDTextDocumentType document attributes
 // // Document dimension
@@ -251,7 +243,6 @@
 // - (BOOL)readFromData:(NSData *)data options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)opts documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * _Nullable * _Nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.0), ios(7.0), watchos(2.0), tvos(9.0));
 // @end
 
-
 // */********************** Misc methods ************************/
 // @interface NSAttributedString (NSAttributedStringKitAdditions)
 // // Attributes which should be copied/pasted with "copy font".
@@ -269,7 +260,6 @@
 
 // - (NSRange)doubleClickAtIndex:(NSUInteger)location;
 // - (NSUInteger)nextWordFromIndex:(NSUInteger)location forward:(BOOL)isForward;
-
 
 // // Convenience methods for calculating the range of an individual text block, range of an entire table, range of a list, and the index within a list.
 // - (NSRange)rangeOfTextBlock:(NSTextBlock *)block atIndex:(NSUInteger)location;
@@ -305,7 +295,6 @@
 
 // APPKIT_EXTERN NSAttributedStringKey NSCharacterShapeAttributeName API_DEPRECATED("This attribute is bound to a specific implementation of ATS feature and not generically supported by wide range of fonts. The majority of characters accessed through this API are now encoded in the Unicode standard. Use the CTFont feature API for fine control over character shape choices.", macos(10.0,10.11));
 // APPKIT_EXTERN NSAttributedStringKey NSUsesScreenFontsDocumentAttribute API_DEPRECATED("", macos(10.8,10.11));
-
 
 // enum {
 //     NSNoUnderlineStyle API_DEPRECATED("Use NSUnderlineStyleNone instead", macos(10.0,10.9)) = 0,

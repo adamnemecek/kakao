@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/AppKitDefines.h>
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
@@ -26,7 +25,7 @@
 //     NSPrintPanelShowsPaperSize = 1 << 2,
 //     NSPrintPanelShowsOrientation = 1 << 3,
 //     NSPrintPanelShowsScaling = 1 << 4,
-    
+
 //     /* Whether the print panel has an additional "Selection" option for the paper range.
 //     */
 //     NSPrintPanelShowsPrintSelection API_AVAILABLE(macos(10.6)) = 1 << 5,
@@ -70,13 +69,11 @@
 
 // @end
 
-
 // @interface NSPrintPanel : NSObject
 
 // /* Create a new NSPrintPanel.
 // */
 // + (NSPrintPanel *)printPanel;
-
 
 // /* Controllers for the accessory views that will be presented in the print panel by the methods below. When the print panel is presented to the user each controller is automatically sent a -setRepresentedObject: message with this object's NSPrintInfo. Because NSViewControllers are KVC and KVO compliant for "representedObject," you can use one as the file's owner of an accessory view's nib and bind controls to the file's owner using key paths that start with "representedObject." to take advantage of NSPrintInfo's KVC and KVO compliance. Each controller is also automatically sent a -title message. If that returns nil the application's short name is used in the popup menu that lets the user choose an accessory view.
 // */
@@ -97,11 +94,8 @@
 // */
 // @property (nullable, copy) NSHelpAnchorName helpAnchor API_AVAILABLE(macos(10.5));
 
-
-
 // // Set or get a string that provides a hint about the type of print job in which this print panel is being used. This controls the set of items that appear in the Presets menu. The string must be one of the job style hint strings declared above, or nil to show general presets.
 // @property (nullable, copy) NSPrintPanelJobStyleHint jobStyleHint;
-
 
 // /* Present a print panel to the user, document-modally. When the user has dismissed it, send the message selected by didEndSelector to the delegate, with the contextInfo as the last argument. The method selected by didEndSelector must have the same signature as:
 
@@ -114,11 +108,9 @@
 // - (NSInteger)runModalWithPrintInfo:(NSPrintInfo *)printInfo API_AVAILABLE(macos(10.5));
 // - (NSInteger)runModal;
 
-
 // /* A simple accessor. Your -beginSheetWithPrintInfo:... delegate can use this so it doesn't have to keep a pointer to the NSPrintInfo elsewhere while waiting for the user to dismiss the print panel.
 // */
 // @property (readonly, strong) NSPrintInfo *printInfo API_AVAILABLE(macos(10.5));
-
 
 // @end
 

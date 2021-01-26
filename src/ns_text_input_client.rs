@@ -4,7 +4,6 @@
 // 	Copyright (c) 2006-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <Foundation/NSRange.h>
@@ -26,7 +25,7 @@
 // /* The receiver invokes the action specified by selector.
 // */
 //  - (void)doCommandBySelector:(SEL)selector;
- 
+
 // /* The receiver inserts string replacing the content specified by replacementRange. string can be either an NSString or NSAttributedString instance. selectedRange specifies the selection inside the string being inserted; hence, the location is relative to the beginning of string. When string is an NSString, the receiver is expected to render the marked text with distinguishing appearance (i.e. NSTextView renders with -markedTextAttributes).
 // */
 // - (void)setMarkedText:(id)string selectedRange:(NSRange)selectedRange replacementRange:(NSRange)replacementRange;

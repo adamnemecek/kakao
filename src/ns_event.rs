@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <AppKit/NSTouch.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <ApplicationServices/ApplicationServices.h>
@@ -52,15 +51,56 @@
 //     NSEventTypeRotate  API_AVAILABLE(macos(10.5))       = 18,
 //     NSEventTypeBeginGesture API_AVAILABLE(macos(10.5))  = 19,
 //     NSEventTypeEndGesture API_AVAILABLE(macos(10.5))    = 20,
-    
+
 //     NSEventTypeSmartMagnify API_AVAILABLE(macos(10.8)) = 32,
 //     NSEventTypeQuickLook API_AVAILABLE(macos(10.8)) = 33,
-    
+
 //     NSEventTypePressure API_AVAILABLE(macos(10.10.3)) = 34,
 //     NSEventTypeDirectTouch API_AVAILABLE(macos(10.10)) = 37,
 
 //     NSEventTypeChangeMode API_AVAILABLE(macos(10.15)) = 38,
 // };
+
+pub enum NSEventType {
+    LeftMouseDown = 1,
+    LeftMouseUp = 2,
+    RightMouseDown = 3,
+    RightMouseUp = 4,
+    MouseMoved = 5,
+    LeftMouseDragged = 6,
+    RightMouseDragged = 7,
+    MouseEntered = 8,
+    MouseExited = 9,
+    KeyDown = 10,
+    KeyUp = 11,
+    FlagsChanged = 12,
+    AppKitDefined = 13,
+    SystemDefined = 14,
+    ApplicationDefined = 15,
+    Periodic = 16,
+    CursorUpdate = 17,
+    ScrollWheel = 22,
+    TabletPoint = 23,
+    TabletProximity = 24,
+    OtherMouseDown = 25,
+    OtherMouseUp = 26,
+    OtherMouseDragged = 27,
+    /* The following event types are available on some hardware on 10.5.2 and later */
+    Gesture = 29,
+    Magnify = 30,
+    Swipe = 31,
+    Rotate = 18,
+    BeginGesture = 19,
+    EndGesture = 20,
+
+    SmartMagnify = 32,
+    QuickLook = 33,
+
+    Pressure = 34,
+    DirectTouch = 37,
+
+    ChangeMode = 38,
+}
 
 // static const NSEventType NSLeftMouseDown 	API_DEPRECATED_WITH_REPLACEMENT("NSEventTypeLeftMouseDown", macos(10.0,10.12)) = NSEventTypeLeftMouseDown;
 // static const NSEventType NSLeftMouseUp 		API_DEPRECATED_WITH_REPLACEMENT("NSEventTypeLeftMouseUp", macos(10.0,10.12)) = NSEventTypeLeftMouseUp;
@@ -85,7 +125,6 @@
 // static const NSEventType NSOtherMouseDown	API_DEPRECATED_WITH_REPLACEMENT("NSEventTypeOtherMouseDown", macos(10.0,10.12)) = NSEventTypeOtherMouseDown;
 // static const NSEventType NSOtherMouseUp 	API_DEPRECATED_WITH_REPLACEMENT("NSEventTypeOtherMouseUp", macos(10.0,10.12)) = NSEventTypeOtherMouseUp;
 // static const NSEventType NSOtherMouseDragged 	API_DEPRECATED_WITH_REPLACEMENT("NSEventTypeOtherMouseDragged", macos(10.0,10.12)) = NSEventTypeOtherMouseDragged;
-
 
 // // For APIs introduced in Mac OS X 10.6 and later, this type is used with NS*Mask constants to indicate the events of interest.
 // typedef NS_OPTIONS(unsigned long long, NSEventMask) { /* masks for the types of events */
@@ -119,7 +158,7 @@
 //     NSEventMaskRotate API_AVAILABLE(macos(10.5))           = 1ULL << NSEventTypeRotate,
 //     NSEventMaskBeginGesture API_AVAILABLE(macos(10.5))     = 1ULL << NSEventTypeBeginGesture,
 //     NSEventMaskEndGesture API_AVAILABLE(macos(10.5))       = 1ULL << NSEventTypeEndGesture,
-    
+
 //     /* Note: You can only use these event masks on 64 bit. In other words, you cannot setup a local, nor global, event monitor for these event types on 32 bit. Also, you cannot search the event queue for them (nextEventMatchingMask:...) on 32 bit.
 //      */
 //     NSEventMaskSmartMagnify API_AVAILABLE(macos(10.8)) = 1ULL << NSEventTypeSmartMagnify,
@@ -127,9 +166,9 @@
 //     NSEventMaskDirectTouch API_AVAILABLE(macos(10.12.2)) = 1ULL << NSEventTypeDirectTouch,
 
 //     NSEventMaskChangeMode API_AVAILABLE(macos(10.15)) = 1ULL << NSEventTypeChangeMode,
-    
+
 //     NSEventMaskAny              = NSUIntegerMax,
-    
+
 // };
 
 // static const NSEventMask NSLeftMouseDownMask 		API_DEPRECATED_WITH_REPLACEMENT("NSEventMaskLeftMouseDown", macos(10.0,10.12)) = NSEventMaskLeftMouseDown;
@@ -169,7 +208,7 @@
 //     NSEventModifierFlagNumericPad         = 1 << 21, // Set if any key in the numeric keypad is pressed.
 //     NSEventModifierFlagHelp               = 1 << 22, // Set if the Help key is pressed.
 //     NSEventModifierFlagFunction           = 1 << 23, // Set if any function key is pressed.
-    
+
 //     // Used to retrieve only the device-independent modifier flags, allowing applications to mask off the device-dependent modifier flags, including event coalescing information.
 //     NSEventModifierFlagDeviceIndependentFlagsMask    = 0xffff0000UL
 // };
@@ -185,7 +224,7 @@
 // static const NSEventModifierFlags NSDeviceIndependentModifierFlagsMask    API_DEPRECATED_WITH_REPLACEMENT("NSEventModifierFlagDeviceIndependentFlagsMask", macos(10.0,10.12)) = NSEventModifierFlagDeviceIndependentFlagsMask;
 
 // /* pointer types for NSEventTypeTabletProximity events or mouse events with subtype NSEventSubtypeTabletProximity*/
-// typedef NS_ENUM(NSUInteger, NSPointingDeviceType) {        
+// typedef NS_ENUM(NSUInteger, NSPointingDeviceType) {
 //     NSPointingDeviceTypeUnknown     = NX_TABLET_POINTER_UNKNOWN,
 //     NSPointingDeviceTypePen         = NX_TABLET_POINTER_PEN,
 //     NSPointingDeviceTypeCursor      = NX_TABLET_POINTER_CURSOR,
@@ -236,10 +275,10 @@
 //     NSEventSubtypeApplicationDeactivated   = 2,
 //     NSEventSubtypeWindowMoved              = 4,
 //     NSEventSubtypeScreenChanged            = 8,
-    
+
 //     /* event subtypes for NSEventTypeSystemDefined events */
 //     NSEventSubtypePowerOff             = 1,
-    
+
 //     /* event subtypes for mouse events */
 //     NSEventSubtypeMouseEvent        = NX_SUBTYPE_DEFAULT,
 //     NSEventSubtypeTabletPoint       = NX_SUBTYPE_TABLET_POINT,
@@ -259,15 +298,14 @@
 // static const NSEventSubtype NSTabletProximityEventSubtype   API_DEPRECATED_WITH_REPLACEMENT("NSEventSubtypeTabletProximity", macos(10.0,10.12)) = NSEventSubtypeTabletProximity;
 // static const NSEventSubtype NSTouchEventSubtype             API_DEPRECATED_WITH_REPLACEMENT("NSEventSubtypeTouch", macos(10.0,10.12)) = NSEventSubtypeTouch;
 
-
 // // NSPressureBehavior - The pressure gesture behavior that describes how a pressure gesture behaves and progresses
 // // In general, pressure gestures begin when stage reaches 1 and end when stage reaches 0. This corresponds to the simultaneously generated mouse down/up events.
 // typedef NS_ENUM(NSInteger, NSPressureBehavior) {
 //     NSPressureBehaviorUnknown = -1,
-    
+
 //     // The default primary behavior when otherwise not explicitly configured. In 10.10.3 the default is NSPressureBehaviorPrimaryDeepClick.
 //     NSPressureBehaviorPrimaryDefault = 0,
-    
+
 //     // Variable pressure with a small dynamic range after mouseDown.
 //     // Mouse events: LeftMouse
 //     // # of Stages: 1
@@ -275,7 +313,7 @@
 //     // Actuations: mouseDown, mouseUp
 //     // stageTransition: NO
 //     NSPressureBehaviorPrimaryClick = 1,
-    
+
 //     // Variable pressure with a large dynamic range after mouseDown suitable for drawing and general pressure use.
 //     // Mouse events: LeftMouse
 //     // # of Stages: 1
@@ -283,7 +321,7 @@
 //     // Actuations: mouseDown, mouseUp
 //     // stageTransition: NO
 //     NSPressureBehaviorPrimaryGeneric = 2,
-    
+
 //     // Variable pressure after mouseDown suitable for controlling speed. Used by NSAcceleratorButton
 //     // Mouse events: LeftMouse
 //     // # of Stages: 1
@@ -291,7 +329,7 @@
 //     // Actuations: mouseDown, mouseUp
 //     // stageTransition: NO
 //     NSPressureBehaviorPrimaryAccelerator = 3,
-    
+
 //     // Toggle between stages 1 and 2 until drag or mouse up (e.g. Force Click)
 //     // Mouse events: LeftMouse
 //     // # of Stages: 2 (stage 2 is disabled once dragging starts)
@@ -299,7 +337,7 @@
 //     // Actuations: mouseDown, mouseUp, 1->2, 2->1
 //     // stageTransition: into and release from stage 2
 //     NSPressureBehaviorPrimaryDeepClick = 5,
-    
+
 //     // Toggle between stages 1 and 2 until mouse up (e.g. Force Click)
 //     // Mouse events: LeftMouse
 //     // # of Stages: 2
@@ -307,11 +345,18 @@
 //     // Actuations: mouseDown, mouseUp, 1->2, 2->1
 //     // stageTransition: into and release from stage 2
 //     NSPressureBehaviorPrimaryDeepDrag = 6,
-    
+
 // }API_AVAILABLE(macos(10.10.3));
 
-// @interface NSEvent : NSObject <NSCopying, NSCoding>
+pub enum NSEventFFI {}
 
+foreign_obj_type! {
+    type CType = NSEventFFI;
+    pub struct NSEvent;
+    pub struct NSEventRef;
+}
+
+// @interface NSEvent : NSObject <NSCopying, NSCoding>
 
 // /* these messages are valid for all events */
 // @property (readonly) NSEventType type;
@@ -334,8 +379,8 @@
 
 // /* these messages are valid for scroll wheel events and mouse move/drag events.  As of 10.5.2, deltaX and deltaY are also valid for swipe events.  A non-0 deltaX will represent a horizontal swipe, -1 for swipe right and 1 for swipe left.  A non-0 deltaY will represent a vertical swipe, -1 for swipe down and 1 for swipe up. As of 10.7, the preferred methods for scroll wheel events are scrollingDeltaX and scrollingDeltaY defined below.
 // */
-// @property (readonly) CGFloat deltaX;    
-// @property (readonly) CGFloat deltaY;    
+// @property (readonly) CGFloat deltaX;
+// @property (readonly) CGFloat deltaY;
 // @property (readonly) CGFloat deltaZ;    // 0 for most scroll wheel and mouse events
 
 // /* This message is valid for NSEventTypeScrollWheel events. A generic scroll wheel issues rather coarse scroll deltas. Some Apple mice and trackpads provide much more precise delta. This method determines the resolution of the scrollDeltaX and scrollDeltaY values.
@@ -351,7 +396,7 @@
 // */
 // @property (readonly) NSEventPhase momentumPhase API_AVAILABLE(macos(10.7));
 
-// /* valid for NSEventScrollWheel events. The user may choose to change the scrolling behavior such that it feels like they are moving the content instead of the scroll bar. To accomplish this, deltaX/Y and scrollingDeltaX/Y are automatically inverted for NSEventScrollWheel events according to the user's preferences. However, for some uses, the behavior should not respect the user preference. This method allows you to determine when the event has been inverted and compensate by multiplying -1 if needed. 
+// /* valid for NSEventScrollWheel events. The user may choose to change the scrolling behavior such that it feels like they are moving the content instead of the scroll bar. To accomplish this, deltaX/Y and scrollingDeltaX/Y are automatically inverted for NSEventScrollWheel events according to the user's preferences. However, for some uses, the behavior should not respect the user preference. This method allows you to determine when the event has been inverted and compensate by multiplying -1 if needed.
 // */
 // @property (getter=isDirectionInvertedFromDevice, readonly) BOOL directionInvertedFromDevice API_AVAILABLE(macos(10.7));
 
@@ -364,18 +409,17 @@
 //     It uses [self keyCode], the new modifiers and the current keyboard input source's layout data for re-translation.  It entirely ignores the modifiers that are already present in the event and calling this method will not affect the dead key state for current text input.
 //     If there is invalid data in this event, -charactersByApplyingModifiers will return nil.
 // */
-// - (nullable NSString *)charactersByApplyingModifiers:(NSEventModifierFlags)modifiers API_AVAILABLE(macos(10.15)); 
+// - (nullable NSString *)charactersByApplyingModifiers:(NSEventModifierFlags)modifiers API_AVAILABLE(macos(10.15));
 
 //   /* the chars that would have been generated, regardless of modifier keys (except shift) */
 // @property (getter=isARepeat, readonly) BOOL ARepeat;
 // /* this message is valid for keyup, keydown and flagschanged events */
 // @property (readonly) unsigned short keyCode;        /* device-independent key number */
-
 // /* these messages are valid for enter and exit events */
 // @property (readonly) NSInteger trackingNumber;
 // @property (nullable, readonly) void *userData NS_RETURNS_INNER_POINTER;
 // /* -trackingArea returns the NSTrackingArea that generated this event.  It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned. */
-// @property (nullable, readonly, strong) NSTrackingArea *trackingArea API_AVAILABLE(macos(10.5)); 
+// @property (nullable, readonly, strong) NSTrackingArea *trackingArea API_AVAILABLE(macos(10.5));
 
 // /* this message is valid for kit, system, and app-defined events */
 // /* this message is also valid for mouse events on 10.4 or later */
@@ -384,7 +428,6 @@
 // /* these messages are valid for kit, system, and app-defined events */
 // @property (readonly) NSInteger data1;
 // @property (readonly) NSInteger data2;
-
 
 // /* -eventRef and +eventWithEventRef:  are valid for all events */
 // /* -eventRef returns an EventRef corresponding to the NSEvent.  The EventRef is retained by the NSEvent, so will be valid as long as the NSEvent is valid, and will be released when the NSEvent is freed.  You can use RetainEvent to extend the lifetime of the EventRef, with a corresponding ReleaseEvent when you are done with it.  If there is no EventRef corresponding to the NSEvent, -eventRef will return NULL.
@@ -406,7 +449,6 @@
 // */
 // @property (class, getter=isMouseCoalescingEnabled) BOOL mouseCoalescingEnabled API_AVAILABLE(macos(10.5));
 
-
 // /* This message is valid for events of type NSEventTypeMagnify, on 10.5.2 or later */
 // @property (readonly) CGFloat magnification API_AVAILABLE(macos(10.5));       // change in magnification.   This value should be added to the current scaling of an item to get the new scale factor.
 
@@ -418,19 +460,19 @@
 
 // /* these messages are valid for mouse events with subtype NSEventSubtypeTabletPoint, and for NSEventTypeTabletPoint events */
 // /* absolute x coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteX; 
+// @property (readonly) NSInteger absoluteX;
 // /* absolute y coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteY;               
+// @property (readonly) NSInteger absoluteY;
 // /* absolute z coordinate in tablet space at full tablet resolution */
-// @property (readonly) NSInteger absoluteZ;     
+// @property (readonly) NSInteger absoluteZ;
 // /* mask indicating which buttons are pressed.*/
 // @property (readonly) NSEventButtonMask buttonMask;
 // /* range is -1 to 1 for both axes */
-// @property (readonly) NSPoint tilt;     
+// @property (readonly) NSPoint tilt;
 // /* tangential pressure on the device; range is -1 to 1 */
-// @property (readonly) float tangentialPressure;  
+// @property (readonly) float tangentialPressure;
 // /* NSArray of 3 vendor defined shorts */
-// @property (readonly, strong) id vendorDefined;    
+// @property (readonly, strong) id vendorDefined;
 
 // /* these messages are valid for mouse events with subtype NSEventSubtypeTabletProximity, and  for NSEventTypeTabletProximity events */
 // /* vendor defined, typically USB vendor ID */
@@ -442,18 +484,17 @@
 // /* system assigned unique tablet ID */
 // @property (readonly) NSUInteger systemTabletID;
 // /* vendor defined pointing device type */
-// @property (readonly) NSUInteger vendorPointingDeviceType; 
+// @property (readonly) NSUInteger vendorPointingDeviceType;
 // /* vendor defined serial number of pointing device */
-// @property (readonly) NSUInteger pointingDeviceSerialNumber; 
+// @property (readonly) NSUInteger pointingDeviceSerialNumber;
 // /* vendor defined unique ID */
-// @property (readonly) unsigned long long uniqueID;    
+// @property (readonly) unsigned long long uniqueID;
 // /* mask representing capabilities of device */
-// @property (readonly) NSUInteger capabilityMask;    
+// @property (readonly) NSUInteger capabilityMask;
 // /* mask representing capabilities of device */
 // @property (readonly) NSPointingDeviceType pointingDeviceType;
 // /* YES - entering; NO - leaving */
-// @property (getter=isEnteringProximity, readonly) BOOL enteringProximity;    
-
+// @property (getter=isEnteringProximity, readonly) BOOL enteringProximity;
 
 // - (NSSet<NSTouch *> *)touchesMatchingPhase:(NSTouchPhase)phase inView:(nullable NSView *)view API_AVAILABLE(macos(10.6));
 
@@ -539,7 +580,7 @@
 //    Use +addLocal to install an event monitor that receives events before they are dispatched by -[NSApplication sendEvent:]. In this case, your block should either return a valid NSEvent (which may be the same as the incoming NSEvent, or may be a newly created NSEvent) to cause the event to be dispatched, or it may return nil to stop dispatching of the event. Note that your handler will not be called for events that are consumed by nested event-tracking loops such as control tracking, menu tracking, or window dragging; only events that are dispatched through -[NSApplication sendEvent:] will be passed to your handler.
 
 //    In either case, the return value of the API is a retained NSObject. You typically do not need to retain and release the event monitor yourself, since the implementation will retain it while needed.
-   
+
 //    To remove the event monitor, under both garbage collection and non-GC, pass the return value from the +add API to +removeMonitor.
 // */
 // + (nullable id)addGlobalMonitorForEventsMatchingMask:(NSEventMask)mask handler:(void (^)(NSEvent *event))block API_AVAILABLE(macos(10.6));
@@ -547,7 +588,6 @@
 // + (void)removeMonitor:(id)eventMonitor API_AVAILABLE(macos(10.6));
 
 // @end
-
 
 // /* Unicodes we reserve for function keys on the keyboard,  OpenStep reserves the range 0xF700-0xF8FF for this purpose.  The availability of various keys will be system dependent. */
 // enum {
@@ -624,8 +664,6 @@
 //     NSHelpFunctionKey           = 0xF746,
 //     NSModeSwitchFunctionKey     = 0xF747
 // };
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

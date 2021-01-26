@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSDictionary.h>
 // #import <AppKit/NSController.h>
 // #import <AppKit/AppKitDefines.h>
@@ -38,4 +37,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

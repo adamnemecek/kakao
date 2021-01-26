@@ -4,8 +4,6 @@
 // 	Copyright (c) 2015-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
-
 // #import <AppKit/NSView.h>
 // #import <AppKit/NSLayoutAnchor.h>
 // #import <AppKit/AppKitDefines.h>
@@ -15,21 +13,19 @@
 
 // @class NSLayoutConstraint, NSGridCell, NSGridColumn, NSGridRow;
 
-
 // typedef NS_ENUM(NSInteger, NSGridCellPlacement) {
 //     NSGridCellPlacementInherited = 0,
 //     NSGridCellPlacementNone,
 //     NSGridCellPlacementLeading,
 //     NSGridCellPlacementTop = NSGridCellPlacementLeading,
-    
+
 //     NSGridCellPlacementTrailing,
 //     NSGridCellPlacementBottom = NSGridCellPlacementTrailing,
-    
+
 //     NSGridCellPlacementCenter,
 //     NSGridCellPlacementFill
-    
-// } API_AVAILABLE(macos(10.12));
 
+// } API_AVAILABLE(macos(10.12));
 
 // typedef NS_ENUM(NSInteger, NSGridRowAlignment) {
 //     NSGridRowAlignmentInherited = 0,
@@ -40,13 +36,11 @@
 
 // APPKIT_EXTERN const CGFloat NSGridViewSizeForContent API_AVAILABLE(macos(10.12)); // Default value for row & column size, indicating it should automatically fit the content views.
 
-
 // /*
 //  NSGridView is a layout container for aligning views in spreadsheet-like rows & columns, indexed from the top left starting at 0.  Rows and columns are sized to fit their largest content (unless an explicit size has been set), but all cells in a given column will be the same width and all cells in a row will be the same height.
 
 //  NSGridPlacement is used to specify the positioning of the contentView within the cell.  The content placement can be configured separately for the X & Y axes to align the content with either edge or to center it.  Placement properties on rows, columns, and cells default to 'inherited' so that the grid-level properties will effect all cells.  Content placement can be overridden for individual rows, columns, or cells by simply changing the appropriate property to a value other than 'inherited'.
 // **/
-
 // API_AVAILABLE(macos(10.12))
 // @interface NSGridView : NSView
 
@@ -58,7 +52,6 @@
 
 // @property (readonly) NSInteger numberOfRows;
 // @property (readonly) NSInteger numberOfColumns;
-
 
 // // Cells are arranged in rows and columns, which allow for configuration of content alignment on a row/column basis.
 // - (NSGridRow *)rowAtIndex:(NSInteger)index;
@@ -79,7 +72,6 @@
 // - (void)moveColumnAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 // - (void)removeColumnAtIndex:(NSInteger)index;
 
-
 // // Grid-level layout properties will be used by cells that don't have the properties defined themselves or at the column/row level.  They default to bottom-leading placement, with no alignment.
 // @property NSGridCellPlacement xPlacement;
 // @property NSGridCellPlacement yPlacement;
@@ -94,8 +86,6 @@
 
 // @end
 
-
-
 // // NSGridRow represents a row of cells in the grid view, and allows content placement to be specified on a per-row basis.
 // API_AVAILABLE(macos(10.12))
 // @interface NSGridRow : NSObject <NSCoding>
@@ -103,7 +93,6 @@
 // @property (readonly,weak) NSGridView *gridView;
 // @property (readonly) NSInteger numberOfCells;
 // - (NSGridCell *)cellAtIndex:(NSInteger)index;
-
 
 // // Row level placement properties will be used by cells whose Y-axis properties are set to 'inherited'.  These also default to 'inherited', falling back to the GridView level properties.
 // @property NSGridCellPlacement yPlacement;
@@ -116,8 +105,6 @@
 // - (void)mergeCellsInRange:(NSRange)range;
 
 // @end
-
-
 
 // // NSGridColumn represents a column of cells in the grid view, and allows content placement to be specified on a per-column basis.
 // API_AVAILABLE(macos(10.12))
@@ -138,11 +125,9 @@
 
 // @end
 
-
 // // NSGridCell represents a single cell in the grid.  The cell will maintain the necessary constraints for positioning out whichever contentView is set.
 // API_AVAILABLE(macos(10.12))
 // @interface NSGridCell : NSObject <NSCoding>
-
 
 // @property (strong,nullable) __kindof NSView *contentView; // The view whose placement will be managed by this cell.
 
@@ -161,8 +146,6 @@
 // @property (copy) NSArray<NSLayoutConstraint *> *customPlacementConstraints;
 
 // @end
-
-
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END

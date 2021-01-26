@@ -4,7 +4,6 @@
 //     Copyright (c) 2014-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSUserActivity.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <AppKit/NSResponder.h>
@@ -34,7 +33,7 @@
 //  To unassociate an object from the user activity, you can set this to nil. If no objects are associated with an NSUserActivity managed by AppKit/UIKit, it will be removed.
 
 //  This property can be used from any thread.
- 
+
 //  This property is KVO observable.
 // **/
 // @property (nullable, strong) NSUserActivity *userActivity API_AVAILABLE(macos(10.10));

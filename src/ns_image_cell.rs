@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // */
-
 // #import <AppKit/NSCell.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -31,7 +30,6 @@
 //     NSImageFrameGroove,
 //     NSImageFrameButton
 // };
-
 
 // @interface NSImageCell : NSCell <NSCopying, NSCoding>
 

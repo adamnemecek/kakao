@@ -4,7 +4,6 @@
 // 	Copyright (c) 2002-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <AppKit/NSKeyValueBinding.h>
 // #import <AppKit/AppKitDefines.h>
 // #import <CoreFoundation/CoreFoundation.h>
@@ -30,4 +29,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

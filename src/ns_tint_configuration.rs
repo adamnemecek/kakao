@@ -4,7 +4,6 @@
 //         Copyright (c) 2020, Apple Inc.
 //         All rights reserved.
 // */
-
 // #import <AppKit/NSColor.h>
 
 // NS_ASSUME_NONNULL_BEGIN

@@ -6,7 +6,6 @@
 
 //     Class to represent text lists.
 // */
-
 // #import <Foundation/NSObject.h>
 // #import <AppKit/AppKitDefines.h>
 
@@ -45,8 +44,6 @@
 // @property NSInteger startingItemNumber API_AVAILABLE(macos(10.6));
 
 // @end
-
-
 
 // #endif // !TARGET_OS_IPHONE
 // NS_ASSUME_NONNULL_END

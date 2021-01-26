@@ -4,7 +4,6 @@
 //  Copyright (c) 2012-2019, Apple Inc.
 //  All rights reserved.
 // **/
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSApplication.h>
 // #import <AppKit/NSLayoutConstraint.h>
@@ -20,15 +19,15 @@
 // /*
 //  The gravity area describes the area within a StackView that a view will be placed.
 //  This placement is also highly related to the set orientation and layoutDirection.
- 
+
 //  Gravity areas will align to a specific direction in the StackView, which are described through these enum values.
 //  Each gravity area is a distinct portion of the StackView, and the constraints for spacing between gravities is described further in the documentation for the spacing property.
 //  In addition to the gravity spacing constraints, the center gravity area also has a constraint tying it to the center of the StackView with a layout priority of NSLayoutPriorityDefaultLow.
- 
+
 //  For horizontally-oriented StackViews, NSStackViewGravityLeading, NSStackViewGravityCenter, and NSStackViewGravityTrailing should be used. Leading and trailing are described by the userInterfaceLayoutDirection of the StackView, (leading = left for NSUserInterfaceLayoutDirectionLeftToRight vs leading = right for NSUserInterfaceLayoutDirectionRightToLeft).
- 
+
 //  For a vertically-oriented StackView, NSStackViewGravityTop, NSStackViewGravityCenter, and NSStackViewGravityBottom should be used.
- 
+
 //  See also:
 //  - insertView:atIndex:inGravity:
 //  - viewsInGravity:
@@ -43,7 +42,6 @@
 //     NSStackViewGravityBottom = 3, // The bottom-most gravity area, should only be used when orientation = NSUserInterfaceLayoutOrientationVertical
 //     NSStackViewGravityTrailing = 3 // The trailing gravity area (as described by userInterfaceLayoutDirection), should only be used when orientation = NSUserInterfaceLayoutOrientationHorizontal
 // } API_AVAILABLE(macos(10.9));
-
 
 // /* Distribution—the layout along the stacking axis.
 //  All NSStackViewDistribution enum values fit first and last stacked views tightly to the container, except for NSStackViewDistributionGravityAreas.
@@ -68,15 +66,14 @@
 //     NSStackViewDistributionEqualCentering,
 // } API_AVAILABLE(macos(10.11));
 
-
 // /*
 //  Visibility Priority describes the priority at which a view should be held (aka, not be detached).
 //  In the case that clippingResistancePriority is optional (< NSLayoutPriorityRequired) and there's not enough space to display all of StackView's subviews, views are able to be detached from the StackView.
 //  Views will be detached in order (from lowest to highest) of their visibility priority, and reattached in the reverse order (FILO).
 //  If multiple views share the lowest visibility priority, all those views will be dropped when one needs to be. Likewise, groups of views with equal visibility priorities will wait to be reattached until they can all be readded.
- 
+
 //  A view with a higher visibility priority will never be detached while a lower priority view remains visible
- 
+
 //  See also:
 //  - visibilityPriorityForView:
 //  - setVisibilityPriority:ForView:
@@ -88,7 +85,6 @@
 // static const NSStackViewVisibilityPriority NSStackViewVisibilityPriorityMustHold API_AVAILABLE(macos(10.9)) = 1000; //Maximum, default - the view will never be detached
 // static const NSStackViewVisibilityPriority NSStackViewVisibilityPriorityDetachOnlyIfNecessary API_AVAILABLE(macos(10.9)) = 900;
 // static const NSStackViewVisibilityPriority NSStackViewVisibilityPriorityNotVisible API_AVAILABLE(macos(10.9)) = 0; //Minimum - will force a view to be detached
-
 
 // /*
 //  A value of NSStackViewSpacingUseDefault signifies that the spacing is the default spacing set with the StackView property.
@@ -139,7 +135,6 @@
 // /// If YES, when a stacked view's `hidden` property is set to YES, the view will be detached from the stack and reattached when set to NO. Similarly, if the view has a lowered visibility priority and is detached from the stack view, it will be set as `hidden` rather than removed from the view hierarchy. Defaults to YES for apps linked on the 10.11 SDK or later.
 // @property BOOL detachesHiddenViews API_AVAILABLE(macos(10.11));
 
-
 // #pragma mark Arranged Subviews
 
 // /// The list of views that are arranged in a stack by the receiver. They are a subset of \c -subviews, with potential difference in ordering.
@@ -166,7 +161,6 @@
 // /// The arrangedSubviews that are currently detached/hidden.
 // @property (readonly, copy) NSArray<__kindof NSView *> *detachedViews;
 
-
 // #pragma mark Custom Priorities
 
 // /*
@@ -176,7 +170,7 @@
 
 //  Defaults to `NSStackViewVisibilityPriorityMustHold`.
 //  Setting the visibility priority to NSStackViewVisibilityPriorityNotVisible will force that view to be detached (regardless of available space), and will set the view to be hidden if `detachesHiddenViews` is set to `YES`.
- 
+
 //  `view` must be managed by the StackView, an exception will be raised if not.
 // **/
 // - (void)setVisibilityPriority:(NSStackViewVisibilityPriority)priority forView:(NSView *)view;
@@ -206,7 +200,6 @@
 // #endif
 
 // @end
-
 
 // #pragma mark - NSStackViewDelegate
 // @protocol NSStackViewDelegate <NSObject>

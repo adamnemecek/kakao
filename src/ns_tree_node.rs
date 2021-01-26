@@ -4,7 +4,6 @@
 // 	Copyright (c) 2007-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSArray.h>
 // #import <AppKit/AppKitDefines.h>
@@ -24,7 +23,7 @@
 
 // @property (readonly, strong) NSIndexPath *indexPath; // represents the receiver's location in the entire tree
 // @property (getter=isLeaf, readonly) BOOL leaf; // determined by (count of child nodes == 0)
-    
+
 // @property (nullable, readonly, copy) NSArray<NSTreeNode *> *childNodes; // traversal
 // @property (readonly, strong) NSMutableArray<NSTreeNode *> *mutableChildNodes; // returns a mutable proxy - parentNode of inserted/removed child nodes is automatically updated
 // - (nullable NSTreeNode *)descendantNodeAtIndexPath:(NSIndexPath *)indexPath; // traversal begins with receiver
@@ -38,4 +37,3 @@
 
 // API_UNAVAILABLE_END
 // NS_ASSUME_NONNULL_END
-

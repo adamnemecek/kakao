@@ -4,7 +4,6 @@
 // 	Copyright (c) 1994-2019, Apple Inc.
 // 	All rights reserved.
 // **/
-
 // #import <Foundation/NSObject.h>
 // #import <Foundation/NSGeometry.h>
 // #import <Foundation/NSRange.h>
@@ -54,7 +53,7 @@
 
 // @end
 
-// /* NSInputManager is deprecated in Mac OS X 10.6. Use NSTextInputContext instead. 
+// /* NSInputManager is deprecated in Mac OS X 10.6. Use NSTextInputContext instead.
 // **/
 // API_DEPRECATED("Use NSTextInputContext instead", macos(10.0,10.6))
 // @interface NSInputManager : NSObject <NSTextInput>
@@ -73,11 +72,9 @@
 // - (null_unspecified NSString *)localizedInputManagerName API_DEPRECATED("", macos(10.0,10.6));
 
 // /* These messages are sent by Views that conform to the NSTextInput protocol TO the Current Input Manager when things happen via user or programmatic action.  E.g., when the mouse moves outside the marked range, send markedTextWillBeAbandoned:.  If the user selects some new text or moves the mouse within the marked region, send markedTextSelectionChanged:.  Not all input manager/server combinations will allow all changes, but abandoning of the marked region cannot be aborted.
-// */ 
-
+// */
 // - (void)markedTextAbandoned:(null_unspecified id)cli API_DEPRECATED("", macos(10.0,10.6)); /* send after abandoning */
 // - (void)markedTextSelectionChanged:(NSRange)newSel client:(null_unspecified id)cli API_DEPRECATED("", macos(10.0,10.6)); /* send after changing */
-
 // /* This corresponds to a server method for input managers that demand to do their own interepretation of command keys as long as they're active.  This will typically be called by a key binder to find out whether it shouldn't just pass along strings.
 // */
 // - (BOOL)wantsToInterpretAllKeystrokes API_DEPRECATED("", macos(10.0,10.6));

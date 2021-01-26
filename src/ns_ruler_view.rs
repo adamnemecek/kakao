@@ -4,7 +4,6 @@
 //     Copyright (c) 1994-2019, Apple Inc.
 //     All rights reserved.
 // */
-
 // #import <Foundation/NSArray.h>
 // #import <AppKit/NSView.h>
 // #import <AppKit/AppKitDefines.h>
@@ -28,18 +27,15 @@
 // @interface NSRulerView : NSView
 
 // */*********************** Registering new units *************************/
-
 // + (void)registerUnitWithName:(NSRulerViewUnitName)unitName abbreviation:(NSString *)abbreviation unitToPointsConversionFactor:(CGFloat)conversionFactor stepUpCycle:(NSArray<NSNumber *> *)stepUpCycle stepDownCycle:(NSArray<NSNumber *> *)stepDownCycle;
 
 // */************************** Initialization ****************************/
-
 // - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 
 // - (instancetype)initWithScrollView:(nullable NSScrollView *)scrollView orientation:(NSRulerOrientation)orientation NS_DESIGNATED_INITIALIZER;
 //     // The designated initializer.  A ruler's size is controlled by its NSScrollView. initWithFrame: is overridden to call this.  The view is initialized with an unrealistically small default frame which will be reset in due time by the NSScrollView.
 
 // */************************** Basic setup ****************************/
-
 // @property (nullable, weak) NSScrollView *scrollView;
 //     // A ruler uses its scrollView to finds its document view to see whether it should be flipped.  The set method is generally called only by the scroll view itself.  You should not have to set this.
 
@@ -47,7 +43,6 @@
 //     // Either NSHorizontalRuler or NSVerticalRuler.  The set method is generally called by the ruler's scroll view.  You should not have to set this.
 
 // */************************** Ruler geometry ****************************/
-
 // @property (readonly) CGFloat baselineLocation;
 //     // Returns the location of the baseline.  The location is a y position for horizontal rulers and an x position for vertical ones.  The value is based on the sizes of the various areas of the ruler, some of which can be set below.
 
@@ -64,7 +59,6 @@
 //     // This indicates to the ruler how much room it should leave for the accessory view.  Default is 0.0.  If you expect that a view in your document view will put an accessory view in the ruler, you can set this to make room fror it from the start.  If an accessory view is ever set for the ruler, and space was not reserved for it or it is bigger than the space reserved, the ruler grows the reserved space to be big enough and retiles the scroll view.  If you know that several different accessory views will be used it is best to set this to the height of the tallest one for horizontal rulers or the width of the widest one for vertical rulers.  If the reserved thickness is larger than an actual accessory view set into the ruler, the accessory view is centered in the thickness.
 
 // */************************** Rule configuration ****************************/
-
 // @property (copy) NSRulerViewUnitName measurementUnits;
 //     // The units of the ruler start out with the user's preferred measurement.  They can be changed if desired.  The units set must be registered with the ruler factory.  By default Inches, Centimeters, Picas, and Points are supported.
 
@@ -72,7 +66,6 @@
 //     // How far to offset the ruler's zero hash mark (and label) from the document view's bounds origin.
 
 // */************************** Client view setup ****************************/
-
 // @property (nullable, weak) NSView *clientView;
 
 // - (void)addMarker:(NSRulerMarker *)marker;
@@ -87,10 +80,9 @@
 //     // A rulers accessory view is drawn below or to the right of the rule.  It can contain arbitrary controls.
 
 // - (void)moveRulerlineFromLocation:(CGFloat)oldLocation toLocation:(CGFloat)newLocation;
-//     // This method can be used to draw temporary lines in the rule.  NSRulerMarkers use this during dragging to draw the part of the line they draw from themselves across the scroll views contents which appears in the rule area.  You can use this method to draw ticks in the ruler (for example) to show the position or extent of an object while it is being dragged in the document.  oldLocation is the last position that the line was at or -1.0 if this is the first time it is being drawn.  newLocation is where the line should be or -1.0 if you are just trying to get an old line erased. 
+//     // This method can be used to draw temporary lines in the rule.  NSRulerMarkers use this during dragging to draw the part of the line they draw from themselves across the scroll views contents which appears in the rule area.  You can use this method to draw ticks in the ruler (for example) to show the position or extent of an object while it is being dragged in the document.  oldLocation is the last position that the line was at or -1.0 if this is the first time it is being drawn.  newLocation is where the line should be or -1.0 if you are just trying to get an old line erased.
 
 // */********************* Drawing and hash invalidation ***********************/
-
 // - (void)invalidateHashMarks;
 //     // Forces recalculation of the hash mark dictionary next time any display is done.  You should not generally have to call this method.
 
@@ -101,7 +93,6 @@
 //     // You should never need to call this, but you might want to override it.  This method is called by -drawRect: to draw the ruler objects on the ruler.  If you want to do something different you can override this.
 
 // */************************** Key overrides ****************************/
-
 // @property (getter=isFlipped, readonly) BOOL flipped;
 //     // A vertical ruler mimics the flippedness of the documentView of it's scrollView.  A horizontal ruler is always flipped (for ease of drawing).
 
