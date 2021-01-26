@@ -360,6 +360,10 @@ foreign_obj_type! {
 impl NSEventRef {
     // /* these messages are valid for all events */
     // @property (readonly) NSEventType type;
+    pub fn type_(&self) -> NSEventType {
+        todo!()
+    }
+
     // @property (readonly) NSEventModifierFlags modifierFlags;
     // @property (readonly) NSTimeInterval timestamp;
     // @property (readonly, nullable, weak) NSWindow *window;
@@ -374,14 +378,27 @@ impl NSEventRef {
 
     // /* -pressure is valid for all mouse down/up/drag events, and is also valid for NSEventTypeTabletPoint events on 10.4 or later and NSEventTypePressure on 10.10.3 or later */
     // @property (readonly) float pressure;
+    pub fn pressure(&self) -> f32 {
+        unsafe { msg_send![self, pressure] }
+    }
+
     // /* -locationInWindow is valid for all mouse-related events */
     // @property (readonly) NSPoint locationInWindow;
 
     // /* these messages are valid for scroll wheel events and mouse move/drag events.  As of 10.5.2, deltaX and deltaY are also valid for swipe events.  A non-0 deltaX will represent a horizontal swipe, -1 for swipe right and 1 for swipe left.  A non-0 deltaY will represent a vertical swipe, -1 for swipe down and 1 for swipe up. As of 10.7, the preferred methods for scroll wheel events are scrollingDeltaX and scrollingDeltaY defined below.
     // */
     // @property (readonly) CGFloat deltaX;
+    pub fn delta_x(&self) -> f32 {
+        unsafe { msg_send![self, deltaX] }
+    }
     // @property (readonly) CGFloat deltaY;
+    pub fn delta_y(&self) -> f32 {
+        unsafe { msg_send![self, deltaY] }
+    }
     // @property (readonly) CGFloat deltaZ;    // 0 for most scroll wheel and mouse events
+    pub fn delta_z(&self) -> f32 {
+        unsafe { msg_send![self, deltaZ] }
+    }
 
     // /* This message is valid for NSEventTypeScrollWheel events. A generic scroll wheel issues rather coarse scroll deltas. Some Apple mice and trackpads provide much more precise delta. This method determines the resolution of the scrollDeltaX and scrollDeltaY values.
     // */
