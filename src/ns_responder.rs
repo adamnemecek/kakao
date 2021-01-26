@@ -45,6 +45,9 @@ impl NSResponderRef {
     // - (BOOL)tryToPerform:(SEL)action with:(nullable id)object;
 
     // - (BOOL)performKeyEquivalent:(NSEvent *)event;
+    pub fn perform_key_equivalent(&self, event: &NSEventRef) -> bool {
+        unsafe { msg_send![self, performKeyEquivalent: event] }
+    }
     // - (nullable id)validRequestorForSendType:(nullable NSPasteboardType)sendType returnType:(nullable NSPasteboardType)returnType;
     // - (void)mouseDown:(NSEvent *)event;
     pub fn mouse_down(&self, event: &NSEventRef) {
@@ -130,6 +133,7 @@ impl NSResponderRef {
     pub fn cursor_update(&self, event: &NSEventRef) {
         unsafe { msg_send![self, cursorUpdate: event] }
     }
+
     // /* The following *WithEvent methods are available on 10.5.2 or later, and will be sent only on hardware capable of generating the corresponding NSEvent types
     // */
     // - (void)magnifyWithEvent:(NSEvent *)event API_AVAILABLE(macos(10.5));
@@ -236,9 +240,7 @@ impl NSResponderRef {
     // /* This method is used in the process of finding a target for an action method. If this NSResponder instance does not itself respondsToSelector:action, then supplementalTargetForAction:sender: is called. This method should return an object which responds to the action; if this responder does not have a supplemental object that does that, the implementation of this method should call super's supplementalTargetForAction:sender:. NSResponder's implementation returns nil.
     // */
     // - (nullable id)supplementalTargetForAction:(SEL)action sender:(nullable id)sender API_AVAILABLE(macos(10.7));
-    pub fn id(&self, event: &NSEventRef) {
-        unsafe { msg_send![self, id: event] }
-    }
+
     // @end
 
     // /* This protocol contains a large number of methods intended for use as key binding commands.  NSResponder does not implement any of them.  NSTextView implements a certain subset of them (see the NSTextView.h header).  Your responder subclasses can implement any that make sense.  You can make up your own as well, but you should use these if the concepts map.  If your view is key and uses key binding and the user types a key sequence which is bound to a command which is not implemented in your class, it is OK, nothing will happen by default.

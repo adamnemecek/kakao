@@ -3,4 +3,6 @@ pub use crate::{
     NSEventRef,
     NSResponder,
     NSResponderRef,
+    NSWindowController,
+    NSWindowControllerRef,
 };
