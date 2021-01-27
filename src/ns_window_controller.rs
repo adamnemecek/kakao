@@ -23,6 +23,8 @@ foreign_obj_type! {
     type CType = NSWindowControllerFFI;
     pub struct NSWindowController;
     pub struct NSWindowControllerRef;
+    type ParentType = NSResponderRef;
+
 }
 
 impl NSWindowController {
