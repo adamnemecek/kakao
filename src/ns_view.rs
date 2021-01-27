@@ -1,3 +1,4 @@
+use crate::NSResponderRef;
 // /*
 //     NSView.h
 //     Application Kit
@@ -73,6 +74,15 @@
 //     NSViewLayerContentsPlacementLeft                        = 10,
 //     NSViewLayerContentsPlacementTopLeft                     = 11
 // } API_AVAILABLE(macos(10.6));
+
+pub enum NSViewFFI { }
+
+foreign_obj_type! {
+    type CType = NSViewFFI;
+    pub struct NSView;
+    pub struct NSViewRef;
+    type ParentType = NSResponderRef;
+}
 
 // typedef NSInteger NSTrackingRectTag;
 // typedef NSInteger NSToolTipTag;
